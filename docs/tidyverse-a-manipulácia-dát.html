@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title> 3 Tidyverse a manipulácia dát | Základy jazyka R, analýza a práca s dátami v R</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+
+  <meta property="og:title" content=" 3 Tidyverse a manipulácia dát | Základy jazyka R, analýza a práca s dátami v R" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content=" 3 Tidyverse a manipulácia dát | Základy jazyka R, analýza a práca s dátami v R" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="základy-r---2.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"><font size="5"><b>Základy R</b></font></a></li>
+<li><a href="https://web.ac-mssr.sk/" target="blank"><img src="./images/acms3.png" width="250" height=30 /></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Úvod</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#poďakovanie"><i class="fa fa-check"></i>Poďakovanie</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="základy-r---1.html"><a href="základy-r---1.html"><i class="fa fa-check"></i><b>1</b> Základy R - 1</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="základy-r---1.html"><a href="základy-r---1.html#čo-je-r"><i class="fa fa-check"></i><b>1.1</b> Čo je R?</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="základy-r---1.html"><a href="základy-r---1.html#ceu-analógia"><i class="fa fa-check"></i><b>1.1.1</b> CEU analógia</a></li>
+<li class="chapter" data-level="1.1.2" data-path="základy-r---1.html"><a href="základy-r---1.html#v-kontexte-r"><i class="fa fa-check"></i><b>1.1.2</b> V kontexte R</a></li>
+<li class="chapter" data-level="1.1.3" data-path="základy-r---1.html"><a href="základy-r---1.html#výhody-a-nevýhody"><i class="fa fa-check"></i><b>1.1.3</b> Výhody a nevýhody</a></li>
+<li class="chapter" data-level="1.1.4" data-path="základy-r---1.html"><a href="základy-r---1.html#základné-pravidlá-skriptingu"><i class="fa fa-check"></i><b>1.1.4</b> Základné pravidlá skriptingu</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="základy-r---1.html"><a href="základy-r---1.html#konečne-sa-dostávame-ku-kódovaniu"><i class="fa fa-check"></i><b>1.2</b> Konečne sa dostávame ku kódovaniu</a></li>
+<li class="chapter" data-level="1.3" data-path="základy-r---1.html"><a href="základy-r---1.html#working-directory"><i class="fa fa-check"></i><b>1.3</b> Working directory</a></li>
+<li class="chapter" data-level="1.4" data-path="základy-r---1.html"><a href="základy-r---1.html#objekty-v-r"><i class="fa fa-check"></i><b>1.4</b> Objekty v R</a></li>
+<li class="chapter" data-level="1.5" data-path="základy-r---1.html"><a href="základy-r---1.html#vektory"><i class="fa fa-check"></i><b>1.5</b> Vektory</a></li>
+<li class="chapter" data-level="1.6" data-path="základy-r---1.html"><a href="základy-r---1.html#matice"><i class="fa fa-check"></i><b>1.6</b> Matice</a></li>
+<li class="chapter" data-level="1.7" data-path="základy-r---1.html"><a href="základy-r---1.html#chýbajúce-údaje"><i class="fa fa-check"></i><b>1.7</b> Chýbajúce údaje</a></li>
+<li class="chapter" data-level="1.8" data-path="základy-r---1.html"><a href="základy-r---1.html#listy"><i class="fa fa-check"></i><b>1.8</b> Listy</a></li>
+<li class="chapter" data-level="1.9" data-path="základy-r---1.html"><a href="základy-r---1.html#data-frames-databázové-tabuľky"><i class="fa fa-check"></i><b>1.9</b> Data frames (databázové tabuľky?)</a></li>
+<li class="chapter" data-level="1.10" data-path="základy-r---1.html"><a href="základy-r---1.html#ako-preskúmať-svoje-dáta"><i class="fa fa-check"></i><b>1.10</b> Ako preskúmať svoje dáta?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="základy-r---2.html"><a href="základy-r---2.html"><i class="fa fa-check"></i><b>2</b> Základy R - 2</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="základy-r---2.html"><a href="základy-r---2.html#načítanie-dát"><i class="fa fa-check"></i><b>2.1</b> Načítanie dát</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="základy-r---2.html"><a href="základy-r---2.html#csv-súbor"><i class="fa fa-check"></i><b>2.1.1</b> CSV súbor</a></li>
+<li class="chapter" data-level="2.1.2" data-path="základy-r---2.html"><a href="základy-r---2.html#dáta-oddelené-tabulátorom"><i class="fa fa-check"></i><b>2.1.2</b> Dáta oddelené tabulátorom</a></li>
+<li class="chapter" data-level="2.1.3" data-path="základy-r---2.html"><a href="základy-r---2.html#univerzálna-funkcia-s-definovaním-oddelovača"><i class="fa fa-check"></i><b>2.1.3</b> Univerzálna funkcia s definovaním oddelovača</a></li>
+<li class="chapter" data-level="2.1.4" data-path="základy-r---2.html"><a href="základy-r---2.html#excel"><i class="fa fa-check"></i><b>2.1.4</b> Excel</a></li>
+<li class="chapter" data-level="2.1.5" data-path="základy-r---2.html"><a href="základy-r---2.html#foreign-knižnica"><i class="fa fa-check"></i><b>2.1.5</b> foreign knižnica</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="základy-r---2.html"><a href="základy-r---2.html#práca-s-dátami"><i class="fa fa-check"></i><b>2.2</b> Práca s dátami</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="základy-r---2.html"><a href="základy-r---2.html#chýbajúce-dáta"><i class="fa fa-check"></i><b>2.2.1</b> Chýbajúce dáta</a></li>
+<li class="chapter" data-level="2.2.2" data-path="základy-r---2.html"><a href="základy-r---2.html#kódovanie-premenných"><i class="fa fa-check"></i><b>2.2.2</b> Kódovanie premenných</a></li>
+<li class="chapter" data-level="2.2.3" data-path="základy-r---2.html"><a href="základy-r---2.html#faktory"><i class="fa fa-check"></i><b>2.2.3</b> Faktory</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="základy-r---2.html"><a href="základy-r---2.html#ukladanie-dát"><i class="fa fa-check"></i><b>2.3</b> Ukladanie dát</a></li>
+<li class="chapter" data-level="2.4" data-path="základy-r---2.html"><a href="základy-r---2.html#funkcie"><i class="fa fa-check"></i><b>2.4</b> Funkcie</a></li>
+<li class="chapter" data-level="2.5" data-path="základy-r---2.html"><a href="základy-r---2.html#loops"><i class="fa fa-check"></i><b>2.5</b> Loops</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="základy-r---2.html"><a href="základy-r---2.html#if-else"><i class="fa fa-check"></i><b>2.5.1</b> if, else</a></li>
+<li class="chapter" data-level="2.5.2" data-path="základy-r---2.html"><a href="základy-r---2.html#for"><i class="fa fa-check"></i><b>2.5.2</b> for</a></li>
+<li class="chapter" data-level="2.5.3" data-path="základy-r---2.html"><a href="základy-r---2.html#break"><i class="fa fa-check"></i><b>2.5.3</b> break</a></li>
+<li class="chapter" data-level="2.5.4" data-path="základy-r---2.html"><a href="základy-r---2.html#next"><i class="fa fa-check"></i><b>2.5.4</b> next</a></li>
+<li class="chapter" data-level="2.5.5" data-path="základy-r---2.html"><a href="základy-r---2.html#while"><i class="fa fa-check"></i><b>2.5.5</b> while</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="základy-r---2.html"><a href="základy-r---2.html#apply-family"><i class="fa fa-check"></i><b>2.6</b> Apply family</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="základy-r---2.html"><a href="základy-r---2.html#apply"><i class="fa fa-check"></i><b>2.6.1</b> apply</a></li>
+<li class="chapter" data-level="2.6.2" data-path="základy-r---2.html"><a href="základy-r---2.html#lapply"><i class="fa fa-check"></i><b>2.6.2</b> lapply</a></li>
+<li class="chapter" data-level="2.6.3" data-path="základy-r---2.html"><a href="základy-r---2.html#sapply"><i class="fa fa-check"></i><b>2.6.3</b> sapply</a></li>
+<li class="chapter" data-level="2.6.4" data-path="základy-r---2.html"><a href="základy-r---2.html#tapply"><i class="fa fa-check"></i><b>2.6.4</b> tapply</a></li>
+<li class="chapter" data-level="2.6.5" data-path="základy-r---2.html"><a href="základy-r---2.html#iné-funkcie-so-základom-v-apply"><i class="fa fa-check"></i><b>2.6.5</b> Iné funkcie so základom v apply</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="základy-r---2.html"><a href="základy-r---2.html#swirl"><i class="fa fa-check"></i><b>2.7</b> swirl</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html"><i class="fa fa-check"></i><b>3</b> Tidyverse a manipulácia dát</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#whose-side-are-you-on"><i class="fa fa-check"></i><b>3.1</b> Whose side are you on?</a></li>
+<li class="chapter" data-level="3.2" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#pipe-revolúcia"><i class="fa fa-check"></i><b>3.2</b> Pipe revolúcia</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#na-sprehľadnenie-kódu"><i class="fa fa-check"></i><b>3.2.1</b> %&gt;% na sprehľadnenie kódu</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#dplyr"><i class="fa fa-check"></i><b>3.3</b> Dplyr</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#cheatsheets"><i class="fa fa-check"></i><b>3.3.1</b> Cheatsheets</a></li>
+<li class="chapter" data-level="3.3.2" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#filter"><i class="fa fa-check"></i><b>3.3.2</b> filter()</a></li>
+<li class="chapter" data-level="3.3.3" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#arrange"><i class="fa fa-check"></i><b>3.3.3</b> arrange()</a></li>
+<li class="chapter" data-level="3.3.4" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#slice"><i class="fa fa-check"></i><b>3.3.4</b> slice()</a></li>
+<li class="chapter" data-level="3.3.5" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#select"><i class="fa fa-check"></i><b>3.3.5</b> select()</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Základy jazyka R,<br>analýza a práca s dátami v R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="tidyverse-a-manipulácia-dát" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number"> 3</span> Tidyverse a manipulácia dát<a href="tidyverse-a-manipulácia-dát.html#tidyverse-a-manipulácia-dát" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="whose-side-are-you-on" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Whose side are you on?<a href="tidyverse-a-manipulácia-dát.html#whose-side-are-you-on" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<center>
+<img src="images/IMG_4257.JPG" width=50% />
+</center>
+<p><br><br></p>
+<p>Doteraz sme pri kódovaní používali primárne base R. Ako názov naznačuje base R je základom R od jeho začiatku a voľakedy bolo primárnym spôsobom písania kódu. Plynutím času však uživatelia začali vytvýárať pre rôzne špecifické činnosti špecializované knižnice (opensource tomu naozaj výrazne pomáha). Niektoré z nich sa začali tak hojne využívať, že vytlačili base R na okraj, čo samozrejme pripravilo pôdu na polarizáciu R úžívateľov.</p>
+<p>Jedna z týchto knižníc je <strong>tidyverse</strong>. tidyverse je knižnica, ktorá zlučuje viaceré knižnice vytvorené na manipuláciu a vizualizáciu dát (napr. dplyr, ggplot, tidyr) a stretnete sa s ňou veľmi často aj na Stack Overflow alebo iných fórach venovaných R.</p>
+<p>Tidyverse sa stal tak obľubeným, že rozdelil užívateľov na dve skupiny:</p>
+<ol style="list-style-type: decimal">
+<li>Base R fanatici - R treba poznať ako programovací jazyk, base R takým je, tvorí aj základ tidyverse, tidyverse nemá pre užívateľov zmysel, lebo potom nevedia robiť niektoré veci</li>
+<li>Tidyverse fanatici - base R je len pre geekov, ktorí programujú, bežný užívateľ nepotrebuje base R poznať, treba sa hlavne naučiť pracovať s tidyverse a pre data science base R netreba</li>
+</ol>
+<p>Imho: záleží od viacerých faktorov. Na čo chcete R využívať, či sa chcete naučiť aj základnú logiku programovania, či chcete robiť len základne čistenie dát a jednoduché analýzy a pod.. Ja sám som za to, aby ľudia poznali princípy jedného aj druhého a rozumeli im.</p>
+<p float="left">
+<img src="images/IMG_4267.JPG" width="40%" />
+<img src="images/IMG_4266.JPG" width="50%" />
+</p>
+<p float="left">
+<img src="images/IMG_4265.JPG" width="40%" align="top"/>
+<img src="images/IMG_4270.PNG" width="50%" />
+</p>
+</div>
+<div id="pipe-revolúcia" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Pipe revolúcia<a href="tidyverse-a-manipulácia-dát.html#pipe-revolúcia" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>V roku 2012 sa na Stack Overflow objavila táto otázka - <a href="https://stackoverflow.com/questions/8896820/how-to-implement-fs-forward-pipe-operator-in-r" class="uri">https://stackoverflow.com/questions/8896820/how-to-implement-fs-forward-pipe-operator-in-r</a>, ktorá spustila revolúciu v práci s dátami v R. Išlo o jednoduché zlepšenie pracovného workflow, keď sa jeden z uživateľov pýtal:</p>
+<pre><code>How can you implement F#&#39;s forward pipe operator in R?
+The operator makes it possible to easily chain a sequence of calculations.
+For example, when you have an input data and want to call functions foo and bar in sequence,
+you can write:
+
+data |&gt; foo |&gt; bar</code></pre>
+<p>Na túto otázku odpovedal profesor z McMaster University Ben Bolcker, ktorý očividne nevidel potenciál v takomto riešení:</p>
+<pre><code>I don&#39;t know how well it would hold up to any real use, but this seems (?) to do what you want,
+at least for single-argument functions ...</code></pre>
+<div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="tidyverse-a-manipulácia-dát.html#cb312-1" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;%&gt;%&quot;</span> <span class="ot">&lt;-</span> <span class="cf">function</span>(x,f) <span class="fu">do.call</span>(f,<span class="fu">list</span>(x))</span>
+<span id="cb312-2"><a href="tidyverse-a-manipulácia-dát.html#cb312-2" aria-hidden="true" tabindex="-1"></a>pi <span class="sc">%&gt;%</span> sin</span>
+<span id="cb312-3"><a href="tidyverse-a-manipulácia-dát.html#cb312-3" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">1.224606e-16</span></span>
+<span id="cb312-4"><a href="tidyverse-a-manipulácia-dát.html#cb312-4" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> pi <span class="sc">%&gt;%</span> sin <span class="sc">%&gt;%</span> cos</span>
+<span id="cb312-5"><a href="tidyverse-a-manipulácia-dát.html#cb312-5" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">1</span></span>
+<span id="cb312-6"><a href="tidyverse-a-manipulácia-dát.html#cb312-6" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">cos</span>(<span class="fu">sin</span>(pi))</span>
+<span id="cb312-7"><a href="tidyverse-a-manipulácia-dát.html#cb312-7" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">1</span></span></code></pre></div>
+<p><br></p>
+<p>Tento princíp bol následne zapracovaný do magritrr knižnice a veľmi ho spopularizovala dplyr (tidyverse) knižnica. Ako to ale funguje?</p>
+<div id="na-sprehľadnenie-kódu" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> %&gt;% na sprehľadnenie kódu<a href="tidyverse-a-manipulácia-dát.html#na-sprehľadnenie-kódu" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="tidyverse-a-manipulácia-dát.html#cb313-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb314-1"><a href="tidyverse-a-manipulácia-dát.html#cb314-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mtcars, <span class="at">n =</span> <span class="dv">8</span>)</span></code></pre></div>
+<pre><code>##                    mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+## Mazda RX4         21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
+## Mazda RX4 Wag     21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+## Datsun 710        22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
+## Hornet 4 Drive    21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
+## Hornet Sportabout 18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
+## Valiant           18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1
+## Duster 360        14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
+## Merc 240D         24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2</code></pre>
+<div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="tidyverse-a-manipulácia-dát.html#cb316-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">rownames</span>(mtcars))</span></code></pre></div>
+<pre><code>##    Length     Class      Mode 
+##        32 character character</code></pre>
+<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="tidyverse-a-manipulácia-dát.html#cb318-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">summary</span>(<span class="fu">as.factor</span>(<span class="fu">rownames</span>(mtcars))), <span class="at">n =</span> <span class="dv">8</span>)</span></code></pre></div>
+<pre><code>##        AMC Javelin Cadillac Fleetwood         Camaro Z28         Datsun 710 
+##                  1                  1                  1                  1 
+##   Dodge Challenger         Duster 360       Ferrari Dino           Fiat 128 
+##                  1                  1                  1                  1</code></pre>
+<p>Čo robí tento kód? Dalo by sa to aj inak? (otázka vnorených funkcií, čítania kódu)</p>
+<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="tidyverse-a-manipulácia-dát.html#cb320-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb321-1"><a href="tidyverse-a-manipulácia-dát.html#cb321-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb321-2"><a href="tidyverse-a-manipulácia-dát.html#cb321-2" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
+<span id="cb321-3"><a href="tidyverse-a-manipulácia-dát.html#cb321-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb321-4"><a href="tidyverse-a-manipulácia-dát.html#cb321-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.factor</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb321-5"><a href="tidyverse-a-manipulácia-dát.html#cb321-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summary</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb321-6"><a href="tidyverse-a-manipulácia-dát.html#cb321-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code></pre></div>
+<pre><code>##        AMC Javelin Cadillac Fleetwood         Camaro Z28         Datsun 710 
+##                  1                  1                  1                  1 
+##   Dodge Challenger         Duster 360 
+##                  1                  1</code></pre>
+<p>Pipe mení filozofiu písania kódu. V zásade preberá výsledok kódu pred pred znakom %&gt;% ako svoje vstupné dáta a aplikuje funkciu za znakom %&gt;%.</p>
+<p>Na prvých príkladoch to asi nie je úplne zreteľné, ale veľmi zlepšuje čitateľnosť kódu a zároveň otvára veľké možnosti pre funkcie knižnice dplyr pri práci s dátami.<br><br></p>
+<p><strong>POZNÁMKA</strong></p>
+<p>V tejto časti sa jej použitiu nebudeme venovať, ale v roku 2021 po R update na verziu 4.1 bola do base R zakompovaná takzvaná native pipe so znakom <strong>|&gt;</strong>. Jej funkcia je podobná tidyverse (magritrr) pipe. Výhra tidyverse nad base R? :)</p>
+<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb323-1"><a href="tidyverse-a-manipulácia-dát.html#cb323-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">|&gt;</span></span>
+<span id="cb323-2"><a href="tidyverse-a-manipulácia-dát.html#cb323-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames</span>() <span class="sc">|&gt;</span></span>
+<span id="cb323-3"><a href="tidyverse-a-manipulácia-dát.html#cb323-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.factor</span>() <span class="sc">|&gt;</span></span>
+<span id="cb323-4"><a href="tidyverse-a-manipulácia-dát.html#cb323-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summary</span>() <span class="sc">|&gt;</span></span>
+<span id="cb323-5"><a href="tidyverse-a-manipulácia-dát.html#cb323-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code></pre></div>
+<pre><code>##        AMC Javelin Cadillac Fleetwood         Camaro Z28         Datsun 710 
+##                  1                  1                  1                  1 
+##   Dodge Challenger         Duster 360 
+##                  1                  1</code></pre>
+</div>
+</div>
+<div id="dplyr" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Dplyr<a href="tidyverse-a-manipulácia-dát.html#dplyr" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>dplyr sa vypracoval na jednu z najpopulárnejších knižníc na manipuláciu dát. Ako samotné podklady ku knižnici uvádzajú je to preto, že:</p>
+<ul>
+<li>je navrhnutý tak, že neumožňuje vykonávať niektoré manipulácie, lebo nedávajú zmysel a tým pádom núti rozmýšľať nad jednotlivými krokmi pri práci s dátami</li>
+<li>pracuje na princípe funkcií - slovies, ktoré sú intiutívne a odvodené od základných spôsobov práce s dátami</li>
+<li>je navrhnutý efektívne, čiže strávite menej času čakaním na počítač (niekedy to môžu byť hodiny a je to naozaj nepríjemne, čiže každá sekunda sa ráta)</li>
+</ul>
+<p>Slovesá, ktorými sa požívajú jednotlivé funkcie je možné rozdeliť do troch skupín:</p>
+<ul>
+<li>Riadky
+<ul>
+<li><span style="background-color:#F3F3F3">filter()</span> vyberá riadky na základe údajov v stĺpcoch</li>
+<li><span style="background-color:#F3F3F3">slice()</span> vyberá riadky na základe umiestnenia</li>
+<li><span style="background-color:#F3F3F3">arrange()</span> mení poradie riadkov, usporiadava ich</li>
+</ul></li>
+<li>Stĺpce
+<ul>
+<li><span style="background-color:#F3F3F3">select()</span> vyberá jednotlivé stĺpce na základe ich názvu alebo poradia</li>
+<li><span style="background-color:#F3F3F3">rename()</span> mení názvy stĺpcov</li>
+<li><span style="background-color:#F3F3F3">mutate()</span> mení hodnoty v stĺpcoch a vytvára nové stĺpce</li>
+<li><span style="background-color:#F3F3F3">relocate()</span> mení poradie stĺpcov</li>
+</ul></li>
+<li>Skupiny riadkov
+<ul>
+<li><span style="background-color:#F3F3F3">group_by()</span> zoskupuje riadky na základe hodnôt v stĺpcoch</li>
+<li><span style="background-color:#F3F3F3">summarize()</span> sumarizuje hodnoty v rámci skupiny</li>
+</ul></li>
+</ul>
+<div id="cheatsheets" class="section level3 hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Cheatsheets<a href="tidyverse-a-manipulácia-dát.html#cheatsheets" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Možno trochu neskôr, ale pri tidyverse sa žiada spomenúť, že každá knižnica má svoj cheatsheet so všetkými funkciami, ktoré obsahuje a návodom na ich použitie. V niektorých prípadoch je fajn nápad sa do takýchto cheatsheets pozrieť.</p>
+<p>Príklady cheatsheets tu: <a href="https://www.rstudio.com/resources/cheatsheets/" class="uri">https://www.rstudio.com/resources/cheatsheets/</a></p>
+</div>
+<div id="filter" class="section level3 hasAnchor" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> filter()<a href="tidyverse-a-manipulácia-dát.html#filter" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>filter() Vám umožňuje vybrať určité riadky na základe konkrétnych podmienok. Prvým argumentom je dataset objekt (data frame, tibble), druhým podmienky, na základe ktorých sú vybrané riadky.</p>
+<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="tidyverse-a-manipulácia-dát.html#cb325-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openxlsx) <span class="co">#ak nemáte nainštalovnú tak treba najprv nainštalovať prostredníctvom install.packages(&quot;openxlsx&quot;)</span></span>
+<span id="cb325-2"><a href="tidyverse-a-manipulácia-dát.html#cb325-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb325-3"><a href="tidyverse-a-manipulácia-dát.html#cb325-3" aria-hidden="true" tabindex="-1"></a>sudy <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">&quot;./data/sudy_2020-2021.xlsx&quot;</span>, <span class="dv">1</span>)</span>
+<span id="cb325-4"><a href="tidyverse-a-manipulácia-dát.html#cb325-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(sudy)</span></code></pre></div>
+<pre><code>##                     Court Year   nJudges Assistant Judicial.officer Secretary
+## 1 OS Bánovce nad Bebravou 2020  4.666667      6.75         4.000000   5.00000
+## 2 OS Bánovce nad Bebravou 2021  5.000000      7.00         4.000000   5.00000
+## 3             OS Bardejov 2020  9.583333     12.00         9.833333   6.00000
+## 4             OS Bardejov 2021 10.833333     12.00        10.000000   6.00000
+## 5        OS Bratislava II 2020 27.916667     34.00        24.916667  18.41667
+## 6        OS Bratislava II 2021 24.500000     33.00        23.500000  18.50000
+##   Expenditure Business.input Civil.input Criminal.input Family.input
+## 1    171806.6             55     503.144          807.0      249.168
+## 2    201655.7             36     459.743          552.0      248.276
+## 3    296897.8             92    1079.914          936.0      459.688
+## 4    302411.3            118     985.370          865.5      403.984
+## 5    736132.1           1074    4922.370         2728.5      989.836
+## 6    638335.3            851    3896.741         2725.5      940.876
+##   IncomingWeighted Incoming Business.output Civil.output Criminal.output
+## 1         1614.312     1782              52      474.516           738.0
+## 2         1296.019     1631              41      476.207           556.5
+## 3         2567.602     3147             109     1155.297          1039.5
+## 4         2372.854     3089             116     1126.777           871.5
+## 5         9714.706    10397            1037     4093.661          2815.5
+## 6         8414.117     9433             733     4414.365          2638.5
+##   Family.output WeightedDecided Decided        Region nEmployees IncomingCTR
+## 1       229.444        1493.960    1660    KS Trenčín   15.75000        1782
+## 2       268.892        1342.599    1520    KS Trenčín   16.00000        1631
+## 3       461.672        2765.469    3136     KS Prešov   27.83333        3147
+## 4       437.888        2552.165    3264     KS Prešov   28.00000        3089
+## 5       936.416        8882.577    9434 KS Bratislava   77.33333       10397
+## 6       920.760        8706.625    9677 KS Bratislava   75.00000        9433
+##   DecidedCTR PendingCTR
+## 1       1660        690
+## 2       1520        801
+## 3       3136       1489
+## 4       3264       1314
+## 5       9434       5693
+## 6       9677       5449</code></pre>
+<p>Vyfiltrujeme si len súdy, ktoré sú pod KS Košice</p>
+<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="tidyverse-a-manipulácia-dát.html#cb327-1" aria-hidden="true" tabindex="-1"></a>sudyKE <span class="ot">&lt;-</span> sudy <span class="sc">%&gt;%</span></span>
+<span id="cb327-2"><a href="tidyverse-a-manipulácia-dát.html#cb327-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Region <span class="sc">==</span> <span class="st">&quot;KS Košice&quot;</span>) <span class="do">##žiadne odkazovanie na názov dataset objektuu, iba na premennú v ňom</span></span>
+<span id="cb327-3"><a href="tidyverse-a-manipulácia-dát.html#cb327-3" aria-hidden="true" tabindex="-1"></a>sudyKE[,<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,<span class="dv">20</span>)]</span></code></pre></div>
+<pre><code>##                  Court Year    Region
+## 1     OS Košice-okolie 2020 KS Košice
+## 2     OS Košice-okolie 2021 KS Košice
+## 3         OS Košice II 2020 KS Košice
+## 4         OS Košice II 2021 KS Košice
+## 5        OS Michalovce 2020 KS Košice
+## 6        OS Michalovce 2021 KS Košice
+## 7           OS Rožňava 2020 KS Košice
+## 8           OS Rožňava 2021 KS Košice
+## 9  OS Spišská Nová Ves 2020 KS Košice
+## 10 OS Spišská Nová Ves 2021 KS Košice
+## 11         OS Trebišov 2020 KS Košice
+## 12         OS Trebišov 2021 KS Košice
+## 13         OS Košice I 2020 KS Košice
+## 14         OS Košice I 2021 KS Košice</code></pre>
+<p>Tento filter v zásade zodpovedá tomuto base R kódu:</p>
+<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb329-1"><a href="tidyverse-a-manipulácia-dát.html#cb329-1" aria-hidden="true" tabindex="-1"></a>sudyKEbase <span class="ot">&lt;-</span> sudy[sudy<span class="sc">$</span>Region <span class="sc">==</span> <span class="st">&quot;KS Košice&quot;</span>,]</span></code></pre></div>
+<p>Môžeme tiež vyfiltrovať tie, ktoré nie sú pod KS Bratislava, ani pod KS Trnava</p>
+<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb330-1"><a href="tidyverse-a-manipulácia-dát.html#cb330-1" aria-hidden="true" tabindex="-1"></a>sudybezBATT <span class="ot">&lt;-</span> sudy <span class="sc">%&gt;%</span></span>
+<span id="cb330-2"><a href="tidyverse-a-manipulácia-dát.html#cb330-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Region <span class="sc">!=</span> <span class="st">&quot;KS Bratislava&quot;</span>, Region <span class="sc">!=</span> <span class="st">&quot;KS Trnava&quot;</span>)</span>
+<span id="cb330-3"><a href="tidyverse-a-manipulácia-dát.html#cb330-3" aria-hidden="true" tabindex="-1"></a>sudybezBATT[<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(sudybezBATT), <span class="dv">6</span>), <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">20</span>)] <span class="do">## toto sa dá ale aj inak a onedlho si ukážeme ako</span></span></code></pre></div>
+<pre><code>##                      Court Year             Region
+## 34 OS Nové Mesto nad Váhom 2021         KS Trenčín
+## 75                OS Nitra 2020           KS Nitra
+## 48      OS Rimavská Sobota 2021 KS Banská Bystrica
+## 79              OS Trenčín 2020         KS Trenčín
+## 77               OS Prešov 2020          KS Prešov
+## 28               OS Martin 2021          KS Žilina</code></pre>
+<p>Vytvorme si pre ukážku nejaké chýbajúce údaje a vyfiltrujme ich</p>
+<div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb332-1"><a href="tidyverse-a-manipulácia-dát.html#cb332-1" aria-hidden="true" tabindex="-1"></a>sudybezBATT<span class="sc">$</span>missing <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(sudybezBATT<span class="sc">$</span>Court <span class="sc">==</span> <span class="st">&quot;OS Nitra&quot;</span>, <span class="cn">NA</span>, <span class="dv">1</span>)</span>
+<span id="cb332-2"><a href="tidyverse-a-manipulácia-dát.html#cb332-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb332-3"><a href="tidyverse-a-manipulácia-dát.html#cb332-3" aria-hidden="true" tabindex="-1"></a>notmissing <span class="ot">&lt;-</span> sudybezBATT <span class="sc">%&gt;%</span> </span>
+<span id="cb332-4"><a href="tidyverse-a-manipulácia-dát.html#cb332-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(missing) <span class="sc">==</span> F) <span class="co">#prečo takto? dá sa to aj inak?</span></span>
+<span id="cb332-5"><a href="tidyverse-a-manipulácia-dát.html#cb332-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb332-6"><a href="tidyverse-a-manipulácia-dát.html#cb332-6" aria-hidden="true" tabindex="-1"></a>notmissing[<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(notmissing), <span class="dv">6</span>), <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">20</span>)]</span></code></pre></div>
+<pre><code>##                 Court Year             Region
+## 67          OS Zvolen 2020 KS Banská Bystrica
+## 22          OS Levice 2021           KS Nitra
+## 6           OS Brezno 2021 KS Banská Bystrica
+## 71 OS Banská Bystrica 2020 KS Banská Bystrica
+## 61        OS Trebišov 2020          KS Košice
+## 73        OS Košice I 2020          KS Košice</code></pre>
+</div>
+<div id="arrange" class="section level3 hasAnchor" number="3.3.3">
+<h3><span class="header-section-number">3.3.3</span> arrange()<a href="tidyverse-a-manipulácia-dát.html#arrange" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Dáta samozrejme vieme aj zoradiť, na čo slúži funkcia arrange(). Zoraďme si bratislavské súdy vzostupne na základe nápadu (počet prišlých vecí) v roku 2020.</p>
+<div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb334-1"><a href="tidyverse-a-manipulácia-dát.html#cb334-1" aria-hidden="true" tabindex="-1"></a>sudyBA <span class="ot">&lt;-</span> sudy <span class="sc">%&gt;%</span></span>
+<span id="cb334-2"><a href="tidyverse-a-manipulácia-dát.html#cb334-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Region <span class="sc">==</span> <span class="st">&quot;KS Bratislava&quot;</span>, Year <span class="sc">==</span> <span class="dv">2020</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb334-3"><a href="tidyverse-a-manipulácia-dát.html#cb334-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(Incoming)</span>
+<span id="cb334-4"><a href="tidyverse-a-manipulácia-dát.html#cb334-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb334-5"><a href="tidyverse-a-manipulácia-dát.html#cb334-5" aria-hidden="true" tabindex="-1"></a>sudyBA[, <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">13</span>)]</span></code></pre></div>
+<pre><code>##               Court Year Incoming
+## 1        OS Pezinok 2020     3135
+## 2        OS Malacky 2020     3967
+## 3  OS Bratislava IV 2020     5079
+## 4   OS Bratislava V 2020     8226
+## 5 OS Bratislava III 2020     9504
+## 6  OS Bratislava II 2020    10397
+## 7   OS Bratislava I 2020    72267</code></pre>
+<p>Lepšie by to bolo asi zostupne</p>
+<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="tidyverse-a-manipulácia-dát.html#cb336-1" aria-hidden="true" tabindex="-1"></a>sudyBA <span class="ot">&lt;-</span> sudyBA <span class="sc">%&gt;%</span></span>
+<span id="cb336-2"><a href="tidyverse-a-manipulácia-dát.html#cb336-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Incoming))</span>
+<span id="cb336-3"><a href="tidyverse-a-manipulácia-dát.html#cb336-3" aria-hidden="true" tabindex="-1"></a>sudyBA[, <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">13</span>)] </span></code></pre></div>
+<pre><code>##               Court Year Incoming
+## 1   OS Bratislava I 2020    72267
+## 2  OS Bratislava II 2020    10397
+## 3 OS Bratislava III 2020     9504
+## 4   OS Bratislava V 2020     8226
+## 5  OS Bratislava IV 2020     5079
+## 6        OS Malacky 2020     3967
+## 7        OS Pezinok 2020     3135</code></pre>
+<p>arrange() funkcia akceptuje aj viacero premenných, na základe ktorých usporadúva dáta. Funguje pri tom tak, že najprv zoradí riadky podľa prvej premennej a keď sú v nej rovnaké hodnoty, tak tie zoradí v rámci skupiny podľa druhej premennej. Ukážme si to:</p>
+<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb338-1"><a href="tidyverse-a-manipulácia-dát.html#cb338-1" aria-hidden="true" tabindex="-1"></a>sudyBA <span class="ot">&lt;-</span> sudy <span class="sc">%&gt;%</span></span>
+<span id="cb338-2"><a href="tidyverse-a-manipulácia-dát.html#cb338-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Region <span class="sc">==</span> <span class="st">&quot;KS Bratislava&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb338-3"><a href="tidyverse-a-manipulácia-dát.html#cb338-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(Year, <span class="fu">desc</span>(Incoming)) <span class="do">## ako tu funguje desc()?</span></span>
+<span id="cb338-4"><a href="tidyverse-a-manipulácia-dát.html#cb338-4" aria-hidden="true" tabindex="-1"></a>sudyBA[, <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">13</span>)]</span></code></pre></div>
+<pre><code>##                Court Year Incoming
+## 1    OS Bratislava I 2020    72267
+## 2   OS Bratislava II 2020    10397
+## 3  OS Bratislava III 2020     9504
+## 4    OS Bratislava V 2020     8226
+## 5   OS Bratislava IV 2020     5079
+## 6         OS Malacky 2020     3967
+## 7         OS Pezinok 2020     3135
+## 8    OS Bratislava I 2021    65984
+## 9   OS Bratislava II 2021     9433
+## 10 OS Bratislava III 2021     8998
+## 11   OS Bratislava V 2021     7654
+## 12  OS Bratislava IV 2021     4819
+## 13        OS Malacky 2021     3990
+## 14        OS Pezinok 2021     3166</code></pre>
+</div>
+<div id="slice" class="section level3 hasAnchor" number="3.3.4">
+<h3><span class="header-section-number">3.3.4</span> slice()<a href="tidyverse-a-manipulácia-dát.html#slice" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>slice() funkcia vie byť nápomocá, ak potrebujete odstrániť prvé alebo posledné riadky (často pri exportoch z databázy) alebo vybrať určitú proporciu náhodných riadkov (napríklad pri delení datasetu na test a training pri ML)</p>
+<p>Viete ale vybrať aj Vami preferované riadky</p>
+<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="tidyverse-a-manipulácia-dát.html#cb340-1" aria-hidden="true" tabindex="-1"></a>sudy[, <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">13</span>, <span class="dv">20</span>)] <span class="sc">%&gt;%</span> <span class="co">#jednoduchšie? stále to vieme spraviť aj inak</span></span>
+<span id="cb340-2"><a href="tidyverse-a-manipulácia-dát.html#cb340-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span></code></pre></div>
+<pre><code>##                      Court Year Incoming        Region
+## 1  OS Bánovce nad Bebravou 2020     1782    KS Trenčín
+## 2  OS Bánovce nad Bebravou 2021     1631    KS Trenčín
+## 3              OS Bardejov 2020     3147     KS Prešov
+## 4              OS Bardejov 2021     3089     KS Prešov
+## 5         OS Bratislava II 2020    10397 KS Bratislava
+## 6         OS Bratislava II 2021     9433 KS Bratislava
+## 7        OS Bratislava III 2020     9504 KS Bratislava
+## 8        OS Bratislava III 2021     8998 KS Bratislava
+## 9         OS Bratislava IV 2020     5079 KS Bratislava
+## 10        OS Bratislava IV 2021     4819 KS Bratislava</code></pre>
+<p>slice_head() a slice_tail() vyberie prvé alebo posledné riadky</p>
+<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="tidyverse-a-manipulácia-dát.html#cb342-1" aria-hidden="true" tabindex="-1"></a>sudy[, <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">13</span>, <span class="dv">20</span>)] <span class="sc">%&gt;%</span> </span>
+<span id="cb342-2"><a href="tidyverse-a-manipulácia-dát.html#cb342-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_head</span>(<span class="at">n=</span><span class="dv">6</span>) <span class="do">## ak nevyberieme n tak vyberie len prvý riadok (pri tail posledný)</span></span></code></pre></div>
+<pre><code>##                     Court Year Incoming        Region
+## 1 OS Bánovce nad Bebravou 2020     1782    KS Trenčín
+## 2 OS Bánovce nad Bebravou 2021     1631    KS Trenčín
+## 3             OS Bardejov 2020     3147     KS Prešov
+## 4             OS Bardejov 2021     3089     KS Prešov
+## 5        OS Bratislava II 2020    10397 KS Bratislava
+## 6        OS Bratislava II 2021     9433 KS Bratislava</code></pre>
+<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="tidyverse-a-manipulácia-dát.html#cb344-1" aria-hidden="true" tabindex="-1"></a>sudy[, <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">13</span>, <span class="dv">20</span>)] <span class="sc">%&gt;%</span> </span>
+<span id="cb344-2"><a href="tidyverse-a-manipulácia-dát.html#cb344-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_tail</span>(<span class="at">n=</span><span class="dv">6</span>)</span></code></pre></div>
+<pre><code>##        Court Year Incoming     Region
+## 1 OS Trenčín 2020    19552 KS Trenčín
+## 2 OS Trenčín 2021    19559 KS Trenčín
+## 3  OS Trnava 2020    25287  KS Trnava
+## 4  OS Trnava 2021    21757  KS Trnava
+## 5  OS Žilina 2020    43832  KS Žilina
+## 6  OS Žilina 2021    38509  KS Žilina</code></pre>
+<p>slice_sample() vyberie náhodné riadky, treba len definovať ich počet alebo proporciu</p>
+<div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="tidyverse-a-manipulácia-dát.html#cb346-1" aria-hidden="true" tabindex="-1"></a>sudy[, <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">13</span>, <span class="dv">20</span>)] <span class="sc">%&gt;%</span> </span>
+<span id="cb346-2"><a href="tidyverse-a-manipulácia-dát.html#cb346-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">10</span>)</span></code></pre></div>
+<pre><code>##                      Court Year Incoming             Region
+## 1               OS Malacky 2021     3990      KS Bratislava
+## 2               OS Skalica 2020     2271          KS Trnava
+## 3     OS Liptovský Mikuláš 2020     3813          KS Žilina
+## 4               OS Humenné 2020     5249          KS Prešov
+## 5     OS Liptovský Mikuláš 2021     3892          KS Žilina
+## 6       OS Rimavská Sobota 2021     5055 KS Banská Bystrica
+## 7  OS Bánovce nad Bebravou 2020     1782         KS Trenčín
+## 8               OS Rožňava 2021     3686          KS Košice
+## 9                OS Senica 2021     3483          KS Trnava
+## 10                OS Čadca 2020     3718          KS Žilina</code></pre>
+<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="tidyverse-a-manipulácia-dát.html#cb348-1" aria-hidden="true" tabindex="-1"></a>sudy[, <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">13</span>, <span class="dv">20</span>)] <span class="sc">%&gt;%</span> </span>
+<span id="cb348-2"><a href="tidyverse-a-manipulácia-dát.html#cb348-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">prop =</span> <span class="fl">0.1</span>)</span></code></pre></div>
+<pre><code>##                      Court Year Incoming             Region
+## 1             OS Prievidza 2020     6119         KS Trenčín
+## 2                OS Martin 2020     5676          KS Žilina
+## 3                OS Poprad 2020     5063          KS Prešov
+## 4  OS Nové Mesto nad Váhom 2020     4322         KS Trenčín
+## 5       OS Žiar nad Hronom 2020     4660 KS Banská Bystrica
+## 6                OS Senica 2020     3401          KS Trnava
+## 7         OS Bratislava II 2020    10397      KS Bratislava
+## 8               OS Rožňava 2021     3686          KS Košice
+## 9     OS Vranov nad Topľou 2021     3824          KS Prešov
+## 10           OS Ružomberok 2021     2705          KS Žilina</code></pre>
+<p>Okrem týchto výberov riadkov, viete vybrať aj tie, ktoré majú maximálnu alebo minimálnu hodnotu v niektorej premennej.</p>
+<div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb350-1"><a href="tidyverse-a-manipulácia-dát.html#cb350-1" aria-hidden="true" tabindex="-1"></a>sudy[, <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">13</span>, <span class="dv">20</span>)] <span class="sc">%&gt;%</span> </span>
+<span id="cb350-2"><a href="tidyverse-a-manipulácia-dát.html#cb350-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_min</span>(Incoming, <span class="at">n =</span> <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>##                     Court Year Incoming     Region
+## 1 OS Bánovce nad Bebravou 2021     1631 KS Trenčín
+## 2 OS Bánovce nad Bebravou 2020     1782 KS Trenčín
+## 3        OS Stará Ľubovňa 2020     2052  KS Prešov
+## 4          OS Dolný Kubín 2021     2099  KS Žilina
+## 5        OS Stará Ľubovňa 2021     2101  KS Prešov</code></pre>
+<div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb352-1"><a href="tidyverse-a-manipulácia-dát.html#cb352-1" aria-hidden="true" tabindex="-1"></a>sudy[, <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">13</span>, <span class="dv">20</span>)] <span class="sc">%&gt;%</span> </span>
+<span id="cb352-2"><a href="tidyverse-a-manipulácia-dát.html#cb352-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(Incoming, <span class="at">n =</span> <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>##                Court Year Incoming             Region
+## 1 OS Banská Bystrica 2021   394457 KS Banská Bystrica
+## 2 OS Banská Bystrica 2020   271334 KS Banská Bystrica
+## 3    OS Bratislava I 2020    72267      KS Bratislava
+## 4    OS Bratislava I 2021    65984      KS Bratislava
+## 5          OS Žilina 2020    43832          KS Žilina</code></pre>
+</div>
+<div id="select" class="section level3 hasAnchor" number="3.3.5">
+<h3><span class="header-section-number">3.3.5</span> select()<a href="tidyverse-a-manipulácia-dát.html#select" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Od riadkov sa presúvame k funkciám pre samotné stĺpce. select() je funkcia, ktorá vyberá stĺpce, ktoré chceme v datasete ponechať. Pracovať sa s ňou dá rôznymi spôsobmi (podobne ako pri base R).</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="základy-r---2.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
