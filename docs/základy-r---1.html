@@ -141,10 +141,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="https://web.ac-mssr.sk/" target="blank"><img src="./images/acms3.png" width="250" height=30 /></a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Úvod</a>
-<ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#poďakovanie"><i class="fa fa-check"></i>Poďakovanie</a></li>
-</ul></li>
+<li><a href="index.html#section" id="toc-section"></a></li>
 <li class="chapter" data-level="1" data-path="základy-r---1.html"><a href="základy-r---1.html"><i class="fa fa-check"></i><b>1</b> Základy R - 1</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="základy-r---1.html"><a href="základy-r---1.html#čo-je-r"><i class="fa fa-check"></i><b>1.1</b> Čo je R?</a>
@@ -163,6 +160,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.8" data-path="základy-r---1.html"><a href="základy-r---1.html#listy"><i class="fa fa-check"></i><b>1.8</b> Listy</a></li>
 <li class="chapter" data-level="1.9" data-path="základy-r---1.html"><a href="základy-r---1.html#data-frames-databázové-tabuľky"><i class="fa fa-check"></i><b>1.9</b> Data frames (databázové tabuľky?)</a></li>
 <li class="chapter" data-level="1.10" data-path="základy-r---1.html"><a href="základy-r---1.html#ako-preskúmať-svoje-dáta"><i class="fa fa-check"></i><b>1.10</b> Ako preskúmať svoje dáta?</a></li>
+<li class="chapter" data-level="1.11" data-path="základy-r---1.html"><a href="základy-r---1.html#knižnice"><i class="fa fa-check"></i><b>1.11</b> Knižnice</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="základy-r---2.html"><a href="základy-r---2.html"><i class="fa fa-check"></i><b>2</b> Základy R - 2</a>
 <ul>
@@ -200,22 +198,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2.7" data-path="základy-r---2.html"><a href="základy-r---2.html#swirl"><i class="fa fa-check"></i><b>2.7</b> swirl</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html"><i class="fa fa-check"></i><b>3</b> Tidyverse a manipulácia dát</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#whose-side-are-you-on"><i class="fa fa-check"></i><b>3.1</b> Whose side are you on?</a></li>
-<li class="chapter" data-level="3.2" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#pipe-revolúcia"><i class="fa fa-check"></i><b>3.2</b> Pipe revolúcia</a>
-<ul>
-<li class="chapter" data-level="3.2.1" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#na-sprehľadnenie-kódu"><i class="fa fa-check"></i><b>3.2.1</b> %&gt;% na sprehľadnenie kódu</a></li>
-</ul></li>
-<li class="chapter" data-level="3.3" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#dplyr"><i class="fa fa-check"></i><b>3.3</b> Dplyr</a>
-<ul>
-<li class="chapter" data-level="3.3.1" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#cheatsheets"><i class="fa fa-check"></i><b>3.3.1</b> Cheatsheets</a></li>
-<li class="chapter" data-level="3.3.2" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#filter"><i class="fa fa-check"></i><b>3.3.2</b> filter()</a></li>
-<li class="chapter" data-level="3.3.3" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#arrange"><i class="fa fa-check"></i><b>3.3.3</b> arrange()</a></li>
-<li class="chapter" data-level="3.3.4" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#slice"><i class="fa fa-check"></i><b>3.3.4</b> slice()</a></li>
-<li class="chapter" data-level="3.3.5" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#select"><i class="fa fa-check"></i><b>3.3.5</b> select()</a></li>
-</ul></li>
-</ul></li>
 </ul>
 
       </nav>
@@ -240,7 +222,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="images/learning_curve.png" width="640" height=500 /></p>
 <ul>
 <li>programovací jazyk - object oriented (<a href="https://en.wikipedia.org/wiki/Object-oriented_programming" class="uri">https://en.wikipedia.org/wiki/Object-oriented_programming</a>)</li>
-<li>primárne pre štatistické operácie - data science, data analysis, iné?</li>
+<li>pre manipuláciu dát, vizualizáciu, štatistické operácie - data science, data analysis?</li>
 <li>open source <br><br></li>
 </ul>
 <div id="ceu-analógia" class="section level3 hasAnchor" number="1.1.1">
@@ -249,7 +231,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Viacerí z Vás asi videli film Fight Club. Práca s jazykom R a s RStudiom môže byť podobná:</p>
 <ul>
 <li>niektoré veci dávajú zmysel až na konci</li>
-<li>niektoré veci sú veľmi elegantne spracované, ak človek pozná koniec</li>
+<li>niektoré veci sa stanú veľmi elegantnými, ak človek pozná koniec</li>
 <li>neuškodí si film znova pozrieť <br><br></li>
 </ul>
 </div>
@@ -257,7 +239,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">1.1.2</span> V kontexte R<a href="základy-r---1.html#v-kontexte-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>veľa vecí sa deje na pozadí (prvé pravidlo FC)</li>
-<li>práca s ním Vám môže prinaášať istú satisfakciu, ale na ceste k jeho poznaniu musíte zniesť zopár úderov <br><br></li>
+<li>práca s ním Vám môže prinášať istú satisfakciu, ale na ceste k jeho poznaniu musíte zniesť zopár úderov <br><br></li>
 </ul>
 </div>
 <div id="výhody-a-nevýhody" class="section level3 hasAnchor" number="1.1.3">
@@ -285,6 +267,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>undo sa dá pomocou ctrl z, redo ctrl+shift+z na Windowse</li>
 <li>undo na macu sa dá pomocou cmd+z a redo cmd+shift+z</li>
 <li>kód si pre prehľadnosť komentujte</li>
+<li>ak nepoužívate anglickú klávesnicu, tak špeciálne znaky vložíte takto:
+<ul>
+<li><strong>&lt;</strong> - alt + 60</li>
+<li><strong>&gt;</strong> - alt + 62</li>
+<li><strong>[</strong> - alt + 91</li>
+<li><strong>]</strong> - alt + 93</li>
+<li><strong>^</strong> - alt + 94</li>
+<li><strong>{</strong> - alt + 123</li>
+<li><strong>}</strong> - alt + 125</li>
+<li><strong>|</strong> - alt 124</li>
+<li><strong>~</strong> - alt 126</li>
+</ul></li>
 <li>asi skoro (pri R nikdy nie je skoro), ale tu nájdete zopár best practices písania kódu:
 <ul>
 <li><a href="https://google.github.io/styleguide/Rguide.xml" class="uri">https://google.github.io/styleguide/Rguide.xml</a></li>
@@ -315,8 +309,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="working-directory" class="section level2 hasAnchor" number="1.3">
 <h2><span class="header-section-number">1.3</span> Working directory<a href="základy-r---1.html#working-directory" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li>R má pozadí uložené working directory. Ide o priečinok, odkiaľ defaultne načítava dáta alebo kam ich exportuje.</li>
-<li>dobrou praxou pre ľahšiu replikovateľnosť je na začiatku skriptu WD definovať</li>
+<li>R má na pozadí uložené working directory. Ide o priečinok, odkiaľ defaultne načítava dáta alebo kam ich exportuje.</li>
+<li>Dobrou praxou pre ľahšiu prácu je na začiatku skriptu WD definovať</li>
 </ul>
 <p><strong>Aktuálne WD zistíte takto:</strong></p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="základy-r---1.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code></pre></div>
@@ -328,7 +322,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Pri odkazovaní na WD je možné použiť skratku
 <ul>
-<li>Na Windowse to ide prostredníctvom “.”, keď to funguje napríklad takto:</li>
+<li>Na Windowse to ide prostredníctvom “.” a funguje to napríklad takto:</li>
 </ul></li>
 </ul>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="základy-r---1.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;./test&quot;</span>)</span>
@@ -342,7 +336,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="objekty-v-r" class="section level2 hasAnchor" number="1.4">
 <h2><span class="header-section-number">1.4</span> Objekty v R<a href="základy-r---1.html#objekty-v-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>V R sa dá fungovať aj s vyjadrením všetkých operácií v kóde, ale oveľa praktickejšie je tieto ukladať do objektov
-- na toto slúžia nasledovné znaky <strong>&lt;-</strong> a <strong>-&gt;</strong> (niekto používa aj <strong>=</strong>, ale to môže viesť k neprehľadnosti)</p>
+- na to slúžia nasledovné znaky <strong>&lt;-</strong> a <strong>-&gt;</strong> (niekto používa aj <strong>=</strong>, ale to môže viesť k neprehľadnosti)</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="základy-r---1.html#cb16-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">10</span></span>
 <span id="cb16-2"><a href="základy-r---1.html#cb16-2" aria-hidden="true" tabindex="-1"></a>y</span></code></pre></div>
 <pre><code>## [1] -10</code></pre>
@@ -406,11 +400,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
 ## [1,]    1    2    3    4    5    6    7    8    9    10
 ## [2,]   11   12   13   14   15   16   17   18   19    20</code></pre>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="základy-r---1.html#cb43-1" aria-hidden="true" tabindex="-1"></a>trialMat[<span class="dv">1</span>, ] <span class="co"># vyberte riadok so všetkými stĺpcami, keď je druhá súradnica prázdna</span></span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="základy-r---1.html#cb43-1" aria-hidden="true" tabindex="-1"></a>trialMat[<span class="dv">1</span>, ] <span class="co"># vyberie riadok so všetkými stĺpcami, keď je druhá súradnica prázdna</span></span></code></pre></div>
 <pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="základy-r---1.html#cb45-1" aria-hidden="true" tabindex="-1"></a>trialMat[ , <span class="dv">5</span>] <span class="co"># vyberte stĺpec so všetkými riadkami, keď je prvá súradnica prázdna</span></span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="základy-r---1.html#cb45-1" aria-hidden="true" tabindex="-1"></a>trialMat[ , <span class="dv">5</span>] <span class="co"># vyberie stĺpec so všetkými riadkami, keď je prvá súradnica prázdna</span></span></code></pre></div>
 <pre><code>## [1]  5 15</code></pre>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="základy-r---1.html#cb47-1" aria-hidden="true" tabindex="-1"></a>trialMat[<span class="dv">2</span>, <span class="dv">2</span>] <span class="co"># vyberte presný údaj z objektu</span></span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="základy-r---1.html#cb47-1" aria-hidden="true" tabindex="-1"></a>trialMat[<span class="dv">2</span>, <span class="dv">2</span>] <span class="co"># vyberie presný údaj z objektu</span></span></code></pre></div>
 <pre><code>## [1] 12</code></pre>
 <p>Matice sa samozrejme dajú aj transponovať:</p>
 <div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="základy-r---1.html#cb49-1" aria-hidden="true" tabindex="-1"></a>trialMat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>, <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">10</span>, <span class="at">byrow =</span> T)</span>
@@ -449,7 +443,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><br></p>
 <p><strong>Pokračujme s prácou s dátami</strong></p>
 <div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="základy-r---1.html#cb60-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">25</span>) <span class="co"># vytvorme dáta</span></span>
-<span id="cb60-2"><a href="základy-r---1.html#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(a) <span class="co"># pozrime sa na smerdajnú odchýlku</span></span></code></pre></div>
+<span id="cb60-2"><a href="základy-r---1.html#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(a) <span class="co"># pozrime sa na smerodajnú odchýlku</span></span></code></pre></div>
 <pre><code>## [1] 7.359801</code></pre>
 </div>
 <div id="chýbajúce-údaje" class="section level2 hasAnchor" number="1.7">
@@ -462,10 +456,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Histogram</strong></p>
 <div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="základy-r---1.html#cb66-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">300</span>) <span class="co">#rnorm vytvorí náhodné čísla s normálnou distribúciou, priemerom 0 a smerodajnou odchýlkou 1</span></span>
 <span id="cb66-2"><a href="základy-r---1.html#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(d)</span></code></pre></div>
-<pre><code>## [1] 0.007607068</code></pre>
+<pre><code>## [1] 0.08313094</code></pre>
 <div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="základy-r---1.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(d)</span></code></pre></div>
-<pre><code>## [1] 0.9986159</code></pre>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="základy-r---1.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(d) <span class="co"># ukážee histogram</span></span></code></pre></div>
+<pre><code>## [1] 1.039891</code></pre>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="základy-r---1.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(d) <span class="co"># ukáže histogram</span></span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
 </div>
 <div id="listy" class="section level2 hasAnchor" number="1.8">
@@ -639,8 +633,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  $ newVar1: int  1 2 3 4 5 6 7 8 9 10 ...
 ##  $ newVar2: int  51 52 53 54 55 56 57 58 59 60 ...</code></pre>
 <p><br></p>
-<div id="knižnice" class="section level4 hasAnchor" number="1.10.0.1">
-<h4><span class="header-section-number">1.10.0.1</span> Knižnice<a href="základy-r---1.html#knižnice" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="knižnice" class="section level2 hasAnchor" number="1.11">
+<h2><span class="header-section-number">1.11</span> Knižnice<a href="základy-r---1.html#knižnice" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Okrem base R funkcií viete využívať aj tie, ktoré sú súčasťou knižníc vytvorených úžívateľmi</p>
 <ul>
 <li>tieto sú väčšinou navrhnuté pre konkrétne problémy alebo uľahčenie práce pri kódovaní</li>
@@ -721,7 +716,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [257] &quot;xfun&quot;          &quot;xlsx&quot;          &quot;xlsxjars&quot;      &quot;xml2&quot;         
 ## [261] &quot;xtable&quot;        &quot;yaml&quot;          &quot;zip&quot;           &quot;zoo&quot;</code></pre>
 
-</div>
 </div>
 </div>
             </section>

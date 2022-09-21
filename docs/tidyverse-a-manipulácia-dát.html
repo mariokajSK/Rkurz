@@ -141,10 +141,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="https://web.ac-mssr.sk/" target="blank"><img src="./images/acms3.png" width="250" height=30 /></a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Úvod</a>
-<ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#poďakovanie"><i class="fa fa-check"></i>Poďakovanie</a></li>
-</ul></li>
+<li><a href="index.html#section" id="toc-section"></a></li>
 <li class="chapter" data-level="1" data-path="základy-r---1.html"><a href="základy-r---1.html"><i class="fa fa-check"></i><b>1</b> Základy R - 1</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="základy-r---1.html"><a href="základy-r---1.html#čo-je-r"><i class="fa fa-check"></i><b>1.1</b> Čo je R?</a>
@@ -163,6 +160,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.8" data-path="základy-r---1.html"><a href="základy-r---1.html#listy"><i class="fa fa-check"></i><b>1.8</b> Listy</a></li>
 <li class="chapter" data-level="1.9" data-path="základy-r---1.html"><a href="základy-r---1.html#data-frames-databázové-tabuľky"><i class="fa fa-check"></i><b>1.9</b> Data frames (databázové tabuľky?)</a></li>
 <li class="chapter" data-level="1.10" data-path="základy-r---1.html"><a href="základy-r---1.html#ako-preskúmať-svoje-dáta"><i class="fa fa-check"></i><b>1.10</b> Ako preskúmať svoje dáta?</a></li>
+<li class="chapter" data-level="1.11" data-path="základy-r---1.html"><a href="základy-r---1.html#knižnice"><i class="fa fa-check"></i><b>1.11</b> Knižnice</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="základy-r---2.html"><a href="základy-r---2.html"><i class="fa fa-check"></i><b>2</b> Základy R - 2</a>
 <ul>
@@ -214,7 +212,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3.3" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#arrange"><i class="fa fa-check"></i><b>3.3.3</b> arrange()</a></li>
 <li class="chapter" data-level="3.3.4" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#slice"><i class="fa fa-check"></i><b>3.3.4</b> slice()</a></li>
 <li class="chapter" data-level="3.3.5" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#select"><i class="fa fa-check"></i><b>3.3.5</b> select()</a></li>
+<li class="chapter" data-level="3.3.6" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#mutate"><i class="fa fa-check"></i><b>3.3.6</b> mutate()</a></li>
+<li class="chapter" data-level="3.3.7" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#if_else-a-case_when"><i class="fa fa-check"></i><b>3.3.7</b> if_else() a case_when</a></li>
+<li class="chapter" data-level="3.3.8" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#relocate"><i class="fa fa-check"></i><b>3.3.8</b> relocate()</a></li>
+<li class="chapter" data-level="3.3.9" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#summarize-spolu-s-group_by"><i class="fa fa-check"></i><b>3.3.9</b> summarize() (spolu s group_by())</a></li>
+<li class="chapter" data-level="3.3.10" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#count-a-n"><i class="fa fa-check"></i><b>3.3.10</b> count() a n()</a></li>
+<li class="chapter" data-level="3.3.11" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#distinct"><i class="fa fa-check"></i><b>3.3.11</b> distinct()</a></li>
+<li class="chapter" data-level="3.3.12" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#podobnosť-funkcií-v-tidyverse-ako-výhoda"><i class="fa fa-check"></i><b>3.3.12</b> Podobnosť funkcií v tidyverse ako výhoda</a></li>
 </ul></li>
+<li class="chapter" data-level="3.4" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#spájanie-datasetov"><i class="fa fa-check"></i><b>3.4</b> Spájanie datasetov</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#joins"><i class="fa fa-check"></i><b>3.4.1</b> Joins</a></li>
+<li class="chapter" data-level="3.4.2" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#bind_rows-a-bind_cols"><i class="fa fa-check"></i><b>3.4.2</b> bind_rows() a bind_cols()</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#transponovanie-datasetov"><i class="fa fa-check"></i><b>3.5</b> Transponovanie datasetov</a></li>
 </ul></li>
 </ul>
 
@@ -248,7 +259,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Base R fanatici - R treba poznať ako programovací jazyk, base R takým je, tvorí aj základ tidyverse, tidyverse nemá pre užívateľov zmysel, lebo potom nevedia robiť niektoré veci</li>
 <li>Tidyverse fanatici - base R je len pre geekov, ktorí programujú, bežný užívateľ nepotrebuje base R poznať, treba sa hlavne naučiť pracovať s tidyverse a pre data science base R netreba</li>
 </ol>
-<p>Imho: záleží od viacerých faktorov. Na čo chcete R využívať, či sa chcete naučiť aj základnú logiku programovania, či chcete robiť len základne čistenie dát a jednoduché analýzy a pod.. Ja sám som za to, aby ľudia poznali princípy jedného aj druhého a rozumeli im.</p>
+<p>Imho: Záleží od viacerých faktorov. Na čo chcete R využívať, či sa chcete naučiť aj základnú logiku programovania, či chcete robiť len základne čistenie dát a jednoduché analýzy a pod.. Ja sám som za to, aby ľudia poznali princípy jedného aj druhého a rozumeli im, ale svoj pracovný workflow nech si nastavia tak, aby im vyhovoval.</p>
 <p float="left">
 <img src="images/IMG_4267.JPG" width="40%" />
 <img src="images/IMG_4266.JPG" width="50%" />
@@ -278,11 +289,10 @@ at least for single-argument functions ...</code></pre>
 <span id="cb312-6"><a href="tidyverse-a-manipulácia-dát.html#cb312-6" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">cos</span>(<span class="fu">sin</span>(pi))</span>
 <span id="cb312-7"><a href="tidyverse-a-manipulácia-dát.html#cb312-7" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">1</span></span></code></pre></div>
 <p><br></p>
-<p>Tento princíp bol následne zapracovaný do magritrr knižnice a veľmi ho spopularizovala dplyr (tidyverse) knižnica. Ako to ale funguje?</p>
+<p>Tento princíp bol následne zapracovaný do magritrr knižnice a veľmi ho spopularizovala <strong>dplyr (tidyverse)</strong> knižnica. Ako to ale funguje?</p>
 <div id="na-sprehľadnenie-kódu" class="section level3 hasAnchor" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> %&gt;% na sprehľadnenie kódu<a href="tidyverse-a-manipulácia-dát.html#na-sprehľadnenie-kódu" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="tidyverse-a-manipulácia-dát.html#cb313-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb314-1"><a href="tidyverse-a-manipulácia-dát.html#cb314-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mtcars, <span class="at">n =</span> <span class="dv">8</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="tidyverse-a-manipulácia-dát.html#cb313-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mtcars, <span class="at">n =</span> <span class="dv">8</span>)</span></code></pre></div>
 <pre><code>##                    mpg cyl  disp  hp drat    wt  qsec vs am gear carb
 ## Mazda RX4         21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
 ## Mazda RX4 Wag     21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
@@ -292,22 +302,22 @@ at least for single-argument functions ...</code></pre>
 ## Valiant           18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1
 ## Duster 360        14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
 ## Merc 240D         24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2</code></pre>
-<div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="tidyverse-a-manipulácia-dát.html#cb316-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">rownames</span>(mtcars))</span></code></pre></div>
+<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="tidyverse-a-manipulácia-dát.html#cb315-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">rownames</span>(mtcars))</span></code></pre></div>
 <pre><code>##    Length     Class      Mode 
 ##        32 character character</code></pre>
-<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="tidyverse-a-manipulácia-dát.html#cb318-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">summary</span>(<span class="fu">as.factor</span>(<span class="fu">rownames</span>(mtcars))), <span class="at">n =</span> <span class="dv">8</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb317-1"><a href="tidyverse-a-manipulácia-dát.html#cb317-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">summary</span>(<span class="fu">as.factor</span>(<span class="fu">rownames</span>(mtcars))), <span class="at">n =</span> <span class="dv">8</span>)</span></code></pre></div>
 <pre><code>##        AMC Javelin Cadillac Fleetwood         Camaro Z28         Datsun 710 
 ##                  1                  1                  1                  1 
 ##   Dodge Challenger         Duster 360       Ferrari Dino           Fiat 128 
 ##                  1                  1                  1                  1</code></pre>
 <p>Čo robí tento kód? Dalo by sa to aj inak? (otázka vnorených funkcií, čítania kódu)</p>
-<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="tidyverse-a-manipulácia-dát.html#cb320-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb321-1"><a href="tidyverse-a-manipulácia-dát.html#cb321-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb321-2"><a href="tidyverse-a-manipulácia-dát.html#cb321-2" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
-<span id="cb321-3"><a href="tidyverse-a-manipulácia-dát.html#cb321-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb321-4"><a href="tidyverse-a-manipulácia-dát.html#cb321-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.factor</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb321-5"><a href="tidyverse-a-manipulácia-dát.html#cb321-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summary</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb321-6"><a href="tidyverse-a-manipulácia-dát.html#cb321-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb319-1"><a href="tidyverse-a-manipulácia-dát.html#cb319-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="tidyverse-a-manipulácia-dát.html#cb320-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb320-2"><a href="tidyverse-a-manipulácia-dát.html#cb320-2" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
+<span id="cb320-3"><a href="tidyverse-a-manipulácia-dát.html#cb320-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb320-4"><a href="tidyverse-a-manipulácia-dát.html#cb320-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.factor</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb320-5"><a href="tidyverse-a-manipulácia-dát.html#cb320-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summary</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb320-6"><a href="tidyverse-a-manipulácia-dát.html#cb320-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code></pre></div>
 <pre><code>##        AMC Javelin Cadillac Fleetwood         Camaro Z28         Datsun 710 
 ##                  1                  1                  1                  1 
 ##   Dodge Challenger         Duster 360 
@@ -316,11 +326,11 @@ at least for single-argument functions ...</code></pre>
 <p>Na prvých príkladoch to asi nie je úplne zreteľné, ale veľmi zlepšuje čitateľnosť kódu a zároveň otvára veľké možnosti pre funkcie knižnice dplyr pri práci s dátami.<br><br></p>
 <p><strong>POZNÁMKA</strong></p>
 <p>V tejto časti sa jej použitiu nebudeme venovať, ale v roku 2021 po R update na verziu 4.1 bola do base R zakompovaná takzvaná native pipe so znakom <strong>|&gt;</strong>. Jej funkcia je podobná tidyverse (magritrr) pipe. Výhra tidyverse nad base R? :)</p>
-<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb323-1"><a href="tidyverse-a-manipulácia-dát.html#cb323-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">|&gt;</span></span>
-<span id="cb323-2"><a href="tidyverse-a-manipulácia-dát.html#cb323-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames</span>() <span class="sc">|&gt;</span></span>
-<span id="cb323-3"><a href="tidyverse-a-manipulácia-dát.html#cb323-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.factor</span>() <span class="sc">|&gt;</span></span>
-<span id="cb323-4"><a href="tidyverse-a-manipulácia-dát.html#cb323-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summary</span>() <span class="sc">|&gt;</span></span>
-<span id="cb323-5"><a href="tidyverse-a-manipulácia-dát.html#cb323-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="tidyverse-a-manipulácia-dát.html#cb322-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">|&gt;</span></span>
+<span id="cb322-2"><a href="tidyverse-a-manipulácia-dát.html#cb322-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames</span>() <span class="sc">|&gt;</span></span>
+<span id="cb322-3"><a href="tidyverse-a-manipulácia-dát.html#cb322-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.factor</span>() <span class="sc">|&gt;</span></span>
+<span id="cb322-4"><a href="tidyverse-a-manipulácia-dát.html#cb322-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summary</span>() <span class="sc">|&gt;</span></span>
+<span id="cb322-5"><a href="tidyverse-a-manipulácia-dát.html#cb322-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code></pre></div>
 <pre><code>##        AMC Javelin Cadillac Fleetwood         Camaro Z28         Datsun 710 
 ##                  1                  1                  1                  1 
 ##   Dodge Challenger         Duster 360 
@@ -329,7 +339,7 @@ at least for single-argument functions ...</code></pre>
 </div>
 <div id="dplyr" class="section level2 hasAnchor" number="3.3">
 <h2><span class="header-section-number">3.3</span> Dplyr<a href="tidyverse-a-manipulácia-dát.html#dplyr" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>dplyr sa vypracoval na jednu z najpopulárnejších knižníc na manipuláciu dát. Ako samotné podklady ku knižnici uvádzajú je to preto, že:</p>
+<p><strong>dplyr</strong> sa vypracoval na jednu z najpopulárnejších knižníc na manipuláciu dát. Ako samotné podklady ku knižnici uvádzajú je to preto, že:</p>
 <ul>
 <li>je navrhnutý tak, že neumožňuje vykonávať niektoré manipulácie, lebo nedávajú zmysel a tým pádom núti rozmýšľať nad jednotlivými krokmi pri práci s dátami</li>
 <li>pracuje na princípe funkcií - slovies, ktoré sú intiutívne a odvodené od základných spôsobov práce s dátami</li>
@@ -363,11 +373,11 @@ at least for single-argument functions ...</code></pre>
 </div>
 <div id="filter" class="section level3 hasAnchor" number="3.3.2">
 <h3><span class="header-section-number">3.3.2</span> filter()<a href="tidyverse-a-manipulácia-dát.html#filter" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>filter() Vám umožňuje vybrať určité riadky na základe konkrétnych podmienok. Prvým argumentom je dataset objekt (data frame, tibble), druhým podmienky, na základe ktorých sú vybrané riadky.</p>
-<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="tidyverse-a-manipulácia-dát.html#cb325-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openxlsx) <span class="co">#ak nemáte nainštalovnú tak treba najprv nainštalovať prostredníctvom install.packages(&quot;openxlsx&quot;)</span></span>
-<span id="cb325-2"><a href="tidyverse-a-manipulácia-dát.html#cb325-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb325-3"><a href="tidyverse-a-manipulácia-dát.html#cb325-3" aria-hidden="true" tabindex="-1"></a>sudy <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">&quot;./data/sudy_2020-2021.xlsx&quot;</span>, <span class="dv">1</span>)</span>
-<span id="cb325-4"><a href="tidyverse-a-manipulácia-dát.html#cb325-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(sudy)</span></code></pre></div>
+<p><strong>filter</strong> Vám umožňuje vybrať určité riadky na základe konkrétnych podmienok. Prvým argumentom je dataset objekt (data frame, tibble), druhým podmienky, na základe ktorých sú vybrané riadky.</p>
+<div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="tidyverse-a-manipulácia-dát.html#cb324-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openxlsx) <span class="co">#ak nemáte nainštalovnú tak treba najprv nainštalovať prostredníctvom install.packages(&quot;openxlsx&quot;)</span></span>
+<span id="cb324-2"><a href="tidyverse-a-manipulácia-dát.html#cb324-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb324-3"><a href="tidyverse-a-manipulácia-dát.html#cb324-3" aria-hidden="true" tabindex="-1"></a>sudy <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">&quot;./data/sudy_2020-2021.xlsx&quot;</span>, <span class="dv">1</span>)</span>
+<span id="cb324-4"><a href="tidyverse-a-manipulácia-dát.html#cb324-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(sudy)</span></code></pre></div>
 <pre><code>##                     Court Year   nJudges Assistant Judicial.officer Secretary
 ## 1 OS Bánovce nad Bebravou 2020  4.666667      6.75         4.000000   5.00000
 ## 2 OS Bánovce nad Bebravou 2021  5.000000      7.00         4.000000   5.00000
@@ -404,9 +414,9 @@ at least for single-argument functions ...</code></pre>
 ## 5       9434       5693
 ## 6       9677       5449</code></pre>
 <p>Vyfiltrujeme si len súdy, ktoré sú pod KS Košice</p>
-<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="tidyverse-a-manipulácia-dát.html#cb327-1" aria-hidden="true" tabindex="-1"></a>sudyKE <span class="ot">&lt;-</span> sudy <span class="sc">%&gt;%</span></span>
-<span id="cb327-2"><a href="tidyverse-a-manipulácia-dát.html#cb327-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Region <span class="sc">==</span> <span class="st">&quot;KS Košice&quot;</span>) <span class="do">##žiadne odkazovanie na názov dataset objektuu, iba na premennú v ňom</span></span>
-<span id="cb327-3"><a href="tidyverse-a-manipulácia-dát.html#cb327-3" aria-hidden="true" tabindex="-1"></a>sudyKE[,<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,<span class="dv">20</span>)]</span></code></pre></div>
+<div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb326-1"><a href="tidyverse-a-manipulácia-dát.html#cb326-1" aria-hidden="true" tabindex="-1"></a>sudyKE <span class="ot">&lt;-</span> sudy <span class="sc">%&gt;%</span></span>
+<span id="cb326-2"><a href="tidyverse-a-manipulácia-dát.html#cb326-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Region <span class="sc">==</span> <span class="st">&quot;KS Košice&quot;</span>) <span class="do">##žiadne odkazovanie na názov dataset objektuu, iba na premennú v ňom</span></span>
+<span id="cb326-3"><a href="tidyverse-a-manipulácia-dát.html#cb326-3" aria-hidden="true" tabindex="-1"></a>sudyKE[,<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,<span class="dv">20</span>)]</span></code></pre></div>
 <pre><code>##                  Court Year    Region
 ## 1     OS Košice-okolie 2020 KS Košice
 ## 2     OS Košice-okolie 2021 KS Košice
@@ -423,18 +433,34 @@ at least for single-argument functions ...</code></pre>
 ## 13         OS Košice I 2020 KS Košice
 ## 14         OS Košice I 2021 KS Košice</code></pre>
 <p>Tento filter v zásade zodpovedá tomuto base R kódu:</p>
-<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb329-1"><a href="tidyverse-a-manipulácia-dát.html#cb329-1" aria-hidden="true" tabindex="-1"></a>sudyKEbase <span class="ot">&lt;-</span> sudy[sudy<span class="sc">$</span>Region <span class="sc">==</span> <span class="st">&quot;KS Košice&quot;</span>,]</span></code></pre></div>
+<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="tidyverse-a-manipulácia-dát.html#cb328-1" aria-hidden="true" tabindex="-1"></a>sudyKEbase <span class="ot">&lt;-</span> sudy[sudy<span class="sc">$</span>Region <span class="sc">==</span> <span class="st">&quot;KS Košice&quot;</span>,]</span>
+<span id="cb328-2"><a href="tidyverse-a-manipulácia-dát.html#cb328-2" aria-hidden="true" tabindex="-1"></a>sudyKEbase[,<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,<span class="dv">20</span>)]</span></code></pre></div>
+<pre><code>##                  Court Year    Region
+## 29    OS Košice-okolie 2020 KS Košice
+## 30    OS Košice-okolie 2021 KS Košice
+## 31        OS Košice II 2020 KS Košice
+## 32        OS Košice II 2021 KS Košice
+## 43       OS Michalovce 2020 KS Košice
+## 44       OS Michalovce 2021 KS Košice
+## 67          OS Rožňava 2020 KS Košice
+## 68          OS Rožňava 2021 KS Košice
+## 75 OS Spišská Nová Ves 2020 KS Košice
+## 76 OS Spišská Nová Ves 2021 KS Košice
+## 83         OS Trebišov 2020 KS Košice
+## 84         OS Trebišov 2021 KS Košice
+## 97         OS Košice I 2020 KS Košice
+## 98         OS Košice I 2021 KS Košice</code></pre>
 <p>Môžeme tiež vyfiltrovať tie, ktoré nie sú pod KS Bratislava, ani pod KS Trnava</p>
 <div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb330-1"><a href="tidyverse-a-manipulácia-dát.html#cb330-1" aria-hidden="true" tabindex="-1"></a>sudybezBATT <span class="ot">&lt;-</span> sudy <span class="sc">%&gt;%</span></span>
 <span id="cb330-2"><a href="tidyverse-a-manipulácia-dát.html#cb330-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Region <span class="sc">!=</span> <span class="st">&quot;KS Bratislava&quot;</span>, Region <span class="sc">!=</span> <span class="st">&quot;KS Trnava&quot;</span>)</span>
 <span id="cb330-3"><a href="tidyverse-a-manipulácia-dát.html#cb330-3" aria-hidden="true" tabindex="-1"></a>sudybezBATT[<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(sudybezBATT), <span class="dv">6</span>), <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">20</span>)] <span class="do">## toto sa dá ale aj inak a onedlho si ukážeme ako</span></span></code></pre></div>
-<pre><code>##                      Court Year             Region
-## 34 OS Nové Mesto nad Váhom 2021         KS Trenčín
-## 75                OS Nitra 2020           KS Nitra
-## 48      OS Rimavská Sobota 2021 KS Banská Bystrica
-## 79              OS Trenčín 2020         KS Trenčín
-## 77               OS Prešov 2020          KS Prešov
-## 28               OS Martin 2021          KS Žilina</code></pre>
+<pre><code>##                 Court Year             Region
+## 14        OS Kežmarok 2021          KS Prešov
+## 70 OS Žiar nad Hronom 2021 KS Banská Bystrica
+## 45          OS Revúca 2020 KS Banská Bystrica
+## 16         OS Komárno 2021           KS Nitra
+## 43       OS Prievidza 2020         KS Trenčín
+## 3         OS Bardejov 2020          KS Prešov</code></pre>
 <p>Vytvorme si pre ukážku nejaké chýbajúce údaje a vyfiltrujme ich</p>
 <div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb332-1"><a href="tidyverse-a-manipulácia-dát.html#cb332-1" aria-hidden="true" tabindex="-1"></a>sudybezBATT<span class="sc">$</span>missing <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(sudybezBATT<span class="sc">$</span>Court <span class="sc">==</span> <span class="st">&quot;OS Nitra&quot;</span>, <span class="cn">NA</span>, <span class="dv">1</span>)</span>
 <span id="cb332-2"><a href="tidyverse-a-manipulácia-dát.html#cb332-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -442,17 +468,17 @@ at least for single-argument functions ...</code></pre>
 <span id="cb332-4"><a href="tidyverse-a-manipulácia-dát.html#cb332-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(missing) <span class="sc">==</span> F) <span class="co">#prečo takto? dá sa to aj inak?</span></span>
 <span id="cb332-5"><a href="tidyverse-a-manipulácia-dát.html#cb332-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb332-6"><a href="tidyverse-a-manipulácia-dát.html#cb332-6" aria-hidden="true" tabindex="-1"></a>notmissing[<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(notmissing), <span class="dv">6</span>), <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">20</span>)]</span></code></pre></div>
-<pre><code>##                 Court Year             Region
-## 67          OS Zvolen 2020 KS Banská Bystrica
-## 22          OS Levice 2021           KS Nitra
-## 6           OS Brezno 2021 KS Banská Bystrica
-## 71 OS Banská Bystrica 2020 KS Banská Bystrica
-## 61        OS Trebišov 2020          KS Košice
-## 73        OS Košice I 2020          KS Košice</code></pre>
+<pre><code>##                      Court Year     Region
+## 33 OS Nové Mesto nad Váhom 2020 KS Trenčín
+## 55        OS Stará Ľubovňa 2020  KS Prešov
+## 13             OS Kežmarok 2020  KS Prešov
+## 23    OS Liptovský Mikuláš 2020  KS Žilina
+## 37          OS Partizánske 2020 KS Trenčín
+## 66    OS Vranov nad Topľou 2021  KS Prešov</code></pre>
 </div>
 <div id="arrange" class="section level3 hasAnchor" number="3.3.3">
 <h3><span class="header-section-number">3.3.3</span> arrange()<a href="tidyverse-a-manipulácia-dát.html#arrange" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Dáta samozrejme vieme aj zoradiť, na čo slúži funkcia arrange(). Zoraďme si bratislavské súdy vzostupne na základe nápadu (počet prišlých vecí) v roku 2020.</p>
+<p>Dáta samozrejme vieme aj zoradiť, na čo slúži funkcia <strong>arrange</strong>. Zoraďme si bratislavské súdy vzostupne na základe nápadu (počet prišlých vecí) v roku 2020.</p>
 <div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb334-1"><a href="tidyverse-a-manipulácia-dát.html#cb334-1" aria-hidden="true" tabindex="-1"></a>sudyBA <span class="ot">&lt;-</span> sudy <span class="sc">%&gt;%</span></span>
 <span id="cb334-2"><a href="tidyverse-a-manipulácia-dát.html#cb334-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Region <span class="sc">==</span> <span class="st">&quot;KS Bratislava&quot;</span>, Year <span class="sc">==</span> <span class="dv">2020</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb334-3"><a href="tidyverse-a-manipulácia-dát.html#cb334-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(Incoming)</span>
@@ -478,7 +504,7 @@ at least for single-argument functions ...</code></pre>
 ## 5  OS Bratislava IV 2020     5079
 ## 6        OS Malacky 2020     3967
 ## 7        OS Pezinok 2020     3135</code></pre>
-<p>arrange() funkcia akceptuje aj viacero premenných, na základe ktorých usporadúva dáta. Funguje pri tom tak, že najprv zoradí riadky podľa prvej premennej a keď sú v nej rovnaké hodnoty, tak tie zoradí v rámci skupiny podľa druhej premennej. Ukážme si to:</p>
+<p><strong>arrange</strong> funkcia akceptuje aj viacero premenných, na základe ktorých usporadúva dáta. Funguje pri tom tak, že najprv zoradí riadky podľa prvej premennej a keď sú v nej rovnaké hodnoty, tak tie zoradí v rámci skupiny podľa druhej premennej. Ukážme si to:</p>
 <div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb338-1"><a href="tidyverse-a-manipulácia-dát.html#cb338-1" aria-hidden="true" tabindex="-1"></a>sudyBA <span class="ot">&lt;-</span> sudy <span class="sc">%&gt;%</span></span>
 <span id="cb338-2"><a href="tidyverse-a-manipulácia-dát.html#cb338-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Region <span class="sc">==</span> <span class="st">&quot;KS Bratislava&quot;</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb338-3"><a href="tidyverse-a-manipulácia-dát.html#cb338-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(Year, <span class="fu">desc</span>(Incoming)) <span class="do">## ako tu funguje desc()?</span></span>
@@ -501,7 +527,7 @@ at least for single-argument functions ...</code></pre>
 </div>
 <div id="slice" class="section level3 hasAnchor" number="3.3.4">
 <h3><span class="header-section-number">3.3.4</span> slice()<a href="tidyverse-a-manipulácia-dát.html#slice" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>slice() funkcia vie byť nápomocá, ak potrebujete odstrániť prvé alebo posledné riadky (často pri exportoch z databázy) alebo vybrať určitú proporciu náhodných riadkov (napríklad pri delení datasetu na test a training pri ML)</p>
+<p><strong>slice</strong> funkcia vie byť nápomocá, ak potrebujete odstrániť prvé alebo posledné riadky (často pri exportoch z databázy) alebo vybrať určitú proporciu náhodných riadkov (napríklad pri delení datasetu na test a training pri ML)</p>
 <p>Viete ale vybrať aj Vami preferované riadky</p>
 <div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="tidyverse-a-manipulácia-dát.html#cb340-1" aria-hidden="true" tabindex="-1"></a>sudy[, <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">13</span>, <span class="dv">20</span>)] <span class="sc">%&gt;%</span> <span class="co">#jednoduchšie? stále to vieme spraviť aj inak</span></span>
 <span id="cb340-2"><a href="tidyverse-a-manipulácia-dát.html#cb340-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span></code></pre></div>
@@ -538,30 +564,30 @@ at least for single-argument functions ...</code></pre>
 <p>slice_sample() vyberie náhodné riadky, treba len definovať ich počet alebo proporciu</p>
 <div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="tidyverse-a-manipulácia-dát.html#cb346-1" aria-hidden="true" tabindex="-1"></a>sudy[, <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">13</span>, <span class="dv">20</span>)] <span class="sc">%&gt;%</span> </span>
 <span id="cb346-2"><a href="tidyverse-a-manipulácia-dát.html#cb346-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">10</span>)</span></code></pre></div>
-<pre><code>##                      Court Year Incoming             Region
-## 1               OS Malacky 2021     3990      KS Bratislava
-## 2               OS Skalica 2020     2271          KS Trnava
-## 3     OS Liptovský Mikuláš 2020     3813          KS Žilina
-## 4               OS Humenné 2020     5249          KS Prešov
-## 5     OS Liptovský Mikuláš 2021     3892          KS Žilina
-## 6       OS Rimavská Sobota 2021     5055 KS Banská Bystrica
-## 7  OS Bánovce nad Bebravou 2020     1782         KS Trenčín
-## 8               OS Rožňava 2021     3686          KS Košice
-## 9                OS Senica 2021     3483          KS Trnava
-## 10                OS Čadca 2020     3718          KS Žilina</code></pre>
+<pre><code>##                 Court Year Incoming             Region
+## 1      OS Dolný Kubín 2020     2127          KS Žilina
+## 2          OS Komárno 2021     5375           KS Nitra
+## 3  OS Rimavská Sobota 2021     5055 KS Banská Bystrica
+## 4         OS Košice I 2020    26431          KS Košice
+## 5    OS Košice-okolie 2021     8299          KS Košice
+## 6           OS Zvolen 2021     6377 KS Banská Bystrica
+## 7     OS Bratislava V 2020     8226      KS Bratislava
+## 8          OS Trenčín 2020    19552         KS Trenčín
+## 9          OS Galanta 2020     7404          KS Trnava
+## 10   OS Bratislava II 2020    10397      KS Bratislava</code></pre>
 <div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="tidyverse-a-manipulácia-dát.html#cb348-1" aria-hidden="true" tabindex="-1"></a>sudy[, <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">13</span>, <span class="dv">20</span>)] <span class="sc">%&gt;%</span> </span>
 <span id="cb348-2"><a href="tidyverse-a-manipulácia-dát.html#cb348-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">prop =</span> <span class="fl">0.1</span>)</span></code></pre></div>
-<pre><code>##                      Court Year Incoming             Region
-## 1             OS Prievidza 2020     6119         KS Trenčín
-## 2                OS Martin 2020     5676          KS Žilina
-## 3                OS Poprad 2020     5063          KS Prešov
-## 4  OS Nové Mesto nad Váhom 2020     4322         KS Trenčín
-## 5       OS Žiar nad Hronom 2020     4660 KS Banská Bystrica
-## 6                OS Senica 2020     3401          KS Trnava
-## 7         OS Bratislava II 2020    10397      KS Bratislava
-## 8               OS Rožňava 2021     3686          KS Košice
-## 9     OS Vranov nad Topľou 2021     3824          KS Prešov
-## 10           OS Ružomberok 2021     2705          KS Žilina</code></pre>
+<pre><code>##                   Court Year Incoming             Region
+## 1             OS Martin 2020     5676          KS Žilina
+## 2             OS Brezno 2021     3225 KS Banská Bystrica
+## 3   OS Spišská Nová Ves 2021     7702          KS Košice
+## 4  OS Považská Bystrica 2021     4348         KS Trenčín
+## 5     OS Bratislava III 2020     9504      KS Bratislava
+## 6          OS Topoľčany 2020     3469           KS Nitra
+## 7            OS Pezinok 2021     3166      KS Bratislava
+## 8             OS Trnava 2021    21757          KS Trnava
+## 9        OS Dolný Kubín 2021     2099          KS Žilina
+## 10 OS Liptovský Mikuláš 2020     3813          KS Žilina</code></pre>
 <p>Okrem týchto výberov riadkov, viete vybrať aj tie, ktoré majú maximálnu alebo minimálnu hodnotu v niektorej premennej.</p>
 <div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb350-1"><a href="tidyverse-a-manipulácia-dát.html#cb350-1" aria-hidden="true" tabindex="-1"></a>sudy[, <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">13</span>, <span class="dv">20</span>)] <span class="sc">%&gt;%</span> </span>
 <span id="cb350-2"><a href="tidyverse-a-manipulácia-dát.html#cb350-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_min</span>(Incoming, <span class="at">n =</span> <span class="dv">5</span>)</span></code></pre></div>
@@ -582,9 +608,1055 @@ at least for single-argument functions ...</code></pre>
 </div>
 <div id="select" class="section level3 hasAnchor" number="3.3.5">
 <h3><span class="header-section-number">3.3.5</span> select()<a href="tidyverse-a-manipulácia-dát.html#select" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Od riadkov sa presúvame k funkciám pre samotné stĺpce. select() je funkcia, ktorá vyberá stĺpce, ktoré chceme v datasete ponechať. Pracovať sa s ňou dá rôznymi spôsobmi (podobne ako pri base R).</p>
-
+<p>Od riadkov sa presúvame k funkciám pre samotné stĺpce. Určite sa často stretávate s datasetmi, ktoré majú veľké množstvo stĺpcov a sú neprehľadné. <strong>select</strong> je funkcia, ktorá vyberá stĺpce, ktoré chceme v datasete ponechať. Pracovať sa s ňou dá rôznymi spôsobmi (podobne ako pri base R).</p>
+<div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb354-1"><a href="tidyverse-a-manipulácia-dát.html#cb354-1" aria-hidden="true" tabindex="-1"></a>sudy <span class="sc">%&gt;%</span> </span>
+<span id="cb354-2"><a href="tidyverse-a-manipulácia-dát.html#cb354-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Court, Year, Incoming, Region) <span class="sc">%&gt;%</span> <span class="co">#vyberie definované stĺpce</span></span>
+<span id="cb354-3"><a href="tidyverse-a-manipulácia-dát.html#cb354-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>) </span></code></pre></div>
+<pre><code>##                     Court Year Incoming        Region
+## 1 OS Bánovce nad Bebravou 2020     1782    KS Trenčín
+## 2 OS Bánovce nad Bebravou 2021     1631    KS Trenčín
+## 3             OS Bardejov 2020     3147     KS Prešov
+## 4             OS Bardejov 2021     3089     KS Prešov
+## 5        OS Bratislava II 2020    10397 KS Bratislava
+## 6        OS Bratislava II 2021     9433 KS Bratislava</code></pre>
+<div class="sourceCode" id="cb356"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb356-1"><a href="tidyverse-a-manipulácia-dát.html#cb356-1" aria-hidden="true" tabindex="-1"></a>sudy <span class="sc">%&gt;%</span></span>
+<span id="cb356-2"><a href="tidyverse-a-manipulácia-dát.html#cb356-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Court<span class="sc">:</span>Expenditure) <span class="sc">%&gt;%</span> <span class="co">#vyberie definovaný rozsah stĺpcov</span></span>
+<span id="cb356-3"><a href="tidyverse-a-manipulácia-dát.html#cb356-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>) </span></code></pre></div>
+<pre><code>##                     Court Year   nJudges Assistant Judicial.officer Secretary
+## 1 OS Bánovce nad Bebravou 2020  4.666667      6.75         4.000000   5.00000
+## 2 OS Bánovce nad Bebravou 2021  5.000000      7.00         4.000000   5.00000
+## 3             OS Bardejov 2020  9.583333     12.00         9.833333   6.00000
+## 4             OS Bardejov 2021 10.833333     12.00        10.000000   6.00000
+## 5        OS Bratislava II 2020 27.916667     34.00        24.916667  18.41667
+## 6        OS Bratislava II 2021 24.500000     33.00        23.500000  18.50000
+##   Expenditure
+## 1    171806.6
+## 2    201655.7
+## 3    296897.8
+## 4    302411.3
+## 5    736132.1
+## 6    638335.3</code></pre>
+<div class="sourceCode" id="cb358"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb358-1"><a href="tidyverse-a-manipulácia-dát.html#cb358-1" aria-hidden="true" tabindex="-1"></a>sudy <span class="sc">%&gt;%</span></span>
+<span id="cb358-2"><a href="tidyverse-a-manipulácia-dát.html#cb358-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">!</span>(Court<span class="sc">:</span>Expenditure)) <span class="sc">%&gt;%</span> <span class="co">#vyberie všetky stĺpce okrem definovaného stĺpca</span></span>
+<span id="cb358-3"><a href="tidyverse-a-manipulácia-dát.html#cb358-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>) </span></code></pre></div>
+<pre><code>##   Business.input Civil.input Criminal.input Family.input IncomingWeighted
+## 1             55     503.144          807.0      249.168         1614.312
+## 2             36     459.743          552.0      248.276         1296.019
+## 3             92    1079.914          936.0      459.688         2567.602
+## 4            118     985.370          865.5      403.984         2372.854
+## 5           1074    4922.370         2728.5      989.836         9714.706
+## 6            851    3896.741         2725.5      940.876         8414.117
+##   Incoming Business.output Civil.output Criminal.output Family.output
+## 1     1782              52      474.516           738.0       229.444
+## 2     1631              41      476.207           556.5       268.892
+## 3     3147             109     1155.297          1039.5       461.672
+## 4     3089             116     1126.777           871.5       437.888
+## 5    10397            1037     4093.661          2815.5       936.416
+## 6     9433             733     4414.365          2638.5       920.760
+##   WeightedDecided Decided        Region nEmployees IncomingCTR DecidedCTR
+## 1        1493.960    1660    KS Trenčín   15.75000        1782       1660
+## 2        1342.599    1520    KS Trenčín   16.00000        1631       1520
+## 3        2765.469    3136     KS Prešov   27.83333        3147       3136
+## 4        2552.165    3264     KS Prešov   28.00000        3089       3264
+## 5        8882.577    9434 KS Bratislava   77.33333       10397       9434
+## 6        8706.625    9677 KS Bratislava   75.00000        9433       9677
+##   PendingCTR
+## 1        690
+## 2        801
+## 3       1489
+## 4       1314
+## 5       5693
+## 6       5449</code></pre>
+<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="tidyverse-a-manipulácia-dát.html#cb360-1" aria-hidden="true" tabindex="-1"></a>sudy <span class="sc">%&gt;%</span></span>
+<span id="cb360-2"><a href="tidyverse-a-manipulácia-dát.html#cb360-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>(Court<span class="sc">:</span>Expenditure)) <span class="sc">%&gt;%</span> <span class="co">#spraví to isté, len iný zápis</span></span>
+<span id="cb360-3"><a href="tidyverse-a-manipulácia-dát.html#cb360-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>) </span></code></pre></div>
+<pre><code>##   Business.input Civil.input Criminal.input Family.input IncomingWeighted
+## 1             55     503.144          807.0      249.168         1614.312
+## 2             36     459.743          552.0      248.276         1296.019
+## 3             92    1079.914          936.0      459.688         2567.602
+## 4            118     985.370          865.5      403.984         2372.854
+## 5           1074    4922.370         2728.5      989.836         9714.706
+## 6            851    3896.741         2725.5      940.876         8414.117
+##   Incoming Business.output Civil.output Criminal.output Family.output
+## 1     1782              52      474.516           738.0       229.444
+## 2     1631              41      476.207           556.5       268.892
+## 3     3147             109     1155.297          1039.5       461.672
+## 4     3089             116     1126.777           871.5       437.888
+## 5    10397            1037     4093.661          2815.5       936.416
+## 6     9433             733     4414.365          2638.5       920.760
+##   WeightedDecided Decided        Region nEmployees IncomingCTR DecidedCTR
+## 1        1493.960    1660    KS Trenčín   15.75000        1782       1660
+## 2        1342.599    1520    KS Trenčín   16.00000        1631       1520
+## 3        2765.469    3136     KS Prešov   27.83333        3147       3136
+## 4        2552.165    3264     KS Prešov   28.00000        3089       3264
+## 5        8882.577    9434 KS Bratislava   77.33333       10397       9434
+## 6        8706.625    9677 KS Bratislava   75.00000        9433       9677
+##   PendingCTR
+## 1        690
+## 2        801
+## 3       1489
+## 4       1314
+## 5       5693
+## 6       5449</code></pre>
+<p><strong>select</strong> funguje výborne aj s pomocnými funkciami ako <code>starts_with()</code>, <code>ends_with()</code>, <code>matches()</code> a <code>contains()</code>. Tieto funkcie vyberú väčšie množstvo stĺpcov na základe konkrétnych kritérií. V <code>?select</code> sa môžete dozvedieť viac. Pre ukážku použijeme len prvé dve.</p>
+<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="tidyverse-a-manipulácia-dát.html#cb362-1" aria-hidden="true" tabindex="-1"></a>sudy <span class="sc">%&gt;%</span></span>
+<span id="cb362-2"><a href="tidyverse-a-manipulácia-dát.html#cb362-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">ends_with</span>(<span class="st">&quot;input&quot;</span>)) <span class="sc">%&gt;%</span> <span class="co">#vyberie všetky stĺpce s &quot;input&quot; na konci</span></span>
+<span id="cb362-3"><a href="tidyverse-a-manipulácia-dát.html#cb362-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>) </span></code></pre></div>
+<pre><code>##   Business.input Civil.input Criminal.input Family.input
+## 1             55     503.144          807.0      249.168
+## 2             36     459.743          552.0      248.276
+## 3             92    1079.914          936.0      459.688
+## 4            118     985.370          865.5      403.984
+## 5           1074    4922.370         2728.5      989.836
+## 6            851    3896.741         2725.5      940.876</code></pre>
+<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="tidyverse-a-manipulácia-dát.html#cb364-1" aria-hidden="true" tabindex="-1"></a>sudy <span class="sc">%&gt;%</span></span>
+<span id="cb364-2"><a href="tidyverse-a-manipulácia-dát.html#cb364-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;Incoming&quot;</span>)) <span class="sc">%&gt;%</span> <span class="co">#vyberie všetky stĺpce s &quot;Incoming&quot; na začiatku</span></span>
+<span id="cb364-3"><a href="tidyverse-a-manipulácia-dát.html#cb364-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb364-4"><a href="tidyverse-a-manipulácia-dát.html#cb364-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>) </span></code></pre></div>
+<pre><code>##   IncomingWeighted Incoming IncomingCTR
+## 1         1614.312     1782        1782
+## 2         1296.019     1631        1631
+## 3         2567.602     3147        3147
+## 4         2372.854     3089        3089
+## 5         9714.706    10397       10397
+## 6         8414.117     9433        9433</code></pre>
+<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="tidyverse-a-manipulácia-dát.html#cb366-1" aria-hidden="true" tabindex="-1"></a>sudy <span class="sc">%&gt;%</span> </span>
+<span id="cb366-2"><a href="tidyverse-a-manipulácia-dát.html#cb366-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Court, <span class="fu">starts_with</span>(<span class="st">&quot;Incoming&quot;</span>)) <span class="sc">%&gt;%</span> <span class="co">#jednotlivé prístupy sa dajú kombinovať</span></span>
+<span id="cb366-3"><a href="tidyverse-a-manipulácia-dát.html#cb366-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>) </span></code></pre></div>
+<pre><code>##                     Court IncomingWeighted Incoming IncomingCTR
+## 1 OS Bánovce nad Bebravou         1614.312     1782        1782
+## 2 OS Bánovce nad Bebravou         1296.019     1631        1631
+## 3             OS Bardejov         2567.602     3147        3147
+## 4             OS Bardejov         2372.854     3089        3089
+## 5        OS Bratislava II         9714.706    10397       10397
+## 6        OS Bratislava II         8414.117     9433        9433</code></pre>
+<p>Posledná funckionalita funkcie <strong>select</strong> je, že dokáže premenovávať jednotlivé premenné (takisto ako iné funkcie dplyr). Pri select to môže byť často nápomocné. Treba mať však na pamäti, že <strong>select</strong> dropne ostatné premenné, ktoré nie sú vybraté. Ak chcete iba premenovať premenné a ponechať ich vo Vašom datasete, tak použite funkciu <strong>rename()</strong>.</p>
+<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="tidyverse-a-manipulácia-dát.html#cb368-1" aria-hidden="true" tabindex="-1"></a>sudy <span class="sc">%&gt;%</span></span>
+<span id="cb368-2"><a href="tidyverse-a-manipulácia-dát.html#cb368-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Súd <span class="ot">=</span> Court) <span class="sc">%&gt;%</span></span>
+<span id="cb368-3"><a href="tidyverse-a-manipulácia-dát.html#cb368-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>)</span></code></pre></div>
+<pre><code>##                       Súd
+## 1 OS Bánovce nad Bebravou
+## 2 OS Bánovce nad Bebravou
+## 3             OS Bardejov
+## 4             OS Bardejov
+## 5        OS Bratislava II
+## 6        OS Bratislava II</code></pre>
+<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="tidyverse-a-manipulácia-dát.html#cb370-1" aria-hidden="true" tabindex="-1"></a>sudy <span class="sc">%&gt;%</span></span>
+<span id="cb370-2"><a href="tidyverse-a-manipulácia-dát.html#cb370-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(Súd <span class="ot">=</span> Court) <span class="sc">%&gt;%</span></span>
+<span id="cb370-3"><a href="tidyverse-a-manipulácia-dát.html#cb370-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>)</span></code></pre></div>
+<pre><code>##                       Súd Year   nJudges Assistant Judicial.officer Secretary
+## 1 OS Bánovce nad Bebravou 2020  4.666667      6.75         4.000000   5.00000
+## 2 OS Bánovce nad Bebravou 2021  5.000000      7.00         4.000000   5.00000
+## 3             OS Bardejov 2020  9.583333     12.00         9.833333   6.00000
+## 4             OS Bardejov 2021 10.833333     12.00        10.000000   6.00000
+## 5        OS Bratislava II 2020 27.916667     34.00        24.916667  18.41667
+## 6        OS Bratislava II 2021 24.500000     33.00        23.500000  18.50000
+##   Expenditure Business.input Civil.input Criminal.input Family.input
+## 1    171806.6             55     503.144          807.0      249.168
+## 2    201655.7             36     459.743          552.0      248.276
+## 3    296897.8             92    1079.914          936.0      459.688
+## 4    302411.3            118     985.370          865.5      403.984
+## 5    736132.1           1074    4922.370         2728.5      989.836
+## 6    638335.3            851    3896.741         2725.5      940.876
+##   IncomingWeighted Incoming Business.output Civil.output Criminal.output
+## 1         1614.312     1782              52      474.516           738.0
+## 2         1296.019     1631              41      476.207           556.5
+## 3         2567.602     3147             109     1155.297          1039.5
+## 4         2372.854     3089             116     1126.777           871.5
+## 5         9714.706    10397            1037     4093.661          2815.5
+## 6         8414.117     9433             733     4414.365          2638.5
+##   Family.output WeightedDecided Decided        Region nEmployees IncomingCTR
+## 1       229.444        1493.960    1660    KS Trenčín   15.75000        1782
+## 2       268.892        1342.599    1520    KS Trenčín   16.00000        1631
+## 3       461.672        2765.469    3136     KS Prešov   27.83333        3147
+## 4       437.888        2552.165    3264     KS Prešov   28.00000        3089
+## 5       936.416        8882.577    9434 KS Bratislava   77.33333       10397
+## 6       920.760        8706.625    9677 KS Bratislava   75.00000        9433
+##   DecidedCTR PendingCTR
+## 1       1660        690
+## 2       1520        801
+## 3       3136       1489
+## 4       3264       1314
+## 5       9434       5693
+## 6       9677       5449</code></pre>
 </div>
+<div id="mutate" class="section level3 hasAnchor" number="3.3.6">
+<h3><span class="header-section-number">3.3.6</span> mutate()<a href="tidyverse-a-manipulácia-dát.html#mutate" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Kódovanie premenných sme si ukázali prostredníctvom base R. Kódovať premenné a pridávať stĺpce sa dá ale aj prostredníctvom <strong>dplyr</strong>. Na toto budete potrebovať <strong>mutate</strong> funkciu.</p>
+<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="tidyverse-a-manipulácia-dát.html#cb372-1" aria-hidden="true" tabindex="-1"></a>sudy <span class="sc">%&gt;%</span></span>
+<span id="cb372-2"><a href="tidyverse-a-manipulácia-dát.html#cb372-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Incoming100 =</span> Incoming<span class="sc">/</span><span class="dv">100</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb372-3"><a href="tidyverse-a-manipulácia-dát.html#cb372-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Court, Incoming100) <span class="sc">%&gt;%</span></span>
+<span id="cb372-4"><a href="tidyverse-a-manipulácia-dát.html#cb372-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>) <span class="co">#tu môžete vidieť, v čom je tidyverse silný. Úprava dát sa deje na zopár riadkoch.</span></span></code></pre></div>
+<pre><code>##                     Court Incoming100
+## 1 OS Bánovce nad Bebravou       17.82
+## 2 OS Bánovce nad Bebravou       16.31
+## 3             OS Bardejov       31.47
+## 4             OS Bardejov       30.89
+## 5        OS Bratislava II      103.97
+## 6        OS Bratislava II       94.33</code></pre>
+<p>Výhodou <strong>mutate</strong> je, že sa viete už v rámci funkcie odkazovať na Vami vytvorené premenné.</p>
+<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb374-1"><a href="tidyverse-a-manipulácia-dát.html#cb374-1" aria-hidden="true" tabindex="-1"></a>sudy <span class="sc">%&gt;%</span></span>
+<span id="cb374-2"><a href="tidyverse-a-manipulácia-dát.html#cb374-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Incoming100 =</span> Incoming<span class="sc">/</span><span class="dv">100</span>,</span>
+<span id="cb374-3"><a href="tidyverse-a-manipulácia-dát.html#cb374-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">LogIncoming100 =</span> <span class="fu">log</span>(Incoming100)) <span class="sc">%&gt;%</span></span>
+<span id="cb374-4"><a href="tidyverse-a-manipulácia-dát.html#cb374-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Court, Incoming100, LogIncoming100) <span class="sc">%&gt;%</span></span>
+<span id="cb374-5"><a href="tidyverse-a-manipulácia-dát.html#cb374-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>)</span></code></pre></div>
+<pre><code>##                     Court Incoming100 LogIncoming100
+## 1 OS Bánovce nad Bebravou       17.82       2.880321
+## 2 OS Bánovce nad Bebravou       16.31       2.791778
+## 3             OS Bardejov       31.47       3.449035
+## 4             OS Bardejov       30.89       3.430433
+## 5        OS Bratislava II      103.97       4.644102
+## 6        OS Bratislava II       94.33       4.546799</code></pre>
+<p>Ak chcete ponechať len novovytvorené stĺpce, tak použite funkciu <strong>transmute</strong>.</p>
+<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb376-1"><a href="tidyverse-a-manipulácia-dát.html#cb376-1" aria-hidden="true" tabindex="-1"></a>sudy <span class="sc">%&gt;%</span></span>
+<span id="cb376-2"><a href="tidyverse-a-manipulácia-dát.html#cb376-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transmute</span>(<span class="at">Incoming100 =</span> Incoming<span class="sc">/</span><span class="dv">100</span>,</span>
+<span id="cb376-3"><a href="tidyverse-a-manipulácia-dát.html#cb376-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">LogIncoming100 =</span> <span class="fu">log</span>(Incoming100)) <span class="sc">%&gt;%</span></span>
+<span id="cb376-4"><a href="tidyverse-a-manipulácia-dát.html#cb376-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>)</span></code></pre></div>
+<pre><code>##   Incoming100 LogIncoming100
+## 1       17.82       2.880321
+## 2       16.31       2.791778
+## 3       31.47       3.449035
+## 4       30.89       3.430433
+## 5      103.97       4.644102
+## 6       94.33       4.546799</code></pre>
+</div>
+<div id="if_else-a-case_when" class="section level3 hasAnchor" number="3.3.7">
+<h3><span class="header-section-number">3.3.7</span> if_else() a case_when<a href="tidyverse-a-manipulácia-dát.html#if_else-a-case_when" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>mutate</strong> funkcia pracuje veľmi dobre s <strong>if_else</strong> a <strong>case_when</strong> funkciami. <strong>ifelse</strong> sme si ukazovali už pri base R. Dplyr v zásade vytvoril svoju vlastnú funkciu, ktorá robí to isté, ale mala by byť rýchlejšia a striknejšia (napríklad vypíše chybu, ak nesedí typ premenných). <strong>case_when</strong> možno poznáte z SQL. Ide o funkciu, ktorá priradí hodnotu ku kategóriám, keď ich je viac ako 2.</p>
+<div class="sourceCode" id="cb378"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb378-1"><a href="tidyverse-a-manipulácia-dát.html#cb378-1" aria-hidden="true" tabindex="-1"></a>sudy <span class="sc">%&gt;%</span></span>
+<span id="cb378-2"><a href="tidyverse-a-manipulácia-dát.html#cb378-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Viacako3000 =</span> <span class="fu">if_else</span>(Incoming <span class="sc">&gt;</span> <span class="dv">3000</span>, <span class="dv">1</span>, <span class="dv">0</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb378-3"><a href="tidyverse-a-manipulácia-dát.html#cb378-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">6</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb378-4"><a href="tidyverse-a-manipulácia-dát.html#cb378-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Court, Year, Incoming, Viacako3000)</span></code></pre></div>
+<pre><code>##                  Court Year Incoming Viacako3000
+## 1 OS Vranov nad Topľou 2021     3824           1
+## 2  OS Spišská Nová Ves 2021     7702           1
+## 3   OS Banská Bystrica 2021   394457           1
+## 4            OS Revúca 2020     2469           0
+## 5           OS Trenčín 2021    19559           1
+## 6            OS Trnava 2020    25287           1</code></pre>
+<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb380-1"><a href="tidyverse-a-manipulácia-dát.html#cb380-1" aria-hidden="true" tabindex="-1"></a>sudy <span class="sc">%&gt;%</span></span>
+<span id="cb380-2"><a href="tidyverse-a-manipulácia-dát.html#cb380-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">SudVelkost =</span> <span class="fu">case_when</span>(nJudges <span class="sc">&lt;</span> <span class="dv">9</span> <span class="sc">~</span> <span class="st">&quot;Malý&quot;</span>,</span>
+<span id="cb380-3"><a href="tidyverse-a-manipulácia-dát.html#cb380-3" aria-hidden="true" tabindex="-1"></a>                                nJudges <span class="sc">&gt;=</span> <span class="dv">9</span> <span class="sc">&amp;</span> nJudges <span class="sc">&lt;</span> <span class="dv">17</span> <span class="sc">~</span> <span class="st">&quot;Stredný&quot;</span>,</span>
+<span id="cb380-4"><a href="tidyverse-a-manipulácia-dát.html#cb380-4" aria-hidden="true" tabindex="-1"></a>                                nJudges <span class="sc">&gt;=</span> <span class="dv">17</span> <span class="sc">~</span> <span class="st">&quot;Veľký&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb380-5"><a href="tidyverse-a-manipulácia-dát.html#cb380-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">6</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb380-6"><a href="tidyverse-a-manipulácia-dát.html#cb380-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Court, Year, nJudges, SudVelkost )</span></code></pre></div>
+<pre><code>##                     Court Year   nJudges SudVelkost
+## 1         OS Bratislava V 2020 27.083333      Veľký
+## 2     OS Spišská Nová Ves 2021 16.000000    Stredný
+## 3             OS Bardejov 2020  9.583333    Stredný
+## 4              OS Skalica 2020  7.500000       Malý
+## 5        OS Bratislava II 2020 27.916667      Veľký
+## 6 OS Bánovce nad Bebravou 2020  4.666667       Malý</code></pre>
+<p>Pri <strong>case_when</strong> si treba dávať pozor na poradie jednotlivých podmienok, ktoré definujú kategórie. <strong>case_when</strong> vyhodnocuje podmienky v rade za sebou a keď už raz je jedna z nich splnená a kategória definovaná, tak pri vyhodnocovaní ďalšej je takéto pozorovanie preskakované.</p>
+<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="tidyverse-a-manipulácia-dát.html#cb382-1" aria-hidden="true" tabindex="-1"></a>sudy <span class="sc">%&gt;%</span></span>
+<span id="cb382-2"><a href="tidyverse-a-manipulácia-dát.html#cb382-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">SudVelkost =</span> <span class="fu">case_when</span>(nJudges <span class="sc">&lt;</span> <span class="dv">9</span> <span class="sc">~</span> <span class="st">&quot;Malý&quot;</span>,</span>
+<span id="cb382-3"><a href="tidyverse-a-manipulácia-dát.html#cb382-3" aria-hidden="true" tabindex="-1"></a>                                nJudges <span class="sc">&gt;=</span> <span class="dv">9</span> <span class="sc">&amp;</span> nJudges <span class="sc">&lt;</span> <span class="dv">17</span> <span class="sc">~</span> <span class="st">&quot;Stredný&quot;</span>,</span>
+<span id="cb382-4"><a href="tidyverse-a-manipulácia-dát.html#cb382-4" aria-hidden="true" tabindex="-1"></a>                                nJudges <span class="sc">&gt;=</span> <span class="dv">17</span> <span class="sc">~</span> <span class="st">&quot;Veľký&quot;</span>,</span>
+<span id="cb382-5"><a href="tidyverse-a-manipulácia-dát.html#cb382-5" aria-hidden="true" tabindex="-1"></a>                                Court <span class="sc">==</span> <span class="st">&quot;OS Bratislava I&quot;</span> <span class="sc">|</span> Court <span class="sc">==</span> <span class="st">&quot;OS Košice I&quot;</span> <span class="sc">~</span> <span class="st">&quot;Registrový&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb382-6"><a href="tidyverse-a-manipulácia-dát.html#cb382-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Court <span class="sc">==</span> <span class="st">&quot;OS Bratislava I&quot;</span><span class="sc">|</span> Court <span class="sc">==</span> <span class="st">&quot;OS Košice I&quot;</span> ) <span class="sc">%&gt;%</span></span>
+<span id="cb382-7"><a href="tidyverse-a-manipulácia-dát.html#cb382-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Court, Year, nJudges, SudVelkost )</span></code></pre></div>
+<pre><code>##             Court Year  nJudges SudVelkost
+## 1 OS Bratislava I 2020 35.66667      Veľký
+## 2 OS Bratislava I 2021 34.75000      Veľký
+## 3     OS Košice I 2020 33.25000      Veľký
+## 4     OS Košice I 2021 29.25000      Veľký</code></pre>
+<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="tidyverse-a-manipulácia-dát.html#cb384-1" aria-hidden="true" tabindex="-1"></a>sudy <span class="sc">%&gt;%</span></span>
+<span id="cb384-2"><a href="tidyverse-a-manipulácia-dát.html#cb384-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">SudVelkost =</span> <span class="fu">case_when</span>(Court <span class="sc">==</span> <span class="st">&quot;OS Bratislava I&quot;</span> <span class="sc">|</span> Court <span class="sc">==</span> <span class="st">&quot;OS Košice I&quot;</span> <span class="sc">~</span> <span class="st">&quot;Registrový&quot;</span>,</span>
+<span id="cb384-3"><a href="tidyverse-a-manipulácia-dát.html#cb384-3" aria-hidden="true" tabindex="-1"></a>                                nJudges <span class="sc">&lt;</span> <span class="dv">9</span> <span class="sc">~</span> <span class="st">&quot;Malý&quot;</span>,</span>
+<span id="cb384-4"><a href="tidyverse-a-manipulácia-dát.html#cb384-4" aria-hidden="true" tabindex="-1"></a>                                nJudges <span class="sc">&gt;=</span> <span class="dv">9</span> <span class="sc">&amp;</span> nJudges <span class="sc">&lt;</span> <span class="dv">17</span> <span class="sc">~</span> <span class="st">&quot;Stredný&quot;</span>,</span>
+<span id="cb384-5"><a href="tidyverse-a-manipulácia-dát.html#cb384-5" aria-hidden="true" tabindex="-1"></a>                                nJudges <span class="sc">&gt;=</span> <span class="dv">17</span> <span class="sc">~</span> <span class="st">&quot;Veľký&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb384-6"><a href="tidyverse-a-manipulácia-dát.html#cb384-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Court <span class="sc">==</span> <span class="st">&quot;OS Bratislava I&quot;</span><span class="sc">|</span> Court <span class="sc">==</span> <span class="st">&quot;OS Košice I&quot;</span> ) <span class="sc">%&gt;%</span></span>
+<span id="cb384-7"><a href="tidyverse-a-manipulácia-dát.html#cb384-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Court, Year, nJudges, SudVelkost )</span></code></pre></div>
+<pre><code>##             Court Year  nJudges SudVelkost
+## 1 OS Bratislava I 2020 35.66667 Registrový
+## 2 OS Bratislava I 2021 34.75000 Registrový
+## 3     OS Košice I 2020 33.25000 Registrový
+## 4     OS Košice I 2021 29.25000 Registrový</code></pre>
+</div>
+<div id="relocate" class="section level3 hasAnchor" number="3.3.8">
+<h3><span class="header-section-number">3.3.8</span> relocate()<a href="tidyverse-a-manipulácia-dát.html#relocate" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Pri <strong>mutate</strong> funkcii, ktorá vytvára viaceré nové premenné je taktiež dobré spomenúť aj jednoduchú <strong>relocate</strong> funkciu. Jej syntax je podobná ako pri <strong>select</strong> funkcii.</p>
+<div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="tidyverse-a-manipulácia-dát.html#cb386-1" aria-hidden="true" tabindex="-1"></a>sudy <span class="sc">%&gt;%</span></span>
+<span id="cb386-2"><a href="tidyverse-a-manipulácia-dát.html#cb386-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">17</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb386-3"><a href="tidyverse-a-manipulácia-dát.html#cb386-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">relocate</span>(Business.output<span class="sc">:</span>Family.output, <span class="at">.before =</span> <span class="fu">ends_with</span>(<span class="st">&quot;input&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb386-4"><a href="tidyverse-a-manipulácia-dát.html#cb386-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>)</span></code></pre></div>
+<pre><code>##                     Court Year   nJudges Assistant Judicial.officer Secretary
+## 1 OS Bánovce nad Bebravou 2020  4.666667      6.75         4.000000   5.00000
+## 2 OS Bánovce nad Bebravou 2021  5.000000      7.00         4.000000   5.00000
+## 3             OS Bardejov 2020  9.583333     12.00         9.833333   6.00000
+## 4             OS Bardejov 2021 10.833333     12.00        10.000000   6.00000
+## 5        OS Bratislava II 2020 27.916667     34.00        24.916667  18.41667
+## 6        OS Bratislava II 2021 24.500000     33.00        23.500000  18.50000
+##   Expenditure Business.output Civil.output Criminal.output Family.output
+## 1    171806.6              52      474.516           738.0       229.444
+## 2    201655.7              41      476.207           556.5       268.892
+## 3    296897.8             109     1155.297          1039.5       461.672
+## 4    302411.3             116     1126.777           871.5       437.888
+## 5    736132.1            1037     4093.661          2815.5       936.416
+## 6    638335.3             733     4414.365          2638.5       920.760
+##   Business.input Civil.input Criminal.input Family.input IncomingWeighted
+## 1             55     503.144          807.0      249.168         1614.312
+## 2             36     459.743          552.0      248.276         1296.019
+## 3             92    1079.914          936.0      459.688         2567.602
+## 4            118     985.370          865.5      403.984         2372.854
+## 5           1074    4922.370         2728.5      989.836         9714.706
+## 6            851    3896.741         2725.5      940.876         8414.117
+##   Incoming
+## 1     1782
+## 2     1631
+## 3     3147
+## 4     3089
+## 5    10397
+## 6     9433</code></pre>
+</div>
+<div id="summarize-spolu-s-group_by" class="section level3 hasAnchor" number="3.3.9">
+<h3><span class="header-section-number">3.3.9</span> summarize() (spolu s group_by())<a href="tidyverse-a-manipulácia-dát.html#summarize-spolu-s-group_by" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Funkcia <strong>summarize</strong> zagreguje dataset do jedného riadku (bez použitia group_by). Využíva sa hlavne pri počítaní sumárných hodnôt v rámci kategórií (za použitia group_by). Môžete si ju predstaviť ako spôsob, akým s databázovej tabuľky spravíte kontingenčnú.</p>
+<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="tidyverse-a-manipulácia-dát.html#cb388-1" aria-hidden="true" tabindex="-1"></a>sudy <span class="sc">%&gt;%</span></span>
+<span id="cb388-2"><a href="tidyverse-a-manipulácia-dát.html#cb388-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">napadSR =</span> <span class="fu">sum</span>(Incoming))</span></code></pre></div>
+<pre><code>##   napadSR
+## 1 1580274</code></pre>
+<p>Takto to ale nedáva veľmi zmysel, keďže v datasete máme dva rôzne roky. Optimálne by sme chceli získť celkový nápad za jednotlivé roky zvlášť. Na to nám slúži funkcia <strong>group_by</strong>, ktorá združuje dáta do skupín definovaných premennými a výpočty robí nad týmito skupinami.</p>
+<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="tidyverse-a-manipulácia-dát.html#cb390-1" aria-hidden="true" tabindex="-1"></a>sudy <span class="sc">%&gt;%</span></span>
+<span id="cb390-2"><a href="tidyverse-a-manipulácia-dát.html#cb390-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Year) <span class="sc">%&gt;%</span></span>
+<span id="cb390-3"><a href="tidyverse-a-manipulácia-dát.html#cb390-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">napadSR =</span> <span class="fu">sum</span>(Incoming)) <span class="sc">%&gt;%</span></span>
+<span id="cb390-4"><a href="tidyverse-a-manipulácia-dát.html#cb390-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="co">#niekedy vzniká problém pri používaní ďalších funkcií, ktoré berú dataset ako zoskupený, preto je fajn zvyk použiť ungroup funkciu</span></span></code></pre></div>
+<pre><code>## # A tibble: 2 x 2
+##    Year napadSR
+##   &lt;dbl&gt;   &lt;dbl&gt;
+## 1  2020  736160
+## 2  2021  844114</code></pre>
+<p>V <strong>group_by</strong> sa dá definovať viacero premenných, na základe ktorých budú rozdelené dáta. Platí pritom pravidlo, že čím viac zoskupovacích premenných, tým rozdrobenejší dataset.</p>
+<div class="sourceCode" id="cb392"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb392-1"><a href="tidyverse-a-manipulácia-dát.html#cb392-1" aria-hidden="true" tabindex="-1"></a>sudy <span class="sc">%&gt;%</span></span>
+<span id="cb392-2"><a href="tidyverse-a-manipulácia-dát.html#cb392-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Year, Region) <span class="sc">%&gt;%</span></span>
+<span id="cb392-3"><a href="tidyverse-a-manipulácia-dát.html#cb392-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">NapadRegion =</span> <span class="fu">sum</span>(Incoming),</span>
+<span id="cb392-4"><a href="tidyverse-a-manipulácia-dát.html#cb392-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">PriemerNapadRegion =</span> <span class="fu">mean</span>(Incoming),</span>
+<span id="cb392-5"><a href="tidyverse-a-manipulácia-dát.html#cb392-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">MedianNapadRegion =</span> <span class="fu">median</span>(Incoming),</span>
+<span id="cb392-6"><a href="tidyverse-a-manipulácia-dát.html#cb392-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">SDNapadRegion =</span> <span class="fu">sd</span>(Incoming),</span>
+<span id="cb392-7"><a href="tidyverse-a-manipulácia-dát.html#cb392-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">MinNapadRegion =</span> <span class="fu">min</span>(Incoming),</span>
+<span id="cb392-8"><a href="tidyverse-a-manipulácia-dát.html#cb392-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">MaxemerNapadRegion =</span> <span class="fu">max</span>(Incoming))</span></code></pre></div>
+<pre><code>## `summarise()` has grouped output by &#39;Year&#39;. You can override using the
+## `.groups` argument.</code></pre>
+<pre><code>## # A tibble: 16 x 8
+## # Groups:   Year [2]
+##     Year Region             NapadRegion Prieme~1 Media~2 SDNap~3 MinNa~4 Maxem~5
+##    &lt;dbl&gt; &lt;chr&gt;                    &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+##  1  2020 KS Banská Bystrica      301225   37653.   4777   94432.    2469  271334
+##  2  2020 KS Bratislava           112575   16082.   8226   24932.    3135   72267
+##  3  2020 KS Košice                74321   10617.   7620    7718.    3586   26431
+##  4  2020 KS Nitra                 48759    9752.   5954    9964.    3469   27450
+##  5  2020 KS Prešov                49824    6228    3547    7667.    2052   24983
+##  6  2020 KS Trenčín               37739    6290.   4086    6686.    1782   19552
+##  7  2020 KS Trnava                47068    7845.   4618    8764.    2271   25287
+##  8  2020 KS Žilina                64649    9236.   3718   15299.    2127   43832
+##  9  2021 KS Banská Bystrica      425030   53129.   4906. 137925.    2545  394457
+## 10  2021 KS Bratislava           104044   14863.   7654   22676.    3166   65984
+## 11  2021 KS Košice                73088   10441.   7702    7722.    3686   26651
+## 12  2021 KS Nitra                 50108   10022.   6530    9894.    3666   27572
+## 13  2021 KS Prešov                49692    6212.   3490    7646.    2101   24916
+## 14  2021 KS Trenčín               38577    6430.   4502    6646.    1631   19559
+## 15  2021 KS Trnava                43753    7292.   4702.   7325.    2337   21757
+## 16  2021 KS Žilina                59822    8546    3892   13266.    2099   38509
+## # ... with abbreviated variable names 1: PriemerNapadRegion,
+## #   2: MedianNapadRegion, 3: SDNapadRegion, 4: MinNapadRegion,
+## #   5: MaxemerNapadRegion</code></pre>
+<p>Takto si vieme vytvoriť aj sumarizačnú tabuľku. Čo nám tam ale chýba?</p>
+</div>
+<div id="count-a-n" class="section level3 hasAnchor" number="3.3.10">
+<h3><span class="header-section-number">3.3.10</span> count() a n()<a href="tidyverse-a-manipulácia-dát.html#count-a-n" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Dplyr obsahuje aj svoju funkciu <strong>count</strong>. Táto funkcia Vám umožňuje rýchlo spočítať jednej a viac premenných. Funguje takto: <code>df %&gt;% count(a, b)</code>, čo je v zásade ekvivalent tohto: <code>df %&gt;% group_by(a, b) %&gt;% summarize(n = n())</code></p>
+<div class="sourceCode" id="cb395"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb395-1"><a href="tidyverse-a-manipulácia-dát.html#cb395-1" aria-hidden="true" tabindex="-1"></a>sudy <span class="sc">%&gt;%</span></span>
+<span id="cb395-2"><a href="tidyverse-a-manipulácia-dát.html#cb395-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(Court) <span class="sc">%&gt;%</span> <span class="co">#Výsledok je 2 lebo každý súd sa opakuje 2x pre 2 roky</span></span>
+<span id="cb395-3"><a href="tidyverse-a-manipulácia-dát.html#cb395-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>)</span></code></pre></div>
+<pre><code>##                     Court n
+## 1 OS Bánovce nad Bebravou 2
+## 2      OS Banská Bystrica 2
+## 3             OS Bardejov 2
+## 4         OS Bratislava I 2
+## 5        OS Bratislava II 2
+## 6       OS Bratislava III 2</code></pre>
+<div class="sourceCode" id="cb397"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb397-1"><a href="tidyverse-a-manipulácia-dát.html#cb397-1" aria-hidden="true" tabindex="-1"></a>sudy <span class="sc">%&gt;%</span></span>
+<span id="cb397-2"><a href="tidyverse-a-manipulácia-dát.html#cb397-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(Court, Year) <span class="sc">%&gt;%</span></span>
+<span id="cb397-3"><a href="tidyverse-a-manipulácia-dát.html#cb397-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>)</span></code></pre></div>
+<pre><code>##                     Court Year n
+## 1 OS Bánovce nad Bebravou 2020 1
+## 2 OS Bánovce nad Bebravou 2021 1
+## 3      OS Banská Bystrica 2020 1
+## 4      OS Banská Bystrica 2021 1
+## 5             OS Bardejov 2020 1
+## 6             OS Bardejov 2021 1</code></pre>
+<p>S <strong>count</strong> funkciou je spojená <strong>tally</strong> funkcia. <strong>tally</strong> narozdiel od <strong>count</strong> počíta s tým, že užívateľ už definoval grouping. <strong>tally</strong> v zásade na pozadí robí len toto: <code>df %&gt;% summarize(n = n())</code></p>
+<div class="sourceCode" id="cb399"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb399-1"><a href="tidyverse-a-manipulácia-dát.html#cb399-1" aria-hidden="true" tabindex="-1"></a>sudy <span class="sc">%&gt;%</span></span>
+<span id="cb399-2"><a href="tidyverse-a-manipulácia-dát.html#cb399-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tally</span>(Court) <span class="co"># toto nefunguje</span></span>
+<span id="cb399-3"><a href="tidyverse-a-manipulácia-dát.html#cb399-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb399-4"><a href="tidyverse-a-manipulácia-dát.html#cb399-4" aria-hidden="true" tabindex="-1"></a>sudy <span class="sc">%&gt;%</span></span>
+<span id="cb399-5"><a href="tidyverse-a-manipulácia-dát.html#cb399-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Court) <span class="sc">%&gt;%</span></span>
+<span id="cb399-6"><a href="tidyverse-a-manipulácia-dát.html#cb399-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tally</span>() <span class="sc">%&gt;%</span> <span class="co"># toto už áno</span></span>
+<span id="cb399-7"><a href="tidyverse-a-manipulácia-dát.html#cb399-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code></pre></div>
+<p>Ak nechcete, aby tieto funkcie používali summarize, ale pridali Vám nový stĺpec do pôvodného datasetu, tak použite <strong>add_count</strong> alebo <strong>add_tally</strong>.</p>
+<div class="sourceCode" id="cb400"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb400-1"><a href="tidyverse-a-manipulácia-dát.html#cb400-1" aria-hidden="true" tabindex="-1"></a>sudy <span class="sc">%&gt;%</span></span>
+<span id="cb400-2"><a href="tidyverse-a-manipulácia-dát.html#cb400-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_count</span>(Region) <span class="sc">%&gt;%</span></span>
+<span id="cb400-3"><a href="tidyverse-a-manipulácia-dát.html#cb400-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">6</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb400-4"><a href="tidyverse-a-manipulácia-dát.html#cb400-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Court, Year, Region, n)</span></code></pre></div>
+<pre><code>##                Court Year             Region  n
+## 1         OS Pezinok 2020      KS Bratislava 14
+## 2 OS Žiar nad Hronom 2021 KS Banská Bystrica 16
+## 3        OS Bardejov 2020          KS Prešov 16
+## 4         OS Humenné 2020          KS Prešov 16
+## 5          OS Zvolen 2020 KS Banská Bystrica 16
+## 6        OS Košice I 2021          KS Košice 14</code></pre>
+<div class="sourceCode" id="cb402"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb402-1"><a href="tidyverse-a-manipulácia-dát.html#cb402-1" aria-hidden="true" tabindex="-1"></a>sudy <span class="sc">%&gt;%</span></span>
+<span id="cb402-2"><a href="tidyverse-a-manipulácia-dát.html#cb402-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Region) <span class="sc">%&gt;%</span></span>
+<span id="cb402-3"><a href="tidyverse-a-manipulácia-dát.html#cb402-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_tally</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb402-4"><a href="tidyverse-a-manipulácia-dát.html#cb402-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb402-5"><a href="tidyverse-a-manipulácia-dát.html#cb402-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">6</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb402-6"><a href="tidyverse-a-manipulácia-dát.html#cb402-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Court, Year, Region, n)</span></code></pre></div>
+<pre><code>## # A tibble: 6 x 4
+##   Court                 Year Region                 n
+##   &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;              &lt;int&gt;
+## 1 OS Námestovo          2021 KS Žilina             14
+## 2 OS Námestovo          2020 KS Žilina             14
+## 3 OS Nové Zámky         2020 KS Nitra              10
+## 4 OS Senica             2020 KS Trnava             12
+## 5 OS Považská Bystrica  2020 KS Trenčín            12
+## 6 OS Zvolen             2020 KS Banská Bystrica    16</code></pre>
+<p>Posledným operátorom, ktorý treba v súvislosti s počtami spomenúť je <strong>n()</strong>. <strong>n()</strong> v zásade počíta počet pozorovaní v rámci určitej skupiny. Je používaná v rámci <strong>mutate</strong> alebo <strong>summarize</strong>. Ako ste mohli vidieť vyššie, tak <strong>count</strong> aj <strong>tally</strong> túto funkciu využívajú.</p>
+<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="tidyverse-a-manipulácia-dát.html#cb404-1" aria-hidden="true" tabindex="-1"></a>sudy <span class="sc">%&gt;%</span></span>
+<span id="cb404-2"><a href="tidyverse-a-manipulácia-dát.html#cb404-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Region) <span class="sc">%&gt;%</span></span>
+<span id="cb404-3"><a href="tidyverse-a-manipulácia-dát.html#cb404-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(Počet <span class="ot">=</span> <span class="fu">n</span>())</span></code></pre></div>
+<pre><code>## # A tibble: 8 x 2
+##   Region             Počet
+##   &lt;chr&gt;              &lt;int&gt;
+## 1 KS Banská Bystrica    16
+## 2 KS Bratislava         14
+## 3 KS Košice             14
+## 4 KS Nitra              10
+## 5 KS Prešov             16
+## 6 KS Trenčín            12
+## 7 KS Trnava             12
+## 8 KS Žilina             14</code></pre>
+<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="tidyverse-a-manipulácia-dát.html#cb406-1" aria-hidden="true" tabindex="-1"></a>sudy <span class="sc">%&gt;%</span></span>
+<span id="cb406-2"><a href="tidyverse-a-manipulácia-dát.html#cb406-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Region) <span class="sc">%&gt;%</span></span>
+<span id="cb406-3"><a href="tidyverse-a-manipulácia-dát.html#cb406-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(Počet <span class="ot">=</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb406-4"><a href="tidyverse-a-manipulácia-dát.html#cb406-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb406-5"><a href="tidyverse-a-manipulácia-dát.html#cb406-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">6</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb406-6"><a href="tidyverse-a-manipulácia-dát.html#cb406-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Court, Year, Region, Počet)</span></code></pre></div>
+<pre><code>## # A tibble: 6 x 4
+##   Court               Year Region             Počet
+##   &lt;chr&gt;              &lt;dbl&gt; &lt;chr&gt;              &lt;int&gt;
+## 1 OS Michalovce       2021 KS Košice             14
+## 2 OS Rimavská Sobota  2021 KS Banská Bystrica    16
+## 3 OS Žiar nad Hronom  2021 KS Banská Bystrica    16
+## 4 OS Martin           2020 KS Žilina             14
+## 5 OS Bratislava V     2021 KS Bratislava         14
+## 6 OS Nové Zámky       2020 KS Nitra              10</code></pre>
+</div>
+<div id="distinct" class="section level3 hasAnchor" number="3.3.11">
+<h3><span class="header-section-number">3.3.11</span> distinct()<a href="tidyverse-a-manipulácia-dát.html#distinct" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Distinct funkciu pravdepodobne poznáte z iných softwareov. V dplyr bola vytvorená vlastná funkcia na identifikovanie jedinečných hodnôt premenných, ktorá je podobná base R <strong>unique</strong>. V zásade sa dá použiť dvojakým spôsobom:</p>
+<ol style="list-style-type: decimal">
+<li>Vybrať premennú (alebo viacero premenných), ktorej jedinečné hodnoty chceme (defaultné nastavenie funkcie).</li>
+<li>Vybrať premennú (alebo viacero premenných), ktorej jedinečné hodnoty chceme za ponechania ostatných stĺpcov.</li>
+</ol>
+<p>V prípade zvolenia druhej možnosti, ak sa v špecifikovaných premenných nenachádza kombinácia jedinečných hodnôt, tak je ponechaný len prvý riadok.</p>
+<div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="tidyverse-a-manipulácia-dát.html#cb408-1" aria-hidden="true" tabindex="-1"></a>sudy <span class="sc">%&gt;%</span></span>
+<span id="cb408-2"><a href="tidyverse-a-manipulácia-dát.html#cb408-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(Court, <span class="at">.keep_all =</span> F) <span class="sc">%&gt;%</span></span>
+<span id="cb408-3"><a href="tidyverse-a-manipulácia-dát.html#cb408-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span></code></pre></div>
+<pre><code>##                      Court
+## 1  OS Bánovce nad Bebravou
+## 2              OS Bardejov
+## 3         OS Bratislava II
+## 4        OS Bratislava III
+## 5         OS Bratislava IV
+## 6          OS Bratislava V
+## 7                OS Brezno
+## 8                 OS Čadca
+## 9           OS Dolný Kubín
+## 10      OS Dunajská Streda</code></pre>
+<div class="sourceCode" id="cb410"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb410-1"><a href="tidyverse-a-manipulácia-dát.html#cb410-1" aria-hidden="true" tabindex="-1"></a>sudy <span class="sc">%&gt;%</span></span>
+<span id="cb410-2"><a href="tidyverse-a-manipulácia-dát.html#cb410-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(Court, <span class="at">.keep_all =</span> T) <span class="sc">%&gt;%</span></span>
+<span id="cb410-3"><a href="tidyverse-a-manipulácia-dát.html#cb410-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span></code></pre></div>
+<pre><code>##                      Court Year   nJudges Assistant Judicial.officer Secretary
+## 1  OS Bánovce nad Bebravou 2020  4.666667   6.75000         4.000000   5.00000
+## 2              OS Bardejov 2020  9.583333  12.00000         9.833333   6.00000
+## 3         OS Bratislava II 2020 27.916667  34.00000        24.916667  18.41667
+## 4        OS Bratislava III 2020 25.250000  33.50000        20.000000  15.91667
+## 5         OS Bratislava IV 2020 18.500000  23.33333        17.000000  11.00000
+## 6          OS Bratislava V 2020 27.083333  36.50000        27.500000  16.33333
+## 7                OS Brezno 2020  9.750000  12.75000         9.000000   7.00000
+## 8                 OS Čadca 2020 11.000000  13.00000         9.833333   7.00000
+## 9           OS Dolný Kubín 2020  6.000000   9.00000         5.000000   6.00000
+## 10      OS Dunajská Streda 2020 16.833333  21.91667        15.500000  12.00000
+##    Expenditure Business.input Civil.input Criminal.input Family.input
+## 1     171806.6             55     503.144          807.0      249.168
+## 2     296897.8             92    1079.914          936.0      459.688
+## 3     736132.1           1074    4922.370         2728.5      989.836
+## 4     671977.5            917    3845.594         2355.0     1173.104
+## 5     534560.9            315    2332.198         1083.0      639.580
+## 6     833706.1            824    3754.816         2106.0     1109.664
+## 7     234266.2             63     988.397         1080.0      496.452
+## 8     289961.0             56    1236.172          981.0      509.240
+## 9     170311.1             63     518.928          520.5      279.996
+## 10    504733.6            172    2135.539         1426.5      967.036
+##    IncomingWeighted Incoming Business.output Civil.output Criminal.output
+## 1          1614.312     1782              52      474.516           738.0
+## 2          2567.602     3147             109     1155.297          1039.5
+## 3          9714.706    10397            1037     4093.661          2815.5
+## 4          8290.698     9504             898     3195.235          2404.5
+## 5          4369.778     5079             308     2313.488          1063.5
+## 6          7794.480     8226             771     3156.700          2073.0
+## 7          2627.849     3148              52     1053.214          1063.5
+## 8          2782.412     3718              46     1405.350           985.5
+## 9          1382.424     2127              70      504.417           562.5
+## 10         4701.075     5835             193     2292.046          1362.0
+##    Family.output WeightedDecided Decided             Region nEmployees
+## 1        229.444        1493.960    1660         KS Trenčín   15.75000
+## 2        461.672        2765.469    3136          KS Prešov   27.83333
+## 3        936.416        8882.577    9434      KS Bratislava   77.33333
+## 4       1202.640        7700.375    9057      KS Bratislava   69.41667
+## 5        563.460        4248.448    4870      KS Bratislava   51.33333
+## 6       1063.080        7063.780    7405      KS Bratislava   80.33333
+## 7        473.360        2642.074    3089 KS Banská Bystrica   28.75000
+## 8        564.744        3001.594    4023          KS Žilina   29.83333
+## 9        281.580        1418.497    2052          KS Žilina   20.00000
+## 10       969.912        4816.958    5873          KS Trnava   49.41667
+##    IncomingCTR DecidedCTR PendingCTR
+## 1         1782       1660        690
+## 2         3147       3136       1489
+## 3        10397       9434       5693
+## 4         9504       9057       8139
+## 5         5079       4870       3357
+## 6         8226       7405       4760
+## 7         3148       3089       1210
+## 8         3718       4023       2646
+## 9         2127       2052        713
+## 10        5835       5873       3381</code></pre>
+</div>
+<div id="podobnosť-funkcií-v-tidyverse-ako-výhoda" class="section level3 hasAnchor" number="3.3.12">
+<h3><span class="header-section-number">3.3.12</span> Podobnosť funkcií v tidyverse ako výhoda<a href="tidyverse-a-manipulácia-dát.html#podobnosť-funkcií-v-tidyverse-ako-výhoda" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Asi ste si už všimli, že syntax funkcií z dplyr (a tidyverse ako takého) je veľmi podobná:</p>
+<ul>
+<li>prvý argument je data frame,</li>
+<li>následné argumenty opisujú to, čo treba spraviť s data frame. Odkazovať na premenné sa dá priamo bez použitia $,</li>
+<li>výsledok funkcie je data frame.</li>
+</ul>
+<p>Ako sme spomínali vyššie, tak toto sú vynikajúce podmienky na spájanie jednotlivých funkcií prostredníctvom pipe (%&gt;%), čo vedie k prehľadnému, zrozumiteľnému a úspornému kódu z pohľadu jeho dĺžky (nemusí platiť vždy).</p>
+</div>
+</div>
+<div id="spájanie-datasetov" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Spájanie datasetov<a href="tidyverse-a-manipulácia-dát.html#spájanie-datasetov" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Spájať datasety sa dá aj v base R, avšak pri dplyr mi to príde intuitívnejšie, preto sme túto tému zaradili sem (ak máte záujem o poznanie base R riešení, tak si pozrite funkcie <em>merge()</em>, <em>rbind()</em> a <em>cbind()</em>). Znova, ak máte skúsenosti s SQL, tak spájanie datasetov by nemal byť pre Vás problém. V zásade dplyr pracuje so 4 funkciami na spájanie datasetu na základe ID:</p>
+<ul>
+<li><p><code>inner_join()</code>: matchne a ponechá všetky riadky, ktoré sa nachádzajú v x aj y</p></li>
+<li><p><code>left_join()</code>: matchne a ponechá všetky riadky v x</p></li>
+<li><p><code>right_join()</code>: matchne a ponechá všetky riadky v y</p></li>
+<li><p><code>full_join()</code>: matchne a ponechá všetky riadky</p></li>
+</ul>
+<center>
+<img src="images/joins.png" width=100% />
+</center>
+<p><br><br></p>
+<p>Okrem toho je možné datasety spojiť prostredníctvom pridania riadkov jedného datasetu k druhému alebo pridania stĺpcov jedného datasetu k druhému. Na to slúžia tieto funkcie:</p>
+<ul>
+<li><code>bind_rows()</code></li>
+<li><code>bind_cols()</code></li>
+</ul>
+<div id="joins" class="section level3 hasAnchor" number="3.4.1">
+<h3><span class="header-section-number">3.4.1</span> Joins<a href="tidyverse-a-manipulácia-dát.html#joins" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Načítame si druhý dataset s informáciami o súdoch:</p>
+<div class="sourceCode" id="cb412"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb412-1"><a href="tidyverse-a-manipulácia-dát.html#cb412-1" aria-hidden="true" tabindex="-1"></a>ID <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">&quot;./data/court_codes_R.xlsx&quot;</span>, <span class="dv">1</span>)</span>
+<span id="cb412-2"><a href="tidyverse-a-manipulácia-dát.html#cb412-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb412-3"><a href="tidyverse-a-manipulácia-dát.html#cb412-3" aria-hidden="true" tabindex="-1"></a>ID <span class="sc">%&gt;%</span> <span class="fu">tally</span>()</span></code></pre></div>
+<pre><code>##    n
+## 1 62</code></pre>
+<p>Pripravíme si dáta na ukážku:</p>
+<div class="sourceCode" id="cb414"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb414-1"><a href="tidyverse-a-manipulácia-dát.html#cb414-1" aria-hidden="true" tabindex="-1"></a>sudy2 <span class="ot">&lt;-</span> sudy <span class="sc">%&gt;%</span></span>
+<span id="cb414-2"><a href="tidyverse-a-manipulácia-dát.html#cb414-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Court, Year, Incoming, nJudges) <span class="sc">%&gt;%</span></span>
+<span id="cb414-3"><a href="tidyverse-a-manipulácia-dát.html#cb414-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span>
+<span id="cb414-4"><a href="tidyverse-a-manipulácia-dát.html#cb414-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb414-5"><a href="tidyverse-a-manipulácia-dát.html#cb414-5" aria-hidden="true" tabindex="-1"></a>sudy2 <span class="sc">%&gt;%</span> <span class="fu">tally</span>()</span></code></pre></div>
+<pre><code>##    n
+## 1 10</code></pre>
+<p>Vyskúšame joiny:</p>
+<div class="sourceCode" id="cb416"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb416-1"><a href="tidyverse-a-manipulácia-dát.html#cb416-1" aria-hidden="true" tabindex="-1"></a><span class="fu">inner_join</span>(sudy2, ID, </span>
+<span id="cb416-2"><a href="tidyverse-a-manipulácia-dát.html#cb416-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;Court&quot;</span> <span class="ot">=</span> <span class="st">&quot;Sud&quot;</span>)) <span class="co">#prečo prázdny data frame?</span></span></code></pre></div>
+<pre><code>## [1] Court                    Year                     Incoming                
+## [4] nJudges                  Sud2                     SAP(Organizácia_skratka)
+## [7] Skratka                  ID_sud                  
+## &lt;0 rows&gt; (or 0-length row.names)</code></pre>
+<div class="sourceCode" id="cb418"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb418-1"><a href="tidyverse-a-manipulácia-dát.html#cb418-1" aria-hidden="true" tabindex="-1"></a><span class="fu">inner_join</span>(sudy2, ID, </span>
+<span id="cb418-2"><a href="tidyverse-a-manipulácia-dát.html#cb418-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;Court&quot;</span> <span class="ot">=</span> <span class="st">&quot;SAP(Organizácia_skratka)&quot;</span>))</span></code></pre></div>
+<pre><code>##                      Court Year Incoming   nJudges
+## 1  OS Bánovce nad Bebravou 2020     1782  4.666667
+## 2  OS Bánovce nad Bebravou 2021     1631  5.000000
+## 3              OS Bardejov 2020     3147  9.583333
+## 4              OS Bardejov 2021     3089 10.833333
+## 5         OS Bratislava II 2020    10397 27.916667
+## 6         OS Bratislava II 2021     9433 24.500000
+## 7        OS Bratislava III 2020     9504 25.250000
+## 8        OS Bratislava III 2021     8998 24.500000
+## 9         OS Bratislava IV 2020     5079 18.500000
+## 10        OS Bratislava IV 2021     4819 17.583333
+##                                Sud2                  Sud Skratka ID_sud
+## 1  Okresný súd Bánovce nad Bebravou Bánovce nad Bebravou      BN      9
+## 2  Okresný súd Bánovce nad Bebravou Bánovce nad Bebravou      BN      9
+## 3              Okresný súd Bardejov             Bardejov      BJ     11
+## 4              Okresný súd Bardejov             Bardejov      BJ     11
+## 5         Okresný súd Bratislava II        Bratislava II     BA2     13
+## 6         Okresný súd Bratislava II        Bratislava II     BA2     13
+## 7        Okresný súd Bratislava III       Bratislava III     BA3     14
+## 8        Okresný súd Bratislava III       Bratislava III     BA3     14
+## 9         Okresný súd Bratislava IV        Bratislava IV     BA4     15
+## 10        Okresný súd Bratislava IV        Bratislava IV     BA4     15</code></pre>
+<p>Inner join naozaj ponecháva len tie riadky, ktoré majú rovnaké hodnoty v oboch (vynecháva KS v ID datasete). Výsledok je v tomto prípade rovnaký <strong>left_join</strong>, pretože Court premenná z datasetu sudy2 má hodnoty, ktoré sú podmnožinou hodnôt SAP(Organizácia_skratka) z ID datasetu.</p>
+<div class="sourceCode" id="cb420"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb420-1"><a href="tidyverse-a-manipulácia-dát.html#cb420-1" aria-hidden="true" tabindex="-1"></a><span class="fu">left_join</span>(sudy2, ID, </span>
+<span id="cb420-2"><a href="tidyverse-a-manipulácia-dát.html#cb420-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;Court&quot;</span> <span class="ot">=</span> <span class="st">&quot;SAP(Organizácia_skratka)&quot;</span>)) <span class="co"># čo keď otočíme poradie datasetov?</span></span></code></pre></div>
+<pre><code>##                      Court Year Incoming   nJudges
+## 1  OS Bánovce nad Bebravou 2020     1782  4.666667
+## 2  OS Bánovce nad Bebravou 2021     1631  5.000000
+## 3              OS Bardejov 2020     3147  9.583333
+## 4              OS Bardejov 2021     3089 10.833333
+## 5         OS Bratislava II 2020    10397 27.916667
+## 6         OS Bratislava II 2021     9433 24.500000
+## 7        OS Bratislava III 2020     9504 25.250000
+## 8        OS Bratislava III 2021     8998 24.500000
+## 9         OS Bratislava IV 2020     5079 18.500000
+## 10        OS Bratislava IV 2021     4819 17.583333
+##                                Sud2                  Sud Skratka ID_sud
+## 1  Okresný súd Bánovce nad Bebravou Bánovce nad Bebravou      BN      9
+## 2  Okresný súd Bánovce nad Bebravou Bánovce nad Bebravou      BN      9
+## 3              Okresný súd Bardejov             Bardejov      BJ     11
+## 4              Okresný súd Bardejov             Bardejov      BJ     11
+## 5         Okresný súd Bratislava II        Bratislava II     BA2     13
+## 6         Okresný súd Bratislava II        Bratislava II     BA2     13
+## 7        Okresný súd Bratislava III       Bratislava III     BA3     14
+## 8        Okresný súd Bratislava III       Bratislava III     BA3     14
+## 9         Okresný súd Bratislava IV        Bratislava IV     BA4     15
+## 10        Okresný súd Bratislava IV        Bratislava IV     BA4     15</code></pre>
+<div class="sourceCode" id="cb422"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb422-1"><a href="tidyverse-a-manipulácia-dát.html#cb422-1" aria-hidden="true" tabindex="-1"></a>sudyLeft <span class="ot">&lt;-</span> <span class="fu">left_join</span>(ID, sudy2, </span>
+<span id="cb422-2"><a href="tidyverse-a-manipulácia-dát.html#cb422-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;SAP(Organizácia_skratka)&quot;</span> <span class="ot">=</span> <span class="st">&quot;Court&quot;</span>)) <span class="sc">%&gt;%</span> <span class="co"># všimnite si, že aj poradie premenných špecifikujúcich match sa muselo meniť</span></span>
+<span id="cb422-3"><a href="tidyverse-a-manipulácia-dát.html#cb422-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(ID_sud)</span>
+<span id="cb422-4"><a href="tidyverse-a-manipulácia-dát.html#cb422-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb422-5"><a href="tidyverse-a-manipulácia-dát.html#cb422-5" aria-hidden="true" tabindex="-1"></a>sudyLeft <span class="sc">%&gt;%</span> <span class="fu">tally</span>()  <span class="co"># 67 pozorovaní lebo v datasete sudy 2 sú duplikáty</span></span></code></pre></div>
+<pre><code>##    n
+## 1 67</code></pre>
+<p>Dostaneme otočením datasetov taký istý dataset ako pri použití right joinu v pôvodnom poradí?</p>
+<div class="sourceCode" id="cb424"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb424-1"><a href="tidyverse-a-manipulácia-dát.html#cb424-1" aria-hidden="true" tabindex="-1"></a>sudyRight <span class="ot">&lt;-</span> <span class="fu">right_join</span>(sudy2, ID,</span>
+<span id="cb424-2"><a href="tidyverse-a-manipulácia-dát.html#cb424-2" aria-hidden="true" tabindex="-1"></a>                        <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;Court&quot;</span> <span class="ot">=</span> <span class="st">&quot;SAP(Organizácia_skratka)&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb424-3"><a href="tidyverse-a-manipulácia-dát.html#cb424-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(ID_sud)</span>
+<span id="cb424-4"><a href="tidyverse-a-manipulácia-dát.html#cb424-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb424-5"><a href="tidyverse-a-manipulácia-dát.html#cb424-5" aria-hidden="true" tabindex="-1"></a>sudyRight <span class="sc">%&gt;%</span> <span class="fu">tally</span>()</span></code></pre></div>
+<pre><code>##    n
+## 1 67</code></pre>
+<div class="sourceCode" id="cb426"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb426-1"><a href="tidyverse-a-manipulácia-dát.html#cb426-1" aria-hidden="true" tabindex="-1"></a>sudyLeft <span class="ot">&lt;-</span> sudyLeft <span class="sc">%&gt;%</span></span>
+<span id="cb426-2"><a href="tidyverse-a-manipulácia-dát.html#cb426-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Court =</span> <span class="st">`</span><span class="at">SAP(Organizácia_skratka)</span><span class="st">`</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb426-3"><a href="tidyverse-a-manipulácia-dát.html#cb426-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">relocate</span>(Court, Year, Incoming, nJudges, Sud2, Sud, Skratka, ID_sud)</span>
+<span id="cb426-4"><a href="tidyverse-a-manipulácia-dát.html#cb426-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb426-5"><a href="tidyverse-a-manipulácia-dát.html#cb426-5" aria-hidden="true" tabindex="-1"></a>sudyRight <span class="ot">&lt;-</span> sudyRight <span class="sc">%&gt;%</span></span>
+<span id="cb426-6"><a href="tidyverse-a-manipulácia-dát.html#cb426-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">relocate</span>(Court, Year, Incoming, nJudges, Sud2, Sud, Skratka, ID_sud)</span>
+<span id="cb426-7"><a href="tidyverse-a-manipulácia-dát.html#cb426-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb426-8"><a href="tidyverse-a-manipulácia-dát.html#cb426-8" aria-hidden="true" tabindex="-1"></a>sudyLeft <span class="sc">==</span> sudyRight</span></code></pre></div>
+<pre><code>##       Court Year Incoming nJudges Sud2  Sud Skratka ID_sud
+##  [1,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+##  [2,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+##  [3,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+##  [4,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+##  [5,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+##  [6,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+##  [7,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+##  [8,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+##  [9,]  TRUE TRUE     TRUE    TRUE TRUE TRUE    TRUE   TRUE
+## [10,]  TRUE TRUE     TRUE    TRUE TRUE TRUE    TRUE   TRUE
+## [11,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [12,]  TRUE TRUE     TRUE    TRUE TRUE TRUE    TRUE   TRUE
+## [13,]  TRUE TRUE     TRUE    TRUE TRUE TRUE    TRUE   TRUE
+## [14,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [15,]  TRUE TRUE     TRUE    TRUE TRUE TRUE    TRUE   TRUE
+## [16,]  TRUE TRUE     TRUE    TRUE TRUE TRUE    TRUE   TRUE
+## [17,]  TRUE TRUE     TRUE    TRUE TRUE TRUE    TRUE   TRUE
+## [18,]  TRUE TRUE     TRUE    TRUE TRUE TRUE    TRUE   TRUE
+## [19,]  TRUE TRUE     TRUE    TRUE TRUE TRUE    TRUE   TRUE
+## [20,]  TRUE TRUE     TRUE    TRUE TRUE TRUE    TRUE   TRUE
+## [21,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [22,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [23,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [24,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [25,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [26,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [27,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [28,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [29,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [30,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [31,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [32,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [33,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [34,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [35,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [36,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [37,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [38,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [39,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [40,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [41,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [42,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [43,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [44,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [45,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [46,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [47,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [48,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [49,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [50,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [51,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [52,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [53,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [54,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [55,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [56,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [57,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [58,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [59,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [60,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [61,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [62,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [63,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [64,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [65,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [66,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE
+## [67,]  TRUE   NA       NA      NA TRUE TRUE    TRUE   TRUE</code></pre>
+<p>Na kontrolu treba trochu pomeniť poradie stĺpcov a zmeniť názov jedného, ale v zásade vidíme, že ide o rovnaké datasety.<br></p>
+<p>Posledným joinom je full join, ktorý ponechá všetky riadky a tam, kde nenájde zhodu vráti NA (ako v predošlom píklade):</p>
+<div class="sourceCode" id="cb428"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb428-1"><a href="tidyverse-a-manipulácia-dát.html#cb428-1" aria-hidden="true" tabindex="-1"></a>sudyFull <span class="ot">&lt;-</span> <span class="fu">full_join</span>(sudy2, ID,</span>
+<span id="cb428-2"><a href="tidyverse-a-manipulácia-dát.html#cb428-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;Court&quot;</span> <span class="ot">=</span> <span class="st">&quot;SAP(Organizácia_skratka)&quot;</span>))</span>
+<span id="cb428-3"><a href="tidyverse-a-manipulácia-dát.html#cb428-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb428-4"><a href="tidyverse-a-manipulácia-dát.html#cb428-4" aria-hidden="true" tabindex="-1"></a>sudyFull <span class="sc">%&gt;%</span></span>
+<span id="cb428-5"><a href="tidyverse-a-manipulácia-dát.html#cb428-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tally</span>()</span></code></pre></div>
+<pre><code>##    n
+## 1 67</code></pre>
+</div>
+<div id="bind_rows-a-bind_cols" class="section level3 hasAnchor" number="3.4.2">
+<h3><span class="header-section-number">3.4.2</span> bind_rows() a bind_cols()<a href="tidyverse-a-manipulácia-dát.html#bind_rows-a-bind_cols" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Spájať datasety sa dá aj pod seba alebo vedľa seba bez toho, aby sme mali nejakú premennú na nájdenie zhody.</p>
+<div class="sourceCode" id="cb430"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb430-1"><a href="tidyverse-a-manipulácia-dát.html#cb430-1" aria-hidden="true" tabindex="-1"></a>sudyRows <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(sudy, sudy2)</span>
+<span id="cb430-2"><a href="tidyverse-a-manipulácia-dát.html#cb430-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb430-3"><a href="tidyverse-a-manipulácia-dát.html#cb430-3" aria-hidden="true" tabindex="-1"></a>sudyRows <span class="sc">%&gt;%</span> <span class="fu">tally</span>()</span></code></pre></div>
+<pre><code>##     n
+## 1 118</code></pre>
+<p>Najväčší zmysel spájanie pod seba dáva, ak máme dáta v rovnakej štruktúre a pridávame nové hodnoty. Base R Vám dokonca vypíše chybu, ak chcete pod seba spoiť dáta v rozdielnej štruktúre. dplyr to nevadí, pridá Vám len NA hodnoty.</p>
+<div class="sourceCode" id="cb432"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb432-1"><a href="tidyverse-a-manipulácia-dát.html#cb432-1" aria-hidden="true" tabindex="-1"></a>ID2 <span class="ot">&lt;-</span> ID <span class="sc">%&gt;%</span></span>
+<span id="cb432-2"><a href="tidyverse-a-manipulácia-dát.html#cb432-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">5</span>)</span>
+<span id="cb432-3"><a href="tidyverse-a-manipulácia-dát.html#cb432-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb432-4"><a href="tidyverse-a-manipulácia-dát.html#cb432-4" aria-hidden="true" tabindex="-1"></a><span class="fu">bind_rows</span>(sudy2, ID2)</span></code></pre></div>
+<pre><code>##                      Court Year Incoming   nJudges
+## 1  OS Bánovce nad Bebravou 2020     1782  4.666667
+## 2  OS Bánovce nad Bebravou 2021     1631  5.000000
+## 3              OS Bardejov 2020     3147  9.583333
+## 4              OS Bardejov 2021     3089 10.833333
+## 5         OS Bratislava II 2020    10397 27.916667
+## 6         OS Bratislava II 2021     9433 24.500000
+## 7        OS Bratislava III 2020     9504 25.250000
+## 8        OS Bratislava III 2021     8998 24.500000
+## 9         OS Bratislava IV 2020     5079 18.500000
+## 10        OS Bratislava IV 2021     4819 17.583333
+## 11                    &lt;NA&gt;   NA       NA        NA
+## 12                    &lt;NA&gt;   NA       NA        NA
+## 13                    &lt;NA&gt;   NA       NA        NA
+## 14                    &lt;NA&gt;   NA       NA        NA
+## 15                    &lt;NA&gt;   NA       NA        NA
+##                             Sud2 SAP(Organizácia_skratka)                   Sud
+## 1                           &lt;NA&gt;                     &lt;NA&gt;                  &lt;NA&gt;
+## 2                           &lt;NA&gt;                     &lt;NA&gt;                  &lt;NA&gt;
+## 3                           &lt;NA&gt;                     &lt;NA&gt;                  &lt;NA&gt;
+## 4                           &lt;NA&gt;                     &lt;NA&gt;                  &lt;NA&gt;
+## 5                           &lt;NA&gt;                     &lt;NA&gt;                  &lt;NA&gt;
+## 6                           &lt;NA&gt;                     &lt;NA&gt;                  &lt;NA&gt;
+## 7                           &lt;NA&gt;                     &lt;NA&gt;                  &lt;NA&gt;
+## 8                           &lt;NA&gt;                     &lt;NA&gt;                  &lt;NA&gt;
+## 9                           &lt;NA&gt;                     &lt;NA&gt;                  &lt;NA&gt;
+## 10                          &lt;NA&gt;                     &lt;NA&gt;                  &lt;NA&gt;
+## 11 Okresný súd Vranov nad Topľou     OS Vranov nad Topľou     Vranov nad Topľou
+## 12           Okresný súd Skalica               OS Skalica               Skalica
+## 13         Krajský súd v Prešove                KS Prešov KRAJSKÝ SÚD V PREŠOVE
+## 14         Okresný súd Košice II             OS Košice II             Košice II
+## 15     Okresný súd Bratislava II         OS Bratislava II         Bratislava II
+##    Skratka ID_sud
+## 1     &lt;NA&gt;     NA
+## 2     &lt;NA&gt;     NA
+## 3     &lt;NA&gt;     NA
+## 4     &lt;NA&gt;     NA
+## 5     &lt;NA&gt;     NA
+## 6     &lt;NA&gt;     NA
+## 7     &lt;NA&gt;     NA
+## 8     &lt;NA&gt;     NA
+## 9     &lt;NA&gt;     NA
+## 10    &lt;NA&gt;     NA
+## 11      VV     59
+## 12      SI     50
+## 13    KSPO      5
+## 14     KE2     26
+## 15     BA2     13</code></pre>
+<p>Pri spájaní datasetov vedľa seba je však rozdielny počet riadkov problém.</p>
+<div class="sourceCode" id="cb434"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb434-1"><a href="tidyverse-a-manipulácia-dát.html#cb434-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bind_cols</span>(sudy2, sudy) <span class="co"># toto nejde</span></span></code></pre></div>
+<div class="sourceCode" id="cb435"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb435-1"><a href="tidyverse-a-manipulácia-dát.html#cb435-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bind_cols</span>(sudy2[,<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>], sudy[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]) <span class="co">#toto už áno s premenovaním premenných, aby boli názvy jedinečné</span></span></code></pre></div>
+<pre><code>## New names:
+## * `Court` -&gt; `Court...1`
+## * `Year` -&gt; `Year...2`
+## * `nJudges` -&gt; `nJudges...4`
+## * `Court` -&gt; `Court...5`
+## * `Year` -&gt; `Year...6`
+## * `nJudges` -&gt; `nJudges...7`</code></pre>
+<pre><code>##                  Court...1 Year...2 Incoming nJudges...4
+## 1  OS Bánovce nad Bebravou     2020     1782    4.666667
+## 2  OS Bánovce nad Bebravou     2021     1631    5.000000
+## 3              OS Bardejov     2020     3147    9.583333
+## 4              OS Bardejov     2021     3089   10.833333
+## 5         OS Bratislava II     2020    10397   27.916667
+## 6         OS Bratislava II     2021     9433   24.500000
+## 7        OS Bratislava III     2020     9504   25.250000
+## 8        OS Bratislava III     2021     8998   24.500000
+## 9         OS Bratislava IV     2020     5079   18.500000
+## 10        OS Bratislava IV     2021     4819   17.583333
+##                  Court...5 Year...6 nJudges...7 Assistant
+## 1  OS Bánovce nad Bebravou     2020    4.666667   6.75000
+## 2  OS Bánovce nad Bebravou     2021    5.000000   7.00000
+## 3              OS Bardejov     2020    9.583333  12.00000
+## 4              OS Bardejov     2021   10.833333  12.00000
+## 5         OS Bratislava II     2020   27.916667  34.00000
+## 6         OS Bratislava II     2021   24.500000  33.00000
+## 7        OS Bratislava III     2020   25.250000  33.50000
+## 8        OS Bratislava III     2021   24.500000  31.58333
+## 9         OS Bratislava IV     2020   18.500000  23.33333
+## 10        OS Bratislava IV     2021   17.583333  23.66667</code></pre>
+</div>
+</div>
+<div id="transponovanie-datasetov" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Transponovanie datasetov<a href="tidyverse-a-manipulácia-dát.html#transponovanie-datasetov" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Datasety môžu mať podobu tzv. long a wide datasetov. Ako ich názov naznačuje, long datasety sa ťahajú do dĺžky, keď jedna premenná definuje kategóriu a druhá hodnotu. Pri wide datasetoch je to tak, že kategórie sú samostatné premenné so svojimi hodnotami, čiže dataset sa ťahá do dĺžky (tzv. plachty).</p>
+<center>
+<img src="images/tidyr-pivot_wider_longer.gif" width=70% />
+</center>
+<p><br><br></p>
+<p>V niektorých prípadoch je lepšie pracovať s jedným nastavení, v iných s druhým. Je však fajn si vedieť dataset rýchlo prehodiť. Na to slúžia funkcie <strong>pivot_longer</strong> a <strong>pivot_wider</strong> z <em>tidyr</em> knižnice.</p>
+<p>Na ukážku toho ako sa to robí si upravíme naše dáta.</p>
+<div class="sourceCode" id="cb438"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb438-1"><a href="tidyverse-a-manipulácia-dát.html#cb438-1" aria-hidden="true" tabindex="-1"></a>sudyLong <span class="ot">&lt;-</span> sudy <span class="sc">%&gt;%</span></span>
+<span id="cb438-2"><a href="tidyverse-a-manipulácia-dát.html#cb438-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Court, Year, Region, Incoming, Decided)</span>
+<span id="cb438-3"><a href="tidyverse-a-manipulácia-dát.html#cb438-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb438-4"><a href="tidyverse-a-manipulácia-dát.html#cb438-4" aria-hidden="true" tabindex="-1"></a>sudyLong[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,]</span></code></pre></div>
+<pre><code>##                      Court Year        Region Incoming Decided
+## 1  OS Bánovce nad Bebravou 2020    KS Trenčín     1782    1660
+## 2  OS Bánovce nad Bebravou 2021    KS Trenčín     1631    1520
+## 3              OS Bardejov 2020     KS Prešov     3147    3136
+## 4              OS Bardejov 2021     KS Prešov     3089    3264
+## 5         OS Bratislava II 2020 KS Bratislava    10397    9434
+## 6         OS Bratislava II 2021 KS Bratislava     9433    9677
+## 7        OS Bratislava III 2020 KS Bratislava     9504    9057
+## 8        OS Bratislava III 2021 KS Bratislava     8998    8568
+## 9         OS Bratislava IV 2020 KS Bratislava     5079    4870
+## 10        OS Bratislava IV 2021 KS Bratislava     4819    4713</code></pre>
+<p>Tuto máme pripravený dataset, ktorý je v long formáte (ish). Hodnoty v kategorických premenných sa opakujú. Ako z neho spraviť wide dataset?</p>
+<div class="sourceCode" id="cb440"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb440-1"><a href="tidyverse-a-manipulácia-dát.html#cb440-1" aria-hidden="true" tabindex="-1"></a>sudyWide <span class="ot">&lt;-</span> <span class="fu">pivot_wider</span>(sudyLong, <span class="at">id_cols =</span> <span class="fu">c</span>(<span class="st">&quot;Court&quot;</span>), <span class="at">names_from =</span> <span class="fu">c</span>(<span class="st">&quot;Year&quot;</span>), <span class="at">values_from =</span> <span class="fu">c</span>(<span class="st">&quot;Incoming&quot;</span>)) <span class="co"># nápad po rokoch na súdoch</span></span>
+<span id="cb440-2"><a href="tidyverse-a-manipulácia-dát.html#cb440-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb440-3"><a href="tidyverse-a-manipulácia-dát.html#cb440-3" aria-hidden="true" tabindex="-1"></a>sudyWide <span class="sc">%&gt;%</span></span>
+<span id="cb440-4"><a href="tidyverse-a-manipulácia-dát.html#cb440-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">6</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 6 x 3
+##   Court                   `2020` `2021`
+##   &lt;chr&gt;                    &lt;dbl&gt;  &lt;dbl&gt;
+## 1 OS Spišská Nová Ves       7620   7702
+## 2 OS Bratislava III         9504   8998
+## 3 OS Brezno                 3148   3225
+## 4 OS Svidník                2329   2297
+## 5 OS Nové Mesto nad Váhom   4322   4656
+## 6 OS Dunajská Streda        5835   5920</code></pre>
+<div class="sourceCode" id="cb442"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb442-1"><a href="tidyverse-a-manipulácia-dát.html#cb442-1" aria-hidden="true" tabindex="-1"></a>sudyWide2 <span class="ot">&lt;-</span> <span class="fu">pivot_wider</span>(sudyLong, <span class="at">id_cols =</span> <span class="fu">c</span>(<span class="st">&quot;Court&quot;</span>), <span class="at">names_from =</span> <span class="fu">c</span>(<span class="st">&quot;Year&quot;</span>), <span class="at">values_from =</span> <span class="fu">c</span>(<span class="st">&quot;Incoming&quot;</span>, <span class="st">&quot;Decided&quot;</span>)) <span class="co"># nápad a rozhodnuté po rokoch</span></span>
+<span id="cb442-2"><a href="tidyverse-a-manipulácia-dát.html#cb442-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb442-3"><a href="tidyverse-a-manipulácia-dát.html#cb442-3" aria-hidden="true" tabindex="-1"></a>sudyWide2 <span class="sc">%&gt;%</span></span>
+<span id="cb442-4"><a href="tidyverse-a-manipulácia-dát.html#cb442-4" aria-hidden="true" tabindex="-1"></a><span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">6</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 6 x 5
+##   Court              Incoming_2020 Incoming_2021 Decided_2020 Decided_2021
+##   &lt;chr&gt;                      &lt;dbl&gt;         &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;
+## 1 OS Trenčín                 19552         19559        23376        24943
+## 2 OS Komárno                  5234          5375         5394         5139
+## 3 OS Prešov                  24983         24916        37826        26812
+## 4 OS Rimavská Sobota          4894          5055         4884         5120
+## 5 OS Martin                   5676          5712         5601         5615
+## 6 OS Svidník                  2329          2297         2954         2174</code></pre>
+<div class="sourceCode" id="cb444"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb444-1"><a href="tidyverse-a-manipulácia-dát.html#cb444-1" aria-hidden="true" tabindex="-1"></a>sudyWide3 <span class="ot">&lt;-</span> <span class="fu">pivot_wider</span>(sudyLong, <span class="at">id_cols =</span> <span class="fu">c</span>(<span class="st">&quot;Court&quot;</span>), <span class="at">names_from =</span> <span class="fu">c</span>(<span class="st">&quot;Year&quot;</span>,<span class="st">&quot;Region&quot;</span>), <span class="at">values_from =</span> <span class="fu">c</span>(<span class="st">&quot;Incoming&quot;</span>, <span class="st">&quot;Decided&quot;</span>)) <span class="co"># nápad a rozhodnuté po rokoch a obvodoch KS</span></span>
+<span id="cb444-2"><a href="tidyverse-a-manipulácia-dát.html#cb444-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb444-3"><a href="tidyverse-a-manipulácia-dát.html#cb444-3" aria-hidden="true" tabindex="-1"></a>sudyWide3 <span class="sc">%&gt;%</span></span>
+<span id="cb444-4"><a href="tidyverse-a-manipulácia-dát.html#cb444-4" aria-hidden="true" tabindex="-1"></a><span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">6</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 6 x 33
+##   Court  Incom~1 Incom~2 Incom~3 Incom~4 Incom~5 Incom~6 Incom~7 Incom~8 Incom~9
+##   &lt;chr&gt;    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+## 1 OS Pr~      NA      NA   24983   24916      NA      NA      NA      NA      NA
+## 2 OS Du~      NA      NA      NA      NA      NA      NA      NA      NA      NA
+## 3 OS Ke~      NA      NA    3054    3156      NA      NA      NA      NA      NA
+## 4 OS Sv~      NA      NA    2329    2297      NA      NA      NA      NA      NA
+## 5 OS Tr~      NA      NA      NA      NA      NA      NA      NA      NA      NA
+## 6 OS Ča~      NA      NA      NA      NA      NA      NA      NA      NA    3718
+## # ... with 23 more variables: `Incoming_2021_KS Žilina` &lt;dbl&gt;,
+## #   `Incoming_2020_KS Trnava` &lt;dbl&gt;, `Incoming_2021_KS Trnava` &lt;dbl&gt;,
+## #   `Incoming_2020_KS Nitra` &lt;dbl&gt;, `Incoming_2021_KS Nitra` &lt;dbl&gt;,
+## #   `Incoming_2020_KS Košice` &lt;dbl&gt;, `Incoming_2021_KS Košice` &lt;dbl&gt;,
+## #   `Decided_2020_KS Trenčín` &lt;dbl&gt;, `Decided_2021_KS Trenčín` &lt;dbl&gt;,
+## #   `Decided_2020_KS Prešov` &lt;dbl&gt;, `Decided_2021_KS Prešov` &lt;dbl&gt;,
+## #   `Decided_2020_KS Bratislava` &lt;dbl&gt;, `Decided_2021_KS Bratislava` &lt;dbl&gt;, ...
+## # i Use `colnames()` to see all variable names</code></pre>
+<p>Skúsme dať všetky wide datasety naspäť do long formátu.</p>
+<div class="sourceCode" id="cb446"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb446-1"><a href="tidyverse-a-manipulácia-dát.html#cb446-1" aria-hidden="true" tabindex="-1"></a>sudyLong1 <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(sudyWide, <span class="at">cols =</span> <span class="fu">c</span>(<span class="st">&quot;2020&quot;</span>, <span class="st">&quot;2021&quot;</span>), <span class="at">names_to =</span> <span class="st">&quot;Year&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;Incoming&quot;</span>)</span>
+<span id="cb446-2"><a href="tidyverse-a-manipulácia-dát.html#cb446-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb446-3"><a href="tidyverse-a-manipulácia-dát.html#cb446-3" aria-hidden="true" tabindex="-1"></a>sudyLong1 <span class="sc">%&gt;%</span></span>
+<span id="cb446-4"><a href="tidyverse-a-manipulácia-dát.html#cb446-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">6</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 6 x 3
+##   Court                   Year  Incoming
+##   &lt;chr&gt;                   &lt;chr&gt;    &lt;dbl&gt;
+## 1 OS Pezinok              2020      3135
+## 2 OS Bánovce nad Bebravou 2020      1782
+## 3 OS Námestovo            2021      2785
+## 4 OS Lučenec              2021      5889
+## 5 OS Stará Ľubovňa        2020      2052
+## 6 OS Žilina               2020     43832</code></pre>
+<div class="sourceCode" id="cb448"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb448-1"><a href="tidyverse-a-manipulácia-dát.html#cb448-1" aria-hidden="true" tabindex="-1"></a>sudyLong2 <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(sudyWide2, <span class="at">cols =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">names_to =</span> <span class="fu">c</span>(<span class="st">&quot;Status&quot;</span>, <span class="st">&quot;Year&quot;</span>), <span class="at">names_sep =</span> <span class="st">&quot;_&quot;</span>,  <span class="at">values_to =</span> <span class="fu">c</span>(<span class="st">&quot;Value&quot;</span>))</span>
+<span id="cb448-2"><a href="tidyverse-a-manipulácia-dát.html#cb448-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb448-3"><a href="tidyverse-a-manipulácia-dát.html#cb448-3" aria-hidden="true" tabindex="-1"></a>sudyLong2 <span class="sc">%&gt;%</span></span>
+<span id="cb448-4"><a href="tidyverse-a-manipulácia-dát.html#cb448-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">6</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 6 x 4
+##   Court                   Status   Year  Value
+##   &lt;chr&gt;                   &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt;
+## 1 OS Topoľčany            Decided  2021   3302
+## 2 OS Skalica              Incoming 2021   2337
+## 3 OS Nové Mesto nad Váhom Decided  2021   4535
+## 4 OS Rožňava              Decided  2020   3726
+## 5 OS Prešov               Decided  2021  26812
+## 6 OS Považská Bystrica    Incoming 2021   4348</code></pre>
+<div class="sourceCode" id="cb450"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb450-1"><a href="tidyverse-a-manipulácia-dát.html#cb450-1" aria-hidden="true" tabindex="-1"></a>sudyLong3 <span class="ot">&lt;-</span><span class="fu">pivot_longer</span>(sudyWide3, <span class="at">cols =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">33</span>, <span class="at">names_to =</span> <span class="fu">c</span>(<span class="st">&quot;Status&quot;</span>, <span class="st">&quot;Year&quot;</span>, <span class="st">&quot;Region&quot;</span>), <span class="at">names_sep =</span> <span class="st">&quot;_&quot;</span>,  <span class="at">values_to =</span> <span class="fu">c</span>(<span class="st">&quot;Value&quot;</span>))</span>
+<span id="cb450-2"><a href="tidyverse-a-manipulácia-dát.html#cb450-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb450-3"><a href="tidyverse-a-manipulácia-dát.html#cb450-3" aria-hidden="true" tabindex="-1"></a>sudyLong3 <span class="sc">%&gt;%</span></span>
+<span id="cb450-4"><a href="tidyverse-a-manipulácia-dát.html#cb450-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">6</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 6 x 5
+##   Court               Status   Year  Region        Value
+##   &lt;chr&gt;               &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;         &lt;dbl&gt;
+## 1 OS Čadca            Incoming 2020  KS Bratislava    NA
+## 2 OS Nitra            Incoming 2020  KS Trenčín       NA
+## 3 OS Poprad           Incoming 2020  KS Žilina        NA
+## 4 OS Spišská Nová Ves Incoming 2021  KS Žilina        NA
+## 5 OS Trebišov         Incoming 2020  KS Prešov        NA
+## 6 OS Zvolen           Incoming 2020  KS Trenčín       NA</code></pre>
+<p>Ako je vidieť, tak to nie je úplne pôvodný dataset. To súvisí s tým, že ani ten nebol úplne v long formáte. Stále sa však môžeme vrátiť k pôvodným dátam.</p>
+<div class="sourceCode" id="cb452"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb452-1"><a href="tidyverse-a-manipulácia-dát.html#cb452-1" aria-hidden="true" tabindex="-1"></a>sudyPovod <span class="ot">&lt;-</span> sudyLong3 <span class="sc">%&gt;%</span></span>
+<span id="cb452-2"><a href="tidyverse-a-manipulácia-dát.html#cb452-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb452-3"><a href="tidyverse-a-manipulácia-dát.html#cb452-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">id_cols =</span> <span class="fu">c</span>(<span class="st">&quot;Court&quot;</span>, <span class="st">&quot;Year&quot;</span>, <span class="st">&quot;Region&quot;</span>), <span class="at">names_from =</span> <span class="st">&quot;Status&quot;</span>, <span class="at">values_from =</span> <span class="st">&quot;Value&quot;</span>)</span>
+<span id="cb452-4"><a href="tidyverse-a-manipulácia-dát.html#cb452-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb452-5"><a href="tidyverse-a-manipulácia-dát.html#cb452-5" aria-hidden="true" tabindex="-1"></a>sudyLong <span class="sc">==</span> sudyPovod</span></code></pre></div>
+<pre><code>##     Court Year Region Incoming Decided
+## 1    TRUE TRUE   TRUE     TRUE    TRUE
+## 2    TRUE TRUE   TRUE     TRUE    TRUE
+## 3    TRUE TRUE   TRUE     TRUE    TRUE
+## 4    TRUE TRUE   TRUE     TRUE    TRUE
+## 5    TRUE TRUE   TRUE     TRUE    TRUE
+## 6    TRUE TRUE   TRUE     TRUE    TRUE
+## 7    TRUE TRUE   TRUE     TRUE    TRUE
+## 8    TRUE TRUE   TRUE     TRUE    TRUE
+## 9    TRUE TRUE   TRUE     TRUE    TRUE
+## 10   TRUE TRUE   TRUE     TRUE    TRUE
+## 11   TRUE TRUE   TRUE     TRUE    TRUE
+## 12   TRUE TRUE   TRUE     TRUE    TRUE
+## 13   TRUE TRUE   TRUE     TRUE    TRUE
+## 14   TRUE TRUE   TRUE     TRUE    TRUE
+## 15   TRUE TRUE   TRUE     TRUE    TRUE
+## 16   TRUE TRUE   TRUE     TRUE    TRUE
+## 17   TRUE TRUE   TRUE     TRUE    TRUE
+## 18   TRUE TRUE   TRUE     TRUE    TRUE
+## 19   TRUE TRUE   TRUE     TRUE    TRUE
+## 20   TRUE TRUE   TRUE     TRUE    TRUE
+## 21   TRUE TRUE   TRUE     TRUE    TRUE
+## 22   TRUE TRUE   TRUE     TRUE    TRUE
+## 23   TRUE TRUE   TRUE     TRUE    TRUE
+## 24   TRUE TRUE   TRUE     TRUE    TRUE
+## 25   TRUE TRUE   TRUE     TRUE    TRUE
+## 26   TRUE TRUE   TRUE     TRUE    TRUE
+## 27   TRUE TRUE   TRUE     TRUE    TRUE
+## 28   TRUE TRUE   TRUE     TRUE    TRUE
+## 29   TRUE TRUE   TRUE     TRUE    TRUE
+## 30   TRUE TRUE   TRUE     TRUE    TRUE
+## 31   TRUE TRUE   TRUE     TRUE    TRUE
+## 32   TRUE TRUE   TRUE     TRUE    TRUE
+## 33   TRUE TRUE   TRUE     TRUE    TRUE
+## 34   TRUE TRUE   TRUE     TRUE    TRUE
+## 35   TRUE TRUE   TRUE     TRUE    TRUE
+## 36   TRUE TRUE   TRUE     TRUE    TRUE
+## 37   TRUE TRUE   TRUE     TRUE    TRUE
+## 38   TRUE TRUE   TRUE     TRUE    TRUE
+## 39   TRUE TRUE   TRUE     TRUE    TRUE
+## 40   TRUE TRUE   TRUE     TRUE    TRUE
+## 41   TRUE TRUE   TRUE     TRUE    TRUE
+## 42   TRUE TRUE   TRUE     TRUE    TRUE
+## 43   TRUE TRUE   TRUE     TRUE    TRUE
+## 44   TRUE TRUE   TRUE     TRUE    TRUE
+## 45   TRUE TRUE   TRUE     TRUE    TRUE
+## 46   TRUE TRUE   TRUE     TRUE    TRUE
+## 47   TRUE TRUE   TRUE     TRUE    TRUE
+## 48   TRUE TRUE   TRUE     TRUE    TRUE
+## 49   TRUE TRUE   TRUE     TRUE    TRUE
+## 50   TRUE TRUE   TRUE     TRUE    TRUE
+## 51   TRUE TRUE   TRUE     TRUE    TRUE
+## 52   TRUE TRUE   TRUE     TRUE    TRUE
+## 53   TRUE TRUE   TRUE     TRUE    TRUE
+## 54   TRUE TRUE   TRUE     TRUE    TRUE
+## 55   TRUE TRUE   TRUE     TRUE    TRUE
+## 56   TRUE TRUE   TRUE     TRUE    TRUE
+## 57   TRUE TRUE   TRUE     TRUE    TRUE
+## 58   TRUE TRUE   TRUE     TRUE    TRUE
+## 59   TRUE TRUE   TRUE     TRUE    TRUE
+## 60   TRUE TRUE   TRUE     TRUE    TRUE
+## 61   TRUE TRUE   TRUE     TRUE    TRUE
+## 62   TRUE TRUE   TRUE     TRUE    TRUE
+## 63   TRUE TRUE   TRUE     TRUE    TRUE
+## 64   TRUE TRUE   TRUE     TRUE    TRUE
+## 65   TRUE TRUE   TRUE     TRUE    TRUE
+## 66   TRUE TRUE   TRUE     TRUE    TRUE
+## 67   TRUE TRUE   TRUE     TRUE    TRUE
+## 68   TRUE TRUE   TRUE     TRUE    TRUE
+## 69   TRUE TRUE   TRUE     TRUE    TRUE
+## 70   TRUE TRUE   TRUE     TRUE    TRUE
+## 71   TRUE TRUE   TRUE     TRUE    TRUE
+## 72   TRUE TRUE   TRUE     TRUE    TRUE
+## 73   TRUE TRUE   TRUE     TRUE    TRUE
+## 74   TRUE TRUE   TRUE     TRUE    TRUE
+## 75   TRUE TRUE   TRUE     TRUE    TRUE
+## 76   TRUE TRUE   TRUE     TRUE    TRUE
+## 77   TRUE TRUE   TRUE     TRUE    TRUE
+## 78   TRUE TRUE   TRUE     TRUE    TRUE
+## 79   TRUE TRUE   TRUE     TRUE    TRUE
+## 80   TRUE TRUE   TRUE     TRUE    TRUE
+## 81   TRUE TRUE   TRUE     TRUE    TRUE
+## 82   TRUE TRUE   TRUE     TRUE    TRUE
+## 83   TRUE TRUE   TRUE     TRUE    TRUE
+## 84   TRUE TRUE   TRUE     TRUE    TRUE
+## 85   TRUE TRUE   TRUE     TRUE    TRUE
+## 86   TRUE TRUE   TRUE     TRUE    TRUE
+## 87   TRUE TRUE   TRUE     TRUE    TRUE
+## 88   TRUE TRUE   TRUE     TRUE    TRUE
+## 89   TRUE TRUE   TRUE     TRUE    TRUE
+## 90   TRUE TRUE   TRUE     TRUE    TRUE
+## 91   TRUE TRUE   TRUE     TRUE    TRUE
+## 92   TRUE TRUE   TRUE     TRUE    TRUE
+## 93   TRUE TRUE   TRUE     TRUE    TRUE
+## 94   TRUE TRUE   TRUE     TRUE    TRUE
+## 95   TRUE TRUE   TRUE     TRUE    TRUE
+## 96   TRUE TRUE   TRUE     TRUE    TRUE
+## 97   TRUE TRUE   TRUE     TRUE    TRUE
+## 98   TRUE TRUE   TRUE     TRUE    TRUE
+## 99   TRUE TRUE   TRUE     TRUE    TRUE
+## 100  TRUE TRUE   TRUE     TRUE    TRUE
+## 101  TRUE TRUE   TRUE     TRUE    TRUE
+## 102  TRUE TRUE   TRUE     TRUE    TRUE
+## 103  TRUE TRUE   TRUE     TRUE    TRUE
+## 104  TRUE TRUE   TRUE     TRUE    TRUE
+## 105  TRUE TRUE   TRUE     TRUE    TRUE
+## 106  TRUE TRUE   TRUE     TRUE    TRUE
+## 107  TRUE TRUE   TRUE     TRUE    TRUE
+## 108  TRUE TRUE   TRUE     TRUE    TRUE</code></pre>
+
 </div>
 </div>
             </section>
