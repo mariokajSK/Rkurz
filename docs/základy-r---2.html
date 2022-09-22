@@ -443,19 +443,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="základy-r---2.html#cb180-1" aria-hidden="true" tabindex="-1"></a>RSVS2021 <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">&quot;./data/2021.xlsx&quot;</span>, <span class="dv">1</span>)</span>
 <span id="cb180-2"><a href="základy-r---2.html#cb180-2" aria-hidden="true" tabindex="-1"></a>RSVS2021[<span class="fu">sample</span>(<span class="fu">nrow</span>(RSVS2021), <span class="dv">6</span>), <span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>, <span class="dv">20</span><span class="sc">:</span><span class="dv">26</span>)] <span class="co">#komplikovanejší zápis, ale skúste interpretovať</span></span></code></pre></div>
 <pre><code>##                           Meno.sudcu               Priezvisko.sudcu  Rok Agenda
-## 42331 Jana                           Sroková                        2021     Po
-## 21600 Ľudmila                        Jančovičová                    2021      C
-## 42630 Anna                           Frigová                        2021     Er
-## 35753 Richard                        Bureš                          2021      C
-## 36382 Alexandra                      Mochnacká                      2021      D
-## 45845 Matúš                          Kalanin                        2021    Csr
+## 34872 Peter                          Štefčík                        2021     Em
+## 19335 Ivona                          Hrčeková                       2021    OdK
+## 29439 Robert                         Droppa                         2021      C
+## 6480  Martina                        Balegová                       2021    Ncb
+## 22393 Miriam                         Oswaldová                      2021    Cpr
+## 9341  Monika                         Jusková                        2021    CoE
 ##       Počet1 Počet2 Počet3 Počet4 Počet5 Typ
-## 42331      8     NA     NA     NA     NA   V
-## 21600    152    122      6      6     NA   N
-## 42630      0      0      0      0     NA   O
-## 35753      5      0      3      0     NA   O
-## 36382    137     35      0      0     NA   N
-## 45845      2     NA     NA     NA     NA   V</code></pre>
+## 34872      1      0     NA     NA     NA   P
+## 19335     46     NA     NA     NA     NA   V
+## 29439     46     21     13      5     NA   N
+## 6480       1      0     NA     NA     NA   P
+## 22393      2      2     NA     NA     NA   N
+## 9341     123     NA     NA     NA     NA   V</code></pre>
 <ul>
 <li>pozrime sa, čo sa dá v rámci tejto funkcie definovať</li>
 </ul>
@@ -478,19 +478,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb184-3"><a href="základy-r---2.html#cb184-3" aria-hidden="true" tabindex="-1"></a>RSVS2021_alt <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">&quot;./data/2021.xlsx&quot;</span>, <span class="dv">1</span>)</span>
 <span id="cb184-4"><a href="základy-r---2.html#cb184-4" aria-hidden="true" tabindex="-1"></a>RSVS2021_alt[<span class="fu">sample</span>(<span class="fu">nrow</span>(RSVS2021), <span class="dv">6</span>), <span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>, <span class="dv">20</span><span class="sc">:</span><span class="dv">26</span>)]</span></code></pre></div>
 <pre><code>##                           Meno.sudcu               Priezvisko.sudcu  Rok Agenda
-## 26481 Jarmila                        Centková                       2021    Csp
-## 12251 Terézia                        Mecelová                       2021   CoZm
-## 27405 Róbert                         Zsiga                          2021    Odi
-## 20842 Katarína                       Mužilová                       2021    Csp
-## 46709 Michal                         Tagaj                          2021     Cb
-## 26953 Lýdia                          Oros Nemešová                  2021   Ccud
+## 25649 Gabriela                       Lukáčová                       2021   PPOm
+## 12057 Monika                         Kadlicová                      2021     Sa
+## 19085 Viera                          Hadrbulcová                    2021    Vyd
+## 30324 Jaroslava                      Tóthová Gederová               2021      P
+## 16626 Tomáš                          Brinčík                        2021      T
+## 11862 Róbert                         Foltán                         2021     Sa
 ##       Počet1 Počet2 Počet3 Počet4 Počet5 Typ
-## 26481      3      1      4      1     NA   O
-## 12251      2     -1     NA     NA     NA   P
-## 27405      4      2     NA     NA     NA   P
-## 20842    181     NA     NA     NA     NA   V
-## 46709      0      0      0      0     NA   O
-## 26953      1      0      0      0     NA   N</code></pre>
+## 25649      6      0     NA     NA     NA   P
+## 12057     11      0      1      1     NA   O
+## 19085      0     NA     NA     NA     NA   V
+## 30324     86     68     18     67     NA   R
+## 16626      8      0     NA     NA      8   P
+## 11862     26     22      4     21     NA   R</code></pre>
 <ul>
 <li>aké sú argumenty pri tejto funkcii?</li>
 </ul>
@@ -1232,13 +1232,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [1] 2.5
 ## 
 ## $item2
-## [1] 0.02574566
+## [1] -0.2408435
 ## 
 ## $item3
-## [1] 1.191758
+## [1] 1.136479
 ## 
 ## $item4
-## [1] 5.028626</code></pre>
+## [1] 4.940293</code></pre>
 <p>V predošlom prípade išlo o list s elementami, ktoré boli jednoduché numerické vektory. Môže sa ale stať, že v rámci listu máte niekoľko data frames a chcete cez ne loopovať a použiť na každý jeden funkciu. V takomto prípade sa dá použiť <strong>apply</strong> fukcia v rámci <strong>lapply</strong> funkcie.</p>
 <p>Na príklade nižšie používame základný R dataset na vytvorenie listu s dvoma data frames. Následný kód potom vyberie najprv jeden a potom druhý data frame (<strong>lapply</strong>), pričom použije <strong>apply</strong> funkciu na vypočítanie priemeru stĺpcov.</p>
 <div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb296-1"><a href="základy-r---2.html#cb296-1" aria-hidden="true" tabindex="-1"></a><span class="co"># vytvorenie listu</span></span>
