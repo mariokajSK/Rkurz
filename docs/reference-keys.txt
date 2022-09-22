@@ -40,13 +40,3 @@ sapply
 tapply
 iné-funkcie-so-základom-v-apply
 swirl
-tidyverse-a-manipulácia-dát
-whose-side-are-you-on
-pipe-revolúcia
-na-sprehľadnenie-kódu
-dplyr
-cheatsheets
-filter
-arrange
-slice
-select

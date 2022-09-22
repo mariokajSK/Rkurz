@@ -141,10 +141,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="https://web.ac-mssr.sk/" target="blank"><img src="./images/acms3.png" width="250" height=30 /></a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Úvod</a>
-<ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#poďakovanie"><i class="fa fa-check"></i>Poďakovanie</a></li>
-</ul></li>
+<li><a href="index.html#section" id="toc-section"></a></li>
 <li class="chapter" data-level="1" data-path="základy-r---1.html"><a href="základy-r---1.html"><i class="fa fa-check"></i><b>1</b> Základy R - 1</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="základy-r---1.html"><a href="základy-r---1.html#čo-je-r"><i class="fa fa-check"></i><b>1.1</b> Čo je R?</a>
@@ -163,6 +160,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.8" data-path="základy-r---1.html"><a href="základy-r---1.html#listy"><i class="fa fa-check"></i><b>1.8</b> Listy</a></li>
 <li class="chapter" data-level="1.9" data-path="základy-r---1.html"><a href="základy-r---1.html#data-frames-databázové-tabuľky"><i class="fa fa-check"></i><b>1.9</b> Data frames (databázové tabuľky?)</a></li>
 <li class="chapter" data-level="1.10" data-path="základy-r---1.html"><a href="základy-r---1.html#ako-preskúmať-svoje-dáta"><i class="fa fa-check"></i><b>1.10</b> Ako preskúmať svoje dáta?</a></li>
+<li class="chapter" data-level="1.11" data-path="základy-r---1.html"><a href="základy-r---1.html#knižnice"><i class="fa fa-check"></i><b>1.11</b> Knižnice</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="základy-r---2.html"><a href="základy-r---2.html"><i class="fa fa-check"></i><b>2</b> Základy R - 2</a>
 <ul>
@@ -200,22 +198,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2.7" data-path="základy-r---2.html"><a href="základy-r---2.html#swirl"><i class="fa fa-check"></i><b>2.7</b> swirl</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html"><i class="fa fa-check"></i><b>3</b> Tidyverse a manipulácia dát</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#whose-side-are-you-on"><i class="fa fa-check"></i><b>3.1</b> Whose side are you on?</a></li>
-<li class="chapter" data-level="3.2" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#pipe-revolúcia"><i class="fa fa-check"></i><b>3.2</b> Pipe revolúcia</a>
-<ul>
-<li class="chapter" data-level="3.2.1" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#na-sprehľadnenie-kódu"><i class="fa fa-check"></i><b>3.2.1</b> %&gt;% na sprehľadnenie kódu</a></li>
-</ul></li>
-<li class="chapter" data-level="3.3" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#dplyr"><i class="fa fa-check"></i><b>3.3</b> Dplyr</a>
-<ul>
-<li class="chapter" data-level="3.3.1" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#cheatsheets"><i class="fa fa-check"></i><b>3.3.1</b> Cheatsheets</a></li>
-<li class="chapter" data-level="3.3.2" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#filter"><i class="fa fa-check"></i><b>3.3.2</b> filter()</a></li>
-<li class="chapter" data-level="3.3.3" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#arrange"><i class="fa fa-check"></i><b>3.3.3</b> arrange()</a></li>
-<li class="chapter" data-level="3.3.4" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#slice"><i class="fa fa-check"></i><b>3.3.4</b> slice()</a></li>
-<li class="chapter" data-level="3.3.5" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#select"><i class="fa fa-check"></i><b>3.3.5</b> select()</a></li>
-</ul></li>
-</ul></li>
 </ul>
 
       </nav>
@@ -236,15 +218,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">Základy jazyka R,<br>analýza a práca s dátami v R</h1>
 <p class="author multi-author"><em><font size="5"> Mário Kajan, Alex Rusnák </font><br><br></em></p>
-<p class="date"><em><font size="4">19. september 2022</font></em></p>
+<p class="date"><em><font size="4">22. september 2022</font></em></p>
 </div>
-<div id="úvod" class="section level1 unnumbered hasAnchor">
-<h1>Úvod<a href="index.html#úvod" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Placeholder</p>
-<div id="poďakovanie" class="section level2 unnumbered hasAnchor">
-<h2>Poďakovanie<a href="index.html#poďakovanie" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="section" class="section level1 unnumbered">
+<h1 class="unnumbered"></h1>
 
-</div>
 </div>
             </section>
 
