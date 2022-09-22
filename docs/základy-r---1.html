@@ -428,7 +428,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
 ## [1,]    1    2    3    4    5    6    7    8    9    10
 ## [2,]   11   12   13   14   15   16   17   18   19    20</code></pre>
-<p>Maticu viete tiež viete previesť na vektor:</p>
+<p>Maticu viete tiež previesť na vektor:</p>
 <div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="základy-r---1.html#cb53-1" aria-hidden="true" tabindex="-1"></a>trialMat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>, <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">10</span>, <span class="at">byrow =</span> T)</span>
 <span id="cb53-2"><a href="základy-r---1.html#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as.vector</span> (trialMat)</span></code></pre></div>
 <pre><code>##  [1]  1 11  2 12  3 13  4 14  5 15  6 16  7 17  8 18  9 19 10 20</code></pre>
@@ -458,9 +458,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Histogram</strong></p>
 <div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="základy-r---1.html#cb66-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">300</span>) <span class="co">#rnorm vytvorí náhodné čísla s normálnou distribúciou, priemerom 0 a smerodajnou odchýlkou 1</span></span>
 <span id="cb66-2"><a href="základy-r---1.html#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(d)</span></code></pre></div>
-<pre><code>## [1] 0.006898124</code></pre>
+<pre><code>## [1] -0.05034162</code></pre>
 <div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="základy-r---1.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(d)</span></code></pre></div>
-<pre><code>## [1] 1.009996</code></pre>
+<pre><code>## [1] 1.041065</code></pre>
 <div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="základy-r---1.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(d) <span class="co"># ukáže histogram</span></span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
 </div>
@@ -621,7 +621,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="základy-r---1.html#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(exData) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;newVar1&quot;</span>, <span class="st">&quot;newVar2&quot;</span>)</span>
 <span id="cb133-2"><a href="základy-r---1.html#cb133-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(exData) <span class="do">## vždy vedzte, koľko hodnôt musíte zadať</span></span></code></pre></div>
 <pre><code>## [1] &quot;newVar1&quot; &quot;newVar2&quot;</code></pre>
-<p>Nz základné popisné štatistiky sa pozriete prostredníctvom funkcie summary. Táto sa využíva aj pri nahliadaní na výsledky niektorých modelov (napríklad lineárna regresia)</p>
+<p>Na základné popisné štatistiky sa pozriete prostredníctvom funkcie summary. Táto sa využíva aj pri nahliadaní na výsledky niektorých modelov (napríklad lineárna regresia).</p>
 <div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="základy-r---1.html#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(exData)</span></code></pre></div>
 <pre><code>##     newVar1      newVar2  
 ##  Min.   : 1   Min.   :51  
@@ -638,7 +638,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="knižnice" class="section level2 hasAnchor" number="1.11">
 <h2><span class="header-section-number">1.11</span> Knižnice<a href="základy-r---1.html#knižnice" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Okrem base R funkcií viete využívať aj tie, ktoré sú súčasťou knižníc vytvorených úžívateľmi</p>
+<p>Okrem base R funkcií viete využívať aj tie, ktoré sú súčasťou knižníc vytvorených užívateľmi</p>
 <ul>
 <li>tieto sú väčšinou navrhnuté pre konkrétne problémy alebo uľahčenie práce pri kódovaní</li>
 <li>každý užívateľ si vie vytvoriť svoju funkciu, ale aj knižnicu</li>
