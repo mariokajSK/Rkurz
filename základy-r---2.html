@@ -493,19 +493,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="základy-r---2.html#cb180-1" aria-hidden="true" tabindex="-1"></a>RSVS2021 <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">&quot;./data/2021.xlsx&quot;</span>, <span class="dv">1</span>)</span>
 <span id="cb180-2"><a href="základy-r---2.html#cb180-2" aria-hidden="true" tabindex="-1"></a>RSVS2021[<span class="fu">sample</span>(<span class="fu">nrow</span>(RSVS2021), <span class="dv">6</span>), <span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>, <span class="dv">20</span><span class="sc">:</span><span class="dv">26</span>)] <span class="co">#komplikovanejší zápis, ale skúste interpretovať</span></span></code></pre></div>
 <pre><code>##                           Meno.sudcu               Priezvisko.sudcu  Rok Agenda
-## 31759 Martin                         Stretavský                     2021      T
-## 32940 Dušan                          Špirek                         2021    Ntt
-## 3242  Magdaléna                      Floreková                      2021    NcC
-## 31711 Daniela                        Pristášová                     2021    Cpr
-## 38490 Danka                          Lauková                        2021      U
-## 14656 Pavol                          Farkaš                         2021   Tost
+## 26068 Imrich                         Hlavička                       2021     Tp
+## 34043 Erika                          Trtalová                       2021    Vyd
+## 30167 Peter                          Straka                         2021      C
+## 40266 Stella                         Al Khufash                     2021     Ps
+## 36485 Dagmar                         Soliarová                      2021     Er
+## 40660 Jarmila                        Bíliková                       2021      T
 ##       Počet1 Počet2 Počet3 Počet4 Počet5 Typ
-## 31759     39     14      6      0     43   N
-## 32940     57     57      0      0     57   R
-## 3242      NA     NA     NA     NA     NA   O
-## 31711      2      0     NA     NA     NA   P
-## 38490      1      0      0      0     NA   N
-## 14656     21      0     21      1     48   R</code></pre>
+## 26068     38      0     NA     NA     40   P
+## 34043      0     NA     NA     NA     NA   V
+## 30167     59     36      4      4     NA   N
+## 40266      4     NA     NA     NA     NA   V
+## 36485    155      0    155      0     NA   R
+## 40660      0      0      0      0     NA   O</code></pre>
 <ul>
 <li>pozrime sa, čo sa dá v rámci tejto funkcie definovať</li>
 </ul>
@@ -526,12 +526,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## # A tibble: 6 x 10
 ##   `Meno sudcu` Priezvisk~1   Rok Agenda Počet1 Počet2 Počet3 Počet4 Počet5 Typ  
 ##   &lt;chr&gt;        &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;
-## 1 Beáta        Svediaková   2021 Vyd         0     NA     NA     NA     NA V    
-## 2 Stanislava   Semanová     2021 D          NA     NA      1     NA     NA O    
-## 3 Daniela      Pristášová   2021 Csr         0      0      0      0     NA R    
-## 4 Mária        Ďuricová     2021 S           1      1      0      0     NA R    
-## 5 Jana         Kurnotová    2021 PPOm        6     NA     NA     NA     NA V    
-## 6 Vlasta       Ondrejková   2021 CoKR        7     NA     NA     NA     NA V    
+## 1 Mária        Košťálová    2021 C           0      0      1      0     NA O    
+## 2 Zuzana       Salajová     2021 P         217    173     44    169     NA R    
+## 3 Petra        Vysaníková   2021 Sa         NA     NA      1     NA     NA O    
+## 4 Boris        Minks        2021 CoP        20      0     NA     NA     NA P    
+## 5 Viera        Sláviková    2021 Pc          3      0      0      0     NA N    
+## 6 Ivetta       Macejková    2021 TdoV        1      1      0      0      1 N    
 ## # ... with abbreviated variable name 1: `Priezvisko sudcu`</code></pre>
 <p>Aké sú argumenty pri tejto funkcii?</p>
 <div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="základy-r---2.html#cb186-1" aria-hidden="true" tabindex="-1"></a><span class="fu">args</span>(read_xlsx)</span></code></pre></div>
@@ -1272,13 +1272,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [1] 2.5
 ## 
 ## $item2
-## [1] 0.04711709
+## [1] 0.3868305
 ## 
 ## $item3
-## [1] 1.204522
+## [1] 0.8817399
 ## 
 ## $item4
-## [1] 4.97547</code></pre>
+## [1] 4.907971</code></pre>
 <p>V predošlom prípade išlo o list s elementami, ktoré boli jednoduché numerické vektory. Môže sa ale stať, že v rámci listu máte niekoľko data frames a chcete cez ne loopovať a použiť na každý jeden funkciu. V takomto prípade sa dá použiť <code>apply</code> fukcia v rámci <code>lapply</code> funkcie.</p>
 <p>Na príklade nižšie používame základný R dataset na vytvorenie listu s dvoma data frames. Následný kód potom vyberie najprv jeden a potom druhý data frame (<code>lapply</code>), pričom použije <code>apply</code> funkciu na vypočítanie priemeru stĺpcov.</p>
 <div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb296-1"><a href="základy-r---2.html#cb296-1" aria-hidden="true" tabindex="-1"></a><span class="co"># vytvorenie listu</span></span>
