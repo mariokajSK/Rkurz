@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title> 6 Štatistika v R | Základy jazyka R, analýza a práca s dátami v R</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+
+  <meta property="og:title" content=" 6 Štatistika v R | Základy jazyka R, analýza a práca s dátami v R" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content=" 6 Štatistika v R | Základy jazyka R, analýza a práca s dátami v R" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ggplot-a-vizualizácia-dát.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"><font size="5"><b>Základy R</b></font></a></li>
+<li><a href="https://web.ac-mssr.sk/" target="blank"><img src="./images/acms3.png" width="250" height=30 /></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like <span>https://bookdown.org/yihui/bookdown</span></a></li>
+<li class="chapter" data-level="2" data-path="základy-r---1.html"><a href="základy-r---1.html"><i class="fa fa-check"></i><b>2</b> Základy R - 1</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="základy-r---1.html"><a href="základy-r---1.html#čo-je-r"><i class="fa fa-check"></i><b>2.1</b> Čo je R?</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="základy-r---1.html"><a href="základy-r---1.html#ceu-analógia"><i class="fa fa-check"></i><b>2.1.1</b> CEU analógia</a></li>
+<li class="chapter" data-level="2.1.2" data-path="základy-r---1.html"><a href="základy-r---1.html#v-kontexte-r"><i class="fa fa-check"></i><b>2.1.2</b> V kontexte R</a></li>
+<li class="chapter" data-level="2.1.3" data-path="základy-r---1.html"><a href="základy-r---1.html#výhody-a-nevýhody"><i class="fa fa-check"></i><b>2.1.3</b> Výhody a nevýhody</a></li>
+<li class="chapter" data-level="2.1.4" data-path="základy-r---1.html"><a href="základy-r---1.html#základné-pravidlá-skriptingu"><i class="fa fa-check"></i><b>2.1.4</b> Základné pravidlá skriptingu</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="základy-r---1.html"><a href="základy-r---1.html#konečne-sa-dostávame-ku-kódovaniu"><i class="fa fa-check"></i><b>2.2</b> Konečne sa dostávame ku kódovaniu</a></li>
+<li class="chapter" data-level="2.3" data-path="základy-r---1.html"><a href="základy-r---1.html#working-directory"><i class="fa fa-check"></i><b>2.3</b> Working directory</a></li>
+<li class="chapter" data-level="2.4" data-path="základy-r---1.html"><a href="základy-r---1.html#objekty-v-r"><i class="fa fa-check"></i><b>2.4</b> Objekty v R</a></li>
+<li class="chapter" data-level="2.5" data-path="základy-r---1.html"><a href="základy-r---1.html#vektory"><i class="fa fa-check"></i><b>2.5</b> Vektory</a></li>
+<li class="chapter" data-level="2.6" data-path="základy-r---1.html"><a href="základy-r---1.html#matice"><i class="fa fa-check"></i><b>2.6</b> Matice</a></li>
+<li class="chapter" data-level="2.7" data-path="základy-r---1.html"><a href="základy-r---1.html#chýbajúce-údaje"><i class="fa fa-check"></i><b>2.7</b> Chýbajúce údaje</a></li>
+<li class="chapter" data-level="2.8" data-path="základy-r---1.html"><a href="základy-r---1.html#listy"><i class="fa fa-check"></i><b>2.8</b> Listy</a></li>
+<li class="chapter" data-level="2.9" data-path="základy-r---1.html"><a href="základy-r---1.html#data-frames-databázové-tabuľky"><i class="fa fa-check"></i><b>2.9</b> Data frames (databázové tabuľky?)</a></li>
+<li class="chapter" data-level="2.10" data-path="základy-r---1.html"><a href="základy-r---1.html#ako-preskúmať-svoje-dáta"><i class="fa fa-check"></i><b>2.10</b> Ako preskúmať svoje dáta?</a></li>
+<li class="chapter" data-level="2.11" data-path="základy-r---1.html"><a href="základy-r---1.html#knižnice"><i class="fa fa-check"></i><b>2.11</b> Knižnice</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="základy-r---2.html"><a href="základy-r---2.html"><i class="fa fa-check"></i><b>3</b> Základy R - 2</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="základy-r---2.html"><a href="základy-r---2.html#načítanie-dát"><i class="fa fa-check"></i><b>3.1</b> Načítanie dát</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="základy-r---2.html"><a href="základy-r---2.html#csv-súbor"><i class="fa fa-check"></i><b>3.1.1</b> CSV súbor</a></li>
+<li class="chapter" data-level="3.1.2" data-path="základy-r---2.html"><a href="základy-r---2.html#dáta-oddelené-tabulátorom"><i class="fa fa-check"></i><b>3.1.2</b> Dáta oddelené tabulátorom</a></li>
+<li class="chapter" data-level="3.1.3" data-path="základy-r---2.html"><a href="základy-r---2.html#univerzálna-funkcia-s-definovaním-oddelovača"><i class="fa fa-check"></i><b>3.1.3</b> Univerzálna funkcia s definovaním oddelovača</a></li>
+<li class="chapter" data-level="3.1.4" data-path="základy-r---2.html"><a href="základy-r---2.html#excel"><i class="fa fa-check"></i><b>3.1.4</b> Excel</a></li>
+<li class="chapter" data-level="3.1.5" data-path="základy-r---2.html"><a href="základy-r---2.html#foreign-knižnica-nepovinné"><i class="fa fa-check"></i><b>3.1.5</b> foreign knižnica (nepovinné)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="základy-r---2.html"><a href="základy-r---2.html#práca-s-dátami"><i class="fa fa-check"></i><b>3.2</b> Práca s dátami</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="základy-r---2.html"><a href="základy-r---2.html#chýbajúce-dáta"><i class="fa fa-check"></i><b>3.2.1</b> Chýbajúce dáta</a></li>
+<li class="chapter" data-level="3.2.2" data-path="základy-r---2.html"><a href="základy-r---2.html#kódovanie-premenných"><i class="fa fa-check"></i><b>3.2.2</b> Kódovanie premenných</a></li>
+<li class="chapter" data-level="3.2.3" data-path="základy-r---2.html"><a href="základy-r---2.html#faktory"><i class="fa fa-check"></i><b>3.2.3</b> Faktory</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="základy-r---2.html"><a href="základy-r---2.html#ukladanie-dát"><i class="fa fa-check"></i><b>3.3</b> Ukladanie dát</a></li>
+<li class="chapter" data-level="3.4" data-path="základy-r---2.html"><a href="základy-r---2.html#funkcie"><i class="fa fa-check"></i><b>3.4</b> Funkcie</a></li>
+<li class="chapter" data-level="3.5" data-path="základy-r---2.html"><a href="základy-r---2.html#loops-nepovinné"><i class="fa fa-check"></i><b>3.5</b> Loops (nepovinné)</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="základy-r---2.html"><a href="základy-r---2.html#if-else"><i class="fa fa-check"></i><b>3.5.1</b> if, else</a></li>
+<li class="chapter" data-level="3.5.2" data-path="základy-r---2.html"><a href="základy-r---2.html#for"><i class="fa fa-check"></i><b>3.5.2</b> for</a></li>
+<li class="chapter" data-level="3.5.3" data-path="základy-r---2.html"><a href="základy-r---2.html#break"><i class="fa fa-check"></i><b>3.5.3</b> break</a></li>
+<li class="chapter" data-level="3.5.4" data-path="základy-r---2.html"><a href="základy-r---2.html#next"><i class="fa fa-check"></i><b>3.5.4</b> next</a></li>
+<li class="chapter" data-level="3.5.5" data-path="základy-r---2.html"><a href="základy-r---2.html#while"><i class="fa fa-check"></i><b>3.5.5</b> while</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="základy-r---2.html"><a href="základy-r---2.html#apply-family-nepovinné"><i class="fa fa-check"></i><b>3.6</b> Apply family (nepovinné)</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="základy-r---2.html"><a href="základy-r---2.html#apply"><i class="fa fa-check"></i><b>3.6.1</b> apply</a></li>
+<li class="chapter" data-level="3.6.2" data-path="základy-r---2.html"><a href="základy-r---2.html#lapply"><i class="fa fa-check"></i><b>3.6.2</b> lapply</a></li>
+<li class="chapter" data-level="3.6.3" data-path="základy-r---2.html"><a href="základy-r---2.html#sapply"><i class="fa fa-check"></i><b>3.6.3</b> sapply</a></li>
+<li class="chapter" data-level="3.6.4" data-path="základy-r---2.html"><a href="základy-r---2.html#tapply"><i class="fa fa-check"></i><b>3.6.4</b> tapply</a></li>
+<li class="chapter" data-level="3.6.5" data-path="základy-r---2.html"><a href="základy-r---2.html#iné-funkcie-so-základom-v-apply"><i class="fa fa-check"></i><b>3.6.5</b> Iné funkcie so základom v apply</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="základy-r---2.html"><a href="základy-r---2.html#swirl"><i class="fa fa-check"></i><b>3.7</b> swirl</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html"><i class="fa fa-check"></i><b>4</b> Tidyverse a manipulácia dát</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#whose-side-are-you-on"><i class="fa fa-check"></i><b>4.1</b> Whose side are you on?</a></li>
+<li class="chapter" data-level="4.2" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#pipe-revolúcia"><i class="fa fa-check"></i><b>4.2</b> Pipe revolúcia</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#na-sprehľadnenie-kódu"><i class="fa fa-check"></i><b>4.2.1</b> %&gt;% na sprehľadnenie kódu</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#dplyr"><i class="fa fa-check"></i><b>4.3</b> Dplyr</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#cheatsheets"><i class="fa fa-check"></i><b>4.3.1</b> Cheatsheets</a></li>
+<li class="chapter" data-level="4.3.2" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#filter"><i class="fa fa-check"></i><b>4.3.2</b> filter()</a></li>
+<li class="chapter" data-level="4.3.3" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#arrange"><i class="fa fa-check"></i><b>4.3.3</b> arrange()</a></li>
+<li class="chapter" data-level="4.3.4" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#slice"><i class="fa fa-check"></i><b>4.3.4</b> slice()</a></li>
+<li class="chapter" data-level="4.3.5" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#select"><i class="fa fa-check"></i><b>4.3.5</b> select()</a></li>
+<li class="chapter" data-level="4.3.6" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#mutate"><i class="fa fa-check"></i><b>4.3.6</b> mutate()</a></li>
+<li class="chapter" data-level="4.3.7" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#if_else-a-case_when"><i class="fa fa-check"></i><b>4.3.7</b> if_else() a case_when</a></li>
+<li class="chapter" data-level="4.3.8" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#relocate"><i class="fa fa-check"></i><b>4.3.8</b> relocate()</a></li>
+<li class="chapter" data-level="4.3.9" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#summarize-spolu-s-group_by"><i class="fa fa-check"></i><b>4.3.9</b> summarize() (spolu s group_by())</a></li>
+<li class="chapter" data-level="4.3.10" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#count-a-n"><i class="fa fa-check"></i><b>4.3.10</b> count() a n()</a></li>
+<li class="chapter" data-level="4.3.11" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#distinct"><i class="fa fa-check"></i><b>4.3.11</b> distinct()</a></li>
+<li class="chapter" data-level="4.3.12" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#podobnosť-funkcií-v-tidyverse-ako-výhoda"><i class="fa fa-check"></i><b>4.3.12</b> Podobnosť funkcií v tidyverse ako výhoda</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#spájanie-datasetov"><i class="fa fa-check"></i><b>4.4</b> Spájanie datasetov</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#joins"><i class="fa fa-check"></i><b>4.4.1</b> Joins</a></li>
+<li class="chapter" data-level="4.4.2" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#bind_rows-a-bind_cols"><i class="fa fa-check"></i><b>4.4.2</b> bind_rows() a bind_cols()</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#transponovanie-datasetov"><i class="fa fa-check"></i><b>4.5</b> Transponovanie datasetov</a></li>
+<li class="chapter" data-level="4.6" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#cvičenia"><i class="fa fa-check"></i><b>4.6</b> Cvičenia</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html"><i class="fa fa-check"></i><b>5</b> Ggplot a vizualizácia dát</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#čo-je-ggplot"><i class="fa fa-check"></i><b>5.1</b> Čo je ggplot</a></li>
+<li class="chapter" data-level="5.2" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#pred-tým-ako-začneme"><i class="fa fa-check"></i><b>5.2</b> Pred tým ako začneme</a></li>
+<li class="chapter" data-level="5.3" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#načítanie-knižníc"><i class="fa fa-check"></i><b>5.3</b> Načítanie knižníc</a></li>
+<li class="chapter" data-level="5.4" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#príprava-datasetu-pre-ggplot"><i class="fa fa-check"></i><b>5.4</b> Príprava datasetu pre ggplot</a></li>
+<li class="chapter" data-level="5.5" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#ggplot-a-jeho-logika"><i class="fa fa-check"></i><b>5.5</b> Ggplot a jeho logika</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#špecifikácia-dát"><i class="fa fa-check"></i><b>5.5.1</b> Špecifikácia dát</a></li>
+<li class="chapter" data-level="5.5.2" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#určíme-dimenzie-dát"><i class="fa fa-check"></i><b>5.5.2</b> Určíme dimenzie dát</a></li>
+<li class="chapter" data-level="5.5.3" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#špecifikácia-zobrazenia-dát"><i class="fa fa-check"></i><b>5.5.3</b> Špecifikácia zobrazenia dát</a></li>
+<li class="chapter" data-level="5.5.4" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#pridanie-tretej-dimenzie"><i class="fa fa-check"></i><b>5.5.4</b> Pridanie tretej dimenzie</a></li>
+<li class="chapter" data-level="5.5.5" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#úprava-prvkov-v-aes-funkcii"><i class="fa fa-check"></i><b>5.5.5</b> Úprava prvkov v <code>aes</code> funkcii</a></li>
+<li class="chapter" data-level="5.5.6" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#úprava-textových-prvkov-grafu"><i class="fa fa-check"></i><b>5.5.6</b> Úprava textových prvkov grafu</a></li>
+<li class="chapter" data-level="5.5.7" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#výber-témy-grafu"><i class="fa fa-check"></i><b>5.5.7</b> Výber témy grafu</a></li>
+<li class="chapter" data-level="5.5.8" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#exportovanie-grafu"><i class="fa fa-check"></i><b>5.5.8</b> Exportovanie grafu</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#rôzne-typy-grafov-v-ggplote-zobrazujúce-množstvá"><i class="fa fa-check"></i><b>5.6</b> Rôzne typy grafov v ggplote zobrazujúce množstvá</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#stĺpcový-graf"><i class="fa fa-check"></i><b>5.6.1</b> Stĺpcový graf</a></li>
+<li class="chapter" data-level="5.6.2" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#bodové-grafy-zobrazujúce-množstvá"><i class="fa fa-check"></i><b>5.6.2</b> Bodové grafy zobrazujúce množstvá</a></li>
+<li class="chapter" data-level="5.6.3" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#histogram"><i class="fa fa-check"></i><b>5.6.3</b> Histogram</a></li>
+<li class="chapter" data-level="5.6.4" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#density-grafy-nepovinné"><i class="fa fa-check"></i><b>5.6.4</b> Density grafy (nepovinné)</a></li>
+<li class="chapter" data-level="5.6.5" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#ridgelines-nepovinné"><i class="fa fa-check"></i><b>5.6.5</b> Ridgelines (nepovinné)</a></li>
+<li class="chapter" data-level="5.6.6" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#box-plot"><i class="fa fa-check"></i><b>5.6.6</b> Box plot</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#xy-vzťahy"><i class="fa fa-check"></i><b>5.7</b> x~y vzťahy</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#bodový-vzťahový-graf"><i class="fa fa-check"></i><b>5.7.1</b> Bodový vzťahový graf</a></li>
+<li class="chapter" data-level="5.7.2" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#bublinový-graf-nepovinné"><i class="fa fa-check"></i><b>5.7.2</b> Bublinový graf (nepovinné)</a></li>
+<li class="chapter" data-level="5.7.3" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#čiarový-graf"><i class="fa fa-check"></i><b>5.7.3</b> Čiarový graf</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#spájanie-grafov-do-jedného-celku"><i class="fa fa-check"></i><b>5.8</b> Spájanie grafov do jedného celku</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#prekrývanie-grafov"><i class="fa fa-check"></i><b>5.8.1</b> Prekrývanie grafov</a></li>
+<li class="chapter" data-level="5.8.2" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#pridávanie-rovnakých-grafov-pre-rôzne-kategórie"><i class="fa fa-check"></i><b>5.8.2</b> Pridávanie rovnakých grafov pre rôzne kategórie</a></li>
+<li class="chapter" data-level="5.8.3" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#pridávanie-rôznych-grafov-do-jedného"><i class="fa fa-check"></i><b>5.8.3</b> Pridávanie rôznych grafov do jedného</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#ggplot-témy-a-formátovanie"><i class="fa fa-check"></i><b>5.9</b> <code>ggplot</code> témy a formátovanie</a>
+<ul>
+<li class="chapter" data-level="5.9.1" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#témy"><i class="fa fa-check"></i><b>5.9.1</b> Témy</a></li>
+<li class="chapter" data-level="5.9.2" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#prvky-grafu-a-ich-formátovanie"><i class="fa fa-check"></i><b>5.9.2</b> Prvky grafu a ich formátovanie</a></li>
+<li class="chapter" data-level="5.9.3" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#vytvorenie-témy"><i class="fa fa-check"></i><b>5.9.3</b> Vytvorenie témy</a></li>
+</ul></li>
+<li class="chapter" data-level="5.10" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#mapy-nepovinné"><i class="fa fa-check"></i><b>5.10</b> Mapy (nepovinné)</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html"><i class="fa fa-check"></i><b>6</b> Štatistika v R</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#popisné-štatistiky"><i class="fa fa-check"></i><b>6.1</b> Popisné štatistiky</a></li>
+<li class="chapter" data-level="6.2" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#deskriptívy-za-využitia-dplyr"><i class="fa fa-check"></i><b>6.2</b> Deskriptívy za využitia <code>dplyr</code></a></li>
+<li class="chapter" data-level="6.3" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#deskriptívy-za-využitia-psych"><i class="fa fa-check"></i><b>6.3</b> Deskriptívy za využitia <code>psych</code></a></li>
+<li class="chapter" data-level="6.4" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#deskriptívy-za-využitia-hmisc"><i class="fa fa-check"></i><b>6.4</b> Deskriptívy za využitia <code>Hmisc</code></a></li>
+<li class="chapter" data-level="6.5" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#vizualizácia-niektorých-popisných-štatistík"><i class="fa fa-check"></i><b>6.5</b> Vizualizácia niektorých popisných štatistík</a></li>
+<li class="chapter" data-level="6.6" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#t-test"><i class="fa fa-check"></i><b>6.6</b> T-test</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#jednovýberový-t-test"><i class="fa fa-check"></i><b>6.6.1</b> Jednovýberový t-test</a></li>
+<li class="chapter" data-level="6.6.2" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#dvojvýberový-t-test"><i class="fa fa-check"></i><b>6.6.2</b> Dvojvýberový t-test</a></li>
+<li class="chapter" data-level="6.6.3" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#párový-t-test"><i class="fa fa-check"></i><b>6.6.3</b> párový t-test</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#anova"><i class="fa fa-check"></i><b>6.7</b> ANOVA</a></li>
+<li class="chapter" data-level="6.8" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#chi-square-test-nezávislosti"><i class="fa fa-check"></i><b>6.8</b> Chi-square test nezávislosti</a></li>
+<li class="chapter" data-level="6.9" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#korelácia"><i class="fa fa-check"></i><b>6.9</b> Korelácia</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Základy jazyka R,<br>analýza a práca s dátami v R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="štatistika-v-r" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number"> 6</span> Štatistika v R<a href="štatistika-v-r.html#štatistika-v-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>R je často označované za softvér, ktorý slúži na štatistické výpočty a modelovanie. Aj keď sa jeho zameranie od začiatkov zmenilo, štatistika zostáva dôležitou súčasťou R. V tejto časti si ukážeme ako sa robia viaceré jednoduché štatistické pohľady ako aj štatistické testy. Na záver sa pozrieme na lineárnu regresiu a ukážeme si, ako sa dá v R skontrolovať naplnenie jej asumpcií.</p>
+<div id="popisné-štatistiky" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Popisné štatistiky<a href="štatistika-v-r.html#popisné-štatistiky" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>V jednej z predošlých častí sme si ukázali, ako sa dajú vytvoriť základné popisné štatistiky. Teraz na to nadviažeme, keď si zo surových dát vytvoríme dataset s popisnou štatistikou, ktorú si budeme vizualizovať. Zároveň si aj ukážeme, ako ľahko je možné dopočítať popisné štatistiky prostredníctvom knižnice <code>psych</code> a <code>Hmisc</code>.</p>
+</div>
+<div id="deskriptívy-za-využitia-dplyr" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Deskriptívy za využitia <code>dplyr</code><a href="štatistika-v-r.html#deskriptívy-za-využitia-dplyr" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><code>dplyr</code> je veľmi nápomocná knižnica, ktorá nám umožňuje prepočítavať rôzne veci v dátach. V príklade si ukážeme, ako je možné prostredníctvom nej dopočítať priemer, medián, minimum, maximum, štandardnú odchýlku, n-kvantil, šikmosť a špicatosť.</p>
+<p>V prvom rade si musíme načítať dáta. Budeme pracovať s dátami o súdoch za roky 2021 a 2020, pričom si vyfiltrujeme nepotrebné premenné.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="štatistika-v-r.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>)</span>
+<span id="cb1-2"><a href="štatistika-v-r.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="štatistika-v-r.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openxlsx)</span>
+<span id="cb1-4"><a href="štatistika-v-r.html#cb1-4" aria-hidden="true" tabindex="-1"></a>sudy <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">&quot;./data/sudy_2020-2021.xlsx&quot;</span>, <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-5"><a href="štatistika-v-r.html#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">ends_with</span>(<span class="st">&quot;input&quot;</span>), <span class="sc">-</span><span class="fu">ends_with</span>(<span class="st">&quot;output&quot;</span>))</span>
+<span id="cb1-6"><a href="štatistika-v-r.html#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="štatistika-v-r.html#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(sudy)</span></code></pre></div>
+<pre><code>##                     Court Year   nJudges Assistant Judicial.officer Secretary
+## 1 OS Bánovce nad Bebravou 2020  4.666667      6.75         4.000000   5.00000
+## 2 OS Bánovce nad Bebravou 2021  5.000000      7.00         4.000000   5.00000
+## 3             OS Bardejov 2020  9.583333     12.00         9.833333   6.00000
+## 4             OS Bardejov 2021 10.833333     12.00        10.000000   6.00000
+## 5        OS Bratislava II 2020 27.916667     34.00        24.916667  18.41667
+## 6        OS Bratislava II 2021 24.500000     33.00        23.500000  18.50000
+##   Expenditure IncomingWeighted Incoming WeightedDecided Decided        Region
+## 1    171806.6         1614.312     1782        1493.960    1660    KS Trenčín
+## 2    201655.7         1296.019     1631        1342.599    1520    KS Trenčín
+## 3    296897.8         2567.602     3147        2765.469    3136     KS Prešov
+## 4    302411.3         2372.854     3089        2552.165    3264     KS Prešov
+## 5    736132.1         9714.706    10397        8882.577    9434 KS Bratislava
+## 6    638335.3         8414.117     9433        8706.625    9677 KS Bratislava
+##   nEmployees Pending
+## 1   15.75000     690
+## 2   16.00000     801
+## 3   27.83333    1489
+## 4   28.00000    1314
+## 5   77.33333    5693
+## 6   75.00000    5449</code></pre>
+<p>Sumárne štatistiky si vieme vyrobiť pre jednotlivé premenné. Na vypčítanie šikmosti a špicatosti si nainštalujeme a načítame knižnicu <code>moments</code>.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="štatistika-v-r.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;moments&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="štatistika-v-r.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(moments)</span>
+<span id="cb4-2"><a href="štatistika-v-r.html#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="štatistika-v-r.html#cb4-3" aria-hidden="true" tabindex="-1"></a>incoming_sum <span class="ot">&lt;-</span> sudy <span class="sc">%&gt;%</span></span>
+<span id="cb4-4"><a href="štatistika-v-r.html#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Obs =</span> <span class="fu">n</span>(),</span>
+<span id="cb4-5"><a href="štatistika-v-r.html#cb4-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">Sum =</span> <span class="fu">sum</span>(Incoming),</span>
+<span id="cb4-6"><a href="štatistika-v-r.html#cb4-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">Mean =</span> <span class="fu">mean</span>(Incoming),</span>
+<span id="cb4-7"><a href="štatistika-v-r.html#cb4-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">Median =</span> <span class="fu">median</span>(Incoming),</span>
+<span id="cb4-8"><a href="štatistika-v-r.html#cb4-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">SD =</span> <span class="fu">sd</span>(Incoming),</span>
+<span id="cb4-9"><a href="štatistika-v-r.html#cb4-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">Min =</span> <span class="fu">min</span>(Incoming),</span>
+<span id="cb4-10"><a href="štatistika-v-r.html#cb4-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">Max =</span> <span class="fu">max</span>(Incoming),</span>
+<span id="cb4-11"><a href="štatistika-v-r.html#cb4-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">Skew =</span> <span class="fu">skewness</span>(Incoming),</span>
+<span id="cb4-12"><a href="štatistika-v-r.html#cb4-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">Kurt =</span> <span class="fu">kurtosis</span>(Incoming),</span>
+<span id="cb4-13"><a href="štatistika-v-r.html#cb4-13" aria-hidden="true" tabindex="-1"></a>            <span class="at">q25 =</span> <span class="fu">quantile</span>(Incoming, <span class="fl">0.25</span>),</span>
+<span id="cb4-14"><a href="štatistika-v-r.html#cb4-14" aria-hidden="true" tabindex="-1"></a>            <span class="at">q75 =</span> <span class="fu">quantile</span>(Incoming, <span class="fl">0.75</span>))</span>
+<span id="cb4-15"><a href="štatistika-v-r.html#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="štatistika-v-r.html#cb4-16" aria-hidden="true" tabindex="-1"></a>incoming_sum</span></code></pre></div>
+<pre><code>##   Obs     Sum     Mean Median       SD  Min    Max     Skew     Kurt  q25
+## 1 108 1580274 14632.17   5059 46147.78 1631 394457 6.877842 52.36372 3154
+##      q75
+## 1 7628.5</code></pre>
+<p>Tieto údaje je samozrejme možné prepočítať v rámci kategorickej premennej alebo kombinácie viacerých kategorických prememnných.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="štatistika-v-r.html#cb6-1" aria-hidden="true" tabindex="-1"></a>incoming_sum_region <span class="ot">&lt;-</span> sudy <span class="sc">%&gt;%</span></span>
+<span id="cb6-2"><a href="štatistika-v-r.html#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Region) <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="štatistika-v-r.html#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Obs =</span> <span class="fu">n</span>(),</span>
+<span id="cb6-4"><a href="štatistika-v-r.html#cb6-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">Sum =</span> <span class="fu">sum</span>(Incoming),</span>
+<span id="cb6-5"><a href="štatistika-v-r.html#cb6-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">Mean =</span> <span class="fu">mean</span>(Incoming),</span>
+<span id="cb6-6"><a href="štatistika-v-r.html#cb6-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">Median =</span> <span class="fu">median</span>(Incoming),</span>
+<span id="cb6-7"><a href="štatistika-v-r.html#cb6-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">SD =</span> <span class="fu">sd</span>(Incoming),</span>
+<span id="cb6-8"><a href="štatistika-v-r.html#cb6-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">Min =</span> <span class="fu">min</span>(Incoming),</span>
+<span id="cb6-9"><a href="štatistika-v-r.html#cb6-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">Max =</span> <span class="fu">max</span>(Incoming),</span>
+<span id="cb6-10"><a href="štatistika-v-r.html#cb6-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">Skew =</span> <span class="fu">skewness</span>(Incoming),</span>
+<span id="cb6-11"><a href="štatistika-v-r.html#cb6-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">Kurt =</span> <span class="fu">kurtosis</span>(Incoming),</span>
+<span id="cb6-12"><a href="štatistika-v-r.html#cb6-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">q25 =</span> <span class="fu">quantile</span>(Incoming, <span class="fl">0.25</span>),</span>
+<span id="cb6-13"><a href="štatistika-v-r.html#cb6-13" aria-hidden="true" tabindex="-1"></a>            <span class="at">q75 =</span> <span class="fu">quantile</span>(Incoming, <span class="fl">0.75</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb6-14"><a href="štatistika-v-r.html#cb6-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb6-15"><a href="štatistika-v-r.html#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="štatistika-v-r.html#cb6-16" aria-hidden="true" tabindex="-1"></a>incoming_sum_region</span></code></pre></div>
+<pre><code>## # A tibble: 8 x 12
+##   Region   Obs    Sum   Mean Median     SD   Min    Max  Skew  Kurt   q25    q75
+##   &lt;chr&gt;  &lt;int&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+## 1 KS Ba~    16 726255 45391.  4825  1.14e5  2469 394457  2.44  7.25 3042.  6025.
+## 2 KS Br~    14 216619 15473.  7940  2.29e4  3135  72267  2.00  5.13 4197.  9486.
+## 3 KS Ko~    14 147409 10529.  7661  7.42e3  3586  26651  1.43  3.76 6390. 12246 
+## 4 KS Ni~    10  98867  9887.  6242  9.36e3  3469  27572  1.44  3.18 5269.  6887.
+## 5 KS Pr~    16  99516  6220.  3490  7.40e3  2052  24983  2.17  5.88 2873.  5110.
+## 6 KS Tr~    12  76316  6360.  4335  6.36e3  1631  19559  1.56  3.79 2180   6134.
+## 7 KS Tr~    12  90821  7568.  4659  7.71e3  2271  25287  1.61  4.00 2998.  7262.
+## 8 KS Ži~    14 124471  8891.  3766. 1.38e4  2099  43832  2.04  5.25 2726.  5287</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="štatistika-v-r.html#cb8-1" aria-hidden="true" tabindex="-1"></a>incoming_sum_region_year <span class="ot">&lt;-</span> sudy <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a href="štatistika-v-r.html#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Region, Year) <span class="sc">%&gt;%</span></span>
+<span id="cb8-3"><a href="štatistika-v-r.html#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Obs =</span> <span class="fu">n</span>(),</span>
+<span id="cb8-4"><a href="štatistika-v-r.html#cb8-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">Sum =</span> <span class="fu">sum</span>(Incoming),</span>
+<span id="cb8-5"><a href="štatistika-v-r.html#cb8-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">Mean =</span> <span class="fu">mean</span>(Incoming),</span>
+<span id="cb8-6"><a href="štatistika-v-r.html#cb8-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">Median =</span> <span class="fu">median</span>(Incoming),</span>
+<span id="cb8-7"><a href="štatistika-v-r.html#cb8-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">SD =</span> <span class="fu">sd</span>(Incoming),</span>
+<span id="cb8-8"><a href="štatistika-v-r.html#cb8-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">Min =</span> <span class="fu">min</span>(Incoming),</span>
+<span id="cb8-9"><a href="štatistika-v-r.html#cb8-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">Max =</span> <span class="fu">max</span>(Incoming),</span>
+<span id="cb8-10"><a href="štatistika-v-r.html#cb8-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">Skew =</span> <span class="fu">skewness</span>(Incoming),</span>
+<span id="cb8-11"><a href="štatistika-v-r.html#cb8-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">Kurt =</span> <span class="fu">kurtosis</span>(Incoming),</span>
+<span id="cb8-12"><a href="štatistika-v-r.html#cb8-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">q25 =</span> <span class="fu">quantile</span>(Incoming, <span class="fl">0.25</span>),</span>
+<span id="cb8-13"><a href="štatistika-v-r.html#cb8-13" aria-hidden="true" tabindex="-1"></a>            <span class="at">q75 =</span> <span class="fu">quantile</span>(Incoming, <span class="fl">0.75</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb8-14"><a href="štatistika-v-r.html#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb8-15"><a href="štatistika-v-r.html#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="štatistika-v-r.html#cb8-16" aria-hidden="true" tabindex="-1"></a>incoming_sum_region_year</span></code></pre></div>
+<pre><code>## # A tibble: 16 x 13
+##    Region  Year   Obs    Sum   Mean Median     SD   Min    Max  Skew  Kurt   q25
+##    &lt;chr&gt;  &lt;dbl&gt; &lt;int&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1 KS Ba~  2020     8 301225 37653.  4777  9.44e4  2469 271334  2.27  6.14 3014.
+##  2 KS Ba~  2021     8 425030 53129.  4906. 1.38e5  2545 394457  2.27  6.14 3100.
+##  3 KS Br~  2020     7 112575 16082.  8226  2.49e4  3135  72267  1.99  5.05 4523 
+##  4 KS Br~  2021     7 104044 14863.  7654  2.27e4  3166  65984  1.99  5.06 4404.
+##  5 KS Ko~  2020     7  74321 10617.  7620  7.72e3  3586  26431  1.37  3.61 6672.
+##  6 KS Ko~  2021     7  73088 10441.  7702  7.72e3  3686  26651  1.50  3.92 6700.
+##  7 KS Ni~  2020     5  48759  9752.  5954  9.96e3  3469  27450  1.45  3.18 5234 
+##  8 KS Ni~  2021     5  50108 10022.  6530  9.89e3  3666  27572  1.44  3.17 5375 
+##  9 KS Pr~  2020     8  49824  6228   3547  7.67e3  2052  24983  2.17  5.88 2873.
+## 10 KS Pr~  2021     8  49692  6212.  3490  7.65e3  2101  24916  2.17  5.88 2891 
+## 11 KS Tr~  2020     6  37739  6290.  4086  6.69e3  1782  19552  1.57  3.81 2548 
+## 12 KS Tr~  2021     6  38577  6430.  4502  6.65e3  1631  19559  1.54  3.76 2738.
+## 13 KS Tr~  2020     6  47068  7845.  4618  8.76e3  2271  25287  1.60  3.85 3003.
+## 14 KS Tr~  2021     6  43753  7292.  4702. 7.32e3  2337  21757  1.54  3.75 3152.
+## 15 KS Ži~  2020     7  64649  9236.  3718  1.53e4  2127  43832  2.02  5.11 2742.
+## 16 KS Ži~  2021     7  59822  8546   3892  1.33e4  2099  38509  2.01  5.09 2745 
+## # ... with 1 more variable: q75 &lt;dbl&gt;
+## # i Use `colnames()` to see all variable names</code></pre>
+<p>Ďalšou možnosťou je pozrieť sa na všetky premenné v datasete. Na to slúži funkcia <code>summarize</code> a trocha zložitejších úprav.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="štatistika-v-r.html#cb10-1" aria-hidden="true" tabindex="-1"></a>incoming_sum_all <span class="ot">&lt;-</span> sudy <span class="sc">%&gt;%</span></span>
+<span id="cb10-2"><a href="štatistika-v-r.html#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric), </span>
+<span id="cb10-3"><a href="štatistika-v-r.html#cb10-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">.fns =</span> <span class="fu">list</span>(</span>
+<span id="cb10-4"><a href="štatistika-v-r.html#cb10-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Obs =</span> length,</span>
+<span id="cb10-5"><a href="štatistika-v-r.html#cb10-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Sum =</span> sum,</span>
+<span id="cb10-6"><a href="štatistika-v-r.html#cb10-6" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Mean =</span> mean,</span>
+<span id="cb10-7"><a href="štatistika-v-r.html#cb10-7" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Median =</span> median,</span>
+<span id="cb10-8"><a href="štatistika-v-r.html#cb10-8" aria-hidden="true" tabindex="-1"></a>                     <span class="at">SD =</span> sd,</span>
+<span id="cb10-9"><a href="štatistika-v-r.html#cb10-9" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Min =</span> min,</span>
+<span id="cb10-10"><a href="štatistika-v-r.html#cb10-10" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Max =</span> max,</span>
+<span id="cb10-11"><a href="štatistika-v-r.html#cb10-11" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Skew =</span> skewness,</span>
+<span id="cb10-12"><a href="štatistika-v-r.html#cb10-12" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Kurt =</span> kurtosis,</span>
+<span id="cb10-13"><a href="štatistika-v-r.html#cb10-13" aria-hidden="true" tabindex="-1"></a>                     <span class="at">q25 =</span> <span class="sc">~</span><span class="fu">quantile</span>(., <span class="fl">0.25</span>), </span>
+<span id="cb10-14"><a href="štatistika-v-r.html#cb10-14" aria-hidden="true" tabindex="-1"></a>                     <span class="at">q75 =</span> <span class="sc">~</span><span class="fu">quantile</span>(., <span class="fl">0.75</span>)</span>
+<span id="cb10-15"><a href="štatistika-v-r.html#cb10-15" aria-hidden="true" tabindex="-1"></a>                     ))) <span class="sc">%&gt;%</span></span>
+<span id="cb10-16"><a href="štatistika-v-r.html#cb10-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="fu">everything</span>(), <span class="at">names_sep =</span> <span class="st">&quot;_&quot;</span>, <span class="at">names_to =</span> <span class="fu">c</span>( <span class="st">&quot;variable&quot;</span>, <span class="st">&quot;.value&quot;</span>))</span>
+<span id="cb10-17"><a href="štatistika-v-r.html#cb10-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-18"><a href="štatistika-v-r.html#cb10-18" aria-hidden="true" tabindex="-1"></a>incoming_sum_all </span></code></pre></div>
+<pre><code>## # A tibble: 12 x 12
+##    variable    Obs    Sum   Mean Median      SD    Min    Max  Skew  Kurt    q25
+##    &lt;chr&gt;     &lt;int&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+##  1 Year        108 2.18e5 2.02e3 2.02e3 5.02e-1 2.02e3 2.02e3  0     1    2.02e3
+##  2 nJudges     108 1.66e3 1.54e1 1.31e1 8.15e+0 4.67e0 3.6 e1  1.03  3.15 9.65e0
+##  3 Assistant   108 2.27e3 2.10e1 1.79e1 1.17e+1 6.75e0 5.46e1  1.20  3.77 1.2 e1
+##  4 Judicial~   108 1.91e3 1.77e1 1.35e1 2.00e+1 4   e0 1.43e2  4.77 29.6  8.98e0
+##  5 Secretary   108 1.27e3 1.17e1 9.5 e0 7.55e+0 4   e0 5.06e1  2.73 13.6  7   e0
+##  6 Expendit~   108 5.44e7 5.04e5 4.65e5 2.77e+5 1.64e5 1.57e6  1.74  6.96 2.90e5
+##  7 Incoming~   108 7.41e5 6.86e3 4.11e3 8.43e+3 1.30e3 5.36e4  3.13 14.3  2.62e3
+##  8 Incoming    108 1.58e6 1.46e4 5.06e3 4.61e+4 1.63e3 3.94e5  6.88 52.4  3.15e3
+##  9 Weighted~   108 7.72e5 7.14e3 4.20e3 9.00e+3 1.30e3 5.37e4  3.00 12.8  2.64e3
+## 10 Decided     108 1.67e6 1.55e4 4.92e3 4.72e+4 1.52e3 3.93e5  6.55 48.3  3.26e3
+## 11 nEmploye~   108 5.44e3 5.04e1 4.18e1 3.75e+1 1.58e1 2.48e2  3.00 15.1  2.80e1
+## 12 Pending     108 3.92e5 3.63e3 2.40e3 3.45e+3 6.53e2 1.73e4  2.26  8.13 1.56e3
+## # ... with 1 more variable: q75 &lt;dbl&gt;
+## # i Use `colnames()` to see all variable names</code></pre>
+</div>
+<div id="deskriptívy-za-využitia-psych" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Deskriptívy za využitia <code>psych</code><a href="štatistika-v-r.html#deskriptívy-za-využitia-psych" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Ako je možné vidieť, keď chceme komplexnejší obraz na popisné štatistiky viacerých premenných, tak prídeme na to, že zložitosť príkazov sa zvyšuje. Na uľahčenie práce ale existujú špecializované knižnice. Knižnica <code>psych</code> Vám bez zložitého kódovania vypočíta všetky základné popisné štatistiky.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="štatistika-v-r.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;psych&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="štatistika-v-r.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
+<span id="cb13-2"><a href="štatistika-v-r.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">describe</span>(sudy)</span></code></pre></div>
+<pre><code>##                  vars   n      mean        sd    median   trimmed       mad
+## Court*              1 108     27.50     15.66     27.50     27.50     20.02
+## Year                2 108   2020.50      0.50   2020.50   2020.50      0.74
+## nJudges             3 108     15.39      8.15     13.12     14.40      5.93
+## Assistant           4 108     20.98     11.70     17.88     19.38      8.71
+## Judicial.officer    5 108     17.68     20.01     13.54     14.06      6.73
+## Secretary           6 108     11.74      7.55      9.50     10.62      3.71
+## Expenditure         7 108 504126.26 277275.54 464595.16 467929.92 257513.19
+## IncomingWeighted    8 108   6860.35   8431.42   4113.61   4993.16   2348.44
+## Incoming            9 108  14632.17  46147.78   5059.00   6421.72   2982.25
+## WeightedDecided    10 108   7144.78   8998.26   4196.29   5089.47   2454.58
+## Decided            11 108  15485.33  47166.83   4924.50   6537.22   2735.40
+## Region*            12 108      4.39      2.36      4.50      4.36      3.71
+## nEmployees         13 108     50.39     37.48     41.79     44.08     19.71
+## Pending            14 108   3631.44   3452.91   2396.00   2931.43   1461.84
+##                        min        max      range skew kurtosis       se
+## Court*                1.00      54.00      53.00 0.00    -1.23     1.51
+## Year               2020.00    2021.00       1.00 0.00    -2.02     0.05
+## nJudges               4.67      36.00      31.33 1.01     0.09     0.78
+## Assistant             6.75      54.58      47.83 1.19     0.70     1.13
+## Judicial.officer      4.00     143.42     139.42 4.70    26.05     1.93
+## Secretary             4.00      50.58      46.58 2.69    10.31     0.73
+## Expenditure      164467.75 1574331.24 1409863.49 1.72     3.84 26680.85
+## IncomingWeighted   1296.02   53588.60   52292.58 3.09    11.02   811.31
+## Incoming           1631.00  394457.00  392826.00 6.78    48.40  4440.57
+## WeightedDecided    1302.35   53715.06   52412.71 2.96     9.60   865.86
+## Decided            1520.00  393359.00  391839.00 6.46    44.40  4538.63
+## Region*               1.00       8.00       7.00 0.05    -1.30     0.23
+## nEmployees           15.75     247.58     231.83 2.96    11.79     3.61
+## Pending             653.00   17332.00   16679.00 2.23     4.98   332.26</code></pre>
+<p>Jednoduché nie? Pridajme si ešte kvantily</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="štatistika-v-r.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">describe</span>(sudy, <span class="at">quant =</span> <span class="fu">c</span>(.<span class="dv">25</span>, .<span class="dv">75</span>))</span></code></pre></div>
+<pre><code>##                  vars   n      mean        sd    median   trimmed       mad
+## Court*              1 108     27.50     15.66     27.50     27.50     20.02
+## Year                2 108   2020.50      0.50   2020.50   2020.50      0.74
+## nJudges             3 108     15.39      8.15     13.12     14.40      5.93
+## Assistant           4 108     20.98     11.70     17.88     19.38      8.71
+## Judicial.officer    5 108     17.68     20.01     13.54     14.06      6.73
+## Secretary           6 108     11.74      7.55      9.50     10.62      3.71
+## Expenditure         7 108 504126.26 277275.54 464595.16 467929.92 257513.19
+## IncomingWeighted    8 108   6860.35   8431.42   4113.61   4993.16   2348.44
+## Incoming            9 108  14632.17  46147.78   5059.00   6421.72   2982.25
+## WeightedDecided    10 108   7144.78   8998.26   4196.29   5089.47   2454.58
+## Decided            11 108  15485.33  47166.83   4924.50   6537.22   2735.40
+## Region*            12 108      4.39      2.36      4.50      4.36      3.71
+## nEmployees         13 108     50.39     37.48     41.79     44.08     19.71
+## Pending            14 108   3631.44   3452.91   2396.00   2931.43   1461.84
+##                        min        max      range skew kurtosis       se
+## Court*                1.00      54.00      53.00 0.00    -1.23     1.51
+## Year               2020.00    2021.00       1.00 0.00    -2.02     0.05
+## nJudges               4.67      36.00      31.33 1.01     0.09     0.78
+## Assistant             6.75      54.58      47.83 1.19     0.70     1.13
+## Judicial.officer      4.00     143.42     139.42 4.70    26.05     1.93
+## Secretary             4.00      50.58      46.58 2.69    10.31     0.73
+## Expenditure      164467.75 1574331.24 1409863.49 1.72     3.84 26680.85
+## IncomingWeighted   1296.02   53588.60   52292.58 3.09    11.02   811.31
+## Incoming           1631.00  394457.00  392826.00 6.78    48.40  4440.57
+## WeightedDecided    1302.35   53715.06   52412.71 2.96     9.60   865.86
+## Decided            1520.00  393359.00  391839.00 6.46    44.40  4538.63
+## Region*               1.00       8.00       7.00 0.05    -1.30     0.23
+## nEmployees           15.75     247.58     231.83 2.96    11.79     3.61
+## Pending             653.00   17332.00   16679.00 2.23     4.98   332.26
+##                      Q0.25     Q0.75
+## Court*               14.00     41.00
+## Year               2020.00   2021.00
+## nJudges               9.65     17.33
+## Assistant            12.00     23.69
+## Judicial.officer      8.98     17.21
+## Secretary             7.00     12.00
+## Expenditure      289706.01 599282.18
+## IncomingWeighted   2619.60   6128.95
+## Incoming           3154.00   7628.50
+## WeightedDecided    2639.96   6009.60
+## Decided            3263.75   7331.00
+## Region*               2.00      6.00
+## nEmployees           27.98     51.85
+## Pending            1558.00   3822.00</code></pre>
+<p>A pozrime sa na to, aké sú popisné štatistiky pre jednotlivé roky.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="štatistika-v-r.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">describe</span>(sudy <span class="sc">~</span> Year, <span class="at">quant =</span> <span class="fu">c</span>(.<span class="dv">25</span>, .<span class="dv">75</span>))</span></code></pre></div>
+<pre><code>## 
+##  Descriptive statistics by group 
+## group: 2020
+##                  vars  n      mean        sd    median   trimmed       mad
+## Court*              1 54     27.50     15.73     27.50     27.50     20.02
+## Year                2 54   2020.00      0.00   2020.00   2020.00      0.00
+## nJudges             3 54     15.65      8.29     13.88     14.70      6.18
+## Assistant           4 54     21.32     11.94     18.08     19.77      9.02
+## Judicial.officer    5 54     17.90     20.14     13.50     14.32      6.73
+## Secretary           6 54     11.89      7.66      9.50     10.78      3.71
+## Expenditure         7 54 508055.95 279883.12 475295.30 476359.66 276803.09
+## IncomingWeighted    8 54   6965.66   8128.76   4262.52   5180.62   2624.02
+## Incoming            9 54  13632.59  37674.02   5071.00   6465.91   3098.63
+## WeightedDecided    10 54   7437.53   9244.01   4277.98   5313.51   2460.24
+## Decided            11 54  15277.98  40286.23   4877.00   6941.61   2750.96
+## Region*            12 54      4.39      2.37      4.50      4.36      3.71
+## nEmployees         13 54     51.11     37.89     42.71     44.91     20.26
+## Pending            14 54   3651.50   3552.11   2362.50   2949.89   1409.95
+##                        min        max      range skew kurtosis       se
+## Court*                1.00      54.00      53.00 0.00    -1.27     2.14
+## Year               2020.00    2020.00       0.00  NaN      NaN     0.00
+## nJudges               4.67      35.67      31.00 0.95    -0.13     1.13
+## Assistant             6.75      52.67      45.92 1.08     0.33     1.62
+## Judicial.officer      4.00     143.42     139.42 4.59    25.18     2.74
+## Secretary             4.00      50.00      46.00 2.52     9.08     1.04
+## Expenditure      170311.13 1550104.18 1379793.05 1.50     3.05 38087.27
+## IncomingWeighted   1382.42   43076.15   41693.73 2.61     7.05  1106.18
+## Incoming           1782.00  271334.00  269552.00 6.00    37.66  5126.79
+## WeightedDecided    1418.50   45743.39   44324.89 2.56     6.33  1257.95
+## Decided            1660.00  279746.00  278086.00 5.44    31.84  5482.26
+## Region*               1.00       8.00       7.00 0.05    -1.34     0.32
+## nEmployees           15.75     246.08     230.33 2.80    10.76     5.16
+## Pending             653.00   16334.00   15681.00 1.97     3.40   483.38
+##                      Q0.25     Q0.75
+## Court*               14.25     40.75
+## Year               2020.00   2020.00
+## nJudges               9.69     17.19
+## Assistant            12.19     24.52
+## Judicial.officer      8.94     17.62
+## Secretary             7.00     12.00
+## Expenditure      289196.08 655883.98
+## IncomingWeighted   2641.73   6195.70
+## Incoming           3147.25   7566.00
+## WeightedDecided    2665.38   6149.74
+## Decided            3362.00   7357.25
+## Region*               2.00      6.00
+## nEmployees           28.13     51.90
+## Pending            1511.50   3754.75
+## ------------------------------------------------------------ 
+## group: 2021
+##                  vars  n      mean        sd    median   trimmed       mad
+## Court*              1 54     27.50     15.73     27.50     27.50     20.02
+## Year                2 54   2021.00      0.00   2021.00   2021.00      0.00
+## nJudges             3 54     15.13      8.09     12.71     14.09      6.18
+## Assistant           4 54     20.64     11.55     17.62     19.00      8.34
+## Judicial.officer    5 54     17.46     20.07     13.54     13.79      6.73
+## Secretary           6 54     11.58      7.50      9.50     10.47      3.71
+## Expenditure         7 54 500196.56 277214.75 456062.60 459500.18 205893.56
+## IncomingWeighted    8 54   6755.04   8798.85   3964.79   4835.29   2375.89
+## Incoming            9 54  15631.74  53647.45   4982.00   6377.52   2908.86
+## WeightedDecided    10 54   6852.02   8822.63   3976.33   4949.01   2346.83
+## Decided            11 54  15692.69  53556.77   5042.50   6449.18   2827.32
+## Region*            12 54      4.39      2.37      4.50      4.36      3.71
+## nEmployees         13 54     49.67     37.41     41.00     43.30     17.91
+## Pending            14 54   3611.39   3384.06   2546.50   2947.95   1586.38
+##                        min        max      range skew kurtosis       se
+## Court*                1.00      54.00      53.00 0.00    -1.27     2.14
+## Year               2021.00    2021.00       0.00  NaN      NaN     0.00
+## nJudges               5.00      36.00      31.00 1.06     0.21     1.10
+## Assistant             7.00      54.58      47.58 1.27     0.98     1.57
+## Judicial.officer      4.00     143.25     139.25 4.69    25.86     2.73
+## Secretary             4.00      50.58      46.58 2.80    11.14     1.02
+## Expenditure      164467.75 1574331.24 1409863.49 1.89     4.42 37724.15
+## IncomingWeighted   1296.02   53588.60   52292.58 3.39    13.38  1197.37
+## Incoming           1631.00  394457.00  392826.00 6.53    43.06  7300.49
+## WeightedDecided    1302.35   53715.06   52412.71 3.33    13.08  1200.61
+## Decided            1520.00  393359.00  391839.00 6.50    42.81  7288.15
+## Region*               1.00       8.00       7.00 0.05    -1.34     0.32
+## nEmployees           16.00     247.58     231.58 3.04    12.34     5.09
+## Pending             797.00   17332.00   16535.00 2.45     6.52   460.51
+##                      Q0.25     Q0.75
+## Court*               14.25     40.75
+## Year               2021.00   2021.00
+## nJudges               9.19     17.35
+## Assistant            12.23     23.35
+## Judicial.officer      9.00     16.92
+## Secretary             7.00     12.00
+## Expenditure      293551.49 567306.46
+## IncomingWeighted   2600.47   5903.46
+## Incoming           3180.75   7578.00
+## WeightedDecided    2581.64   5969.02
+## Decided            3263.25   7227.00
+## Region*               2.00      6.00
+## nEmployees           28.06     50.94
+## Pending            1651.75   3848.50</code></pre>
+<p>Tento výsledok vieme uložiť do objektu. Ak uložíme sumárne dáta pre celý dataset, tak v objekte bude data frame (psych typ, ale s tým sa dá pracovať). Ak však máme popisné štatistiky rozdelené na základe kategorickej premennej, tak sa nám uloží list.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="štatistika-v-r.html#cb19-1" aria-hidden="true" tabindex="-1"></a>psych_sum_all <span class="ot">&lt;-</span> <span class="fu">describe</span>(sudy, <span class="at">quant =</span> <span class="fu">c</span>(.<span class="dv">25</span>, .<span class="dv">75</span>))</span>
+<span id="cb19-2"><a href="štatistika-v-r.html#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="štatistika-v-r.html#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(psych_sum_all)</span></code></pre></div>
+<pre><code>## [1] &quot;psych&quot;      &quot;describe&quot;   &quot;data.frame&quot;</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="štatistika-v-r.html#cb21-1" aria-hidden="true" tabindex="-1"></a>psych_sum_year <span class="ot">&lt;-</span> <span class="fu">describe</span>(sudy <span class="sc">~</span> Year, <span class="at">quant =</span> <span class="fu">c</span>(.<span class="dv">25</span>, .<span class="dv">75</span>))</span>
+<span id="cb21-2"><a href="štatistika-v-r.html#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="štatistika-v-r.html#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(psych_sum_year)</span></code></pre></div>
+<pre><code>## [1] &quot;psych&quot;      &quot;describeBy&quot;</code></pre>
+<p>Z listu však vieme vybrať jednotlivé data frames a upraviť si ich tak, ako chceme (všimnite si potrebu zmeny na data frame).</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="štatistika-v-r.html#cb23-1" aria-hidden="true" tabindex="-1"></a>psych_sum_all_2020 <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">describe</span>(sudy <span class="sc">~</span> Year, <span class="at">quant =</span> <span class="fu">c</span>(.<span class="dv">25</span>, .<span class="dv">75</span>))[[<span class="dv">1</span>]]) <span class="sc">%&gt;%</span></span>
+<span id="cb23-2"><a href="štatistika-v-r.html#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="at">var =</span> <span class="st">&quot;Stat&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb23-3"><a href="štatistika-v-r.html#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Stat <span class="sc">!=</span> <span class="st">&quot;Year&quot;</span> <span class="sc">&amp;</span> Stat <span class="sc">!=</span> <span class="st">&quot;Region*&quot;</span> <span class="sc">&amp;</span> Stat <span class="sc">!=</span> <span class="st">&quot;Court*&quot;</span>)</span>
+<span id="cb23-4"><a href="štatistika-v-r.html#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="štatistika-v-r.html#cb23-5" aria-hidden="true" tabindex="-1"></a>psych_sum_all_2020</span></code></pre></div>
+<pre><code>##                Stat vars  n         mean            sd       median
+## 1           nJudges    3 54     15.65278      8.289187     13.87500
+## 2         Assistant    4 54     21.32407     11.940406     18.08333
+## 3  Judicial.officer    5 54     17.89815     20.140867     13.50000
+## 4         Secretary    6 54     11.89198      7.655715      9.50000
+## 5       Expenditure    7 54 508055.95352 279883.115363 475295.30000
+## 6  IncomingWeighted    8 54   6965.65770   8128.760348   4262.52050
+## 7          Incoming    9 54  13632.59259  37674.021847   5071.00000
+## 8   WeightedDecided   10 54   7437.53461   9244.010382   4277.97750
+## 9           Decided   11 54  15277.98148  40286.230020   4877.00000
+## 10       nEmployees   13 54     51.11420     37.894253     42.70833
+## 11          Pending   14 54   3651.50000   3552.107085   2362.50000
+##         trimmed           mad           min           max         range
+## 1      14.69886      6.177500      4.666667      35.66667      31.00000
+## 2      19.76894      9.019150      6.750000      52.66667      45.91667
+## 3      14.32008      6.733475      4.000000     143.41667     139.41667
+## 4      10.78220      3.706500      4.000000      50.00000      46.00000
+## 5  476359.65818 276803.087925 170311.130000 1550104.18000 1379793.05000
+## 6    5180.61684   2624.021864   1382.424000   43076.15000   41693.72600
+## 7    6465.90909   3098.634000   1782.000000  271334.00000  269552.00000
+## 8    5313.51184   2460.239042   1418.497000   45743.38800   44324.89100
+## 9    6941.61364   2750.964300   1660.000000  279746.00000  278086.00000
+## 10     44.90909     20.262200     15.750000     246.08333     230.33333
+## 11   2949.88636   1409.952600    653.000000   16334.00000   15681.00000
+##         skew   kurtosis           se       Q0.25        Q0.75
+## 1  0.9460628 -0.1331195     1.128016      9.6875     17.18750
+## 2  1.0803537  0.3297445     1.624883     12.1875     24.52083
+## 3  4.5855853 25.1774227     2.740825      8.9375     17.62500
+## 4  2.5173904  9.0827967     1.041811      7.0000     12.00000
+## 5  1.5020378  3.0472344 38087.267792 289196.0775 655883.98500
+## 6  2.6053640  7.0504504  1106.184172   2641.7320   6195.69500
+## 7  5.9961064 37.6627108  5126.785005   3147.2500   7566.00000
+## 8  2.5578881  6.3258322  1257.950478   2665.3772   6149.73725
+## 9  5.4383834 31.8363287  5482.261512   3362.0000   7357.25000
+## 10 2.7978493 10.7595410     5.156755     28.1250     51.89583
+## 11 1.9668434  3.4017741   483.380548   1511.5000   3754.75000</code></pre>
+</div>
+<div id="deskriptívy-za-využitia-hmisc" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Deskriptívy za využitia <code>Hmisc</code><a href="štatistika-v-r.html#deskriptívy-za-využitia-hmisc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Okrem knižnice <code>psych</code> je možné na kontrolu alebo analýzu popisných štatistík použiť knižnicu <code>Hmisc</code>. Za použitia rovnakej funkcie ako pri <code>psych</code> knižnici - <code>describe</code> (nezabudnite špecifikovať knižnicu prostredníctvom “::”), dostaneme trochu iné informácie v rozdielnom formáte.</p>
+<p><em>Poznámka:</em> Môžete si všimnúť, že po použití knižnice <code>Hmisc</code> nasledujúce príkazy začínam s funkciou <code>unloadNamespace</code>. Je to kvôli tomu, že <code>Hmisc</code> maskuje niektoré funkcie <code>tidyverse</code>, čo znižuje užívateľský komfort pri jej využívaní. <code>unloadNamespace</code> len odloaduje knižnicu <code>Hmisc</code>, aby R ďalej nevyužíval jej funkcie.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="štatistika-v-r.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;Hmisc&quot;</span>) <span class="co">#nainštalujeme knižnicu Hmisc</span></span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="štatistika-v-r.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Hmisc)</span>
+<span id="cb26-2"><a href="štatistika-v-r.html#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="štatistika-v-r.html#cb26-3" aria-hidden="true" tabindex="-1"></a>hmisc_sum_all <span class="ot">&lt;-</span> Hmisc<span class="sc">::</span><span class="fu">describe</span>(sudy)</span></code></pre></div>
+<p>Ako vidíme výsledok sa znova uloží do listu a v rámci elementov listu vieme nájsť ďalšie listy. Tým, že máme rozvetvený list je veľmi náročné z neho spraviť data frame (možné to je napríklad prostredníctvom <code>pastecs</code> knižnice a <code>stat.desc</code> funkcie, ktorá dáva podobný výstup) Pozrime sa ale aspoň na dve premenné a ich popisné štatistiky</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="štatistika-v-r.html#cb27-1" aria-hidden="true" tabindex="-1"></a>hmisc_sum_all[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">8</span>)]</span></code></pre></div>
+<pre><code>## sudy 
+## 
+##  2  Variables      108  Observations
+## --------------------------------------------------------------------------------
+## Court 
+##        n  missing distinct 
+##      108        0       54 
+## 
+## lowest : OS Bánovce nad Bebravou OS Banská Bystrica      OS Bardejov             OS Bratislava I         OS Bratislava II       
+## highest: OS Veľký Krtíš          OS Vranov nad Topľou    OS Zvolen               OS Žiar nad Hronom      OS Žilina              
+## --------------------------------------------------------------------------------
+## IncomingWeighted 
+##        n  missing distinct     Info     Mean      Gmd      .05      .10 
+##      108        0      108        1     6860     6848     1701     1941 
+##      .25      .50      .75      .90      .95 
+##     2620     4114     6129    16247    24030 
+## 
+## lowest :  1296.019  1334.254  1382.424  1614.312  1632.007
+## highest: 29329.711 29554.983 31358.460 43076.150 53588.600
+## --------------------------------------------------------------------------------</code></pre>
+<p>Okrem niektorých základných informácií <code>describe</code> funkcia z <code>Hmisc</code> knižnice vypočíta aj netradičnejšie štatistiky:</p>
+<ul>
+<li><code>Info</code> - z dokumentácie sa môžeme dozvedieť že:</li>
+</ul>
+<p><em>“For numeric variables, describe adds an item called Info which is a relative information measure using the relative efficiency of a proportional odds/Wilcoxon test on the variable relative to the same test on a variable that has no ties. Info is related to how continuous the variable is, and ties are less harmful the more untied values there are. The formula for Info is one minus the sum of the cubes of relative frequencies of values divided by one minus the square of the reciprocal of the sample size. The lowest information comes from a variable having only one unique values following by a highly skewed binary variable. Info is reported to two decimal places.”</em></p>
+<ul>
+<li><code>gmd</code> - Gini mean difference - robustný ukazovateľ rozptylu hodnôt, je počítaný ako priemerný absolútny rozdiel medzi hocijakými dvojicami pozorovaní. Väčšie hodnoty <code>gmd</code> ukazujú na väčší rozptyl v rámci distribúcie hodnôt.</li>
+</ul>
+</div>
+<div id="vizualizácia-niektorých-popisných-štatistík" class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> Vizualizácia niektorých popisných štatistík<a href="štatistika-v-r.html#vizualizácia-niektorých-popisných-štatistík" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Pri vizualizáciách, ktoré diagnostikujú jednotlivé premenné sa najviac využívajú tie, ktoré sa pozerajú na distribúcie (dôvodom sú asumpcie parametrických modelov). Dve sme si už v predošlej časti ukázali - <code>boxplot</code> a <code>histogram</code>. Okrem toho môže byť nápomocný ešte <strong>qq-plot</strong>.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="štatistika-v-r.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unloadNamespace</span>(<span class="st">&quot;Hmisc&quot;</span>)</span>
+<span id="cb29-2"><a href="štatistika-v-r.html#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb29-3"><a href="štatistika-v-r.html#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="štatistika-v-r.html#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sudy, <span class="fu">aes</span>(<span class="at">y=</span>Incoming)) <span class="sc">+</span></span>
+<span id="cb29-5"><a href="štatistika-v-r.html#cb29-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p>Vidíme, že takýto graf nám veľa neukazuje, okrem toho, že je zopár vzdialených pozorovaní, ktoré sa veľmi líšia od zvyšku distribúcie. Skúsme si ho upraviť.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="štatistika-v-r.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sudy, <span class="fu">aes</span>(<span class="at">y=</span>Incoming)) <span class="sc">+</span></span>
+<span id="cb30-2"><a href="štatistika-v-r.html#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb30-3"><a href="štatistika-v-r.html#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_log10</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p>Toto je už lepšie. Skúsme si boxploty ešte rozdeliť po územných obvodoch krajských súdov a ukázať si vzdialené pozorovania.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="štatistika-v-r.html#cb31-1" aria-hidden="true" tabindex="-1"></a>findoutlier <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb31-2"><a href="štatistika-v-r.html#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(x <span class="sc">&lt;</span> <span class="fu">quantile</span>(x, .<span class="dv">25</span>) <span class="sc">-</span> <span class="fl">1.5</span><span class="sc">*</span><span class="fu">IQR</span>(x) <span class="sc">|</span> x <span class="sc">&gt;</span> <span class="fu">quantile</span>(x, .<span class="dv">75</span>) <span class="sc">+</span> <span class="fl">1.5</span><span class="sc">*</span><span class="fu">IQR</span>(x))</span>
+<span id="cb31-3"><a href="štatistika-v-r.html#cb31-3" aria-hidden="true" tabindex="-1"></a>} <span class="co"># vytvorme si funkciu na hľadanie vzdialených pozorovaní</span></span>
+<span id="cb31-4"><a href="štatistika-v-r.html#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-5"><a href="štatistika-v-r.html#cb31-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-6"><a href="štatistika-v-r.html#cb31-6" aria-hidden="true" tabindex="-1"></a>sudy_box <span class="ot">&lt;-</span> sudy <span class="sc">%&gt;%</span></span>
+<span id="cb31-7"><a href="štatistika-v-r.html#cb31-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">group_by</span>(Region) <span class="sc">%&gt;%</span></span>
+<span id="cb31-8"><a href="štatistika-v-r.html#cb31-8" aria-hidden="true" tabindex="-1"></a>        <span class="fu">mutate</span>(<span class="at">outlier =</span> <span class="fu">ifelse</span>(<span class="fu">findoutlier</span>(<span class="fu">log10</span>(Incoming)), Court, <span class="cn">NA</span>)) <span class="co">#vytvoríme premennú s Názvom súdu, ak ide o vzdialené pozorovanie za použitia log10</span></span>
+<span id="cb31-9"><a href="štatistika-v-r.html#cb31-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-10"><a href="štatistika-v-r.html#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb31-11"><a href="štatistika-v-r.html#cb31-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-12"><a href="štatistika-v-r.html#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sudy_box, <span class="fu">aes</span>(<span class="at">y=</span>Incoming, <span class="at">x =</span> Region)) <span class="sc">+</span></span>
+<span id="cb31-13"><a href="štatistika-v-r.html#cb31-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb31-14"><a href="štatistika-v-r.html#cb31-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_log10</span>() <span class="sc">+</span></span>
+<span id="cb31-15"><a href="štatistika-v-r.html#cb31-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label=</span>outlier)) <span class="sc">+</span></span>
+<span id="cb31-16"><a href="štatistika-v-r.html#cb31-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.3</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p>Podobné veci vieme samozrejme robiť aj pri histograme.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="štatistika-v-r.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sudy, <span class="fu">aes</span>(<span class="at">x =</span> Incoming)) <span class="sc">+</span></span>
+<span id="cb32-2"><a href="štatistika-v-r.html#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-21-1.png" width="672" />
+Aj pri histograme vidíme, že existujú vzdialené pozorovania, ktoré výrazne krivia distribúciu. Skúsme zopár úprav.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="štatistika-v-r.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sudy, <span class="fu">aes</span>(<span class="at">x =</span> Incoming)) <span class="sc">+</span></span>
+<span id="cb33-2"><a href="štatistika-v-r.html#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
+<span id="cb33-3"><a href="štatistika-v-r.html#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="co"># logaritmus dobre funguje pri pravom zošikmení distribúcie - napr. platy</span></span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="štatistika-v-r.html#cb34-1" aria-hidden="true" tabindex="-1"></a>sudy_box <span class="ot">&lt;-</span> sudy <span class="sc">%&gt;%</span> </span>
+<span id="cb34-2"><a href="štatistika-v-r.html#cb34-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">mutate</span>(<span class="at">outlier2 =</span> <span class="fu">ifelse</span>(<span class="fu">findoutlier</span>(Incoming), <span class="dv">1</span>, <span class="dv">0</span>)) <span class="co"># skúsme sa pozrieť na distribúciu bez vzdialených pozorovaní</span></span>
+<span id="cb34-3"><a href="štatistika-v-r.html#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-4"><a href="štatistika-v-r.html#cb34-4" aria-hidden="true" tabindex="-1"></a>sudy_box <span class="sc">%&gt;%</span> </span>
+<span id="cb34-5"><a href="štatistika-v-r.html#cb34-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(outlier2 <span class="sc">==</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb34-6"><a href="štatistika-v-r.html#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Incoming)) <span class="sc">+</span></span>
+<span id="cb34-7"><a href="štatistika-v-r.html#cb34-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-22-2.png" width="672" />
+Posledným náhľadom na dáta môžu byť QQ grafy, ktoré sa často využívajú pri diagonostike premenných vstupujúcich do modelov. Princíp tejto metódy spočíva v tom, že na jednu os nanášame kvantily hypotetického normálneho rozdelenia a na druhú os kvantily skúmaného súboru. V prípade normálneho rozdelenia ležia všetky body grafu na priamke.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="štatistika-v-r.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sudy, <span class="fu">aes</span>(<span class="at">sample =</span> Incoming)) <span class="sc">+</span></span>
+<span id="cb35-2"><a href="štatistika-v-r.html#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_qq</span>() <span class="sc">+</span></span>
+<span id="cb35-3"><a href="štatistika-v-r.html#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_qq_line</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="štatistika-v-r.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sudy, <span class="fu">aes</span>(<span class="at">sample =</span> <span class="fu">log10</span>(Incoming))) <span class="sc">+</span></span>
+<span id="cb36-2"><a href="štatistika-v-r.html#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_qq</span>() <span class="sc">+</span></span>
+<span id="cb36-3"><a href="štatistika-v-r.html#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_qq_line</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-23-2.png" width="672" /></p>
+</div>
+<div id="t-test" class="section level2 hasAnchor" number="6.6">
+<h2><span class="header-section-number">6.6</span> T-test<a href="štatistika-v-r.html#t-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>T-test je štatistický test, ktorý nám pomáha overiť dve hypotézy:</p>
+<ol style="list-style-type: decimal">
+<li>či má normálne rozdelenie náhodne vybranej vzorky určitú konkrétnu strednú hodnotu (priemer)</li>
+<li>či dve normálne rozdelenia majúce rovnaký rozptyl, z ktorých pochádzajú dve nezávislé náhodne vybrané vzorky, majú rovnakú strednú hodnotu (priemer)</li>
+</ol>
+<p>Zjednodušene sa t-test používa k porovnaniu toho, či sa výsledky merania jednej skupiny štatisticky líšia od výsledkov merania druhej skupiny (a teda, či nejde len o náhodný rozdiel).</p>
+<p>Existujú tri rôzne druhy t-testu, ktoré vychádzajú z toho, ktorú z vyššie formulovaných hypotéz chceme testovať:</p>
+<ol style="list-style-type: decimal">
+<li>jednovýberový t-test (one-sample)</li>
+<li>dvojvýberový t-test (two-sample)</li>
+<li>párový t-test (paired)</li>
+</ol>
+<p>Pri využívaní t-testu treba mať na pamäti, že dáta musia spĺňať asumpcie testu ako napríklad normálna distibúcia premenných, homogénnosť rozptylov, dostatočne veľká vzorka a podobne. Tieto tu nebudeme overovať.</p>
+<div id="jednovýberový-t-test" class="section level3 hasAnchor" number="6.6.1">
+<h3><span class="header-section-number">6.6.1</span> Jednovýberový t-test<a href="štatistika-v-r.html#jednovýberový-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Najprv si načítame dáta, s ktorými budeme pracovať.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="štatistika-v-r.html#cb37-1" aria-hidden="true" tabindex="-1"></a>ess_sk <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;./data/ESS10.csv&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb37-2"><a href="štatistika-v-r.html#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(cntry, name, essround, proddate, edition, idno, dweight, pweight, polintr, trstprl, trstlgl, trstplt, stfdem, secgrdec, gndr) <span class="sc">%&gt;%</span></span>
+<span id="cb37-3"><a href="štatistika-v-r.html#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(cntry <span class="sc">==</span> <span class="st">&quot;SK&quot;</span>)</span>
+<span id="cb37-4"><a href="štatistika-v-r.html#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-5"><a href="štatistika-v-r.html#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ess_sk)</span></code></pre></div>
+<pre><code>## # A tibble: 6 x 15
+##   cntry name       essro~1 prodd~2 edition  idno dweight pweight polintr trstprl
+##   &lt;chr&gt; &lt;chr&gt;        &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+## 1 SK    ESS10e01_2      10 28.06.~     1.2 10020   1.12    0.324       4       0
+## 2 SK    ESS10e01_2      10 28.06.~     1.2 10032   0.796   0.324       2       9
+## 3 SK    ESS10e01_2      10 28.06.~     1.2 10033   0.713   0.324       3       1
+## 4 SK    ESS10e01_2      10 28.06.~     1.2 10036   1.26    0.324       2       6
+## 5 SK    ESS10e01_2      10 28.06.~     1.2 10049   1.45    0.324       2       5
+## 6 SK    ESS10e01_2      10 28.06.~     1.2 10070   2.08    0.324       3       4
+## # ... with 5 more variables: trstlgl &lt;dbl&gt;, trstplt &lt;dbl&gt;, stfdem &lt;dbl&gt;,
+## #   secgrdec &lt;dbl&gt;, gndr &lt;dbl&gt;, and abbreviated variable names 1: essround,
+## #   2: proddate
+## # i Use `colnames()` to see all variable names</code></pre>
+<p>Odstráňme odpovede, ktoré v analýze nepotrebujeme - No answer, Refusal a podobne (v naozajstnej analýze tieto odpovede tiež prinášajú informačnú hodnotu, ale tu by nám to zbytočne komplikovali) a spravíme z <code>gndr</code> premennej faktor s levelmi “male” a “female”.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="štatistika-v-r.html#cb39-1" aria-hidden="true" tabindex="-1"></a>ess_sample <span class="ot">&lt;-</span> ess_sk <span class="sc">%&gt;%</span></span>
+<span id="cb39-2"><a href="štatistika-v-r.html#cb39-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(cntry, polintr<span class="sc">:</span>gndr) <span class="sc">%&gt;%</span> </span>
+<span id="cb39-3"><a href="štatistika-v-r.html#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(polintr <span class="sc">&lt;</span> <span class="dv">7</span>, trstprl <span class="sc">&lt;</span> <span class="dv">11</span>, trstlgl <span class="sc">&lt;</span> <span class="dv">11</span>, trstplt <span class="sc">&lt;</span> <span class="dv">11</span>, stfdem <span class="sc">&lt;</span> <span class="dv">11</span>, secgrdec <span class="sc">&lt;</span> <span class="dv">6</span>, gndr <span class="sc">&lt;</span> <span class="dv">3</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb39-4"><a href="štatistika-v-r.html#cb39-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">gndr =</span> <span class="fu">factor</span>(gndr, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;male&quot;</span>, <span class="st">&quot;female&quot;</span>)))</span></code></pre></div>
+<p>Pozrime sa, či slovenská spoločnosť verí konšpiráciám (veľmi zjednodušene pre účely príkladu). Použijeme na to premennú <code>secgrdec</code>, ktorá je kódovaná nasledovne:</p>
+<p>Small secret group of people r … or decisions in world politics
+K1 How much do you agree or disagree with the following statements? A small secret group of people is responsible for making all major decisions in world politics.</p>
+<p>Value Category
+1 Agree strongly
+2 Agree
+3 Neither agree nor disagree
+4 Disagree
+5 Disagree strongly
+7 Refusal<em>
+8 Don’t know</em>
+9 No answer*</p>
+<p>Stredná hodnota je 3, všetko pod 3 považujme za konšpiračný postoj.</p>
+<p>V R sa t-test robí pomocou <code>t.test</code> funkcie. Od toho, aký typ t-testu chcete robiť záleží aj zápis argumentov v tejto funkcii. Pri jednovýberovom t-teste treba ako argument doplniť premennú, ktorá nás zaujíma a hodnotu, od ktorej testujeme, či je rozdielny priemer tejto sledovanej premennej.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="štatistika-v-r.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(ess_sample<span class="sc">$</span>secgrdec, <span class="at">mu =</span> <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## 
+##  One Sample t-test
+## 
+## data:  ess_sample$secgrdec
+## t = -1.8867, df = 1191, p-value = 0.05944
+## alternative hypothesis: true mean is not equal to 3
+## 95 percent confidence interval:
+##  2.864807 3.002643
+## sample estimates:
+## mean of x 
+##  2.933725</code></pre>
+<p>Test ukazuje, že priemer je nižší ako 3, avšak p-value testu je nad najčastejšie stanovenou hranicou (0.05). Tým pádom môžeme povedať, nezamietame nulovú hypotézu t-testu, že priemer sledovanej premennej je rovnaký ako nami definovaná hodnota.</p>
+</div>
+<div id="dvojvýberový-t-test" class="section level3 hasAnchor" number="6.6.2">
+<h3><span class="header-section-number">6.6.2</span> Dvojvýberový t-test<a href="štatistika-v-r.html#dvojvýberový-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Teraz sa pozrime, či je rozdiel v akceptácií vyššie spomenutého výroku medzi ženami a mužmi. Pri definovaní argumentov použijeme zápis, ktorý sa často používa pri štatistických funkciách. Najprv sa definuje závislá premenná, v tomtot prípade <code>secgrdec</code>. Za závislou premennou nasleduje symbol <code>~</code>, za ktorý sa definujú nezávislé premenné. V našom prípade ide o <code>gndr</code>. Nakoniec sa definujú dáta, z ktorých premenné pochádzajú.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="štatistika-v-r.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(secgrdec <span class="sc">~</span> gndr, <span class="at">data =</span> ess_sample)</span></code></pre></div>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  secgrdec by gndr
+## t = 0.18326, df = 1168.7, p-value = 0.8546
+## alternative hypothesis: true difference in means between group male and group female is not equal to 0
+## 95 percent confidence interval:
+##  -0.1253946  0.1512328
+## sample estimates:
+##   mean in group male mean in group female 
+##             2.940455             2.927536</code></pre>
+<p>Priemer oboch skupín je približne rovnaký a ako vidíme p-value je vysoko nad hranicou 0.05. Tým pádom môžeme povedať, že medzi mužmi a ženami nie je rozdiel v ich postoji k meranej konšpirácii. Skúsme si vizualizovať t-test prostredníctvom zobrazenia skupinových priemerov a ich štandardných chýb:</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="štatistika-v-r.html#cb44-1" aria-hidden="true" tabindex="-1"></a>ess_sample <span class="sc">%&gt;%</span> </span>
+<span id="cb44-2"><a href="štatistika-v-r.html#cb44-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(gndr) <span class="sc">%&gt;%</span> </span>
+<span id="cb44-3"><a href="štatistika-v-r.html#cb44-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">group_mean =</span> <span class="fu">mean</span>(secgrdec, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">se =</span> <span class="fu">sd</span>(secgrdec, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="fu">length</span>(secgrdec))) <span class="sc">%&gt;%</span> </span>
+<span id="cb44-4"><a href="štatistika-v-r.html#cb44-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> gndr, <span class="at">y =</span> group_mean, <span class="at">color =</span> gndr)) <span class="sc">+</span></span>
+<span id="cb44-5"><a href="štatistika-v-r.html#cb44-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb44-6"><a href="štatistika-v-r.html#cb44-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> group_mean <span class="sc">-</span> se, <span class="at">ymax =</span> group_mean <span class="sc">+</span> se), <span class="at">width=</span>.<span class="dv">05</span>) <span class="sc">+</span></span>
+<span id="cb44-7"><a href="štatistika-v-r.html#cb44-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+</div>
+<div id="párový-t-test" class="section level3 hasAnchor" number="6.6.3">
+<h3><span class="header-section-number">6.6.3</span> párový t-test<a href="štatistika-v-r.html#párový-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Tento t-test sa často využíva na overenie toho, či nami zvolený treatment má na skupinu efekt. Preto potrebujeme dáta, ktoré určitú premennú merajú pred zásahom a potom aj po zásahu. V reči R potrebujeme dva vektory rovnakej dĺžky a rovnakého poradia pre jednotlivé pozorovania. V používanom datasete takéto dáta nemáme, preto si pre príklad dáta vytvoríme.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="štatistika-v-r.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Váha ľudí pred experimentálnym zásahom (napr. dieta)</span></span>
+<span id="cb45-2"><a href="štatistika-v-r.html#cb45-2" aria-hidden="true" tabindex="-1"></a>before <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">89</span>, <span class="dv">78</span>, <span class="dv">82</span>, <span class="dv">65</span>, <span class="dv">101</span>, <span class="dv">55</span>, <span class="dv">93</span>, <span class="dv">72</span>, <span class="dv">51</span>, <span class="dv">84</span>)</span>
+<span id="cb45-3"><a href="štatistika-v-r.html#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Váha ľudí po experimentálnom zásahu</span></span>
+<span id="cb45-4"><a href="štatistika-v-r.html#cb45-4" aria-hidden="true" tabindex="-1"></a>after <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">85</span>, <span class="dv">77</span>, <span class="dv">82</span>, <span class="dv">60</span>, <span class="dv">97</span>, <span class="dv">53</span>, <span class="dv">91</span>, <span class="dv">69</span>, <span class="dv">52</span>, <span class="dv">79</span>)</span>
+<span id="cb45-5"><a href="štatistika-v-r.html#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Vytvoríme data frame</span></span>
+<span id="cb45-6"><a href="štatistika-v-r.html#cb45-6" aria-hidden="true" tabindex="-1"></a>my_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>( </span>
+<span id="cb45-7"><a href="štatistika-v-r.html#cb45-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">group =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;before&quot;</span>, <span class="st">&quot;after&quot;</span>), <span class="at">each =</span> <span class="dv">10</span>),</span>
+<span id="cb45-8"><a href="štatistika-v-r.html#cb45-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">weight =</span> <span class="fu">c</span>(before,  after)</span>
+<span id="cb45-9"><a href="štatistika-v-r.html#cb45-9" aria-hidden="true" tabindex="-1"></a>                )</span></code></pre></div>
+<p>Pri takomto datasete potom môžeme použíť párový t-test. Do argumentov však musím zadať <code>paired = TRUE</code></p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="štatistika-v-r.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(weight <span class="sc">~</span> group, <span class="at">data =</span> my_data, <span class="at">paired =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## 
+##  Paired t-test
+## 
+## data:  weight by group
+## t = -3.8224, df = 9, p-value = 0.004075
+## alternative hypothesis: true mean difference is not equal to 0
+## 95 percent confidence interval:
+##  -3.979558 -1.020442
+## sample estimates:
+## mean difference 
+##            -2.5</code></pre>
+<p>Výsledok tohto testu nám hovorí, že existuje štatisticky signifikantný rozdiel medzi váhou participantov pred experimentálnym zásahom a váhou po zásahu. V priemere ide o úbytok 2,5 kg.</p>
+<p>Tento test sa dá urobiť aj iným spôsobom (podobne ako dvojvýberový t-test), pričom použijeme subset jednotlivých kategórií.</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="štatistika-v-r.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(before, after, <span class="at">paired =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## 
+##  Paired t-test
+## 
+## data:  before and after
+## t = 3.8224, df = 9, p-value = 0.004075
+## alternative hypothesis: true mean difference is not equal to 0
+## 95 percent confidence interval:
+##  1.020442 3.979558
+## sample estimates:
+## mean difference 
+##             2.5</code></pre>
+</div>
+</div>
+<div id="anova" class="section level2 hasAnchor" number="6.7">
+<h2><span class="header-section-number">6.7</span> ANOVA<a href="štatistika-v-r.html#anova" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Ak sa zaujímame o rozdiely medzi viac ako dvoma skupinami (a teda 2 a viac priemermi), tak môžeme použiť Analysis of Variance test, tzv. ANOVA. Nasledujúci príklad bude jednoduchá “one-way” ANOVA - jedna závislá premenná a jedna nezávislá premenná. Existuje viacero druhov ANOVA, avšak tie tu nebudeme rozoberať.</p>
+<p>Pre príklad použijeme <code>airquality</code> dáta. Načítajme si dáta a pozrime sa na ne.</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="štatistika-v-r.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(airquality)</span>
+<span id="cb50-2"><a href="štatistika-v-r.html#cb50-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-3"><a href="štatistika-v-r.html#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(airquality)</span></code></pre></div>
+<pre><code>##   Ozone Solar.R Wind Temp Month Day
+## 1    41     190  7.4   67     5   1
+## 2    36     118  8.0   72     5   2
+## 3    12     149 12.6   74     5   3
+## 4    18     313 11.5   62     5   4
+## 5    NA      NA 14.3   56     5   5
+## 6    28      NA 14.9   66     5   6</code></pre>
+<p>ANOVA sa v R spúšta prostredíctvom <code>aov</code> funkcie a jej najjednochší zápis vyzerá rovnako ak pri t-teste. Musíme definovať závislú a nezávislú premennú a povedať funkcii, ktorý objekt (dataset) má použiť. Spustíme ANOVA a na výsledky sa pozrieme prostredníctvom funkcie <code>summary</code>.</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="štatistika-v-r.html#cb52-1" aria-hidden="true" tabindex="-1"></a>anova1 <span class="ot">&lt;-</span> <span class="fu">aov</span>(Temp <span class="sc">~</span> Month, <span class="at">data=</span>airquality)</span>
+<span id="cb52-2"><a href="štatistika-v-r.html#cb52-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-3"><a href="štatistika-v-r.html#cb52-3" aria-hidden="true" tabindex="-1"></a>anova1</span></code></pre></div>
+<pre><code>## Call:
+##    aov(formula = Temp ~ Month, data = airquality)
+## 
+## Terms:
+##                     Month Residuals
+## Sum of Squares   2413.042 11204.840
+## Deg. of Freedom         1       151
+## 
+## Residual standard error: 8.614188
+## Estimated effects may be unbalanced</code></pre>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="štatistika-v-r.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anova1)</span></code></pre></div>
+<pre><code>##              Df Sum Sq Mean Sq F value       Pr(&gt;F)    
+## Month         1   2413  2413.0   32.52 0.0000000603 ***
+## Residuals   151  11205    74.2                         
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Znova, najdôležitejšia informácia v tomto výsledku je F value a k nej prislúchajúca p-value. Keď je p-value nižšia ako naša definovaná hranice štatistickej významnosti (0,05 v našom prípade), tak môžeme povedať, že existuje štatisticky signifikantný rozdiel medzi priemermi skupín. V našom prípade je p-value nižšia ako 0,05, čo znamená, že môžeme zamietnuť našu nulovú hypotézu, ktorá hovorí o tom, že neexistuje rozdiel medzi priemermi skupín.</p>
+<p>Ak chceme ANOVA vizualizovať, tak môžeme takisto ako pri t-teste, zobraziť priemery jednotlivých skupín z ich štandradnými chybami.</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="štatistika-v-r.html#cb56-1" aria-hidden="true" tabindex="-1"></a>anova_sum <span class="ot">&lt;-</span> airquality <span class="sc">%&gt;%</span> </span>
+<span id="cb56-2"><a href="štatistika-v-r.html#cb56-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Month) <span class="sc">%&gt;%</span> </span>
+<span id="cb56-3"><a href="štatistika-v-r.html#cb56-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">mean_temp =</span> <span class="fu">mean</span>(Temp), <span class="at">sd =</span> <span class="fu">sd</span>(Temp), <span class="at">se =</span> sd<span class="sc">/</span><span class="fu">sqrt</span>(<span class="fu">length</span>(Temp)))</span>
+<span id="cb56-4"><a href="štatistika-v-r.html#cb56-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-5"><a href="štatistika-v-r.html#cb56-5" aria-hidden="true" tabindex="-1"></a>anova_sum</span></code></pre></div>
+<pre><code>## # A tibble: 5 x 4
+##   Month mean_temp    sd    se
+##   &lt;int&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1     5      65.5  6.85 1.23 
+## 2     6      79.1  6.60 1.20 
+## 3     7      83.9  4.32 0.775
+## 4     8      84.0  6.59 1.18 
+## 5     9      76.9  8.36 1.53</code></pre>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="štatistika-v-r.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> anova_sum,</span>
+<span id="cb58-2"><a href="štatistika-v-r.html#cb58-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Month,</span>
+<span id="cb58-3"><a href="štatistika-v-r.html#cb58-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> mean_temp)) <span class="sc">+</span></span>
+<span id="cb58-4"><a href="štatistika-v-r.html#cb58-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean_temp <span class="sc">-</span> se, <span class="at">ymax =</span> mean_temp <span class="sc">+</span> se), <span class="at">width =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb58-5"><a href="štatistika-v-r.html#cb58-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb58-6"><a href="štatistika-v-r.html#cb58-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb58-7"><a href="štatistika-v-r.html#cb58-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
+</div>
+<div id="chi-square-test-nezávislosti" class="section level2 hasAnchor" number="6.8">
+<h2><span class="header-section-number">6.8</span> Chi-square test nezávislosti<a href="štatistika-v-r.html#chi-square-test-nezávislosti" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Chi-square test nezávislosti nám dáva odpoveď na otázku, či sú dve kategorické premenné na sebe nezávislé alebo nie. Pri dvoch kategorických premenných máme počty jednotlivých hodnôt v rámci prieniku kategórií. Už samotná cross-tabuľka nám dáva ideu, či sú dve kategorické premenné na sebe závislé. Chi-square test nezávisloti nám to môže aj štatisticky potvrdiť (prípadne vyvrátiť).</p>
+<p>Na ukážku použijeme znova ESS dataset a pozrieme sa, či sú záujem o politiku a spokojnosť s demokraciou nejak previazané. Chi-square sa dá spraviť dvoma základnými spôsobmi:</p>
+<ol style="list-style-type: decimal">
+<li>za použitia <code>chisq.test</code> funkcie</li>
+<li>za použitia <code>crosstab</code> funkcie z knižnice <code>descr</code></li>
+</ol>
+<p>Vyskúšajme si teda spraviť tento test.</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="štatistika-v-r.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(ess_sample<span class="sc">$</span>polintr, ess_sample<span class="sc">$</span>stfdem)</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test
+## 
+## data:  ess_sample$polintr and ess_sample$stfdem
+## X-squared = 90.128, df = 30, p-value = 0.00000006281</code></pre>
+<p>p-value je pod hranicou štatistickej signifikantnosti (0,05), preto zamietame nulovú hypotézu, že premenné sú na sebe nezávislé a môžeme povedať, že medzi nimi je nejaký vzťah. Z takto prevedeného testu ale nevieme povedať aký. Nainštalujme a načitajme si knižnicu <code>descr</code> a pozrime sa v analýze na viac detailov.</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="štatistika-v-r.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(descr)</span></span>
+<span id="cb61-2"><a href="štatistika-v-r.html#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(descr)</span>
+<span id="cb61-3"><a href="štatistika-v-r.html#cb61-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-4"><a href="štatistika-v-r.html#cb61-4" aria-hidden="true" tabindex="-1"></a><span class="fu">crosstab</span>(ess_sample<span class="sc">$</span>polintr, ess_sample<span class="sc">$</span>stfdem, <span class="at">chisq =</span> T, <span class="at">plot =</span> T)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
+<pre><code>##    Cell Contents 
+## |-------------------------|
+## |                   Count | 
+## |-------------------------|
+## 
+## ========================================================================================================
+##                       ess_sample$stfdem
+## ess_sample$polintr       0      1      2      3      4      5      6      7      8      9     10   Total
+## --------------------------------------------------------------------------------------------------------
+## 1                       10      4      9      6      1     11      4      9      6      5      0      65
+## --------------------------------------------------------------------------------------------------------
+## 2                       35     15     46     56     65     76     41     48     38     20     20     460
+## --------------------------------------------------------------------------------------------------------
+## 3                       57     29     44     70     63     82     42     49     32      8     10     486
+## --------------------------------------------------------------------------------------------------------
+## 4                       46     18      9     24     22     16     14     10     15      3      4     181
+## --------------------------------------------------------------------------------------------------------
+## Total                  148     66    108    156    151    185    101    116     91     36     34    1192
+## ========================================================================================================
+## 
+## Statistics for All Table Factors
+## 
+## Pearson&#39;s Chi-squared test 
+## ------------------------------------------------------------
+## Chi^2 = 90.12754      d.f. = 30      p = 0.0000000628 
+## 
+##         Minimum expected frequency: 1.854027 
+## Cells with Expected Frequency &lt; 5: 4 of 44 (9.090909%)</code></pre>
+<p>Stále je tabuľka a graf málo čitateľný, skúsme zopár úprav.</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="štatistika-v-r.html#cb63-1" aria-hidden="true" tabindex="-1"></a>ess_sample <span class="ot">&lt;-</span> ess_sample <span class="sc">%&gt;%</span></span>
+<span id="cb63-2"><a href="štatistika-v-r.html#cb63-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">polintr2 =</span> <span class="fu">factor</span>(polintr, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Very interested&quot;</span>, <span class="st">&quot;Quite interested&quot;</span>, <span class="st">&quot;Hardly interested&quot;</span>, <span class="st">&quot;Not at all interested&quot;</span>), <span class="at">ordered  =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb63-3"><a href="štatistika-v-r.html#cb63-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-4"><a href="štatistika-v-r.html#cb63-4" aria-hidden="true" tabindex="-1"></a><span class="fu">crosstab</span>(ess_sample<span class="sc">$</span>polintr2, ess_sample<span class="sc">$</span>stfdem, <span class="at">chisq =</span> T, <span class="at">plot =</span> T)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
+<pre><code>##    Cell Contents 
+## |-------------------------|
+## |                   Count | 
+## |-------------------------|
+## 
+## ===========================================================================================================
+##                          ess_sample$stfdem
+## ess_sample$polintr2         0      1      2      3      4      5      6      7      8      9     10   Total
+## -----------------------------------------------------------------------------------------------------------
+## Very interested            10      4      9      6      1     11      4      9      6      5      0      65
+## -----------------------------------------------------------------------------------------------------------
+## Quite interested           35     15     46     56     65     76     41     48     38     20     20     460
+## -----------------------------------------------------------------------------------------------------------
+## Hardly interested          57     29     44     70     63     82     42     49     32      8     10     486
+## -----------------------------------------------------------------------------------------------------------
+## Not at all interested      46     18      9     24     22     16     14     10     15      3      4     181
+## -----------------------------------------------------------------------------------------------------------
+## Total                     148     66    108    156    151    185    101    116     91     36     34    1192
+## ===========================================================================================================
+## 
+## Statistics for All Table Factors
+## 
+## Pearson&#39;s Chi-squared test 
+## ------------------------------------------------------------
+## Chi^2 = 90.12754      d.f. = 30      p = 0.0000000628 
+## 
+##         Minimum expected frequency: 1.854027 
+## Cells with Expected Frequency &lt; 5: 4 of 44 (9.090909%)</code></pre>
+<p>To už je lepšie, ale stále sa s tým dá niečo robiť.</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="štatistika-v-r.html#cb65-1" aria-hidden="true" tabindex="-1"></a>ess_sample <span class="ot">&lt;-</span> ess_sample <span class="sc">%&gt;%</span></span>
+<span id="cb65-2"><a href="štatistika-v-r.html#cb65-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">polintr3 =</span> <span class="fu">if_else</span>(polintr2 <span class="sc">==</span> <span class="st">&quot;Very interested&quot;</span> <span class="sc">|</span> polintr2 <span class="sc">==</span> <span class="st">&quot;Quite interested&quot;</span>, <span class="st">&quot;Interested&quot;</span>, <span class="st">&quot;Not interested&quot;</span>),</span>
+<span id="cb65-3"><a href="štatistika-v-r.html#cb65-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">stfdem2 =</span> <span class="fu">factor</span>(<span class="fu">case_when</span>(stfdem <span class="sc">&lt;=</span> <span class="dv">3</span> <span class="sc">~</span> <span class="st">&quot;Dissatisfied&quot;</span>,</span>
+<span id="cb65-4"><a href="štatistika-v-r.html#cb65-4" aria-hidden="true" tabindex="-1"></a>                                    stfdem <span class="sc">&gt;</span> <span class="dv">3</span> <span class="sc">&amp;</span> stfdem <span class="sc">&lt;</span> <span class="dv">7</span> <span class="sc">~</span> <span class="st">&quot;Neutral&quot;</span>,</span>
+<span id="cb65-5"><a href="štatistika-v-r.html#cb65-5" aria-hidden="true" tabindex="-1"></a>                                    stfdem <span class="sc">&gt;=</span> <span class="dv">7</span> <span class="sc">~</span> <span class="st">&quot;Satisfied&quot;</span>),</span>
+<span id="cb65-6"><a href="štatistika-v-r.html#cb65-6" aria-hidden="true" tabindex="-1"></a>                          <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Dissatisfied&quot;</span>, <span class="st">&quot;Neutral&quot;</span>, <span class="st">&quot;Satisfied&quot;</span> <span class="ot">=</span> <span class="st">&quot;Satisfied&quot;</span>),</span>
+<span id="cb65-7"><a href="štatistika-v-r.html#cb65-7" aria-hidden="true" tabindex="-1"></a>                          <span class="at">ordered =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb65-8"><a href="štatistika-v-r.html#cb65-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-9"><a href="štatistika-v-r.html#cb65-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-10"><a href="štatistika-v-r.html#cb65-10" aria-hidden="true" tabindex="-1"></a><span class="fu">crosstab</span>(ess_sample<span class="sc">$</span>polintr3, ess_sample<span class="sc">$</span>stfdem2,</span>
+<span id="cb65-11"><a href="štatistika-v-r.html#cb65-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">chisq =</span> T,</span>
+<span id="cb65-12"><a href="štatistika-v-r.html#cb65-12" aria-hidden="true" tabindex="-1"></a>         <span class="at">expected =</span> T,</span>
+<span id="cb65-13"><a href="štatistika-v-r.html#cb65-13" aria-hidden="true" tabindex="-1"></a>         <span class="at">prop.c =</span> T, </span>
+<span id="cb65-14"><a href="štatistika-v-r.html#cb65-14" aria-hidden="true" tabindex="-1"></a>         <span class="at">resid =</span> T, </span>
+<span id="cb65-15"><a href="štatistika-v-r.html#cb65-15" aria-hidden="true" tabindex="-1"></a>         <span class="at">plot =</span> T)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
+<pre><code>##    Cell Contents 
+## |-------------------------|
+## |                   Count | 
+## |         Expected Values | 
+## |          Column Percent | 
+## |                Residual | 
+## |-------------------------|
+## 
+## =================================================================
+##                        ess_sample$stfdem2
+## ess_sample$polintr3    Dissatisfied   Neutral   Satisfied   Total
+## -----------------------------------------------------------------
+## Interested                     181       198         146     525 
+##                              210.5     192.5       122.0         
+##                               37.9%     45.3%       52.7%        
+##                            -29.529     5.529      23.999         
+## -----------------------------------------------------------------
+## Not interested                 297       239         131     667 
+##                              267.5     244.5       155.0         
+##                               62.1%     54.7%       47.3%        
+##                             29.529    -5.529     -23.999         
+## -----------------------------------------------------------------
+## Total                          478       437         277    1192 
+##                               40.1%     36.7%       23.2%        
+## =================================================================
+## 
+## Statistics for All Table Factors
+## 
+## Pearson&#39;s Chi-squared test 
+## ------------------------------------------------------------
+## Chi^2 = 16.12227      d.f. = 2      p = 0.000316 
+## 
+##         Minimum expected frequency: 122.0008</code></pre>
+<p>Samozrejme ide o zjednodušenia, ktoré nemusia vždy dávať zmysel, avšak niekedy je možné takýmto spôsobom spraviť analýzu prehľadnejšou.</p>
+<p>Ako ste mohli vidieť, tak <code>chisq</code> argument nám dopočíta chi-square a zobrazí ho pod cross-tabuľkou. Okrem toho sa v rámci funkcie <code>crosstab</code> dá pridávať pomerné zastúpenie v jednotlivých skupinách počítané či už po riadkoch (<code>prop.r</code>), stĺpcoch (<code>prop.c</code>) alebo celkovo (<code>prop.t</code>). Keďže p-value je nižšia ako naša hranica štatistickej signifikantnosti (0,05), tak a základe takejto analýzy môžeme povedať, že existuje vzťah medzi záujmom o politiku a spokojnosťou so stavom demokracie, pričom na základe hodnôt jednej premennej vieme predikovať hodnoty tej druhej. Treba sa však pozrieť aj na to, aký silný je tento vzťah.Použijeme preto Cramer’s V, ktoré meria relatívnu silu vzťahu medzi analyzovanými premennými. Nadobúda hodnoty od 0 do 1, pričom približne:</p>
+<ul>
+<li>&gt; 0,5 silný vzťah</li>
+<li>od 0,3 do 0,5 mierny vzťah</li>
+<li>od 0,1 do 0,3 slabý vzťah</li>
+<li>0 do 0,1 slabý, ak nejaký vzťah</li>
+</ul>
+<p>Na výpočet tejto hodnoty použijeme <code>cramer</code> funkciu z knižnice <code>greybox</code>.</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="štatistika-v-r.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(&quot;greybox&quot;)</span></span>
+<span id="cb67-2"><a href="štatistika-v-r.html#cb67-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(greybox)</span>
+<span id="cb67-3"><a href="štatistika-v-r.html#cb67-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-4"><a href="štatistika-v-r.html#cb67-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cramer</span>(ess_sample<span class="sc">$</span>polintr3, ess_sample<span class="sc">$</span>stfdem2)</span></code></pre></div>
+<pre><code>## Cramer&#39;s V: 0.1089
+## Chi^2 statistics = 16.1223, df: 2, p-value: 0.0003</code></pre>
+<p>Cramer’s V dosahuje v našom prípade hodnotu približne 0,11, čo znamená, že ide o slabý vzťah medzi premennými.</p>
+<p>Chi-square si vieme vizualizovať aj inak, ako to bolo vyššie. Použijeme na to rozšírenie <code>ggplot</code>, ktoré sa volá <code>ggstatsplot</code>.</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="štatistika-v-r.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(&quot;ggstatsplot&quot;)</span></span>
+<span id="cb69-2"><a href="štatistika-v-r.html#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggstatsplot)</span>
+<span id="cb69-3"><a href="štatistika-v-r.html#cb69-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-4"><a href="štatistika-v-r.html#cb69-4" aria-hidden="true" tabindex="-1"></a><span class="co"># plot</span></span>
+<span id="cb69-5"><a href="štatistika-v-r.html#cb69-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggbarstats</span>(</span>
+<span id="cb69-6"><a href="štatistika-v-r.html#cb69-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> ess_sample,</span>
+<span id="cb69-7"><a href="štatistika-v-r.html#cb69-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> polintr3,</span>
+<span id="cb69-8"><a href="štatistika-v-r.html#cb69-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> stfdem2,</span>
+<span id="cb69-9"><a href="štatistika-v-r.html#cb69-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">label =</span> <span class="st">&quot;both&quot;</span>,</span>
+<span id="cb69-10"><a href="štatistika-v-r.html#cb69-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">proportion.test =</span> <span class="cn">NULL</span></span>
+<span id="cb69-11"><a href="štatistika-v-r.html#cb69-11" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb69-12"><a href="štatistika-v-r.html#cb69-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">caption =</span> <span class="cn">NULL</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
+<p><code>ggbarstats</code> nám vytvorí podobný graf ako <code>crosstab</code> funckia, avšak máme k nemu aj dodatočné informácie o hodnote chi-square testu, p-value, či Cramer’s V.</p>
+</div>
+<div id="korelácia" class="section level2 hasAnchor" number="6.9">
+<h2><span class="header-section-number">6.9</span> Korelácia<a href="štatistika-v-r.html#korelácia" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Pravdepodobne jeden z najpoužívanejších spôsobov náhľadu na asociácie medzi premennými je korelácia. Samozrejme v štatistike existuje viac druhov korelácie. My sa budeme v tejto časti venovať Pearsonovej korelácii, ktorá je väčšinou to, čo si ľudia predstavia, keď sa rozprávame o korelácii. Korelácia ukazuje na vzťah medzi dvoma priebehovými premennými a v R sa dá spraviť pomocou <code>cor</code> a <code>cor.test</code> funkcií. Prvá funkcia jednoducho vypočíta koreláciu medzi premennými, druhá k tomu ešte vypočíta štatistický test, ktorý testuje, či je korelácia štatistický rozdielna od 0.</p>
+<p>V tejto časti použijeme <code>gapminder</code> dataset, ktorý sme využívali v časti venovanej <code>ggplot</code>. Pre ukážku použijeme dáta pre rok 2007.</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="štatistika-v-r.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span>
+<span id="cb70-2"><a href="štatistika-v-r.html#cb70-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-3"><a href="štatistika-v-r.html#cb70-3" aria-hidden="true" tabindex="-1"></a>gapminder_cs <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span></span>
+<span id="cb70-4"><a href="štatistika-v-r.html#cb70-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>)</span>
+<span id="cb70-5"><a href="štatistika-v-r.html#cb70-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-6"><a href="štatistika-v-r.html#cb70-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gapminder_cs)</span></code></pre></div>
+<pre><code>## # A tibble: 6 x 6
+##   country     continent  year lifeExp      pop gdpPercap
+##   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;
+## 1 Afghanistan Asia       2007    43.8 31889923      975.
+## 2 Albania     Europe     2007    76.4  3600523     5937.
+## 3 Algeria     Africa     2007    72.3 33333216     6223.
+## 4 Angola      Africa     2007    42.7 12420476     4797.
+## 5 Argentina   Americas   2007    75.3 40301927    12779.
+## 6 Australia   Oceania    2007    81.2 20434176    34435.</code></pre>
+<p><code>cor</code> funkcia je užitočná, pretože Vám umožňuje pozrieť sa na koreláciu viacerých dvojíc premenných naraz. Pozrime sa teda na korelácie všetkých dvojíc premenných v datasete. <code>cor</code> funkcia je sinzitívna na chýbajúce hodnoty, preto musíme v argumentoch špecifikovať, aby použila len kompletné záznamy. <code>pairwise.complete</code> argument povie funkcii, aby na výpočet každej korelácie použila vzorku záznamov, ktoré sú kompletné.</p>
+<p>Okrem toho argumentom <code>method</code> špecifikujeme, aký typ korelácie chceme použiť.</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="štatistika-v-r.html#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(gapminder_cs[, <span class="dv">4</span><span class="sc">:</span><span class="dv">6</span>], <span class="at">use =</span> <span class="st">&quot;pairwise.complete&quot;</span>, <span class="at">method =</span> <span class="st">&quot;pearson&quot;</span>)</span></code></pre></div>
+<pre><code>##              lifeExp         pop  gdpPercap
+## lifeExp   1.00000000  0.04755312  0.6786624
+## pop       0.04755312  1.00000000 -0.0556756
+## gdpPercap 0.67866240 -0.05567560  1.0000000</code></pre>
+<p>Zároveň môžeme pomocou funnkcie <code>cor.test</code> otestovať, či sú odhadnuté korelácie štatisticky signifikantné. Pozrime sa na HDP per capita a počet obyvateľov. Tieto dve premenné majú medzi sebou negatívnu koreláciu, ale zatiaľ nevieme, či je štatisticky signifikantná alebo nie.</p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="štatistika-v-r.html#cb74-1" aria-hidden="true" tabindex="-1"></a>cor1 <span class="ot">&lt;-</span> <span class="fu">cor.test</span>(gapminder_cs<span class="sc">$</span>pop, gapminder_cs<span class="sc">$</span>gdpPercap, <span class="at">method =</span> <span class="st">&quot;pearson&quot;</span>)</span>
+<span id="cb74-2"><a href="štatistika-v-r.html#cb74-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-3"><a href="štatistika-v-r.html#cb74-3" aria-hidden="true" tabindex="-1"></a>cor1</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s product-moment correlation
+## 
+## data:  gapminder_cs$pop and gapminder_cs$gdpPercap
+## t = -0.65979, df = 140, p-value = 0.5105
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  -0.2183999  0.1100611
+## sample estimates:
+##        cor 
+## -0.0556756</code></pre>
+<p>p-value testu je v tomto prípade vyššia ako naša hranica (0,05), čiže negatívna korelácia medzi týmito dvoma premennými nie je štatisticky signifikantná.</p>
+<p>Pozrime sa na strednú dĺžku života a HDP per capita.</p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="štatistika-v-r.html#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(gapminder_cs<span class="sc">$</span>lifeExp, gapminder_cs<span class="sc">$</span>gdpPercap)</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s product-moment correlation
+## 
+## data:  gapminder_cs$lifeExp and gapminder_cs$gdpPercap
+## t = 10.933, df = 140, p-value &lt; 0.00000000000000022
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  0.5786217 0.7585843
+## sample estimates:
+##       cor 
+## 0.6786624</code></pre>
+<p>Môžeme vidieť, že v tomto prípade ide o štatisticky signifikantnú koreláciu, keďže p-value je pod našou hranicou (0.05).</p>
+<p>Okrem týchto dvoch funkcií nám knižnica <code>Hmisc</code> prostredníctvom funkcie <code>rcorr</code> uľahčuje náhľady na štatistickú signifikantnosť jednotlivých dvojíc premenných.</p>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="štatistika-v-r.html#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Hmisc)</span>
+<span id="cb78-2"><a href="štatistika-v-r.html#cb78-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-3"><a href="štatistika-v-r.html#cb78-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rcorr</span>(<span class="fu">as.matrix</span>(gapminder_cs[, <span class="dv">4</span><span class="sc">:</span><span class="dv">6</span>]))</span></code></pre></div>
+<pre><code>##           lifeExp   pop gdpPercap
+## lifeExp      1.00  0.05      0.68
+## pop          0.05  1.00     -0.06
+## gdpPercap    0.68 -0.06      1.00
+## 
+## n= 142 
+## 
+## 
+## P
+##           lifeExp pop    gdpPercap
+## lifeExp           0.5741 0.0000   
+## pop       0.5741         0.5105   
+## gdpPercap 0.0000  0.5105</code></pre>
+<p>Zároveň si vzťahy medzi dvojicami premenných môžeme aj vizualizovať. V prvom rade sa to dá prostredníctvom bodového grafu.</p>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="štatistika-v-r.html#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unloadNamespace</span>(<span class="st">&quot;Hmisc&quot;</span>)</span>
+<span id="cb80-2"><a href="štatistika-v-r.html#cb80-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder_cs, <span class="fu">aes</span>(gdpPercap, lifeExp)) <span class="sc">+</span></span>
+<span id="cb80-3"><a href="štatistika-v-r.html#cb80-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb80-4"><a href="štatistika-v-r.html#cb80-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
+<p>Druho možnosťou je vytvoriť heatmap pomocou rozšírenia <code>ggplot</code> - <code>GGally</code> a <code>ggcorr</code> funkcie.</p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="štatistika-v-r.html#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(&quot;GGally&quot;)</span></span>
+<span id="cb81-2"><a href="štatistika-v-r.html#cb81-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GGally)</span>
+<span id="cb81-3"><a href="štatistika-v-r.html#cb81-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-4"><a href="štatistika-v-r.html#cb81-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggcorr</span>(gapminder_cs[, <span class="dv">4</span><span class="sc">:</span><span class="dv">6</span>], <span class="at">label =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-47-1.png" width="672" /></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ggplot-a-vizualizácia-dát.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

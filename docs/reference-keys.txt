@@ -57,10 +57,11 @@ summarize-spolu-s-group_by
 count-a-n
 distinct
 podobnosť-funkcií-v-tidyverse-ako-výhoda
-spájanie-datasetov
+spájanie-datasetov-nepovinné
 joins
 bind_rows-a-bind_cols
-transponovanie-datasetov
+transponovanie-datasetov-nepovinné
+cvičenia
 ggplot-a-vizualizácia-dát
 čo-je-ggplot
 pred-tým-ako-začneme
