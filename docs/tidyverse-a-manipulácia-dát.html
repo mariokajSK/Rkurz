@@ -518,11 +518,11 @@ at least for single-argument functions ...</code></pre>
 <span id="cb330-2"><a href="tidyverse-a-manipulácia-dát.html#cb330-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Region <span class="sc">!=</span> <span class="st">&quot;KS Bratislava&quot;</span>, Region <span class="sc">!=</span> <span class="st">&quot;KS Trnava&quot;</span>)</span>
 <span id="cb330-3"><a href="tidyverse-a-manipulácia-dát.html#cb330-3" aria-hidden="true" tabindex="-1"></a>sudybezBATT[<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(sudybezBATT), <span class="dv">6</span>), <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">20</span>)] <span class="do">## toto sa dá ale aj inak a onedlho si ukážeme ako</span></span></code></pre></div>
 <pre><code>##                   Court Year             Region
-## 23 OS Liptovský Mikuláš 2020          KS Žilina
-## 41 OS Považská Bystrica 2020         KS Trenčín
-## 50           OS Rožňava 2021          KS Košice
-## 55     OS Stará Ľubovňa 2020          KS Prešov
-## 24 OS Liptovský Mikuláš 2021          KS Žilina
+## 69   OS Žiar nad Hronom 2020 KS Banská Bystrica
+## 28            OS Martin 2021          KS Žilina
+## 66 OS Vranov nad Topľou 2021          KS Prešov
+## 37       OS Partizánske 2020         KS Trenčín
+## 6             OS Brezno 2021 KS Banská Bystrica
 ## 68            OS Zvolen 2021 KS Banská Bystrica</code></pre>
 <p>Vytvorme si pre ukážku nejaké chýbajúce údaje a vyfiltrujme ich</p>
 <div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb332-1"><a href="tidyverse-a-manipulácia-dát.html#cb332-1" aria-hidden="true" tabindex="-1"></a>sudybezBATT<span class="sc">$</span>missing <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(sudybezBATT<span class="sc">$</span>Court <span class="sc">==</span> <span class="st">&quot;OS Nitra&quot;</span>, <span class="cn">NA</span>, <span class="dv">1</span>)</span>
@@ -624,29 +624,29 @@ at least for single-argument functions ...</code></pre>
 <div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="tidyverse-a-manipulácia-dát.html#cb348-1" aria-hidden="true" tabindex="-1"></a>sudy[, <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">17</span>, <span class="dv">20</span>)] <span class="sc">%&gt;%</span> </span>
 <span id="cb348-2"><a href="tidyverse-a-manipulácia-dát.html#cb348-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">10</span>)</span></code></pre></div>
 <pre><code>##                   Court Year Incoming             Region
-## 1            OS Pezinok 2020     3135      KS Bratislava
-## 2             OS Prešov 2020    24983          KS Prešov
-## 3     OS Bratislava III 2020     9504      KS Bratislava
-## 4    OS Rimavská Sobota 2020     4894 KS Banská Bystrica
-## 5           OS Piešťany 2021     3041          KS Trnava
-## 6    OS Dunajská Streda 2020     5835          KS Trnava
-## 7        OS Dolný Kubín 2020     2127          KS Žilina
-## 8  OS Vranov nad Topľou 2020     3947          KS Prešov
-## 9            OS Komárno 2021     5375           KS Nitra
-## 10           OS Lučenec 2020     5996 KS Banská Bystrica</code></pre>
+## 1        OS Veľký Krtíš 2021     2726 KS Banská Bystrica
+## 2          OS Košice II 2021    13349          KS Košice
+## 3           OS Trebišov 2020     6109          KS Košice
+## 4             OS Zvolen 2020     6113 KS Banská Bystrica
+## 5             OS Senica 2020     3401          KS Trnava
+## 6             OS Trnava 2020    25287          KS Trnava
+## 7            OS Malacky 2020     3967      KS Bratislava
+## 8  OS Liptovský Mikuláš 2020     3813          KS Žilina
+## 9             OS Žilina 2021    38509          KS Žilina
+## 10    OS Bratislava III 2021     8998      KS Bratislava</code></pre>
 <div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb350-1"><a href="tidyverse-a-manipulácia-dát.html#cb350-1" aria-hidden="true" tabindex="-1"></a>sudy[, <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">17</span>, <span class="dv">20</span>)] <span class="sc">%&gt;%</span> </span>
 <span id="cb350-2"><a href="tidyverse-a-manipulácia-dát.html#cb350-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">prop =</span> <span class="fl">0.1</span>)</span></code></pre></div>
-<pre><code>##                  Court Year Incoming             Region
-## 1     OS Stará Ľubovňa 2021     2101          KS Prešov
-## 2            OS Zvolen 2021     6377 KS Banská Bystrica
-## 3            OS Poprad 2021     4909          KS Prešov
-## 4  OS Spišská Nová Ves 2021     7702          KS Košice
-## 5         OS Prievidza 2021     6181         KS Trenčín
-## 6           OS Galanta 2021     7215          KS Trnava
-## 7           OS Humenné 2021     5400          KS Prešov
-## 8            OS Brezno 2020     3148 KS Banská Bystrica
-## 9            OS Revúca 2020     2469 KS Banská Bystrica
-## 10           OS Brezno 2021     3225 KS Banská Bystrica</code></pre>
+<pre><code>##                   Court Year Incoming        Region
+## 1            OS Rožňava 2020     3586     KS Košice
+## 2      OS Košice-okolie 2021     8299     KS Košice
+## 3            OS Humenné 2020     5249     KS Prešov
+## 4  OS Považská Bystrica 2021     4348    KS Trenčín
+## 5      OS Bratislava IV 2021     4819 KS Bratislava
+## 6         OS Michalovce 2021     7350     KS Košice
+## 7             OS Martin 2021     5712     KS Žilina
+## 8            OS Pezinok 2021     3166 KS Bratislava
+## 9       OS Bratislava I 2021    65984 KS Bratislava
+## 10       OS Dolný Kubín 2021     2099     KS Žilina</code></pre>
 <p>Okrem týchto výberov riadkov, viete vybrať aj tie, ktoré majú maximálnu alebo minimálnu hodnotu v niektorej premennej.</p>
 <div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb352-1"><a href="tidyverse-a-manipulácia-dát.html#cb352-1" aria-hidden="true" tabindex="-1"></a>sudy[, <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">17</span>, <span class="dv">20</span>)] <span class="sc">%&gt;%</span> </span>
 <span id="cb352-2"><a href="tidyverse-a-manipulácia-dát.html#cb352-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_min</span>(Incoming, <span class="at">n =</span> <span class="dv">5</span>)</span></code></pre></div>
@@ -865,26 +865,26 @@ at least for single-argument functions ...</code></pre>
 <span id="cb380-2"><a href="tidyverse-a-manipulácia-dát.html#cb380-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Viacako3000 =</span> <span class="fu">if_else</span>(Incoming <span class="sc">&gt;</span> <span class="dv">3000</span>, <span class="dv">1</span>, <span class="dv">0</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb380-3"><a href="tidyverse-a-manipulácia-dát.html#cb380-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">6</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb380-4"><a href="tidyverse-a-manipulácia-dát.html#cb380-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Court, Year, Incoming, Viacako3000)</span></code></pre></div>
-<pre><code>##               Court Year Incoming Viacako3000
-## 1 OS Bratislava III 2020     9504           1
-## 2    OS Dolný Kubín 2020     2127           0
-## 3        OS Galanta 2021     7215           1
-## 4        OS Galanta 2020     7404           1
-## 5      OS Prievidza 2020     6119           1
-## 6   OS Bratislava I 2020    72267           1</code></pre>
+<pre><code>##                Court Year Incoming Viacako3000
+## 1          OS Prešov 2021    24916           1
+## 2      OS Ružomberok 2020     2710           0
+## 3          OS Senica 2021     3483           1
+## 4       OS Košice II 2021    13349           1
+## 5          OS Revúca 2020     2469           0
+## 6 OS Dunajská Streda 2021     5920           1</code></pre>
 <div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="tidyverse-a-manipulácia-dát.html#cb382-1" aria-hidden="true" tabindex="-1"></a>sudy <span class="sc">%&gt;%</span></span>
 <span id="cb382-2"><a href="tidyverse-a-manipulácia-dát.html#cb382-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">SudVelkost =</span> <span class="fu">case_when</span>(nJudges <span class="sc">&lt;</span> <span class="dv">9</span> <span class="sc">~</span> <span class="st">&quot;Malý&quot;</span>,</span>
 <span id="cb382-3"><a href="tidyverse-a-manipulácia-dát.html#cb382-3" aria-hidden="true" tabindex="-1"></a>                                nJudges <span class="sc">&gt;=</span> <span class="dv">9</span> <span class="sc">&amp;</span> nJudges <span class="sc">&lt;</span> <span class="dv">17</span> <span class="sc">~</span> <span class="st">&quot;Stredný&quot;</span>,</span>
 <span id="cb382-4"><a href="tidyverse-a-manipulácia-dát.html#cb382-4" aria-hidden="true" tabindex="-1"></a>                                nJudges <span class="sc">&gt;=</span> <span class="dv">17</span> <span class="sc">~</span> <span class="st">&quot;Veľký&quot;</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb382-5"><a href="tidyverse-a-manipulácia-dát.html#cb382-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">6</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb382-6"><a href="tidyverse-a-manipulácia-dát.html#cb382-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Court, Year, nJudges, SudVelkost )</span></code></pre></div>
-<pre><code>##                     Court Year  nJudges SudVelkost
-## 1 OS Nové Mesto nad Váhom 2021 11.33333    Stredný
-## 2    OS Liptovský Mikuláš 2020 11.50000    Stredný
-## 3          OS Veľký Krtíš 2021  8.00000       Malý
-## 4              OS Rožňava 2021 10.25000    Stredný
-## 5                OS Nitra 2020 26.08333      Veľký
-## 6               OS Senica 2021  9.00000    Stredný</code></pre>
+<pre><code>##                Court Year   nJudges SudVelkost
+## 1        OS Kežmarok 2021  8.083333       Malý
+## 2         OS Lučenec 2021 13.000000    Stredný
+## 3 OS Rimavská Sobota 2020 14.250000    Stredný
+## 4 OS Žiar nad Hronom 2021 11.916667    Stredný
+## 5         OS Komárno 2021 14.750000    Stredný
+## 6          OS Levice 2021 12.250000    Stredný</code></pre>
 <p>Pri <code>case_when</code> si treba dávať pozor na poradie jednotlivých podmienok, ktoré definujú kategórie. <code>case_when</code> vyhodnocuje podmienky v rade za sebou a keď už raz je jedna z nich splnená a kategória definovaná, tak pri vyhodnocovaní ďalšej je takéto pozorovanie preskakované.</p>
 <div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="tidyverse-a-manipulácia-dát.html#cb384-1" aria-hidden="true" tabindex="-1"></a>sudy <span class="sc">%&gt;%</span></span>
 <span id="cb384-2"><a href="tidyverse-a-manipulácia-dát.html#cb384-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">SudVelkost =</span> <span class="fu">case_when</span>(nJudges <span class="sc">&lt;</span> <span class="dv">9</span> <span class="sc">~</span> <span class="st">&quot;Malý&quot;</span>,</span>
@@ -1043,13 +1043,13 @@ at least for single-argument functions ...</code></pre>
 <span id="cb404-2"><a href="tidyverse-a-manipulácia-dát.html#cb404-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_count</span>(Region) <span class="sc">%&gt;%</span></span>
 <span id="cb404-3"><a href="tidyverse-a-manipulácia-dát.html#cb404-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">6</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb404-4"><a href="tidyverse-a-manipulácia-dát.html#cb404-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Court, Year, Region, n)</span></code></pre></div>
-<pre><code>##                Court Year    Region  n
-## 1      OS Michalovce 2021 KS Košice 14
-## 2        OS Košice I 2021 KS Košice 14
-## 3       OS Topoľčany 2020  KS Nitra 10
-## 4         OS Galanta 2020 KS Trnava 12
-## 5           OS Čadca 2020 KS Žilina 14
-## 6 OS Dunajská Streda 2020 KS Trnava 12</code></pre>
+<pre><code>##                     Court Year             Region  n
+## 1           OS Ružomberok 2020          KS Žilina 14
+## 2              OS Skalica 2021          KS Trnava 12
+## 3              OS Lučenec 2021 KS Banská Bystrica 16
+## 4 OS Bánovce nad Bebravou 2021         KS Trenčín 12
+## 5    OS Liptovský Mikuláš 2020          KS Žilina 14
+## 6               OS Brezno 2021 KS Banská Bystrica 16</code></pre>
 <div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="tidyverse-a-manipulácia-dát.html#cb406-1" aria-hidden="true" tabindex="-1"></a>sudy <span class="sc">%&gt;%</span></span>
 <span id="cb406-2"><a href="tidyverse-a-manipulácia-dát.html#cb406-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Region) <span class="sc">%&gt;%</span></span>
 <span id="cb406-3"><a href="tidyverse-a-manipulácia-dát.html#cb406-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_tally</span>() <span class="sc">%&gt;%</span></span>
@@ -1059,12 +1059,12 @@ at least for single-argument functions ...</code></pre>
 <pre><code>## # A tibble: 6 x 4
 ##   Court                 Year Region                 n
 ##   &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;              &lt;int&gt;
-## 1 OS Zvolen             2020 KS Banská Bystrica    16
-## 2 OS Rožňava            2020 KS Košice             14
-## 3 OS Banská Bystrica    2020 KS Banská Bystrica    16
-## 4 OS Liptovský Mikuláš  2021 KS Žilina             14
-## 5 OS Vranov nad Topľou  2021 KS Prešov             16
-## 6 OS Levice             2021 KS Nitra              10</code></pre>
+## 1 OS Galanta            2020 KS Trnava             12
+## 2 OS Brezno             2020 KS Banská Bystrica    16
+## 3 OS Ružomberok         2021 KS Žilina             14
+## 4 OS Michalovce         2021 KS Košice             14
+## 5 OS Veľký Krtíš        2021 KS Banská Bystrica    16
+## 6 OS Liptovský Mikuláš  2021 KS Žilina             14</code></pre>
 <p>Posledným operátorom, ktorý treba v súvislosti s počtami spomenúť je <code>n()</code>. <code>n()</code> v zásade počíta počet pozorovaní v rámci určitej skupiny. Je používaná v rámci <code>mutate</code> alebo <code>summarize</code>. Ako ste mohli vidieť vyššie, tak <code>count</code> aj <code>tally</code> túto funkciu využívajú.</p>
 <div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="tidyverse-a-manipulácia-dát.html#cb408-1" aria-hidden="true" tabindex="-1"></a>sudy <span class="sc">%&gt;%</span></span>
 <span id="cb408-2"><a href="tidyverse-a-manipulácia-dát.html#cb408-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Region) <span class="sc">%&gt;%</span></span>
@@ -1087,14 +1087,14 @@ at least for single-argument functions ...</code></pre>
 <span id="cb410-5"><a href="tidyverse-a-manipulácia-dát.html#cb410-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">6</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb410-6"><a href="tidyverse-a-manipulácia-dát.html#cb410-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Court, Year, Region, Počet)</span></code></pre></div>
 <pre><code>## # A tibble: 6 x 4
-##   Court                 Year Region        Počet
-##   &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;         &lt;int&gt;
-## 1 OS Dunajská Streda    2020 KS Trnava        12
-## 2 OS Senica             2021 KS Trnava        12
-## 3 OS Martin             2020 KS Žilina        14
-## 4 OS Bratislava V       2020 KS Bratislava    14
-## 5 OS Bratislava II      2021 KS Bratislava    14
-## 6 OS Vranov nad Topľou  2020 KS Prešov        16</code></pre>
+##   Court                    Year Region             Počet
+##   &lt;chr&gt;                   &lt;dbl&gt; &lt;chr&gt;              &lt;int&gt;
+## 1 OS Revúca                2020 KS Banská Bystrica    16
+## 2 OS Lučenec               2020 KS Banská Bystrica    16
+## 3 OS Trnava                2021 KS Trnava             12
+## 4 OS Dolný Kubín           2021 KS Žilina             14
+## 5 OS Nové Mesto nad Váhom  2021 KS Trenčín            12
+## 6 OS Bratislava IV         2021 KS Bratislava         14</code></pre>
 </div>
 <div id="distinct" class="section level3 hasAnchor" number="3.3.11">
 <h3><span class="header-section-number">3.3.11</span> distinct()<a href="tidyverse-a-manipulácia-dát.html#distinct" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1381,38 +1381,38 @@ at least for single-argument functions ...</code></pre>
 <span id="cb436-2"><a href="tidyverse-a-manipulácia-dát.html#cb436-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">5</span>)</span>
 <span id="cb436-3"><a href="tidyverse-a-manipulácia-dát.html#cb436-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb436-4"><a href="tidyverse-a-manipulácia-dát.html#cb436-4" aria-hidden="true" tabindex="-1"></a><span class="fu">bind_rows</span>(sudy2, ID2)</span></code></pre></div>
-<pre><code>##                      Court Year Incoming   nJudges                        Sud2
-## 1  OS Bánovce nad Bebravou 2020     1782  4.666667                        &lt;NA&gt;
-## 2  OS Bánovce nad Bebravou 2021     1631  5.000000                        &lt;NA&gt;
-## 3              OS Bardejov 2020     3147  9.583333                        &lt;NA&gt;
-## 4              OS Bardejov 2021     3089 10.833333                        &lt;NA&gt;
-## 5         OS Bratislava II 2020    10397 27.916667                        &lt;NA&gt;
-## 6         OS Bratislava II 2021     9433 24.500000                        &lt;NA&gt;
-## 7        OS Bratislava III 2020     9504 25.250000                        &lt;NA&gt;
-## 8        OS Bratislava III 2021     8998 24.500000                        &lt;NA&gt;
-## 9         OS Bratislava IV 2020     5079 18.500000                        &lt;NA&gt;
-## 10        OS Bratislava IV 2021     4819 17.583333                        &lt;NA&gt;
-## 11                    &lt;NA&gt;   NA       NA        NA     Okresný súd Partizánske
-## 12                    &lt;NA&gt;   NA       NA        NA          Okresný súd Poprad
-## 13                    &lt;NA&gt;   NA       NA        NA      Okresný súd Ružomberok
-## 14                    &lt;NA&gt;   NA       NA        NA Okresný súd Banská Bystrica
-## 15                    &lt;NA&gt;   NA       NA        NA       Krajský súd v Prešove
-##    SAP(Organizácia_skratka)                   Sud Skratka ID_sud
-## 1                      &lt;NA&gt;                  &lt;NA&gt;    &lt;NA&gt;     NA
-## 2                      &lt;NA&gt;                  &lt;NA&gt;    &lt;NA&gt;     NA
-## 3                      &lt;NA&gt;                  &lt;NA&gt;    &lt;NA&gt;     NA
-## 4                      &lt;NA&gt;                  &lt;NA&gt;    &lt;NA&gt;     NA
-## 5                      &lt;NA&gt;                  &lt;NA&gt;    &lt;NA&gt;     NA
-## 6                      &lt;NA&gt;                  &lt;NA&gt;    &lt;NA&gt;     NA
-## 7                      &lt;NA&gt;                  &lt;NA&gt;    &lt;NA&gt;     NA
-## 8                      &lt;NA&gt;                  &lt;NA&gt;    &lt;NA&gt;     NA
-## 9                      &lt;NA&gt;                  &lt;NA&gt;    &lt;NA&gt;     NA
-## 10                     &lt;NA&gt;                  &lt;NA&gt;    &lt;NA&gt;     NA
-## 11           OS Partizánske           Partizánske      PE     38
-## 12                OS Poprad                Poprad      PP     41
-## 13            OS Ružomberok            Ružomberok      RK     48
-## 14       OS Banská Bystrica       Banská Bystrica      BB     10
-## 15                KS Prešov KRAJSKÝ SÚD V PREŠOVE    KSPO      5</code></pre>
+<pre><code>##                      Court Year Incoming   nJudges                     Sud2
+## 1  OS Bánovce nad Bebravou 2020     1782  4.666667                     &lt;NA&gt;
+## 2  OS Bánovce nad Bebravou 2021     1631  5.000000                     &lt;NA&gt;
+## 3              OS Bardejov 2020     3147  9.583333                     &lt;NA&gt;
+## 4              OS Bardejov 2021     3089 10.833333                     &lt;NA&gt;
+## 5         OS Bratislava II 2020    10397 27.916667                     &lt;NA&gt;
+## 6         OS Bratislava II 2021     9433 24.500000                     &lt;NA&gt;
+## 7        OS Bratislava III 2020     9504 25.250000                     &lt;NA&gt;
+## 8        OS Bratislava III 2021     8998 24.500000                     &lt;NA&gt;
+## 9         OS Bratislava IV 2020     5079 18.500000                     &lt;NA&gt;
+## 10        OS Bratislava IV 2021     4819 17.583333                     &lt;NA&gt;
+## 11                    &lt;NA&gt;   NA       NA        NA   Okresný súd Nové Zámky
+## 12                    &lt;NA&gt;   NA       NA        NA    Okresný súd Košice II
+## 13                    &lt;NA&gt;   NA       NA        NA     Krajský súd v Žiline
+## 14                    &lt;NA&gt;   NA       NA        NA Okresný súd Bratislava I
+## 15                    &lt;NA&gt;   NA       NA        NA     Okresný súd Bardejov
+##    SAP(Organizácia_skratka)                  Sud Skratka ID_sud
+## 1                      &lt;NA&gt;                 &lt;NA&gt;    &lt;NA&gt;     NA
+## 2                      &lt;NA&gt;                 &lt;NA&gt;    &lt;NA&gt;     NA
+## 3                      &lt;NA&gt;                 &lt;NA&gt;    &lt;NA&gt;     NA
+## 4                      &lt;NA&gt;                 &lt;NA&gt;    &lt;NA&gt;     NA
+## 5                      &lt;NA&gt;                 &lt;NA&gt;    &lt;NA&gt;     NA
+## 6                      &lt;NA&gt;                 &lt;NA&gt;    &lt;NA&gt;     NA
+## 7                      &lt;NA&gt;                 &lt;NA&gt;    &lt;NA&gt;     NA
+## 8                      &lt;NA&gt;                 &lt;NA&gt;    &lt;NA&gt;     NA
+## 9                      &lt;NA&gt;                 &lt;NA&gt;    &lt;NA&gt;     NA
+## 10                     &lt;NA&gt;                 &lt;NA&gt;    &lt;NA&gt;     NA
+## 11            OS Nové Zámky           Nové Zámky      NZ     37
+## 12             OS Košice II            Košice II     KE2     26
+## 13                KS Žilina KRAJSKÝ SÚD V ŽILINE    KSZA      8
+## 14          OS Bratislava I         Bratislava I     BA1     12
+## 15              OS Bardejov             Bardejov      BJ     11</code></pre>
 <p>Pri spájaní datasetov vedľa seba je však rozdielny počet riadkov problém.</p>
 <div class="sourceCode" id="cb438"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb438-1"><a href="tidyverse-a-manipulácia-dát.html#cb438-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bind_cols</span>(sudy2, sudy) <span class="co"># toto nejde</span></span></code></pre></div>
 <div class="sourceCode" id="cb439"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb439-1"><a href="tidyverse-a-manipulácia-dát.html#cb439-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bind_cols</span>(sudy2[,<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>], sudy[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]) <span class="co">#toto už áno s premenovaním premenných, aby boli názvy jedinečné</span></span></code></pre></div>
@@ -1477,27 +1477,27 @@ at least for single-argument functions ...</code></pre>
 <span id="cb444-3"><a href="tidyverse-a-manipulácia-dát.html#cb444-3" aria-hidden="true" tabindex="-1"></a>sudyWide <span class="sc">%&gt;%</span></span>
 <span id="cb444-4"><a href="tidyverse-a-manipulácia-dát.html#cb444-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">6</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 6 x 3
-##   Court              `2020` `2021`
-##   &lt;chr&gt;               &lt;dbl&gt;  &lt;dbl&gt;
-## 1 OS Michalovce        7234   7350
-## 2 OS Žiar nad Hronom   4660   4756
-## 3 OS Žilina           43832  38509
-## 4 OS Partizánske       2114   2202
-## 5 OS Trebišov          6109   6051
-## 6 OS Brezno            3148   3225</code></pre>
+##   Court                `2020` `2021`
+##   &lt;chr&gt;                 &lt;dbl&gt;  &lt;dbl&gt;
+## 1 OS Vranov nad Topľou   3947   3824
+## 2 OS Veľký Krtíš         2611   2726
+## 3 OS Košice-okolie       8937   8299
+## 4 OS Rimavská Sobota     4894   5055
+## 5 OS Malacky             3967   3990
+## 6 OS Poprad              5063   4909</code></pre>
 <div class="sourceCode" id="cb446"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb446-1"><a href="tidyverse-a-manipulácia-dát.html#cb446-1" aria-hidden="true" tabindex="-1"></a>sudyWide2 <span class="ot">&lt;-</span> <span class="fu">pivot_wider</span>(sudyLong, <span class="at">id_cols =</span> <span class="fu">c</span>(<span class="st">&quot;Court&quot;</span>), <span class="at">names_from =</span> <span class="fu">c</span>(<span class="st">&quot;Year&quot;</span>), <span class="at">values_from =</span> <span class="fu">c</span>(<span class="st">&quot;Incoming&quot;</span>, <span class="st">&quot;Decided&quot;</span>)) <span class="co"># nápad a rozhodnuté po rokoch</span></span>
 <span id="cb446-2"><a href="tidyverse-a-manipulácia-dát.html#cb446-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb446-3"><a href="tidyverse-a-manipulácia-dát.html#cb446-3" aria-hidden="true" tabindex="-1"></a>sudyWide2 <span class="sc">%&gt;%</span></span>
 <span id="cb446-4"><a href="tidyverse-a-manipulácia-dát.html#cb446-4" aria-hidden="true" tabindex="-1"></a><span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">6</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 6 x 5
-##   Court                   Incoming_2020 Incoming_2021 Decided_2020 Decided_2021
-##   &lt;chr&gt;                           &lt;dbl&gt;         &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;
-## 1 OS Veľký Krtíš                   2611          2726         2630         2721
-## 2 OS Lučenec                       5996          5889         5990         5533
-## 3 OS Žiar nad Hronom               4660          4756         4422         4039
-## 4 OS Bardejov                      3147          3089         3136         3264
-## 5 OS Bánovce nad Bebravou          1782          1631         1660         1520
-## 6 OS Michalovce                    7234          7350         7054         6972</code></pre>
+##   Court              Incoming_2020 Incoming_2021 Decided_2020 Decided_2021
+##   &lt;chr&gt;                      &lt;dbl&gt;         &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;
+## 1 OS Veľký Krtíš              2611          2726         2630         2721
+## 2 OS Žilina                  43832         38509        49820        38754
+## 3 OS Dunajská Streda          5835          5920         5873         5670
+## 4 OS Partizánske              2114          2202         2116         2195
+## 5 OS Skalica                  2271          2337         2340         2312
+## 6 OS Pezinok                  3135          3166         3519         3298</code></pre>
 <div class="sourceCode" id="cb448"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb448-1"><a href="tidyverse-a-manipulácia-dát.html#cb448-1" aria-hidden="true" tabindex="-1"></a>sudyWide3 <span class="ot">&lt;-</span> <span class="fu">pivot_wider</span>(sudyLong, <span class="at">id_cols =</span> <span class="fu">c</span>(<span class="st">&quot;Court&quot;</span>), <span class="at">names_from =</span> <span class="fu">c</span>(<span class="st">&quot;Year&quot;</span>,<span class="st">&quot;Region&quot;</span>), <span class="at">values_from =</span> <span class="fu">c</span>(<span class="st">&quot;Incoming&quot;</span>, <span class="st">&quot;Decided&quot;</span>)) <span class="co"># nápad a rozhodnuté po rokoch a obvodoch KS</span></span>
 <span id="cb448-2"><a href="tidyverse-a-manipulácia-dát.html#cb448-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb448-3"><a href="tidyverse-a-manipulácia-dát.html#cb448-3" aria-hidden="true" tabindex="-1"></a>sudyWide3 <span class="sc">%&gt;%</span></span>
@@ -1505,12 +1505,12 @@ at least for single-argument functions ...</code></pre>
 <pre><code>## # A tibble: 6 x 33
 ##   Court  Incom~1 Incom~2 Incom~3 Incom~4 Incom~5 Incom~6 Incom~7 Incom~8 Incom~9
 ##   &lt;chr&gt;    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
-## 1 OS No~      NA      NA      NA      NA      NA      NA      NA      NA      NA
-## 2 OS Ko~      NA      NA      NA      NA      NA      NA      NA      NA      NA
-## 3 OS Br~      NA      NA      NA      NA      NA      NA    3148    3225      NA
-## 4 OS Tr~      NA      NA      NA      NA      NA      NA      NA      NA      NA
-## 5 OS Ru~      NA      NA      NA      NA      NA      NA      NA      NA    2710
-## 6 OS No~    4322    4656      NA      NA      NA      NA      NA      NA      NA
+## 1 OS Br~      NA      NA      NA      NA    8226    7654      NA      NA      NA
+## 2 OS Ná~      NA      NA      NA      NA      NA      NA      NA      NA    2773
+## 3 OS Vr~      NA      NA    3947    3824      NA      NA      NA      NA      NA
+## 4 OS Ni~      NA      NA      NA      NA      NA      NA      NA      NA      NA
+## 5 OS Tr~   19552   19559      NA      NA      NA      NA      NA      NA      NA
+## 6 OS Ko~      NA      NA      NA      NA      NA      NA      NA      NA      NA
 ## # ... with 23 more variables: `Incoming_2021_KS Žilina` &lt;dbl&gt;,
 ## #   `Incoming_2020_KS Trnava` &lt;dbl&gt;, `Incoming_2021_KS Trnava` &lt;dbl&gt;,
 ## #   `Incoming_2020_KS Nitra` &lt;dbl&gt;, `Incoming_2021_KS Nitra` &lt;dbl&gt;,
@@ -1525,40 +1525,40 @@ at least for single-argument functions ...</code></pre>
 <span id="cb450-3"><a href="tidyverse-a-manipulácia-dát.html#cb450-3" aria-hidden="true" tabindex="-1"></a>sudyLong1 <span class="sc">%&gt;%</span></span>
 <span id="cb450-4"><a href="tidyverse-a-manipulácia-dát.html#cb450-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">6</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 6 x 3
-##   Court              Year  Incoming
-##   &lt;chr&gt;              &lt;chr&gt;    &lt;dbl&gt;
-## 1 OS Bardejov        2021      3089
-## 2 OS Pezinok         2020      3135
-## 3 OS Senica          2020      3401
-## 4 OS Žiar nad Hronom 2020      4660
-## 5 OS Partizánske     2021      2202
-## 6 OS Bardejov        2020      3147</code></pre>
+##   Court                   Year  Incoming
+##   &lt;chr&gt;                   &lt;chr&gt;    &lt;dbl&gt;
+## 1 OS Nové Mesto nad Váhom 2021      4656
+## 2 OS Spišská Nová Ves     2020      7620
+## 3 OS Čadca                2021      4120
+## 4 OS Trenčín              2020     19552
+## 5 OS Banská Bystrica      2020    271334
+## 6 OS Bratislava II        2020     10397</code></pre>
 <div class="sourceCode" id="cb452"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb452-1"><a href="tidyverse-a-manipulácia-dát.html#cb452-1" aria-hidden="true" tabindex="-1"></a>sudyLong2 <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(sudyWide2, <span class="at">cols =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">names_to =</span> <span class="fu">c</span>(<span class="st">&quot;Status&quot;</span>, <span class="st">&quot;Year&quot;</span>), <span class="at">names_sep =</span> <span class="st">&quot;_&quot;</span>,  <span class="at">values_to =</span> <span class="fu">c</span>(<span class="st">&quot;Value&quot;</span>))</span>
 <span id="cb452-2"><a href="tidyverse-a-manipulácia-dát.html#cb452-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb452-3"><a href="tidyverse-a-manipulácia-dát.html#cb452-3" aria-hidden="true" tabindex="-1"></a>sudyLong2 <span class="sc">%&gt;%</span></span>
 <span id="cb452-4"><a href="tidyverse-a-manipulácia-dát.html#cb452-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">6</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 6 x 4
-##   Court        Status   Year  Value
-##   &lt;chr&gt;        &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt;
-## 1 OS Levice    Incoming 2020   5954
-## 2 OS Nitra     Incoming 2020  27450
-## 3 OS Revúca    Decided  2020   2435
-## 4 OS Rožňava   Decided  2020   3726
-## 5 OS Bardejov  Decided  2020   3136
-## 6 OS Námestovo Decided  2020   2573</code></pre>
+##   Court              Status   Year  Value
+##   &lt;chr&gt;              &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt;
+## 1 OS Žilina          Incoming 2021  38509
+## 2 OS Trnava          Incoming 2021  21757
+## 3 OS Poprad          Incoming 2021   4909
+## 4 OS Martin          Incoming 2020   5676
+## 5 OS Pezinok         Incoming 2020   3135
+## 6 OS Dunajská Streda Incoming 2021   5920</code></pre>
 <div class="sourceCode" id="cb454"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb454-1"><a href="tidyverse-a-manipulácia-dát.html#cb454-1" aria-hidden="true" tabindex="-1"></a>sudyLong3 <span class="ot">&lt;-</span><span class="fu">pivot_longer</span>(sudyWide3, <span class="at">cols =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">33</span>, <span class="at">names_to =</span> <span class="fu">c</span>(<span class="st">&quot;Status&quot;</span>, <span class="st">&quot;Year&quot;</span>, <span class="st">&quot;Region&quot;</span>), <span class="at">names_sep =</span> <span class="st">&quot;_&quot;</span>,  <span class="at">values_to =</span> <span class="fu">c</span>(<span class="st">&quot;Value&quot;</span>))</span>
 <span id="cb454-2"><a href="tidyverse-a-manipulácia-dát.html#cb454-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb454-3"><a href="tidyverse-a-manipulácia-dát.html#cb454-3" aria-hidden="true" tabindex="-1"></a>sudyLong3 <span class="sc">%&gt;%</span></span>
 <span id="cb454-4"><a href="tidyverse-a-manipulácia-dát.html#cb454-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">6</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 6 x 5
-##   Court              Status   Year  Region             Value
-##   &lt;chr&gt;              &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;              &lt;dbl&gt;
-## 1 OS Malacky         Incoming 2020  KS Nitra              NA
-## 2 OS Lučenec         Decided  2021  KS Bratislava         NA
-## 3 OS Dolný Kubín     Decided  2021  KS Banská Bystrica    NA
-## 4 OS Revúca          Decided  2020  KS Trenčín            NA
-## 5 OS Michalovce      Incoming 2020  KS Košice           7234
-## 6 OS Rimavská Sobota Decided  2021  KS Trenčín            NA</code></pre>
+##   Court                Status   Year  Region             Value
+##   &lt;chr&gt;                &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;              &lt;dbl&gt;
+## 1 OS Svidník           Incoming 2021  KS Banská Bystrica    NA
+## 2 OS Trnava            Incoming 2020  KS Prešov             NA
+## 3 OS Košice-okolie     Incoming 2021  KS Trnava             NA
+## 4 OS Prešov            Decided  2020  KS Prešov          37826
+## 5 OS Liptovský Mikuláš Decided  2021  KS Žilina           3752
+## 6 OS Žiar nad Hronom   Decided  2021  KS Nitra              NA</code></pre>
 <p>Ako je vidieť, tak to nie je úplne pôvodný dataset. To súvisí s tým, že ani ten nebol úplne v long formáte. Stále sa však môžeme vrátiť k pôvodným dátam.</p>
 <div class="sourceCode" id="cb456"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb456-1"><a href="tidyverse-a-manipulácia-dát.html#cb456-1" aria-hidden="true" tabindex="-1"></a>sudyPovod <span class="ot">&lt;-</span> sudyLong3 <span class="sc">%&gt;%</span></span>
 <span id="cb456-2"><a href="tidyverse-a-manipulácia-dát.html#cb456-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span></span>
@@ -1730,27 +1730,27 @@ at least for single-argument functions ...</code></pre>
 <span id="cb463-3"><a href="tidyverse-a-manipulácia-dát.html#cb463-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Súd <span class="ot">=</span> Court, <span class="at">Rok =</span> Year, Nápad <span class="ot">=</span> Incoming, Rozhodnuté <span class="ot">=</span> Decided, Nerozhodnuté <span class="ot">=</span> Pending)</span>
 <span id="cb463-4"><a href="tidyverse-a-manipulácia-dát.html#cb463-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb463-5"><a href="tidyverse-a-manipulácia-dát.html#cb463-5" aria-hidden="true" tabindex="-1"></a>sudy_sample_sk</span></code></pre></div>
-<pre><code>##                        Súd  Rok Nápad Rozhodnuté Nerozhodnuté
-## 1                OS Zvolen 2021  6377       6092         2381
-## 2          OS Bratislava V 2020  8226       7405         4760
-## 3                OS Brezno 2020  3148       3089         1210
-## 4     OS Liptovský Mikuláš 2020  3813       3713         1871
-## 5                OS Martin 2020  5676       5601         2411
-## 6                OS Trnava 2021 21757      23294         8060
-## 7                OS Senica 2020  3401       3437         1247
-## 8                OS Zvolen 2020  6113       6314         2096
-## 9               OS Svidník 2020  2329       2954         1510
-## 10 OS Nové Mesto nad Váhom 2020  4322       4307         2909
-## 11       OS Bratislava III 2020  9504       9057         8139
-## 12               OS Poprad 2021  4909       4965         2787
-## 13               OS Poprad 2020  5063       4724         2843
-## 14          OS Dolný Kubín 2020  2127       2052          713
-## 15               OS Revúca 2020  2469       2435          653
-## 16              OS Skalica 2021  2337       2312         1391
-## 17    OS Liptovský Mikuláš 2021  3892       3752         2011
-## 18     OS Spišská Nová Ves 2021  7702       7312         2898
-## 19          OS Veľký Krtíš 2020  2611       2630          980
-## 20             OS Piešťany 2021  3041       3070         2065</code></pre>
+<pre><code>##                        Súd  Rok  Nápad Rozhodnuté Nerozhodnuté
+## 1              OS Bardejov 2020   3147       3136         1489
+## 2             OS Topoľčany 2020   3469       3460         1350
+## 3  OS Bánovce nad Bebravou 2020   1782       1660          690
+## 4               OS Skalica 2021   2337       2312         1391
+## 5               OS Trenčín 2020  19552      23376        11458
+## 6         OS Košice-okolie 2020   8937       9089         3795
+## 7               OS Malacky 2021   3990       4544         3685
+## 8                OS Prešov 2020  24983      37826         9599
+## 9            OS Nové Zámky 2020   6652       7065         3179
+## 10            OS Topoľčany 2021   3666       3302         1714
+## 11              OS Galanta 2020   7404       7265         3634
+## 12    OS Vranov nad Topľou 2021   3824       3438         2122
+## 13               OS Senica 2021   3483       3158         1572
+## 14      OS Banská Bystrica 2020 271334     279746        15464
+## 15        OS Bratislava II 2021   9433       9677         5449
+## 16        OS Košice-okolie 2021   8299       8191         3903
+## 17        OS Bratislava II 2020  10397       9434         5693
+## 18         OS Bratislava I 2020  72267     103316        16334
+## 19               OS Martin 2020   5676       5601         2411
+## 20               OS Žilina 2021  38509      38754        10159</code></pre>
 </details>
 <p><br></p>
 <p><strong>4.</strong> Vytvorte nový stĺpec, v ktorom sa nachádza hodnota tzv. clearance rate (počítaný ako pomer rozhodnutých vecí a nápadu, t.j. rozhodnuté (Decided) / nápad (Incoming)). Uložte dataset s pridaným stĺpcom v objekte <code>sudy_CR</code>. Zoraďte pozorovania zostupne a vyberte prvých 20% pozorovaní so stĺpcami súd (Court), Rok (Year), Clearance Rate (CR).</p>
