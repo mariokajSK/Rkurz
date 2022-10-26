@@ -1211,7 +1211,7 @@ Posledným náhľadom na dáta môžu byť QQ grafy, ktoré sa často využívaj
 ## lifeExp   1.00000000  0.04755312  0.6786624
 ## pop       0.04755312  1.00000000 -0.0556756
 ## gdpPercap 0.67866240 -0.05567560  1.0000000</code></pre>
-<p>Zároveň môžeme pomocou funkcie <code>cor.test</code> otestovať, či sú odhadnuté korelácie štatisticky signifikantné. Pozrime sa na HDP per capita a počet obyvateľov. Tieto dve premenné majú medzi sebou negatívnu koreláciu, ale zatiaľ nevieme, či je štatisticky signifikantná alebo nie.</p>
+<p>Zároveň môžeme pomocou funkcie <code>cor.test</code> otestovať, či sú odhadnuté korelácie štatisticky signifikantné. Pozrime sa na HDP na obyvateľa a počet obyvateľov. Tieto dve premenné majú medzi sebou negatívnu koreláciu, ale zatiaľ nevieme, či je štatisticky signifikantná alebo nie.</p>
 <div class="sourceCode" id="cb635"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb635-1"><a href="štatistika-v-r.html#cb635-1" aria-hidden="true" tabindex="-1"></a>cor1 <span class="ot">&lt;-</span> <span class="fu">cor.test</span>(gapminder_cs<span class="sc">$</span>pop, gapminder_cs<span class="sc">$</span>gdpPercap, <span class="at">method =</span> <span class="st">&quot;pearson&quot;</span>)</span>
 <span id="cb635-2"><a href="štatistika-v-r.html#cb635-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb635-3"><a href="štatistika-v-r.html#cb635-3" aria-hidden="true" tabindex="-1"></a>cor1</span></code></pre></div>
@@ -1227,7 +1227,7 @@ Posledným náhľadom na dáta môžu byť QQ grafy, ktoré sa často využívaj
 ##        cor 
 ## -0.0556756</code></pre>
 <p>p-value testu je v tomto prípade vyššia ako naša hranica signifikantnosti (0,05), čiže negatívna korelácia medzi týmito dvoma premennými nie je štatisticky signifikantná.</p>
-<p>Pozrime sa na strednú dĺžku života a HDP per capita.</p>
+<p>Pozrime sa na strednú dĺžku života a HDP na obyvateľa.</p>
 <div class="sourceCode" id="cb637"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb637-1"><a href="štatistika-v-r.html#cb637-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(gapminder_cs<span class="sc">$</span>lifeExp, gapminder_cs<span class="sc">$</span>gdpPercap)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
@@ -1296,7 +1296,7 @@ Posledným náhľadom na dáta môžu byť QQ grafy, ktoré sa často využívaj
 </ul>
 <p><strong>6. Neexistencia vzdialených pozorovaní ovplyvňujúcich regresné koeficienty</strong></p>
 <p><strong>7. Nezávislosť náhodných chýb</strong> (pri datasetoch, keď pre 1 entitu zbierame pozorovania opakovane vo viacerých časových horizontoch)</p>
-<p>Použime dataset <code>gapminder_cs</code>, ktorý sme si vytvorili vyššie a vytvorme model, ktorý sa bude snažiť vysvetlovať strednú dĺžku života v niektorých krajinách ako funkciu HDP per capita, počtu obyvateľov a toho, na akom svetadiele sa krajina nachádza.</p>
+<p>Použime dataset <code>gapminder_cs</code>, ktorý sme si vytvorili vyššie a vytvorme model, ktorý sa bude snažiť vysvetlovať strednú dĺžku života v niektorých krajinách ako funkciu HDP na obyvateľa, počtu obyvateľov a toho, na akom svetadiele sa krajina nachádza.</p>
 <p>V R vieme lineárny model skonštruovať pomocou <code>lm</code> funkcie, ktorá akceptuje rovnaké argumenty, ako štatistické funkcie, ktoré sme si v predchádzajúcich kapitolách ukazovali. Potrebujeme špecifikovať našu závislú a nezávislé premenné v modeli, keď na ľavej strane sa nachádza závislá premenná a na pravej nezávislé. Zároveň musíme v argumentoch funkcii povedať, aký dataset treba použiť.</p>
 <div class="sourceCode" id="cb643"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb643-1"><a href="štatistika-v-r.html#cb643-1" aria-hidden="true" tabindex="-1"></a>reg1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(lifeExp <span class="sc">~</span> gdpPercap <span class="sc">+</span> pop <span class="sc">+</span> continent, <span class="at">data =</span> gapminder_cs)</span>
 <span id="cb643-2"><a href="štatistika-v-r.html#cb643-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1333,8 +1333,8 @@ Posledným náhľadom na dáta môžu byť QQ grafy, ktoré sa často využívaj
 ## Multiple R-squared:  0.7141, Adjusted R-squared:  0.7014 
 ## F-statistic:  56.2 on 6 and 135 DF,  p-value: &lt; 0.00000000000000022</code></pre>
 <p>Prvou vecou, na ktorú sa ešte pred vyhodnocovaním jednotlivých koeficientov nezávislých premenných pozrieme je model fit. Ten sa určuje prostredníctvom R-squared hodnôt v spodnej časti R výstupu. Ako môžete vidieť, tak máme zobrazené dve R-squared hodnoty, pričom odporúčam riadiť sa podľa adjusted R-squared, pretože výpočet pri tejto hodnote berie do úvahy počet premenných a počet pozorovaní v modeli. Hocijaká premenná pridaná do modelu, aj keď medzi ňou a závislou premennou nie je vzťah, zvyšuje hodnotu model fitu (obyčajné R-squared) na základe náhody a preto by sme to mali vziať do úvahy. To presne adjusted R-squared robí.</p>
-<p>V tomto príklade vidno, že máme naozaj dobrý model fit, keď zvolené nezávislé vysvetľujú približne 70% rozptylu závislej premennej. S takto dobrým modelom sa môžeme bez problémov pustiť do hodnotenia a interpretácie koeficientov. Tie nám hovoria, že zmena (navýšenie) o jeden dolár v rámci HDP per capita premennej zvyšuje strednú dĺžku života o 0,00035.</p>
-<p>Zároveň vidíme, že veľkosť efektu premennej svetadiel znižuje veľkosť efektu HDP per capita. Toto by nemalo byť prekvapením, keďže pravdepodobne nemáme plne špecifikovaný model, keď premenná svetadiel v sebe s veľkou pravdepodobnosťou obsahuje efekt iných faktorov/premenných.</p>
+<p>V tomto príklade vidno, že máme naozaj dobrý model fit, keď zvolené nezávislé vysvetľujú približne 70% rozptylu závislej premennej. S takto dobrým modelom sa môžeme bez problémov pustiť do hodnotenia a interpretácie koeficientov. Tie nám hovoria, že zmena (navýšenie) o jeden dolár v rámci HDP na obyvateľa premennej zvyšuje strednú dĺžku života o 0,00035.</p>
+<p>Zároveň vidíme, že veľkosť efektu premennej svetadiel znižuje veľkosť efektu HDP na obyvateľa. Toto by nemalo byť prekvapením, keďže pravdepodobne nemáme plne špecifikovaný model, keď premenná svetadiel v sebe s veľkou pravdepodobnosťou obsahuje efekt iných faktorov/premenných.</p>
 <p>Ako aj pri iných štatistických modeloch/testoch, niekedy je lepšie výsledky vizualizovať. Pre regresie sa to dá jedoducho pomocou <code>effects</code> knižnice. Táto vie vybrať a vizualizovať efekt jednej premennej spoločne s jej intervalmi spoľahlivosti. Funkcia <code>effect</code> vypočíta efekt, pričom ako argumenty akceptuje názov premennej, ktorej efekt chceme vizualizovať a názov modelu, v ktorom táto premenná je. Takto definovaný efekt jednej premennej je vizualizovaný pomocou generickej funkcie base R <code>plot</code>.</p>
 <div class="sourceCode" id="cb645"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb645-1"><a href="štatistika-v-r.html#cb645-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(&quot;effects&quot;) #ak nemáte nainštalovanú knižnicu effects, odstránte # a spustite príkaz</span></span>
 <span id="cb645-2"><a href="štatistika-v-r.html#cb645-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(effects)</span>
@@ -1343,7 +1343,7 @@ Posledným náhľadom na dáta môžu byť QQ grafy, ktoré sa často využívaj
 <p><img src="_main_files/figure-html/unnamed-chunk-336-1.png" width="672" /></p>
 <div class="sourceCode" id="cb646"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb646-1"><a href="štatistika-v-r.html#cb646-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">effect</span>(<span class="st">&quot;continent&quot;</span>, reg1))</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-337-1.png" width="672" /></p>
-<p>Keďže z predošlých ukážok vieme, že HDP per capita dáta sú vpravo zošikmené, tak môžeme vyskúšať transformovať túto premennú pomocou logaritmu. Túto transformáciu vieme spraviť v rámci definovania nezávislých premenných v modeli bez toho, aby sme menili samotné dáta.</p>
+<p>Keďže z predošlých ukážok vieme, že HDP na obyvateľa dáta sú vpravo zošikmené, tak môžeme vyskúšať transformovať túto premennú pomocou logaritmu. Túto transformáciu vieme spraviť v rámci definovania nezávislých premenných v modeli bez toho, aby sme menili samotné dáta.</p>
 <div class="sourceCode" id="cb647"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb647-1"><a href="štatistika-v-r.html#cb647-1" aria-hidden="true" tabindex="-1"></a>reg2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(lifeExp <span class="sc">~</span> <span class="fu">log</span>(gdpPercap) <span class="sc">+</span> pop <span class="sc">+</span> continent, <span class="at">data =</span> gapminder_cs)</span>
 <span id="cb647-2"><a href="štatistika-v-r.html#cb647-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb647-3"><a href="štatistika-v-r.html#cb647-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(reg2)</span></code></pre></div>
