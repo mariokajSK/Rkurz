@@ -1227,7 +1227,7 @@ F Statistic
 <div class="sourceCode" id="cb700"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb700-1"><a href="r-markdown.html#cb700-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(m2, <span class="at">title =</span> <span class="st">&quot;Regression result&quot;</span>, <span class="at">dep.var.labels =</span> <span class="st">&quot;Ozone levels&quot;</span>, <span class="at">type =</span> <span class="st">&quot;latex&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## % Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
-## % Date and time: št, nov 03, 2022 - 8:20:32
+## % Date and time: št, nov 03, 2022 - 9:06:47
 ## \begin{table}[!htbp] \centering 
 ##   \caption{Regression result} 
 ##   \label{} 
@@ -1345,9 +1345,9 @@ F Statistic
 ##                      y = lifeExp)) +
 ##     geom_point(alpha = 0.3) +
 ##     geom_smooth(method = &quot;lm&quot;) +
-##     labs(x = &quot;GDP per capita (log)&quot;,
-##          y = &quot;Life expectancy&quot;,
-##          caption = &quot;note: Observations are country years&quot;) +
+##     labs(x = &quot;HDP na obyvateľa (log)&quot;,
+##          y = &quot;Stredná dĺžka života&quot;,
+##          caption = &quot;Poznámka: Jednotka analýzy sú krajiny v roku&quot;) +
 ##     theme_minimal()
 ## ```
 ## 
@@ -1366,7 +1366,7 @@ F Statistic
 ## 
 ## m3 &lt;- lm(lifeExp ~ log(gdpPercap) + pop + continent, data = cs_gapminder)
 ## 
-## stargazer(m1, m2, m3, title = &quot;OLS models&quot;, dep.var.labels = &quot;Life Expectancy&quot;, covariate.labels = c(&quot;GDP per capita (log)&quot;, &quot;Population&quot;, &quot;Continent&quot;), type = &quot;latex&quot;, header = FALSE)
+## stargazer(m1, m2, m3, title = &quot;OLS modely&quot;, intercept.bottom = F, dep.var.labels = &quot;Stredná dĺžka života&quot;, covariate.labels = c(&quot;(Intercept)&quot;, &quot;HDP na obyvateľa (log)&quot;, &quot;Počet obyvateľov&quot;, &quot;Amerika&quot;, &quot;Ázia&quot;, &quot;Európa&quot;, &quot;Oceánia&quot;), type = &quot;latex&quot;, header = FALSE)
 ## ```
 ## 
 ## Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
