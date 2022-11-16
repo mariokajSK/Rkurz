@@ -39,7 +39,6 @@ set in the _output.yml file.</p>" />
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -56,6 +55,17 @@ set in the _output.yml file.</p>" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -123,6 +133,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -220,12 +252,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3.11" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#distinct"><i class="fa fa-check"></i><b>3.3.11</b> distinct()</a></li>
 <li class="chapter" data-level="3.3.12" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#podobnosť-funkcií-v-tidyverse-ako-výhoda"><i class="fa fa-check"></i><b>3.3.12</b> Podobnosť funkcií v tidyverse ako výhoda</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#spájanie-datasetov"><i class="fa fa-check"></i><b>3.4</b> Spájanie datasetov</a>
+<li class="chapter" data-level="3.4" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#spájanie-datasetov-nepovinné"><i class="fa fa-check"></i><b>3.4</b> Spájanie datasetov (nepovinné)</a>
 <ul>
 <li class="chapter" data-level="3.4.1" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#joins"><i class="fa fa-check"></i><b>3.4.1</b> Joins</a></li>
 <li class="chapter" data-level="3.4.2" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#bind_rows-a-bind_cols"><i class="fa fa-check"></i><b>3.4.2</b> bind_rows() a bind_cols()</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#transponovanie-datasetov"><i class="fa fa-check"></i><b>3.5</b> Transponovanie datasetov</a></li>
+<li class="chapter" data-level="3.5" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#transponovanie-datasetov-nepovinné"><i class="fa fa-check"></i><b>3.5</b> Transponovanie datasetov (nepovinné)</a></li>
+<li class="chapter" data-level="3.6" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#cvičenia"><i class="fa fa-check"></i><b>3.6</b> Cvičenia</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html"><i class="fa fa-check"></i><b>4</b> Ggplot a vizualizácia dát</a>
 <ul>
@@ -272,6 +305,70 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.9.3" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#vytvorenie-témy"><i class="fa fa-check"></i><b>4.9.3</b> Vytvorenie témy</a></li>
 </ul></li>
 <li class="chapter" data-level="4.10" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#mapy-nepovinné"><i class="fa fa-check"></i><b>4.10</b> Mapy (nepovinné)</a></li>
+<li class="chapter" data-level="4.11" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#cvičenia-1"><i class="fa fa-check"></i><b>4.11</b> Cvičenia</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html"><i class="fa fa-check"></i><b>5</b> Štatistika v R</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#popisné-štatistiky"><i class="fa fa-check"></i><b>5.1</b> Popisné štatistiky</a></li>
+<li class="chapter" data-level="5.2" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#deskriptívy-za-využitia-dplyr"><i class="fa fa-check"></i><b>5.2</b> Deskriptívy za využitia <code>dplyr</code></a></li>
+<li class="chapter" data-level="5.3" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#deskriptívy-za-využitia-psych"><i class="fa fa-check"></i><b>5.3</b> Deskriptívy za využitia <code>psych</code></a></li>
+<li class="chapter" data-level="5.4" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#deskriptívy-za-využitia-hmisc"><i class="fa fa-check"></i><b>5.4</b> Deskriptívy za využitia <code>Hmisc</code></a></li>
+<li class="chapter" data-level="5.5" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#vizualizácia-niektorých-popisných-štatistík"><i class="fa fa-check"></i><b>5.5</b> Vizualizácia niektorých popisných štatistík</a></li>
+<li class="chapter" data-level="5.6" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#t-test"><i class="fa fa-check"></i><b>5.6</b> T-test</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#jednovýberový-t-test"><i class="fa fa-check"></i><b>5.6.1</b> Jednovýberový t-test</a></li>
+<li class="chapter" data-level="5.6.2" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#dvojvýberový-t-test"><i class="fa fa-check"></i><b>5.6.2</b> Dvojvýberový t-test</a></li>
+<li class="chapter" data-level="5.6.3" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#párový-t-test"><i class="fa fa-check"></i><b>5.6.3</b> párový t-test</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#anova"><i class="fa fa-check"></i><b>5.7</b> ANOVA</a></li>
+<li class="chapter" data-level="5.8" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#chi-square-test-nezávislosti"><i class="fa fa-check"></i><b>5.8</b> Chi-square test nezávislosti</a></li>
+<li class="chapter" data-level="5.9" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#korelácia"><i class="fa fa-check"></i><b>5.9</b> Korelácia</a></li>
+<li class="chapter" data-level="5.10" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#lineárna-regresia"><i class="fa fa-check"></i><b>5.10</b> Lineárna regresia</a>
+<ul>
+<li class="chapter" data-level="5.10.1" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#diagnostika-modelu"><i class="fa fa-check"></i><b>5.10.1</b> Diagnostika modelu</a></li>
+<li class="chapter" data-level="5.10.2" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#objekty-modelu-a-broom-knižnica"><i class="fa fa-check"></i><b>5.10.2</b> Objekty modelu a <code>broom</code> knižnica</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="r-markdown.html"><a href="r-markdown.html"><i class="fa fa-check"></i><b>6</b> R Markdown</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="r-markdown.html"><a href="r-markdown.html#čo-je-r-markdown"><i class="fa fa-check"></i><b>6.1</b> Čo je R Markdown?</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="r-markdown.html"><a href="r-markdown.html#využitie-r-markdown"><i class="fa fa-check"></i><b>6.1.1</b> Využitie R Markdown</a></li>
+<li class="chapter" data-level="6.1.2" data-path="r-markdown.html"><a href="r-markdown.html#z-čoho-sa-skladá-r-markdown-prostredie-a-ako-funguje"><i class="fa fa-check"></i><b>6.1.2</b> Z čoho sa skladá R Markdown prostredie a ako funguje?</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="r-markdown.html"><a href="r-markdown.html#nastavenie-a-formátovanie-dokumentu"><i class="fa fa-check"></i><b>6.2</b> Nastavenie a formátovanie dokumentu</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="r-markdown.html"><a href="r-markdown.html#vytvorenie-dokumentu-a-jeho-nastavenia"><i class="fa fa-check"></i><b>6.2.1</b> Vytvorenie dokumentu a jeho nastavenia</a></li>
+<li class="chapter" data-level="6.2.2" data-path="r-markdown.html"><a href="r-markdown.html#yaml-hlavička"><i class="fa fa-check"></i><b>6.2.2</b> YAML hlavička</a></li>
+<li class="chapter" data-level="6.2.3" data-path="r-markdown.html"><a href="r-markdown.html#jednoduché-formátovanie-textu"><i class="fa fa-check"></i><b>6.2.3</b> Jednoduché formátovanie textu</a></li>
+<li class="chapter" data-level="6.2.4" data-path="r-markdown.html"><a href="r-markdown.html#názvy-chunks"><i class="fa fa-check"></i><b>6.2.4</b> Názvy chunks</a></li>
+<li class="chapter" data-level="6.2.5" data-path="r-markdown.html"><a href="r-markdown.html#možnosti-nastavenia-chunks"><i class="fa fa-check"></i><b>6.2.5</b> Možnosti nastavenia chunks</a></li>
+<li class="chapter" data-level="6.2.6" data-path="r-markdown.html"><a href="r-markdown.html#parametre"><i class="fa fa-check"></i><b>6.2.6</b> Parametre</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="r-markdown.html"><a href="r-markdown.html#tabuľky-a-možnosti-outputov"><i class="fa fa-check"></i><b>6.3</b> Tabuľky a možnosti outputov</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="r-markdown.html"><a href="r-markdown.html#html"><i class="fa fa-check"></i><b>6.3.1</b> HTML</a></li>
+<li class="chapter" data-level="6.3.2" data-path="r-markdown.html"><a href="r-markdown.html#word"><i class="fa fa-check"></i><b>6.3.2</b> Word</a></li>
+<li class="chapter" data-level="6.3.3" data-path="r-markdown.html"><a href="r-markdown.html#latex"><i class="fa fa-check"></i><b>6.3.3</b> LaTeX</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="r-markdown.html"><a href="r-markdown.html#ďalšie-zdroje-a-ukážka-r-markdown-výstupov"><i class="fa fa-check"></i><b>6.4</b> Ďalšie zdroje a ukážka R Markdown výstupov</a></li>
+<li class="chapter" data-level="6.5" data-path="r-markdown.html"><a href="r-markdown.html#bibliography"><i class="fa fa-check"></i><b>6.5</b> Bibliography</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html"><i class="fa fa-check"></i><b>7</b> Plotly vizualizácie</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html#čo-je-plotly"><i class="fa fa-check"></i><b>7.1</b> Čo je plotly?</a></li>
+<li class="chapter" data-level="7.2" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html#ako-plotly-funguje"><i class="fa fa-check"></i><b>7.2</b> Ako plotly funguje</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html#načítanie-knižníc-a-dát"><i class="fa fa-check"></i><b>7.2.1</b> Načítanie knižníc a dát</a></li>
+<li class="chapter" data-level="7.2.2" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html#ggplotly"><i class="fa fa-check"></i><b>7.2.2</b> <code>ggplotly</code></a></li>
+<li class="chapter" data-level="7.2.3" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html#plotly-graf"><i class="fa fa-check"></i><b>7.2.3</b> <code>plotly</code> graf</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html#stĺpcový-graf-1"><i class="fa fa-check"></i><b>7.3</b> Stĺpcový graf</a></li>
+<li class="chapter" data-level="7.4" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html#histogram-1"><i class="fa fa-check"></i><b>7.4</b> Histogram</a></li>
+<li class="chapter" data-level="7.5" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html#bodové-grafy"><i class="fa fa-check"></i><b>7.5</b> Bodové grafy</a></li>
+<li class="chapter" data-level="7.6" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html#boxplot"><i class="fa fa-check"></i><b>7.6</b> Boxplot</a></li>
+<li class="chapter" data-level="7.7" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html#čiarový-graf-1"><i class="fa fa-check"></i><b>7.7</b> Čiarový graf</a></li>
+<li class="chapter" data-level="7.8" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html#úprava-interaktívnych-prvkov"><i class="fa fa-check"></i><b>7.8</b> Úprava interaktívnych prvkov</a></li>
 </ul></li>
 </ul>
 
@@ -293,7 +390,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">Základy jazyka R,<br>analýza a práca s dátami v R</h1>
 <p class="author multi-author"><em><font size="5"> Mário Kajan, Alex Rusnák </font><br><br></em></p>
-<p class="date"><em><font size="4">03. október 2022</font></em></p>
+<p class="date"><em><font size="4">16. november 2022</font></em></p>
 </div>
 <div id="section" class="section level1 unnumbered">
 <h1 class="unnumbered"></h1>
