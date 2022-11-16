@@ -39,7 +39,6 @@ set in the _output.yml file.</p>" />
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -56,6 +55,17 @@ set in the _output.yml file.</p>" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
 <style type="text/css">
@@ -123,6 +133,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -220,12 +252,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3.11" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#distinct"><i class="fa fa-check"></i><b>3.3.11</b> distinct()</a></li>
 <li class="chapter" data-level="3.3.12" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#podobnosť-funkcií-v-tidyverse-ako-výhoda"><i class="fa fa-check"></i><b>3.3.12</b> Podobnosť funkcií v tidyverse ako výhoda</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#spájanie-datasetov"><i class="fa fa-check"></i><b>3.4</b> Spájanie datasetov</a>
+<li class="chapter" data-level="3.4" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#spájanie-datasetov-nepovinné"><i class="fa fa-check"></i><b>3.4</b> Spájanie datasetov (nepovinné)</a>
 <ul>
 <li class="chapter" data-level="3.4.1" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#joins"><i class="fa fa-check"></i><b>3.4.1</b> Joins</a></li>
 <li class="chapter" data-level="3.4.2" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#bind_rows-a-bind_cols"><i class="fa fa-check"></i><b>3.4.2</b> bind_rows() a bind_cols()</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#transponovanie-datasetov"><i class="fa fa-check"></i><b>3.5</b> Transponovanie datasetov</a></li>
+<li class="chapter" data-level="3.5" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#transponovanie-datasetov-nepovinné"><i class="fa fa-check"></i><b>3.5</b> Transponovanie datasetov (nepovinné)</a></li>
+<li class="chapter" data-level="3.6" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#cvičenia"><i class="fa fa-check"></i><b>3.6</b> Cvičenia</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html"><i class="fa fa-check"></i><b>4</b> Ggplot a vizualizácia dát</a>
 <ul>
@@ -272,6 +305,69 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.9.3" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#vytvorenie-témy"><i class="fa fa-check"></i><b>4.9.3</b> Vytvorenie témy</a></li>
 </ul></li>
 <li class="chapter" data-level="4.10" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#mapy-nepovinné"><i class="fa fa-check"></i><b>4.10</b> Mapy (nepovinné)</a></li>
+<li class="chapter" data-level="4.11" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#cvičenia-1"><i class="fa fa-check"></i><b>4.11</b> Cvičenia</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html"><i class="fa fa-check"></i><b>5</b> Štatistika v R</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#popisné-štatistiky"><i class="fa fa-check"></i><b>5.1</b> Popisné štatistiky</a></li>
+<li class="chapter" data-level="5.2" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#deskriptívy-za-využitia-dplyr"><i class="fa fa-check"></i><b>5.2</b> Deskriptívy za využitia <code>dplyr</code></a></li>
+<li class="chapter" data-level="5.3" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#deskriptívy-za-využitia-psych"><i class="fa fa-check"></i><b>5.3</b> Deskriptívy za využitia <code>psych</code></a></li>
+<li class="chapter" data-level="5.4" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#deskriptívy-za-využitia-hmisc"><i class="fa fa-check"></i><b>5.4</b> Deskriptívy za využitia <code>Hmisc</code></a></li>
+<li class="chapter" data-level="5.5" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#vizualizácia-niektorých-popisných-štatistík"><i class="fa fa-check"></i><b>5.5</b> Vizualizácia niektorých popisných štatistík</a></li>
+<li class="chapter" data-level="5.6" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#t-test"><i class="fa fa-check"></i><b>5.6</b> T-test</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#jednovýberový-t-test"><i class="fa fa-check"></i><b>5.6.1</b> Jednovýberový t-test</a></li>
+<li class="chapter" data-level="5.6.2" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#dvojvýberový-t-test"><i class="fa fa-check"></i><b>5.6.2</b> Dvojvýberový t-test</a></li>
+<li class="chapter" data-level="5.6.3" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#párový-t-test"><i class="fa fa-check"></i><b>5.6.3</b> párový t-test</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#anova"><i class="fa fa-check"></i><b>5.7</b> ANOVA</a></li>
+<li class="chapter" data-level="5.8" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#chi-square-test-nezávislosti"><i class="fa fa-check"></i><b>5.8</b> Chi-square test nezávislosti</a></li>
+<li class="chapter" data-level="5.9" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#korelácia"><i class="fa fa-check"></i><b>5.9</b> Korelácia</a></li>
+<li class="chapter" data-level="5.10" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#lineárna-regresia"><i class="fa fa-check"></i><b>5.10</b> Lineárna regresia</a>
+<ul>
+<li class="chapter" data-level="5.10.1" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#diagnostika-modelu"><i class="fa fa-check"></i><b>5.10.1</b> Diagnostika modelu</a></li>
+<li class="chapter" data-level="5.10.2" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#objekty-modelu-a-broom-knižnica"><i class="fa fa-check"></i><b>5.10.2</b> Objekty modelu a <code>broom</code> knižnica</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html"><i class="fa fa-check"></i><b>6</b> Plotly vizualizácie</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html#čo-je-plotly"><i class="fa fa-check"></i><b>6.1</b> Čo je plotly?</a></li>
+<li class="chapter" data-level="6.2" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html#ako-plotly-funguje"><i class="fa fa-check"></i><b>6.2</b> Ako plotly funguje</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html#načítanie-knižníc-a-dát"><i class="fa fa-check"></i><b>6.2.1</b> Načítanie knižníc a dát</a></li>
+<li class="chapter" data-level="6.2.2" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html#ggplotly"><i class="fa fa-check"></i><b>6.2.2</b> <code>ggplotly</code></a></li>
+<li class="chapter" data-level="6.2.3" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html#plotly-graf"><i class="fa fa-check"></i><b>6.2.3</b> <code>plotly</code> graf</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html#stĺpcový-graf-1"><i class="fa fa-check"></i><b>6.3</b> Stĺpcový graf</a></li>
+<li class="chapter" data-level="6.4" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html#histogram-1"><i class="fa fa-check"></i><b>6.4</b> Histogram</a></li>
+<li class="chapter" data-level="6.5" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html#bodové-grafy"><i class="fa fa-check"></i><b>6.5</b> Bodové grafy</a></li>
+<li class="chapter" data-level="6.6" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html#boxplot"><i class="fa fa-check"></i><b>6.6</b> Boxplot</a></li>
+<li class="chapter" data-level="6.7" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html#čiarový-graf-1"><i class="fa fa-check"></i><b>6.7</b> Čiarový graf</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="r-markdown.html"><a href="r-markdown.html"><i class="fa fa-check"></i><b>7</b> R Markdown</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="r-markdown.html"><a href="r-markdown.html#čo-je-r-markdown"><i class="fa fa-check"></i><b>7.1</b> Čo je R Markdown?</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="r-markdown.html"><a href="r-markdown.html#využitie-r-markdown"><i class="fa fa-check"></i><b>7.1.1</b> Využitie R Markdown</a></li>
+<li class="chapter" data-level="7.1.2" data-path="r-markdown.html"><a href="r-markdown.html#z-čoho-sa-skladá-r-markdown-prostredie-a-ako-funguje"><i class="fa fa-check"></i><b>7.1.2</b> Z čoho sa skladá R Markdown prostredie a ako funguje?</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="r-markdown.html"><a href="r-markdown.html#nastavenie-a-formátovanie-dokumentu"><i class="fa fa-check"></i><b>7.2</b> Nastavenie a formátovanie dokumentu</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="r-markdown.html"><a href="r-markdown.html#vytvorenie-dokumentu-a-jeho-nastavenia"><i class="fa fa-check"></i><b>7.2.1</b> Vytvorenie dokumentu a jeho nastavenia</a></li>
+<li class="chapter" data-level="7.2.2" data-path="r-markdown.html"><a href="r-markdown.html#yaml-hlavička"><i class="fa fa-check"></i><b>7.2.2</b> YAML hlavička</a></li>
+<li class="chapter" data-level="7.2.3" data-path="r-markdown.html"><a href="r-markdown.html#jednoduché-formátovanie-textu"><i class="fa fa-check"></i><b>7.2.3</b> Jednoduché formátovanie textu</a></li>
+<li class="chapter" data-level="7.2.4" data-path="r-markdown.html"><a href="r-markdown.html#názvy-chunks"><i class="fa fa-check"></i><b>7.2.4</b> Názvy chunks</a></li>
+<li class="chapter" data-level="7.2.5" data-path="r-markdown.html"><a href="r-markdown.html#možnosti-nastavenia-chunks"><i class="fa fa-check"></i><b>7.2.5</b> Možnosti nastavenia chunks</a></li>
+<li class="chapter" data-level="7.2.6" data-path="r-markdown.html"><a href="r-markdown.html#parametre"><i class="fa fa-check"></i><b>7.2.6</b> Parametre</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="r-markdown.html"><a href="r-markdown.html#tabuľky-a-možnosti-outputov"><i class="fa fa-check"></i><b>7.3</b> Tabuľky a možnosti outputov</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="r-markdown.html"><a href="r-markdown.html#html"><i class="fa fa-check"></i><b>7.3.1</b> HTML</a></li>
+<li class="chapter" data-level="7.3.2" data-path="r-markdown.html"><a href="r-markdown.html#word"><i class="fa fa-check"></i><b>7.3.2</b> Word</a></li>
+<li class="chapter" data-level="7.3.3" data-path="r-markdown.html"><a href="r-markdown.html#latex"><i class="fa fa-check"></i><b>7.3.3</b> LaTeX</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="r-markdown.html"><a href="r-markdown.html#ďalšie-zdroje-a-ukážka-r-markdown-výstupov"><i class="fa fa-check"></i><b>7.4</b> Ďalšie zdroje a ukážka R Markdown výstupov</a></li>
+<li class="chapter" data-level="7.5" data-path="r-markdown.html"><a href="r-markdown.html#bibliography"><i class="fa fa-check"></i><b>7.5</b> Bibliography</a></li>
 </ul></li>
 </ul>
 
@@ -539,9 +635,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Histogram</strong></p>
 <div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="základy-r---1.html#cb66-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">300</span>) <span class="co">#rnorm vytvorí náhodné čísla s normálnou distribúciou, priemerom 0 a smerodajnou odchýlkou 1</span></span>
 <span id="cb66-2"><a href="základy-r---1.html#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(d)</span></code></pre></div>
-<pre><code>## [1] -0.05207261</code></pre>
+<pre><code>## [1] 0.009562684</code></pre>
 <div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="základy-r---1.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(d)</span></code></pre></div>
-<pre><code>## [1] 0.9372682</code></pre>
+<pre><code>## [1] 1.030284</code></pre>
 <div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="základy-r---1.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(d) <span class="co"># ukáže histogram</span></span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
 </div>
@@ -732,85 +828,121 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="základy-r---1.html#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="fu">update.packages</span>()</span></code></pre></div>
 <p>Aké všetky knižnice mám nainštalované?</p>
 <div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="základy-r---1.html#cb142-1" aria-hidden="true" tabindex="-1"></a>(<span class="fu">.packages</span>(<span class="at">all.available=</span><span class="cn">TRUE</span>))</span></code></pre></div>
-<pre><code>##   [1] &quot;abind&quot;          &quot;AER&quot;            &quot;AICcmodavg&quot;     &quot;askpass&quot;       
-##   [5] &quot;assertthat&quot;     &quot;backports&quot;      &quot;base&quot;           &quot;base64enc&quot;     
-##   [9] &quot;bayestestR&quot;     &quot;bdsmatrix&quot;      &quot;Benchmarking&quot;   &quot;BH&quot;            
-##  [13] &quot;bit&quot;            &quot;bit64&quot;          &quot;bitops&quot;         &quot;blob&quot;          
-##  [17] &quot;bookdown&quot;       &quot;boot&quot;           &quot;brew&quot;           &quot;brio&quot;          
-##  [21] &quot;broom&quot;          &quot;bslib&quot;          &quot;cachem&quot;         &quot;callr&quot;         
-##  [25] &quot;car&quot;            &quot;carData&quot;        &quot;cellranger&quot;     &quot;censReg&quot;       
-##  [29] &quot;class&quot;          &quot;classInt&quot;       &quot;cli&quot;            &quot;clipr&quot;         
-##  [33] &quot;cluster&quot;        &quot;codetools&quot;      &quot;coin&quot;           &quot;collapse&quot;      
-##  [37] &quot;colorspace&quot;     &quot;commonmark&quot;     &quot;compiler&quot;       &quot;countrycode&quot;   
-##  [41] &quot;cpp11&quot;          &quot;crayon&quot;         &quot;credentials&quot;    &quot;crch&quot;          
-##  [45] &quot;crosstalk&quot;      &quot;curl&quot;           &quot;data.table&quot;     &quot;datasets&quot;      
-##  [49] &quot;datawizard&quot;     &quot;DBI&quot;            &quot;dbplyr&quot;         &quot;deaR&quot;          
-##  [53] &quot;deldir&quot;         &quot;desc&quot;           &quot;DescrTab2&quot;      &quot;DescTools&quot;     
-##  [57] &quot;devtools&quot;       &quot;diffobj&quot;        &quot;digest&quot;         &quot;downlit&quot;       
-##  [61] &quot;dplyr&quot;          &quot;dtplyr&quot;         &quot;e1071&quot;          &quot;effectsize&quot;    
-##  [65] &quot;ellipsis&quot;       &quot;emmeans&quot;        &quot;estimability&quot;   &quot;eurostat&quot;      
-##  [69] &quot;evaluate&quot;       &quot;Exact&quot;          &quot;exact2x2&quot;       &quot;exactci&quot;       
-##  [73] &quot;expm&quot;           &quot;extrafont&quot;      &quot;extrafontdb&quot;    &quot;fansi&quot;         
-##  [77] &quot;farver&quot;         &quot;fastmap&quot;        &quot;flextable&quot;      &quot;fontawesome&quot;   
-##  [81] &quot;forcats&quot;        &quot;foreign&quot;        &quot;Formula&quot;        &quot;fs&quot;            
-##  [85] &quot;gapminder&quot;      &quot;gargle&quot;         &quot;gdata&quot;          &quot;gdtools&quot;       
-##  [89] &quot;generics&quot;       &quot;gert&quot;           &quot;ggeffects&quot;      &quot;ggforce&quot;       
-##  [93] &quot;gghighlight&quot;    &quot;ggplot2&quot;        &quot;ggrepel&quot;        &quot;ggridges&quot;      
-##  [97] &quot;ggthemes&quot;       &quot;gh&quot;             &quot;gitcreds&quot;       &quot;gld&quot;           
-## [101] &quot;glmmML&quot;         &quot;glmmTMB&quot;        &quot;glue&quot;           &quot;googledrive&quot;   
-## [105] &quot;googlesheets4&quot;  &quot;graphics&quot;       &quot;grDevices&quot;      &quot;grid&quot;          
-## [109] &quot;gridExtra&quot;      &quot;gtable&quot;         &quot;gtools&quot;         &quot;haven&quot;         
-## [113] &quot;here&quot;           &quot;highr&quot;          &quot;Hmisc&quot;          &quot;hms&quot;           
-## [117] &quot;htmlTable&quot;      &quot;htmltools&quot;      &quot;htmlwidgets&quot;    &quot;htobit&quot;        
-## [121] &quot;httpuv&quot;         &quot;httr&quot;           &quot;checkmate&quot;      &quot;ids&quot;           
-## [125] &quot;igraph&quot;         &quot;ini&quot;            &quot;insight&quot;        &quot;interp&quot;        
-## [129] &quot;isoband&quot;        &quot;jpeg&quot;           &quot;jquerylib&quot;      &quot;jsonlite&quot;      
-## [133] &quot;kableExtra&quot;     &quot;KernSmooth&quot;     &quot;klippy&quot;         &quot;knitr&quot;         
-## [137] &quot;labeling&quot;       &quot;later&quot;          &quot;lattice&quot;        &quot;latticeExtra&quot;  
-## [141] &quot;lazyeval&quot;       &quot;libcoin&quot;        &quot;lifecycle&quot;      &quot;lme4&quot;          
-## [145] &quot;lmerTest&quot;       &quot;lmom&quot;           &quot;lmtest&quot;         &quot;lpSolve&quot;       
-## [149] &quot;lpSolveAPI&quot;     &quot;lubridate&quot;      &quot;magrittr&quot;       &quot;mapproj&quot;       
-## [153] &quot;maps&quot;           &quot;maptools&quot;       &quot;markdown&quot;       &quot;MASS&quot;          
-## [157] &quot;Matrix&quot;         &quot;MatrixModels&quot;   &quot;matrixStats&quot;    &quot;maxLik&quot;        
-## [161] &quot;memoise&quot;        &quot;methods&quot;        &quot;mgcv&quot;           &quot;mime&quot;          
-## [165] &quot;miniUI&quot;         &quot;minqa&quot;          &quot;miscTools&quot;      &quot;mnormt&quot;        
-## [169] &quot;modelr&quot;         &quot;modeltools&quot;     &quot;multcomp&quot;       &quot;munsell&quot;       
-## [173] &quot;mvtnorm&quot;        &quot;nlme&quot;           &quot;nloptr&quot;         &quot;nnet&quot;          
-## [177] &quot;numDeriv&quot;       &quot;officer&quot;        &quot;openssl&quot;        &quot;openxlsx&quot;      
-## [181] &quot;ordinal&quot;        &quot;packrat&quot;        &quot;palmerpenguins&quot; &quot;parallel&quot;      
-## [185] &quot;parameters&quot;     &quot;patchwork&quot;      &quot;pbapply&quot;        &quot;pbkrtest&quot;      
-## [189] &quot;performance&quot;    &quot;pillar&quot;         &quot;pkgbuild&quot;       &quot;pkgconfig&quot;     
-## [193] &quot;pkgdown&quot;        &quot;pkgload&quot;        &quot;plm&quot;            &quot;plotly&quot;        
-## [197] &quot;plyr&quot;           &quot;png&quot;            &quot;polyclip&quot;       &quot;praise&quot;        
-## [201] &quot;prettyunits&quot;    &quot;processx&quot;       &quot;profvis&quot;        &quot;progress&quot;      
-## [205] &quot;promises&quot;       &quot;proxy&quot;          &quot;ps&quot;             &quot;psych&quot;         
-## [209] &quot;purrr&quot;          &quot;quadprog&quot;       &quot;quantreg&quot;       &quot;R6&quot;            
-## [213] &quot;ragg&quot;           &quot;rappdirs&quot;       &quot;rbibutils&quot;      &quot;rcmdcheck&quot;     
-## [217] &quot;RColorBrewer&quot;   &quot;Rcpp&quot;           &quot;RcppArmadillo&quot;  &quot;RcppEigen&quot;     
-## [221] &quot;RCurl&quot;          &quot;Rdpack&quot;         &quot;readr&quot;          &quot;readxl&quot;        
-## [225] &quot;RefManageR&quot;     &quot;regions&quot;        &quot;rematch&quot;        &quot;rematch2&quot;      
-## [229] &quot;remotes&quot;        &quot;reprex&quot;         &quot;rio&quot;            &quot;rJava&quot;         
-## [233] &quot;rlang&quot;          &quot;rmarkdown&quot;      &quot;rootSolve&quot;      &quot;roxygen2&quot;      
-## [237] &quot;rpart&quot;          &quot;rprojroot&quot;      &quot;rsconnect&quot;      &quot;rstudioapi&quot;    
-## [241] &quot;Rttf2pt1&quot;       &quot;rversions&quot;      &quot;rvest&quot;          &quot;s2&quot;            
-## [245] &quot;sandwich&quot;       &quot;sass&quot;           &quot;scales&quot;         &quot;scoringRules&quot;  
-## [249] &quot;selectr&quot;        &quot;sessioninfo&quot;    &quot;sf&quot;             &quot;shiny&quot;         
-## [253] &quot;sjlabelled&quot;     &quot;sjmisc&quot;         &quot;sjPlot&quot;         &quot;sjstats&quot;       
-## [257] &quot;sourcetools&quot;    &quot;sp&quot;             &quot;SparseM&quot;        &quot;spatial&quot;       
-## [261] &quot;splines&quot;        &quot;ssanv&quot;          &quot;stargazer&quot;      &quot;stats&quot;         
-## [265] &quot;stats4&quot;         &quot;stringi&quot;        &quot;stringr&quot;        &quot;survival&quot;      
-## [269] &quot;svglite&quot;        &quot;swirl&quot;          &quot;sys&quot;            &quot;systemfonts&quot;   
-## [273] &quot;tcltk&quot;          &quot;testthat&quot;       &quot;texreg&quot;         &quot;textshaping&quot;   
-## [277] &quot;TH.data&quot;        &quot;tibble&quot;         &quot;tidyr&quot;          &quot;tidyselect&quot;    
-## [281] &quot;tidyverse&quot;      &quot;tinytex&quot;        &quot;TMB&quot;            &quot;tools&quot;         
-## [285] &quot;translations&quot;   &quot;tweenr&quot;         &quot;tzdb&quot;           &quot;ucminf&quot;        
-## [289] &quot;units&quot;          &quot;unmarked&quot;       &quot;urlchecker&quot;     &quot;usethis&quot;       
-## [293] &quot;utf8&quot;           &quot;utils&quot;          &quot;uuid&quot;           &quot;vctrs&quot;         
-## [297] &quot;VGAM&quot;           &quot;viridis&quot;        &quot;viridisLite&quot;    &quot;vroom&quot;         
-## [301] &quot;waldo&quot;          &quot;webshot&quot;        &quot;whisker&quot;        &quot;withr&quot;         
-## [305] &quot;wk&quot;             &quot;writexl&quot;        &quot;xfun&quot;           &quot;xlsx&quot;          
-## [309] &quot;xlsxjars&quot;       &quot;xml2&quot;           &quot;xopen&quot;          &quot;xtable&quot;        
-## [313] &quot;yaml&quot;           &quot;zip&quot;            &quot;zoo&quot;</code></pre>
+<pre><code>##   [1] &quot;abind&quot;            &quot;AER&quot;              &quot;AICcmodavg&quot;      
+##   [4] &quot;askpass&quot;          &quot;assertthat&quot;       &quot;backports&quot;       
+##   [7] &quot;base&quot;             &quot;base64enc&quot;        &quot;BayesFactor&quot;     
+##  [10] &quot;bayestestR&quot;       &quot;bdsmatrix&quot;        &quot;Benchmarking&quot;    
+##  [13] &quot;BH&quot;               &quot;bit&quot;              &quot;bit64&quot;           
+##  [16] &quot;bitops&quot;           &quot;blob&quot;             &quot;bookdown&quot;        
+##  [19] &quot;boot&quot;             &quot;brew&quot;             &quot;brio&quot;            
+##  [22] &quot;broom&quot;            &quot;bslib&quot;            &quot;cachem&quot;          
+##  [25] &quot;callr&quot;            &quot;car&quot;              &quot;carData&quot;         
+##  [28] &quot;cellranger&quot;       &quot;censReg&quot;          &quot;class&quot;           
+##  [31] &quot;classInt&quot;         &quot;cli&quot;              &quot;clipr&quot;           
+##  [34] &quot;cluster&quot;          &quot;coda&quot;             &quot;codetools&quot;       
+##  [37] &quot;coin&quot;             &quot;collapse&quot;         &quot;colorspace&quot;      
+##  [40] &quot;commonmark&quot;       &quot;compiler&quot;         &quot;contfrac&quot;        
+##  [43] &quot;correlation&quot;      &quot;countrycode&quot;      &quot;cpp11&quot;           
+##  [46] &quot;cranlogs&quot;         &quot;crayon&quot;           &quot;credentials&quot;     
+##  [49] &quot;crch&quot;             &quot;crosstalk&quot;        &quot;curl&quot;            
+##  [52] &quot;data.table&quot;       &quot;datasets&quot;         &quot;datawizard&quot;      
+##  [55] &quot;DBI&quot;              &quot;dbplyr&quot;           &quot;deaR&quot;            
+##  [58] &quot;deldir&quot;           &quot;desc&quot;             &quot;descr&quot;           
+##  [61] &quot;DescrTab2&quot;        &quot;DescTools&quot;        &quot;deSolve&quot;         
+##  [64] &quot;devtools&quot;         &quot;diffobj&quot;          &quot;digest&quot;          
+##  [67] &quot;downlit&quot;          &quot;dplyr&quot;            &quot;dtplyr&quot;          
+##  [70] &quot;e1071&quot;            &quot;effects&quot;          &quot;effectsize&quot;      
+##  [73] &quot;ellipsis&quot;         &quot;elliptic&quot;         &quot;emmeans&quot;         
+##  [76] &quot;estimability&quot;     &quot;eurostat&quot;         &quot;evaluate&quot;        
+##  [79] &quot;Exact&quot;            &quot;exact2x2&quot;         &quot;exactci&quot;         
+##  [82] &quot;expm&quot;             &quot;extrafont&quot;        &quot;extrafontdb&quot;     
+##  [85] &quot;fansi&quot;            &quot;farver&quot;           &quot;fastmap&quot;         
+##  [88] &quot;flextable&quot;        &quot;fontawesome&quot;      &quot;forcats&quot;         
+##  [91] &quot;foreign&quot;          &quot;Formula&quot;          &quot;fs&quot;              
+##  [94] &quot;gapminder&quot;        &quot;gargle&quot;           &quot;gdata&quot;           
+##  [97] &quot;gdtools&quot;          &quot;generics&quot;         &quot;gert&quot;            
+## [100] &quot;GGally&quot;           &quot;ggeffects&quot;        &quot;ggforce&quot;         
+## [103] &quot;ggfortify&quot;        &quot;gghighlight&quot;      &quot;ggplot2&quot;         
+## [106] &quot;ggrepel&quot;          &quot;ggridges&quot;         &quot;ggsignif&quot;        
+## [109] &quot;ggstatsplot&quot;      &quot;ggthemes&quot;         &quot;gh&quot;              
+## [112] &quot;gitcreds&quot;         &quot;gld&quot;              &quot;glmmML&quot;          
+## [115] &quot;glmmTMB&quot;          &quot;glue&quot;             &quot;googledrive&quot;     
+## [118] &quot;googlesheets4&quot;    &quot;graphics&quot;         &quot;grDevices&quot;       
+## [121] &quot;greybox&quot;          &quot;grid&quot;             &quot;gridExtra&quot;       
+## [124] &quot;gtable&quot;           &quot;gtools&quot;           &quot;haven&quot;           
+## [127] &quot;here&quot;             &quot;highr&quot;            &quot;Hmisc&quot;           
+## [130] &quot;hms&quot;              &quot;htmlTable&quot;        &quot;htmltools&quot;       
+## [133] &quot;htmlwidgets&quot;      &quot;htobit&quot;           &quot;httpuv&quot;          
+## [136] &quot;httr&quot;             &quot;hypergeo&quot;         &quot;checkmate&quot;       
+## [139] &quot;ids&quot;              &quot;igraph&quot;           &quot;ini&quot;             
+## [142] &quot;insight&quot;          &quot;interp&quot;           &quot;isoband&quot;         
+## [145] &quot;jpeg&quot;             &quot;jquerylib&quot;        &quot;jsonlite&quot;        
+## [148] &quot;kableExtra&quot;       &quot;KernSmooth&quot;       &quot;klippy&quot;          
+## [151] &quot;knitr&quot;            &quot;labeling&quot;         &quot;later&quot;           
+## [154] &quot;lattice&quot;          &quot;latticeExtra&quot;     &quot;lazyeval&quot;        
+## [157] &quot;libcoin&quot;          &quot;lifecycle&quot;        &quot;lme4&quot;            
+## [160] &quot;lmerTest&quot;         &quot;lmom&quot;             &quot;lmtest&quot;          
+## [163] &quot;lpSolve&quot;          &quot;lpSolveAPI&quot;       &quot;lubridate&quot;       
+## [166] &quot;magrittr&quot;         &quot;mapproj&quot;          &quot;maps&quot;            
+## [169] &quot;maptools&quot;         &quot;markdown&quot;         &quot;MASS&quot;            
+## [172] &quot;Matrix&quot;           &quot;MatrixModels&quot;     &quot;matrixStats&quot;     
+## [175] &quot;maxLik&quot;           &quot;mc2d&quot;             &quot;memoise&quot;         
+## [178] &quot;methods&quot;          &quot;mgcv&quot;             &quot;mime&quot;            
+## [181] &quot;miniUI&quot;           &quot;minqa&quot;            &quot;miscTools&quot;       
+## [184] &quot;mitools&quot;          &quot;mnormt&quot;           &quot;modelr&quot;          
+## [187] &quot;modeltools&quot;       &quot;moments&quot;          &quot;multcomp&quot;        
+## [190] &quot;munsell&quot;          &quot;mvtnorm&quot;          &quot;nlme&quot;            
+## [193] &quot;nloptr&quot;           &quot;nnet&quot;             &quot;numDeriv&quot;        
+## [196] &quot;officer&quot;          &quot;openssl&quot;          &quot;openxlsx&quot;        
+## [199] &quot;ordinal&quot;          &quot;packrat&quot;          &quot;paletteer&quot;       
+## [202] &quot;palmerpenguins&quot;   &quot;parallel&quot;         &quot;parameters&quot;      
+## [205] &quot;pastecs&quot;          &quot;patchwork&quot;        &quot;pbapply&quot;         
+## [208] &quot;pbkrtest&quot;         &quot;performance&quot;      &quot;pillar&quot;          
+## [211] &quot;pkgbuild&quot;         &quot;pkgconfig&quot;        &quot;pkgdown&quot;         
+## [214] &quot;pkgload&quot;          &quot;plm&quot;              &quot;plotly&quot;          
+## [217] &quot;plyr&quot;             &quot;png&quot;              &quot;polyclip&quot;        
+## [220] &quot;pracma&quot;           &quot;praise&quot;           &quot;prettyunits&quot;     
+## [223] &quot;prismatic&quot;        &quot;processx&quot;         &quot;profvis&quot;         
+## [226] &quot;progress&quot;         &quot;promises&quot;         &quot;proxy&quot;           
+## [229] &quot;ps&quot;               &quot;psych&quot;            &quot;purrr&quot;           
+## [232] &quot;quadprog&quot;         &quot;quantreg&quot;         &quot;R6&quot;              
+## [235] &quot;ragg&quot;             &quot;rappdirs&quot;         &quot;rbibutils&quot;       
+## [238] &quot;rcmdcheck&quot;        &quot;RColorBrewer&quot;     &quot;Rcpp&quot;            
+## [241] &quot;RcppArmadillo&quot;    &quot;RcppEigen&quot;        &quot;RCurl&quot;           
+## [244] &quot;Rdpack&quot;           &quot;readr&quot;            &quot;readxl&quot;          
+## [247] &quot;RefManageR&quot;       &quot;regions&quot;          &quot;rematch&quot;         
+## [250] &quot;rematch2&quot;         &quot;remotes&quot;          &quot;reprex&quot;          
+## [253] &quot;reshape&quot;          &quot;rio&quot;              &quot;rJava&quot;           
+## [256] &quot;rlang&quot;            &quot;rmarkdown&quot;        &quot;rootSolve&quot;       
+## [259] &quot;roxygen2&quot;         &quot;rpart&quot;            &quot;rprojroot&quot;       
+## [262] &quot;rsconnect&quot;        &quot;rstudioapi&quot;       &quot;Rttf2pt1&quot;        
+## [265] &quot;rversions&quot;        &quot;rvest&quot;            &quot;s2&quot;              
+## [268] &quot;sandwich&quot;         &quot;sass&quot;             &quot;scales&quot;          
+## [271] &quot;scoringRules&quot;     &quot;selectr&quot;          &quot;sessioninfo&quot;     
+## [274] &quot;sf&quot;               &quot;shiny&quot;            &quot;sjlabelled&quot;      
+## [277] &quot;sjmisc&quot;           &quot;sjPlot&quot;           &quot;sjstats&quot;         
+## [280] &quot;sourcetools&quot;      &quot;sp&quot;               &quot;SparseM&quot;         
+## [283] &quot;spatial&quot;          &quot;splines&quot;          &quot;ssanv&quot;           
+## [286] &quot;stargazer&quot;        &quot;statmod&quot;          &quot;stats&quot;           
+## [289] &quot;stats4&quot;           &quot;statsExpressions&quot; &quot;stringi&quot;         
+## [292] &quot;stringr&quot;          &quot;survey&quot;           &quot;survival&quot;        
+## [295] &quot;svglite&quot;          &quot;swirl&quot;            &quot;sys&quot;             
+## [298] &quot;systemfonts&quot;      &quot;tcltk&quot;            &quot;testthat&quot;        
+## [301] &quot;texreg&quot;           &quot;textshaping&quot;      &quot;TH.data&quot;         
+## [304] &quot;tibble&quot;           &quot;tidyr&quot;            &quot;tidyselect&quot;      
+## [307] &quot;tidyverse&quot;        &quot;tinytex&quot;          &quot;TMB&quot;             
+## [310] &quot;tools&quot;            &quot;translations&quot;     &quot;tweenr&quot;          
+## [313] &quot;tzdb&quot;             &quot;ucminf&quot;           &quot;units&quot;           
+## [316] &quot;unmarked&quot;         &quot;urlchecker&quot;       &quot;usethis&quot;         
+## [319] &quot;utf8&quot;             &quot;utils&quot;            &quot;uuid&quot;            
+## [322] &quot;vctrs&quot;            &quot;VGAM&quot;             &quot;viridis&quot;         
+## [325] &quot;viridisLite&quot;      &quot;vroom&quot;            &quot;waldo&quot;           
+## [328] &quot;webshot&quot;          &quot;whisker&quot;          &quot;withr&quot;           
+## [331] &quot;wk&quot;               &quot;writexl&quot;          &quot;WRS2&quot;            
+## [334] &quot;xfun&quot;             &quot;xlsx&quot;             &quot;xlsxjars&quot;        
+## [337] &quot;xml2&quot;             &quot;xopen&quot;            &quot;xtable&quot;          
+## [340] &quot;yaml&quot;             &quot;zeallot&quot;          &quot;zip&quot;             
+## [343] &quot;zoo&quot;</code></pre>
 
 </div>
 </div>

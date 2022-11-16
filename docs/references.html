@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title> 8 References | Základy jazyka R, analýza a práca s dátami v R</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+
+  <meta property="og:title" content=" 8 References | Základy jazyka R, analýza a práca s dátami v R" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content=" 8 References | Základy jazyka R, analýza a práca s dátami v R" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="r-markdown.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"><font size="5"><b>Základy R</b></font></a></li>
+<li><a href="https://web.ac-mssr.sk/" target="blank"><img src="./images/acms3.png" width="250" height=30 /></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like <span>https://bookdown.org/yihui/bookdown</span></a></li>
+<li class="chapter" data-level="2" data-path="základy-r---1.html"><a href="základy-r---1.html"><i class="fa fa-check"></i><b>2</b> Základy R - 1</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="základy-r---1.html"><a href="základy-r---1.html#čo-je-r"><i class="fa fa-check"></i><b>2.1</b> Čo je R?</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="základy-r---1.html"><a href="základy-r---1.html#ceu-analógia"><i class="fa fa-check"></i><b>2.1.1</b> CEU analógia</a></li>
+<li class="chapter" data-level="2.1.2" data-path="základy-r---1.html"><a href="základy-r---1.html#v-kontexte-r"><i class="fa fa-check"></i><b>2.1.2</b> V kontexte R</a></li>
+<li class="chapter" data-level="2.1.3" data-path="základy-r---1.html"><a href="základy-r---1.html#výhody-a-nevýhody"><i class="fa fa-check"></i><b>2.1.3</b> Výhody a nevýhody</a></li>
+<li class="chapter" data-level="2.1.4" data-path="základy-r---1.html"><a href="základy-r---1.html#základné-pravidlá-skriptingu"><i class="fa fa-check"></i><b>2.1.4</b> Základné pravidlá skriptingu</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="základy-r---1.html"><a href="základy-r---1.html#konečne-sa-dostávame-ku-kódovaniu"><i class="fa fa-check"></i><b>2.2</b> Konečne sa dostávame ku kódovaniu</a></li>
+<li class="chapter" data-level="2.3" data-path="základy-r---1.html"><a href="základy-r---1.html#working-directory"><i class="fa fa-check"></i><b>2.3</b> Working directory</a></li>
+<li class="chapter" data-level="2.4" data-path="základy-r---1.html"><a href="základy-r---1.html#objekty-v-r"><i class="fa fa-check"></i><b>2.4</b> Objekty v R</a></li>
+<li class="chapter" data-level="2.5" data-path="základy-r---1.html"><a href="základy-r---1.html#vektory"><i class="fa fa-check"></i><b>2.5</b> Vektory</a></li>
+<li class="chapter" data-level="2.6" data-path="základy-r---1.html"><a href="základy-r---1.html#matice"><i class="fa fa-check"></i><b>2.6</b> Matice</a></li>
+<li class="chapter" data-level="2.7" data-path="základy-r---1.html"><a href="základy-r---1.html#chýbajúce-údaje"><i class="fa fa-check"></i><b>2.7</b> Chýbajúce údaje</a></li>
+<li class="chapter" data-level="2.8" data-path="základy-r---1.html"><a href="základy-r---1.html#listy"><i class="fa fa-check"></i><b>2.8</b> Listy</a></li>
+<li class="chapter" data-level="2.9" data-path="základy-r---1.html"><a href="základy-r---1.html#data-frames-databázové-tabuľky"><i class="fa fa-check"></i><b>2.9</b> Data frames (databázové tabuľky?)</a></li>
+<li class="chapter" data-level="2.10" data-path="základy-r---1.html"><a href="základy-r---1.html#ako-preskúmať-svoje-dáta"><i class="fa fa-check"></i><b>2.10</b> Ako preskúmať svoje dáta?</a></li>
+<li class="chapter" data-level="2.11" data-path="základy-r---1.html"><a href="základy-r---1.html#knižnice"><i class="fa fa-check"></i><b>2.11</b> Knižnice</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="základy-r---2.html"><a href="základy-r---2.html"><i class="fa fa-check"></i><b>3</b> Základy R - 2</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="základy-r---2.html"><a href="základy-r---2.html#načítanie-dát"><i class="fa fa-check"></i><b>3.1</b> Načítanie dát</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="základy-r---2.html"><a href="základy-r---2.html#csv-súbor"><i class="fa fa-check"></i><b>3.1.1</b> CSV súbor</a></li>
+<li class="chapter" data-level="3.1.2" data-path="základy-r---2.html"><a href="základy-r---2.html#dáta-oddelené-tabulátorom"><i class="fa fa-check"></i><b>3.1.2</b> Dáta oddelené tabulátorom</a></li>
+<li class="chapter" data-level="3.1.3" data-path="základy-r---2.html"><a href="základy-r---2.html#univerzálna-funkcia-s-definovaním-oddelovača"><i class="fa fa-check"></i><b>3.1.3</b> Univerzálna funkcia s definovaním oddelovača</a></li>
+<li class="chapter" data-level="3.1.4" data-path="základy-r---2.html"><a href="základy-r---2.html#excel"><i class="fa fa-check"></i><b>3.1.4</b> Excel</a></li>
+<li class="chapter" data-level="3.1.5" data-path="základy-r---2.html"><a href="základy-r---2.html#foreign-knižnica-nepovinné"><i class="fa fa-check"></i><b>3.1.5</b> foreign knižnica (nepovinné)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="základy-r---2.html"><a href="základy-r---2.html#práca-s-dátami"><i class="fa fa-check"></i><b>3.2</b> Práca s dátami</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="základy-r---2.html"><a href="základy-r---2.html#chýbajúce-dáta"><i class="fa fa-check"></i><b>3.2.1</b> Chýbajúce dáta</a></li>
+<li class="chapter" data-level="3.2.2" data-path="základy-r---2.html"><a href="základy-r---2.html#kódovanie-premenných"><i class="fa fa-check"></i><b>3.2.2</b> Kódovanie premenných</a></li>
+<li class="chapter" data-level="3.2.3" data-path="základy-r---2.html"><a href="základy-r---2.html#faktory"><i class="fa fa-check"></i><b>3.2.3</b> Faktory</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="základy-r---2.html"><a href="základy-r---2.html#ukladanie-dát"><i class="fa fa-check"></i><b>3.3</b> Ukladanie dát</a></li>
+<li class="chapter" data-level="3.4" data-path="základy-r---2.html"><a href="základy-r---2.html#funkcie"><i class="fa fa-check"></i><b>3.4</b> Funkcie</a></li>
+<li class="chapter" data-level="3.5" data-path="základy-r---2.html"><a href="základy-r---2.html#loops-nepovinné"><i class="fa fa-check"></i><b>3.5</b> Loops (nepovinné)</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="základy-r---2.html"><a href="základy-r---2.html#if-else"><i class="fa fa-check"></i><b>3.5.1</b> if, else</a></li>
+<li class="chapter" data-level="3.5.2" data-path="základy-r---2.html"><a href="základy-r---2.html#for"><i class="fa fa-check"></i><b>3.5.2</b> for</a></li>
+<li class="chapter" data-level="3.5.3" data-path="základy-r---2.html"><a href="základy-r---2.html#break"><i class="fa fa-check"></i><b>3.5.3</b> break</a></li>
+<li class="chapter" data-level="3.5.4" data-path="základy-r---2.html"><a href="základy-r---2.html#next"><i class="fa fa-check"></i><b>3.5.4</b> next</a></li>
+<li class="chapter" data-level="3.5.5" data-path="základy-r---2.html"><a href="základy-r---2.html#while"><i class="fa fa-check"></i><b>3.5.5</b> while</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="základy-r---2.html"><a href="základy-r---2.html#apply-family-nepovinné"><i class="fa fa-check"></i><b>3.6</b> Apply family (nepovinné)</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="základy-r---2.html"><a href="základy-r---2.html#apply"><i class="fa fa-check"></i><b>3.6.1</b> apply</a></li>
+<li class="chapter" data-level="3.6.2" data-path="základy-r---2.html"><a href="základy-r---2.html#lapply"><i class="fa fa-check"></i><b>3.6.2</b> lapply</a></li>
+<li class="chapter" data-level="3.6.3" data-path="základy-r---2.html"><a href="základy-r---2.html#sapply"><i class="fa fa-check"></i><b>3.6.3</b> sapply</a></li>
+<li class="chapter" data-level="3.6.4" data-path="základy-r---2.html"><a href="základy-r---2.html#tapply"><i class="fa fa-check"></i><b>3.6.4</b> tapply</a></li>
+<li class="chapter" data-level="3.6.5" data-path="základy-r---2.html"><a href="základy-r---2.html#iné-funkcie-so-základom-v-apply"><i class="fa fa-check"></i><b>3.6.5</b> Iné funkcie so základom v apply</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="základy-r---2.html"><a href="základy-r---2.html#swirl"><i class="fa fa-check"></i><b>3.7</b> swirl</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html"><i class="fa fa-check"></i><b>4</b> Tidyverse a manipulácia dát</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#whose-side-are-you-on"><i class="fa fa-check"></i><b>4.1</b> Whose side are you on?</a></li>
+<li class="chapter" data-level="4.2" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#pipe-revolúcia"><i class="fa fa-check"></i><b>4.2</b> Pipe revolúcia</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#na-sprehľadnenie-kódu"><i class="fa fa-check"></i><b>4.2.1</b> %&gt;% na sprehľadnenie kódu</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#dplyr"><i class="fa fa-check"></i><b>4.3</b> Dplyr</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#cheatsheets"><i class="fa fa-check"></i><b>4.3.1</b> Cheatsheets</a></li>
+<li class="chapter" data-level="4.3.2" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#filter"><i class="fa fa-check"></i><b>4.3.2</b> filter()</a></li>
+<li class="chapter" data-level="4.3.3" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#arrange"><i class="fa fa-check"></i><b>4.3.3</b> arrange()</a></li>
+<li class="chapter" data-level="4.3.4" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#slice"><i class="fa fa-check"></i><b>4.3.4</b> slice()</a></li>
+<li class="chapter" data-level="4.3.5" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#select"><i class="fa fa-check"></i><b>4.3.5</b> select()</a></li>
+<li class="chapter" data-level="4.3.6" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#mutate"><i class="fa fa-check"></i><b>4.3.6</b> mutate()</a></li>
+<li class="chapter" data-level="4.3.7" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#if_else-a-case_when"><i class="fa fa-check"></i><b>4.3.7</b> if_else() a case_when</a></li>
+<li class="chapter" data-level="4.3.8" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#relocate"><i class="fa fa-check"></i><b>4.3.8</b> relocate()</a></li>
+<li class="chapter" data-level="4.3.9" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#summarize-spolu-s-group_by"><i class="fa fa-check"></i><b>4.3.9</b> summarize() (spolu s group_by())</a></li>
+<li class="chapter" data-level="4.3.10" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#count-a-n"><i class="fa fa-check"></i><b>4.3.10</b> count() a n()</a></li>
+<li class="chapter" data-level="4.3.11" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#distinct"><i class="fa fa-check"></i><b>4.3.11</b> distinct()</a></li>
+<li class="chapter" data-level="4.3.12" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#podobnosť-funkcií-v-tidyverse-ako-výhoda"><i class="fa fa-check"></i><b>4.3.12</b> Podobnosť funkcií v tidyverse ako výhoda</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#spájanie-datasetov-nepovinné"><i class="fa fa-check"></i><b>4.4</b> Spájanie datasetov (nepovinné)</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#joins"><i class="fa fa-check"></i><b>4.4.1</b> Joins</a></li>
+<li class="chapter" data-level="4.4.2" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#bind_rows-a-bind_cols"><i class="fa fa-check"></i><b>4.4.2</b> bind_rows() a bind_cols()</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#transponovanie-datasetov-nepovinné"><i class="fa fa-check"></i><b>4.5</b> Transponovanie datasetov (nepovinné)</a></li>
+<li class="chapter" data-level="4.6" data-path="tidyverse-a-manipulácia-dát.html"><a href="tidyverse-a-manipulácia-dát.html#cvičenia"><i class="fa fa-check"></i><b>4.6</b> Cvičenia</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html"><i class="fa fa-check"></i><b>5</b> Ggplot a vizualizácia dát</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#čo-je-ggplot"><i class="fa fa-check"></i><b>5.1</b> Čo je ggplot</a></li>
+<li class="chapter" data-level="5.2" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#pred-tým-ako-začneme"><i class="fa fa-check"></i><b>5.2</b> Pred tým ako začneme</a></li>
+<li class="chapter" data-level="5.3" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#načítanie-knižníc"><i class="fa fa-check"></i><b>5.3</b> Načítanie knižníc</a></li>
+<li class="chapter" data-level="5.4" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#príprava-datasetu-pre-ggplot"><i class="fa fa-check"></i><b>5.4</b> Príprava datasetu pre ggplot</a></li>
+<li class="chapter" data-level="5.5" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#ggplot-a-jeho-logika"><i class="fa fa-check"></i><b>5.5</b> Ggplot a jeho logika</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#špecifikácia-dát"><i class="fa fa-check"></i><b>5.5.1</b> Špecifikácia dát</a></li>
+<li class="chapter" data-level="5.5.2" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#určíme-dimenzie-dát"><i class="fa fa-check"></i><b>5.5.2</b> Určíme dimenzie dát</a></li>
+<li class="chapter" data-level="5.5.3" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#špecifikácia-zobrazenia-dát"><i class="fa fa-check"></i><b>5.5.3</b> Špecifikácia zobrazenia dát</a></li>
+<li class="chapter" data-level="5.5.4" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#pridanie-tretej-dimenzie"><i class="fa fa-check"></i><b>5.5.4</b> Pridanie tretej dimenzie</a></li>
+<li class="chapter" data-level="5.5.5" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#úprava-prvkov-v-aes-funkcii"><i class="fa fa-check"></i><b>5.5.5</b> Úprava prvkov v <code>aes</code> funkcii</a></li>
+<li class="chapter" data-level="5.5.6" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#úprava-textových-prvkov-grafu"><i class="fa fa-check"></i><b>5.5.6</b> Úprava textových prvkov grafu</a></li>
+<li class="chapter" data-level="5.5.7" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#výber-témy-grafu"><i class="fa fa-check"></i><b>5.5.7</b> Výber témy grafu</a></li>
+<li class="chapter" data-level="5.5.8" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#exportovanie-grafu"><i class="fa fa-check"></i><b>5.5.8</b> Exportovanie grafu</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#rôzne-typy-grafov-v-ggplote-zobrazujúce-množstvá"><i class="fa fa-check"></i><b>5.6</b> Rôzne typy grafov v ggplote zobrazujúce množstvá</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#stĺpcový-graf"><i class="fa fa-check"></i><b>5.6.1</b> Stĺpcový graf</a></li>
+<li class="chapter" data-level="5.6.2" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#bodové-grafy-zobrazujúce-množstvá"><i class="fa fa-check"></i><b>5.6.2</b> Bodové grafy zobrazujúce množstvá</a></li>
+<li class="chapter" data-level="5.6.3" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#histogram"><i class="fa fa-check"></i><b>5.6.3</b> Histogram</a></li>
+<li class="chapter" data-level="5.6.4" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#density-grafy-nepovinné"><i class="fa fa-check"></i><b>5.6.4</b> Density grafy (nepovinné)</a></li>
+<li class="chapter" data-level="5.6.5" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#ridgelines-nepovinné"><i class="fa fa-check"></i><b>5.6.5</b> Ridgelines (nepovinné)</a></li>
+<li class="chapter" data-level="5.6.6" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#box-plot"><i class="fa fa-check"></i><b>5.6.6</b> Box plot</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#xy-vzťahy"><i class="fa fa-check"></i><b>5.7</b> x~y vzťahy</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#bodový-vzťahový-graf"><i class="fa fa-check"></i><b>5.7.1</b> Bodový vzťahový graf</a></li>
+<li class="chapter" data-level="5.7.2" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#bublinový-graf-nepovinné"><i class="fa fa-check"></i><b>5.7.2</b> Bublinový graf (nepovinné)</a></li>
+<li class="chapter" data-level="5.7.3" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#čiarový-graf"><i class="fa fa-check"></i><b>5.7.3</b> Čiarový graf</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#spájanie-grafov-do-jedného-celku"><i class="fa fa-check"></i><b>5.8</b> Spájanie grafov do jedného celku</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#prekrývanie-grafov"><i class="fa fa-check"></i><b>5.8.1</b> Prekrývanie grafov</a></li>
+<li class="chapter" data-level="5.8.2" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#pridávanie-rovnakých-grafov-pre-rôzne-kategórie"><i class="fa fa-check"></i><b>5.8.2</b> Pridávanie rovnakých grafov pre rôzne kategórie</a></li>
+<li class="chapter" data-level="5.8.3" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#pridávanie-rôznych-grafov-do-jedného"><i class="fa fa-check"></i><b>5.8.3</b> Pridávanie rôznych grafov do jedného</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#ggplot-témy-a-formátovanie"><i class="fa fa-check"></i><b>5.9</b> <code>ggplot</code> témy a formátovanie</a>
+<ul>
+<li class="chapter" data-level="5.9.1" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#témy"><i class="fa fa-check"></i><b>5.9.1</b> Témy</a></li>
+<li class="chapter" data-level="5.9.2" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#prvky-grafu-a-ich-formátovanie"><i class="fa fa-check"></i><b>5.9.2</b> Prvky grafu a ich formátovanie</a></li>
+<li class="chapter" data-level="5.9.3" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#vytvorenie-témy"><i class="fa fa-check"></i><b>5.9.3</b> Vytvorenie témy</a></li>
+</ul></li>
+<li class="chapter" data-level="5.10" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#mapy-nepovinné"><i class="fa fa-check"></i><b>5.10</b> Mapy (nepovinné)</a></li>
+<li class="chapter" data-level="5.11" data-path="ggplot-a-vizualizácia-dát.html"><a href="ggplot-a-vizualizácia-dát.html#cvičenia-1"><i class="fa fa-check"></i><b>5.11</b> Cvičenia</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html"><i class="fa fa-check"></i><b>6</b> Štatistika v R</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#popisné-štatistiky"><i class="fa fa-check"></i><b>6.1</b> Popisné štatistiky</a></li>
+<li class="chapter" data-level="6.2" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#deskriptívy-za-využitia-dplyr"><i class="fa fa-check"></i><b>6.2</b> Deskriptívy za využitia <code>dplyr</code></a></li>
+<li class="chapter" data-level="6.3" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#deskriptívy-za-využitia-psych"><i class="fa fa-check"></i><b>6.3</b> Deskriptívy za využitia <code>psych</code></a></li>
+<li class="chapter" data-level="6.4" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#deskriptívy-za-využitia-hmisc"><i class="fa fa-check"></i><b>6.4</b> Deskriptívy za využitia <code>Hmisc</code></a></li>
+<li class="chapter" data-level="6.5" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#vizualizácia-niektorých-popisných-štatistík"><i class="fa fa-check"></i><b>6.5</b> Vizualizácia niektorých popisných štatistík</a></li>
+<li class="chapter" data-level="6.6" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#t-test"><i class="fa fa-check"></i><b>6.6</b> T-test</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#jednovýberový-t-test"><i class="fa fa-check"></i><b>6.6.1</b> Jednovýberový t-test</a></li>
+<li class="chapter" data-level="6.6.2" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#dvojvýberový-t-test"><i class="fa fa-check"></i><b>6.6.2</b> Dvojvýberový t-test</a></li>
+<li class="chapter" data-level="6.6.3" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#párový-t-test"><i class="fa fa-check"></i><b>6.6.3</b> párový t-test</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#anova"><i class="fa fa-check"></i><b>6.7</b> ANOVA</a></li>
+<li class="chapter" data-level="6.8" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#chi-square-test-nezávislosti"><i class="fa fa-check"></i><b>6.8</b> Chi-square test nezávislosti</a></li>
+<li class="chapter" data-level="6.9" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#korelácia"><i class="fa fa-check"></i><b>6.9</b> Korelácia</a></li>
+<li class="chapter" data-level="6.10" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#lineárna-regresia"><i class="fa fa-check"></i><b>6.10</b> Lineárna regresia</a>
+<ul>
+<li class="chapter" data-level="6.10.1" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#diagnostika-modelu"><i class="fa fa-check"></i><b>6.10.1</b> Diagnostika modelu</a></li>
+<li class="chapter" data-level="6.10.2" data-path="štatistika-v-r.html"><a href="štatistika-v-r.html#objekty-modelu-a-broom-knižnica"><i class="fa fa-check"></i><b>6.10.2</b> Objekty modelu a <code>broom</code> knižnica</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="r-markdown.html"><a href="r-markdown.html"><i class="fa fa-check"></i><b>7</b> R Markdown</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="r-markdown.html"><a href="r-markdown.html#čo-je-r-markdown"><i class="fa fa-check"></i><b>7.1</b> Čo je R Markdown?</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="r-markdown.html"><a href="r-markdown.html#využitie-r-markdown"><i class="fa fa-check"></i><b>7.1.1</b> Využitie R Markdown</a></li>
+<li class="chapter" data-level="7.1.2" data-path="r-markdown.html"><a href="r-markdown.html#z-čoho-sa-skladá-r-markdown-prostredie-a-dokument"><i class="fa fa-check"></i><b>7.1.2</b> Z čoho sa skladá R Markdown prostredie a dokument?</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="r-markdown.html"><a href="r-markdown.html#nastavenie-a-formátovanie-dokumentu"><i class="fa fa-check"></i><b>7.2</b> Nastavenie a formátovanie dokumentu</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="r-markdown.html"><a href="r-markdown.html#vytvorenie-dokumentu-a-jeho-nastavenia"><i class="fa fa-check"></i><b>7.2.1</b> Vytvorenie dokumentu a jeho nastavenia</a></li>
+<li class="chapter" data-level="7.2.2" data-path="r-markdown.html"><a href="r-markdown.html#yaml-hlavička"><i class="fa fa-check"></i><b>7.2.2</b> YAML hlavička</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>8</b> References</a>
+<ul>
+<li class="chapter" data-level="8.0.1" data-path="references.html"><a href="references.html#jednoduché-formátovanie-textu"><i class="fa fa-check"></i><b>8.0.1</b> Jednoduché formátovanie textu</a></li>
+<li class="chapter" data-level="8.0.2" data-path="references.html"><a href="references.html#názvy-chunks"><i class="fa fa-check"></i><b>8.0.2</b> Názvy chunks</a></li>
+<li class="chapter" data-level="8.0.3" data-path="references.html"><a href="references.html#možnosti-nastavenia-chunks"><i class="fa fa-check"></i><b>8.0.3</b> Možnosti nastavenia chunks</a></li>
+<li class="chapter" data-level="8.0.4" data-path="references.html"><a href="references.html#parametre"><i class="fa fa-check"></i><b>8.0.4</b> Parametre</a></li>
+<li class="chapter" data-level="8.0.5" data-path="references.html"><a href="references.html#tabuľky-a-možnosti-outputov"><i class="fa fa-check"></i><b>8.0.5</b> Tabuľky a možnosti outputov</a></li>
+<li class="chapter" data-level="8.1" data-path="references.html"><a href="references.html#možnosti-a-ukážka-r-markdown-výstupov"><i class="fa fa-check"></i><b>8.1</b> Možnosti a ukážka R Markdown výstupov</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Základy jazyka R,<br>analýza a práca s dátami v R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="references" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number"> 8</span> References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div class="csl-entry">
+Albrecht, Andreas, and Joao Magueijo. 1999. <span>“Time Varying Speed of Light as a Solution to Cosmological Puzzles.”</span> <em>Physical Review D</em> 59 (4): 043516.
+</div>
+</div>
+<div id="jednoduché-formátovanie-textu" class="section level3 hasAnchor" number="8.0.1">
+<h3><span class="header-section-number">8.0.1</span> Jednoduché formátovanie textu<a href="references.html#jednoduché-formátovanie-textu" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="názvy-chunks" class="section level3 hasAnchor" number="8.0.2">
+<h3><span class="header-section-number">8.0.2</span> Názvy chunks<a href="references.html#názvy-chunks" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="možnosti-nastavenia-chunks" class="section level3 hasAnchor" number="8.0.3">
+<h3><span class="header-section-number">8.0.3</span> Možnosti nastavenia chunks<a href="references.html#možnosti-nastavenia-chunks" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="parametre" class="section level3 hasAnchor" number="8.0.4">
+<h3><span class="header-section-number">8.0.4</span> Parametre<a href="references.html#parametre" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="tabuľky-a-možnosti-outputov" class="section level3 hasAnchor" number="8.0.5">
+<h3><span class="header-section-number">8.0.5</span> Tabuľky a možnosti outputov<a href="references.html#tabuľky-a-možnosti-outputov" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="možnosti-a-ukážka-r-markdown-výstupov" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Možnosti a ukážka R Markdown výstupov<a href="references.html#možnosti-a-ukážka-r-markdown-výstupov" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="r-markdown.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
