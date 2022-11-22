@@ -128,6 +128,9 @@ histogram-1
 bodové-grafy
 boxplot
 čiarový-graf-1
+úprava-štítku-s-informáciami
+pridanie-a-odobratie-možností-grafu
+ďalšie-interaktívne-prvky-plotly-grafov
 r-markdown
 čo-je-r-markdown
 využitie-r-markdown

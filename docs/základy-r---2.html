@@ -343,6 +343,9 @@ div.csl-indent {
 <li class="chapter" data-level="6.5" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html#bodové-grafy"><i class="fa fa-check"></i><b>6.5</b> Bodové grafy</a></li>
 <li class="chapter" data-level="6.6" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html#boxplot"><i class="fa fa-check"></i><b>6.6</b> Boxplot</a></li>
 <li class="chapter" data-level="6.7" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html#čiarový-graf-1"><i class="fa fa-check"></i><b>6.7</b> Čiarový graf</a></li>
+<li class="chapter" data-level="6.8" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html#úprava-štítku-s-informáciami"><i class="fa fa-check"></i><b>6.8</b> Úprava štítku s informáciami</a></li>
+<li class="chapter" data-level="6.9" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html#pridanie-a-odobratie-možností-grafu"><i class="fa fa-check"></i><b>6.9</b> Pridanie a odobratie možností grafu</a></li>
+<li class="chapter" data-level="6.10" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html#ďalšie-interaktívne-prvky-plotly-grafov"><i class="fa fa-check"></i><b>6.10</b> Ďalšie interaktívne prvky <code>plotly</code> grafov</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="r-markdown.html"><a href="r-markdown.html"><i class="fa fa-check"></i><b>7</b> R Markdown</a>
 <ul>
@@ -589,19 +592,19 @@ div.csl-indent {
 <div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="základy-r---2.html#cb180-1" aria-hidden="true" tabindex="-1"></a>RSVS2021 <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">&quot;./data/2021.xlsx&quot;</span>, <span class="dv">1</span>)</span>
 <span id="cb180-2"><a href="základy-r---2.html#cb180-2" aria-hidden="true" tabindex="-1"></a>RSVS2021[<span class="fu">sample</span>(<span class="fu">nrow</span>(RSVS2021), <span class="dv">6</span>), <span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>, <span class="dv">20</span><span class="sc">:</span><span class="dv">26</span>)] <span class="co">#komplikovanejší zápis, ale skúste interpretovať</span></span></code></pre></div>
 <pre><code>##                           Meno.sudcu               Priezvisko.sudcu  Rok Agenda
-## 43325 Ladislav                       Bujňák                         2021   PPOm
-## 48199 Katarína                       Muráriková                     2021    Odi
-## 9112  Martin                         Fiľakovský                     2021  CoPno
-## 14191 Erik                           Varga                          2021   Cudz
-## 16350 Marián                         Trenčan                        2021    Sžk
-## 7242  Ľubica                         Libantová Medvecká, PhD.       2021    Nto
+## 1625  Mária                          Kubincová, PhD.                2021    CoE
+## 32027 Vanda                          Mikulášová                     2021      P
+## 31239 Veronika                       Pavláková                      2021   SprS
+## 38759 Vladislav                      Ďurkáň                         2021     Em
+## 25269 Andrea                         Sátorová                       2021      P
+## 770   Dušan                          Ďurian                         2021      C
 ##       Počet1 Počet2 Počet3 Počet4 Počet5 Typ
-## 43325      1      0     NA     NA     NA   P
-## 48199      4      1      1      0     NA   N
-## 9112       0      0     NA     NA     NA   N
-## 14191      0     NA     NA     NA     NA   V
-## 16350     16     NA     NA     NA     NA   P
-## 7242       0      0      0      0      0   N</code></pre>
+## 1625      48     29     19     NA     NA   R
+## 32027     72     59     13     59     NA   R
+## 31239     41     NA     NA     NA     NA   V
+## 38759      2      1      1      1     NA   R
+## 25269    195      0     NA     NA     NA   P
+## 770        0      0      0      0     NA   R</code></pre>
 <ul>
 <li>pozrime sa, čo sa dá v rámci tejto funkcie definovať</li>
 </ul>
@@ -622,12 +625,12 @@ div.csl-indent {
 <pre><code>## # A tibble: 6 x 10
 ##   `Meno sudcu` Priezvisk~1   Rok Agenda Počet1 Počet2 Počet3 Počet4 Počet5 Typ  
 ##   &lt;chr&gt;        &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;
-## 1 Zuzana       Pribulová    2021 C          83      2     NA     NA     NA P    
-## 2 Andrej       Radomský     2021 CobVO       0     NA     NA     NA     NA V    
-## 3 Nora         Halmová      2021 Sžik        5     NA     NA     NA     NA V    
-## 4 Vladimír     Novotný      2021 CoPno       0      0      0      0     NA N    
-## 5 Ladislav     Gábor        2021 Cbcud       4      0      4      0     NA R    
-## 6 Mária        Benková      2021 Ps         27     21      6     17     NA R    
+## 1 Slavomír     Ivanecký     2021 Nt          1      1      0      0      1 N    
+## 2 Marta        Kamenská     2021 Csp        97     19      1      0     NA N    
+## 3 Rastislav    Kresl        2021 Ntc         8      8      0      2      8 R    
+## 4 Jana         Gombárová    2021 Td          0      0     NA     NA      0 P    
+## 5 Natália      Slivenská    2021 C           0      0      0      0     NA N    
+## 6 Roman        Fitt         2021 Tp        113      0     NA     NA    116 P    
 ## # ... with abbreviated variable name 1: `Priezvisko sudcu`</code></pre>
 <p>Aké sú argumenty pri tejto funkcii?</p>
 <div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="základy-r---2.html#cb186-1" aria-hidden="true" tabindex="-1"></a><span class="fu">args</span>(read_xlsx)</span></code></pre></div>
@@ -1368,13 +1371,13 @@ div.csl-indent {
 ## [1] 2.5
 ## 
 ## $item2
-## [1] -0.4169656
+## [1] -0.2157169
 ## 
 ## $item3
-## [1] 0.6635973
+## [1] 1.118897
 ## 
 ## $item4
-## [1] 4.982661</code></pre>
+## [1] 4.851745</code></pre>
 <p>V predošlom prípade išlo o list s elementami, ktoré boli jednoduché numerické vektory. Môže sa ale stať, že v rámci listu máte niekoľko data frames a chcete cez ne loopovať a použiť na každý jeden funkciu. V takomto prípade sa dá použiť <code>apply</code> fukcia v rámci <code>lapply</code> funkcie.</p>
 <p>Na príklade nižšie používame základný R dataset na vytvorenie listu s dvoma data frames. Následný kód potom vyberie najprv jeden a potom druhý data frame (<code>lapply</code>), pričom použije <code>apply</code> funkciu na vypočítanie priemeru stĺpcov.</p>
 <div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb296-1"><a href="základy-r---2.html#cb296-1" aria-hidden="true" tabindex="-1"></a><span class="co"># vytvorenie listu</span></span>

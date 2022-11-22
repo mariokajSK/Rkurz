@@ -343,6 +343,9 @@ div.csl-indent {
 <li class="chapter" data-level="6.5" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html#bodové-grafy"><i class="fa fa-check"></i><b>6.5</b> Bodové grafy</a></li>
 <li class="chapter" data-level="6.6" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html#boxplot"><i class="fa fa-check"></i><b>6.6</b> Boxplot</a></li>
 <li class="chapter" data-level="6.7" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html#čiarový-graf-1"><i class="fa fa-check"></i><b>6.7</b> Čiarový graf</a></li>
+<li class="chapter" data-level="6.8" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html#úprava-štítku-s-informáciami"><i class="fa fa-check"></i><b>6.8</b> Úprava štítku s informáciami</a></li>
+<li class="chapter" data-level="6.9" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html#pridanie-a-odobratie-možností-grafu"><i class="fa fa-check"></i><b>6.9</b> Pridanie a odobratie možností grafu</a></li>
+<li class="chapter" data-level="6.10" data-path="plotly-vizualizácie.html"><a href="plotly-vizualizácie.html#ďalšie-interaktívne-prvky-plotly-grafov"><i class="fa fa-check"></i><b>6.10</b> Ďalšie interaktívne prvky <code>plotly</code> grafov</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="r-markdown.html"><a href="r-markdown.html"><i class="fa fa-check"></i><b>7</b> R Markdown</a>
 <ul>
@@ -418,8 +421,8 @@ div.csl-indent {
 <div id="render-dokumentu-knitting" class="section level4 hasAnchor" number="7.1.2.2">
 <h4><span class="header-section-number">7.1.2.2</span> Render dokumentu (knitting)<a href="r-markdown.html#render-dokumentu-knitting" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Na vytvorenie dokumentu z R Markdown súboru treba spustiť <code>render</code> funkciu</p>
-<div class="sourceCode" id="cb707"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb707-1"><a href="r-markdown.html#cb707-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rmarkdown)</span>
-<span id="cb707-2"><a href="r-markdown.html#cb707-2" aria-hidden="true" tabindex="-1"></a><span class="fu">render</span>(<span class="st">&quot;1-example.Rmd&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb721"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb721-1"><a href="r-markdown.html#cb721-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rmarkdown)</span>
+<span id="cb721-2"><a href="r-markdown.html#cb721-2" aria-hidden="true" tabindex="-1"></a><span class="fu">render</span>(<span class="st">&quot;1-example.Rmd&quot;</span>)</span></code></pre></div>
 <p>V prostredí R Studio je však jednoduchšie použiť <code>Knit</code> tlačidlo nachádzajúce sa v hornej lište. Týmto spôsobom uložíte samotný súbor a vytvoríte dokument v požadovanom formáte. Tento dokument obsahuje text, kód a výsledky kódu (záleží od nastavenia chunkov). Okrem toho sa Vám zobrazí aj jeho náhľad v samotnom R Studio.</p>
 <center>
 <img src="images/rendering.png" width="100%"/>
@@ -488,7 +491,7 @@ div.csl-indent {
 author: 
   name: &lt;font size=&quot;5&quot;&gt;Mário Kajan, Alex Rusnák&lt;/font&gt;
   affiliation: &lt;font size=&quot;4.5&quot;&gt;*Analytické centrum MS SR*&lt;/font&gt;&lt;br&gt;
-date: &lt;font size=&quot;4&quot;&gt;16. november 2022&lt;/font&gt; 
+date: &lt;font size=&quot;4&quot;&gt;22. november 2022&lt;/font&gt; 
 output:
     html_document:
         toc: true
@@ -541,12 +544,12 @@ output:
 <h3><span class="header-section-number">7.2.3</span> Jednoduché formátovanie textu<a href="r-markdown.html#jednoduché-formátovanie-textu" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Druhou časťou R Markdown súboru je obyčajný text. Ten sa dá formátovať prostredníctvom viacerých znakov (aj v závislosti od výsledného dokumentu).</p>
 <p>Názvy kapitol pridáme pomocou <code>#</code>. Čím viac <code>#</code>, tým nižšia úroveň názvu.</p>
-<div class="sourceCode" id="cb711"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb711-1"><a href="r-markdown.html#cb711-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Header 1</span></span>
-<span id="cb711-2"><a href="r-markdown.html#cb711-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Header 2</span></span>
-<span id="cb711-3"><a href="r-markdown.html#cb711-3" aria-hidden="true" tabindex="-1"></a><span class="do">### Header 3</span></span>
-<span id="cb711-4"><a href="r-markdown.html#cb711-4" aria-hidden="true" tabindex="-1"></a><span class="do">#### Header 4</span></span>
-<span id="cb711-5"><a href="r-markdown.html#cb711-5" aria-hidden="true" tabindex="-1"></a><span class="do">##### Header 5</span></span>
-<span id="cb711-6"><a href="r-markdown.html#cb711-6" aria-hidden="true" tabindex="-1"></a><span class="do">###### Header 6</span></span></code></pre></div>
+<div class="sourceCode" id="cb725"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb725-1"><a href="r-markdown.html#cb725-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Header 1</span></span>
+<span id="cb725-2"><a href="r-markdown.html#cb725-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Header 2</span></span>
+<span id="cb725-3"><a href="r-markdown.html#cb725-3" aria-hidden="true" tabindex="-1"></a><span class="do">### Header 3</span></span>
+<span id="cb725-4"><a href="r-markdown.html#cb725-4" aria-hidden="true" tabindex="-1"></a><span class="do">#### Header 4</span></span>
+<span id="cb725-5"><a href="r-markdown.html#cb725-5" aria-hidden="true" tabindex="-1"></a><span class="do">##### Header 5</span></span>
+<span id="cb725-6"><a href="r-markdown.html#cb725-6" aria-hidden="true" tabindex="-1"></a><span class="do">###### Header 6</span></span></code></pre></div>
 <p>Na zmenu písma na túčné alebo kurzívu použijeme:</p>
 <pre><code>*italics* alebo _italics_  
 **bold** alebo __bold__  </code></pre>
@@ -656,9 +659,9 @@ alebo
 <li><code>message</code> je podobné nastavenie ako predošlé, avšak platí pre správy z vyhodnotenia výsledkov (napr. to, čo vidíte pri načítaní knižníc)</li>
 </ul>
 <p>Globálne nastavenia viete špecifikovať použitím tohto kódu: <code>knitr::opts_chunk$set()</code>. Príkladom môže byť nasledovné nastavenie:</p>
-<div class="sourceCode" id="cb715"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb715-1"><a href="r-markdown.html#cb715-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb715-2"><a href="r-markdown.html#cb715-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">warning =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb715-3"><a href="r-markdown.html#cb715-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">message =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb729"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb729-1"><a href="r-markdown.html#cb729-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb729-2"><a href="r-markdown.html#cb729-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">warning =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb729-3"><a href="r-markdown.html#cb729-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">message =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 </div>
 <div id="parametre" class="section level3 hasAnchor" number="7.2.6">
 <h3><span class="header-section-number">7.2.6</span> Parametre<a href="r-markdown.html#parametre" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -668,15 +671,15 @@ alebo
 <img src="images/params.PNG" width="80%"/>
 </center>
 <p>Parameter sa dá následne požiť v kóde:</p>
-<div class="sourceCode" id="cb716"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb716-1"><a href="r-markdown.html#cb716-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span>
-<span id="cb716-2"><a href="r-markdown.html#cb716-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb716-3"><a href="r-markdown.html#cb716-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb716-4"><a href="r-markdown.html#cb716-4" aria-hidden="true" tabindex="-1"></a>gapminder_df <span class="ot">&lt;-</span> gapminder</span>
-<span id="cb716-5"><a href="r-markdown.html#cb716-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb716-6"><a href="r-markdown.html#cb716-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb716-7"><a href="r-markdown.html#cb716-7" aria-hidden="true" tabindex="-1"></a>gapminder_df <span class="sc">%&gt;%</span></span>
-<span id="cb716-8"><a href="r-markdown.html#cb716-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(continent <span class="sc">==</span> params<span class="sc">$</span>continent) <span class="sc">%&gt;%</span></span>
-<span id="cb716-9"><a href="r-markdown.html#cb716-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb730"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb730-1"><a href="r-markdown.html#cb730-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span>
+<span id="cb730-2"><a href="r-markdown.html#cb730-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb730-3"><a href="r-markdown.html#cb730-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb730-4"><a href="r-markdown.html#cb730-4" aria-hidden="true" tabindex="-1"></a>gapminder_df <span class="ot">&lt;-</span> gapminder</span>
+<span id="cb730-5"><a href="r-markdown.html#cb730-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb730-6"><a href="r-markdown.html#cb730-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb730-7"><a href="r-markdown.html#cb730-7" aria-hidden="true" tabindex="-1"></a>gapminder_df <span class="sc">%&gt;%</span></span>
+<span id="cb730-8"><a href="r-markdown.html#cb730-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(continent <span class="sc">==</span> params<span class="sc">$</span>continent) <span class="sc">%&gt;%</span></span>
+<span id="cb730-9"><a href="r-markdown.html#cb730-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code></pre></div>
 </div>
 </div>
 <div id="tabuľky-a-možnosti-outputov" class="section level2 hasAnchor" number="7.3">
@@ -684,19 +687,19 @@ alebo
 <p>V tejto časti si na príklade tabuliek ukážeme, ako vieme dostať konkrétne výstupy z R Markdownu do html, LaTeX a Word dokumentov.</p>
 <div id="html" class="section level3 hasAnchor" number="7.3.1">
 <h3><span class="header-section-number">7.3.1</span> HTML<a href="r-markdown.html#html" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb717"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb717-1"><a href="r-markdown.html#cb717-1" aria-hidden="true" tabindex="-1"></a>packages_needed <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;dplyr&quot;</span>, <span class="st">&quot;knitr&quot;</span>, <span class="st">&quot;kableExtra&quot;</span>, <span class="st">&quot;survey&quot;</span>, <span class="st">&quot;broom&quot;</span>, <span class="st">&quot;stargazer&quot;</span>)</span>
-<span id="cb717-2"><a href="r-markdown.html#cb717-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(packages)</span></code></pre></div>
-<div class="sourceCode" id="cb718"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb718-1"><a href="r-markdown.html#cb718-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb718-2"><a href="r-markdown.html#cb718-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb718-3"><a href="r-markdown.html#cb718-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
-<span id="cb718-4"><a href="r-markdown.html#cb718-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(survey)</span>
-<span id="cb718-5"><a href="r-markdown.html#cb718-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
-<span id="cb718-6"><a href="r-markdown.html#cb718-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stargazer)</span></code></pre></div>
+<div class="sourceCode" id="cb731"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb731-1"><a href="r-markdown.html#cb731-1" aria-hidden="true" tabindex="-1"></a>packages_needed <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;dplyr&quot;</span>, <span class="st">&quot;knitr&quot;</span>, <span class="st">&quot;kableExtra&quot;</span>, <span class="st">&quot;survey&quot;</span>, <span class="st">&quot;broom&quot;</span>, <span class="st">&quot;stargazer&quot;</span>)</span>
+<span id="cb731-2"><a href="r-markdown.html#cb731-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(packages)</span></code></pre></div>
+<div class="sourceCode" id="cb732"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb732-1"><a href="r-markdown.html#cb732-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb732-2"><a href="r-markdown.html#cb732-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb732-3"><a href="r-markdown.html#cb732-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb732-4"><a href="r-markdown.html#cb732-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(survey)</span>
+<span id="cb732-5"><a href="r-markdown.html#cb732-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
+<span id="cb732-6"><a href="r-markdown.html#cb732-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stargazer)</span></code></pre></div>
 <p>Ak potrebujete vytvoriť html verziu Vašej analýzy, tak je pre tabuľky najlepšie použiť <code>knitr::kable()</code> funkciu, ktorá tvorí celkom pekné tabuľky. Ak si želáte, tak možete upraviť tabuľku s extra prvkami z <code>kableExtra</code> knižnice. Pridajme farebné rozlíšenie riadkov v našom príklade a nastavme tabuľku tak, aby zvýraznila riadok, na ktorom sa nachádza naša myš pomocou <code>kable_styling</code> funkcie. Ak túto funkciu použijete a nedodáte jej žiadne argumenty, tak Vám vytvorí základnú tabuľku ako pri použití <code>kable</code> funkcie.</p>
-<div class="sourceCode" id="cb719"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb719-1"><a href="r-markdown.html#cb719-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> mtcars[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>]</span></code></pre></div>
-<div class="sourceCode" id="cb720"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb720-1"><a href="r-markdown.html#cb720-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
-<span id="cb720-2"><a href="r-markdown.html#cb720-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb720-3"><a href="r-markdown.html#cb720-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb733"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb733-1"><a href="r-markdown.html#cb733-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> mtcars[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb734"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb734-1"><a href="r-markdown.html#cb734-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb734-2"><a href="r-markdown.html#cb734-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb734-3"><a href="r-markdown.html#cb734-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span></code></pre></div>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -840,8 +843,8 @@ Hornet Sportabout
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb721"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb721-1"><a href="r-markdown.html#cb721-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(df) <span class="sc">%&gt;%</span></span>
-<span id="cb721-2"><a href="r-markdown.html#cb721-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb735"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb735-1"><a href="r-markdown.html#cb735-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(df) <span class="sc">%&gt;%</span></span>
+<span id="cb735-2"><a href="r-markdown.html#cb735-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>))</span></code></pre></div>
 <table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -986,16 +989,16 @@ Hornet Sportabout
 </tbody>
 </table>
 <p>Takto viete exportovať aj jednotlivé regresné tabuľky po ich úprave pomocou <code>broom</code> knižnice.</p>
-<div class="sourceCode" id="cb722"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb722-1"><a href="r-markdown.html#cb722-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;airquality&quot;</span>)</span>
-<span id="cb722-2"><a href="r-markdown.html#cb722-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb722-3"><a href="r-markdown.html#cb722-3" aria-hidden="true" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">tidy</span>(<span class="fu">lm</span>(Ozone<span class="sc">~</span>Temp<span class="sc">+</span>Solar.R, <span class="at">data =</span> airquality))</span>
-<span id="cb722-4"><a href="r-markdown.html#cb722-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb722-5"><a href="r-markdown.html#cb722-5" aria-hidden="true" tabindex="-1"></a>reg1_table <span class="ot">&lt;-</span> m1 <span class="sc">%&gt;%</span> </span>
-<span id="cb722-6"><a href="r-markdown.html#cb722-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="at">IV =</span> term, <span class="at">Est. =</span> estimate, <span class="at">sd =</span> std.error, <span class="st">`</span><span class="at">p value</span><span class="st">`</span> <span class="ot">=</span> p.value) <span class="sc">%&gt;%</span> </span>
-<span id="cb722-7"><a href="r-markdown.html#cb722-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate_if</span>(is.numeric, <span class="fu">funs</span>(<span class="fu">round</span>(., <span class="dv">2</span>)))</span></code></pre></div>
-<div class="sourceCode" id="cb723"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb723-1"><a href="r-markdown.html#cb723-1" aria-hidden="true" tabindex="-1"></a>reg1_table <span class="sc">%&gt;%</span> </span>
-<span id="cb723-2"><a href="r-markdown.html#cb723-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">kable</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb723-3"><a href="r-markdown.html#cb723-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">kable_styling</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb736"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb736-1"><a href="r-markdown.html#cb736-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;airquality&quot;</span>)</span>
+<span id="cb736-2"><a href="r-markdown.html#cb736-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb736-3"><a href="r-markdown.html#cb736-3" aria-hidden="true" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">tidy</span>(<span class="fu">lm</span>(Ozone<span class="sc">~</span>Temp<span class="sc">+</span>Solar.R, <span class="at">data =</span> airquality))</span>
+<span id="cb736-4"><a href="r-markdown.html#cb736-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb736-5"><a href="r-markdown.html#cb736-5" aria-hidden="true" tabindex="-1"></a>reg1_table <span class="ot">&lt;-</span> m1 <span class="sc">%&gt;%</span> </span>
+<span id="cb736-6"><a href="r-markdown.html#cb736-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="at">IV =</span> term, <span class="at">Est. =</span> estimate, <span class="at">sd =</span> std.error, <span class="st">`</span><span class="at">p value</span><span class="st">`</span> <span class="ot">=</span> p.value) <span class="sc">%&gt;%</span> </span>
+<span id="cb736-7"><a href="r-markdown.html#cb736-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate_if</span>(is.numeric, <span class="fu">funs</span>(<span class="fu">round</span>(., <span class="dv">2</span>)))</span></code></pre></div>
+<div class="sourceCode" id="cb737"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb737-1"><a href="r-markdown.html#cb737-1" aria-hidden="true" tabindex="-1"></a>reg1_table <span class="sc">%&gt;%</span> </span>
+<span id="cb737-2"><a href="r-markdown.html#cb737-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">kable</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb737-3"><a href="r-markdown.html#cb737-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">kable_styling</span>()</span></code></pre></div>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -1059,8 +1062,8 @@ Solar.R
 </tbody>
 </table>
 <p>Alebo môžete využiť <code>stargazer</code> knižnicu, ktorá vytvára regresné tabuľky, ktoré sú použiteľné do akademických žurnálov.</p>
-<div class="sourceCode" id="cb724"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb724-1"><a href="r-markdown.html#cb724-1" aria-hidden="true" tabindex="-1"></a>m2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Ozone<span class="sc">~</span>Temp<span class="sc">+</span>Solar.R, <span class="at">data =</span> airquality)</span></code></pre></div>
-<div class="sourceCode" id="cb725"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb725-1"><a href="r-markdown.html#cb725-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(m2, <span class="at">title =</span> <span class="st">&quot;Regression result&quot;</span>, <span class="at">dep.var.labels =</span> <span class="st">&quot;Ozone levels&quot;</span>, <span class="at">type =</span> <span class="st">&quot;html&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb738"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb738-1"><a href="r-markdown.html#cb738-1" aria-hidden="true" tabindex="-1"></a>m2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Ozone<span class="sc">~</span>Temp<span class="sc">+</span>Solar.R, <span class="at">data =</span> airquality)</span></code></pre></div>
+<div class="sourceCode" id="cb739"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb739-1"><a href="r-markdown.html#cb739-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(m2, <span class="at">title =</span> <span class="st">&quot;Regression result&quot;</span>, <span class="at">dep.var.labels =</span> <span class="st">&quot;Ozone levels&quot;</span>, <span class="at">type =</span> <span class="st">&quot;html&quot;</span>)</span></code></pre></div>
 <table style="text-align:center">
 <caption>
 <strong>Regression result</strong>
@@ -1214,7 +1217,7 @@ F Statistic
 </tr>
 </table>
 <p>Na to, aby sa Vám zobrazila tabuľka musíte zmeniť nastavenie chunku nasledovne: <code>```{r, results = "asis"}</code>. V opačnom prípade bude výsledkom tohto kódu len html kód, ktorý môžete potom prekopírovať do hocijakého html dokumentu, aby sa zobrazila tabuľka správne.</p>
-<div class="sourceCode" id="cb726"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb726-1"><a href="r-markdown.html#cb726-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(m2, <span class="at">title =</span> <span class="st">&quot;Regression result&quot;</span>, <span class="at">dep.var.labels =</span> <span class="st">&quot;Ozone levels&quot;</span>, <span class="at">type =</span> <span class="st">&quot;html&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb740"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb740-1"><a href="r-markdown.html#cb740-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(m2, <span class="at">title =</span> <span class="st">&quot;Regression result&quot;</span>, <span class="at">dep.var.labels =</span> <span class="st">&quot;Ozone levels&quot;</span>, <span class="at">type =</span> <span class="st">&quot;html&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## &lt;table style=&quot;text-align:center&quot;&gt;&lt;caption&gt;&lt;strong&gt;Regression result&lt;/strong&gt;&lt;/caption&gt;
 ## &lt;tr&gt;&lt;td colspan=&quot;2&quot; style=&quot;border-bottom: 1px solid black&quot;&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;em&gt;Dependent variable:&lt;/em&gt;&lt;/td&gt;&lt;/tr&gt;
@@ -1240,16 +1243,16 @@ F Statistic
 <div id="word" class="section level3 hasAnchor" number="7.3.2">
 <h3><span class="header-section-number">7.3.2</span> Word<a href="r-markdown.html#word" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Existuje viacero spôsobov ako exportovať tabuľky do Wordu. Môžete jednoducho využiť <code>kable</code> funkciu a knitnúť R Markdown do Wordu, ktorý potom môžete upravovať ako chcete. Ďalšia možnosť je exportovať R tabuľku ako csv súbor a ten importovať do Wordu tak, že otvoríte csv súbor vo Worde, označíte si text a spravíte tieto kroky: <code>Vložiť &gt; Tabuľka &gt; Konvertovať text na tabuľku</code>. Po základnom nastavení by mal Word vedieť, čo spraviť.</p>
-<div class="sourceCode" id="cb728"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb728-1"><a href="r-markdown.html#cb728-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.table</span>(reg1_table, <span class="at">file =</span> <span class="st">&quot;reg1_table.csv&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;,&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb742"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb742-1"><a href="r-markdown.html#cb742-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.table</span>(reg1_table, <span class="at">file =</span> <span class="st">&quot;reg1_table.csv&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;,&quot;</span>)</span></code></pre></div>
 <p>Ďalšia z možností je otvoriť csv súbor v Exceli a tabuľku z neho skopírovať do Wordu.</p>
 </div>
 <div id="latex" class="section level3 hasAnchor" number="7.3.3">
 <h3><span class="header-section-number">7.3.3</span> LaTeX<a href="r-markdown.html#latex" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Ak viete použivať LaTeX ako textový editor alebo knitujete R Markdown do pdf, tak potrebujete tabuľku špecifikovanú LaTeX jazykom. Naštastie <code>stargazer</code> knižnica je vcelku flexibilná čo sa tohto týka. Vo funkcii <code>stargazer</code> stačí špecifikovať argument - <code>type = latex</code>.</p>
-<div class="sourceCode" id="cb729"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb729-1"><a href="r-markdown.html#cb729-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(m2, <span class="at">title =</span> <span class="st">&quot;Regression result&quot;</span>, <span class="at">dep.var.labels =</span> <span class="st">&quot;Ozone levels&quot;</span>, <span class="at">type =</span> <span class="st">&quot;latex&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb743"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb743-1"><a href="r-markdown.html#cb743-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(m2, <span class="at">title =</span> <span class="st">&quot;Regression result&quot;</span>, <span class="at">dep.var.labels =</span> <span class="st">&quot;Ozone levels&quot;</span>, <span class="at">type =</span> <span class="st">&quot;latex&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## % Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
-## % Date and time: st, nov 16, 2022 - 9:02:25
+## % Date and time: ut, nov 22, 2022 - 14:51:08
 ## \begin{table}[!htbp] \centering 
 ##   \caption{Regression result} 
 ##   \label{} 
